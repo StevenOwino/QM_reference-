@@ -1,0 +1,9 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'elegantbook-en.blg'
+[104] biber:340> INFO - === Wed May 20, 2026, 14:36:04
+[122] Biber.pm:419> INFO - Reading 'elegantbook-en.bcf'
+[210] Biber.pm:979> INFO - Found 0 citekeys in bib section 0
+[228] bbl.pm:660> INFO - Writing 'elegantbook-en.bbl' with encoding 'UTF-8'
+[228] bbl.pm:763> INFO - Output to elegantbook-en.bbl
+[229] Biber.pm:131> WARN - The file 'elegantbook-en.bcf' does not contain any citations!
+[229] Biber.pm:133> INFO - WARNINGS: 1

@@ -1,0 +1,10 @@
+This is makeindex, version 2.17 [TeX Live 2023] (kpathsea + Thai support).
+Scanning style file ./qm_book.ist...done (3 attributes redefined, 0 ignored).
+Scanning input file qm_book.idx....done (204 entries accepted, 0 rejected).
+Sorting entries.....done (1793 comparisons).
+Generating output file qm_book.ind....
+## Warning (input = qm_book.idx, line = 18; output = qm_book.ind, line = 118):
+   -- Unmatched range opening operator (.
+done (263 lines written, 1 warning).
+Output written in qm_book.ind.
+Transcript written in qm_book.ilg.
