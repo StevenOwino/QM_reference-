@@ -210,9 +210,8 @@ Sympletic-potential\index{Sympletic-potential} $\longrightarrow$ $\theta$ = $\fr
   
 Fourier-transform($\mathcal{F})$\index{Fourier-transform} $\longrightarrow$ A constant multiple of a unitary map $\longrightarrow$ $\psi(p)$ = - $\int_\mathbb R$ $\phi$(x)$e^{- \frac{{ixp}}{\hbar}}$ dx dp  \\
   
-$C_c^{\infty}(\mathbb {R^n})$ $\longrightarrow$ Space of smooth, compactly supported functions\index{Space of smooth, compactly supported functions}                                           
+$C_c^{\infty}(\mathbb {R^n})$ $\longrightarrow$ Space of smooth, compactly supported functions\index{Space of smooth, compactly supported functions} \\
 \end{note}
- 
 $\mathbf{\textbf{Common nomenclecture}}$ 
 
 \begin{enumerate}
@@ -648,14 +647,14 @@ From the distribution-integral\index{distribution-integral} $\rightarrow$ $\int_
 
 $\bullet$ (5) expectation value: $\langle\hat{\mathbf Q} \rangle$ $\equiv$ $\langle\psi, \hat{\mathbf Q}\psi \rangle$, $i \hbar \frac{d}{dt} \langle \hat{\mathbf Q \rangle}$ = $\langle[ \hat{\mathbf Q},{\mathbf H}] \rangle$, $\hat{\mathbf Q}$ time idependent.  \\
 
-$\bullet$ (6) uncertainty: $\vartriangle{A} \equiv || (\hat{A} - \langle \hat{A} \rangle \mathbb{1}) \psi ||$,  
+$\bullet$ (6) uncertainty: $\vartriangle{A} \equiv \vert {A} - \langle \hat{A} \rangle \mathbb{1}) \psi \vert$
 $(\vartriangle{A})^2$ = $\langle \hat{A}^2 \rangle - \langle \hat{A} \rangle^2 \geq$ 0.  
 $\vartriangle{A} \vartriangle{B}$ $\geq$ | $\langle \psi$ $\mid$ $\frac{1}{2i}$ $[\hat{A},\hat{B}]$ $\mid$ $\psi$ $\rangle$  \\
 
 $\bullet$ (7) saturation\index{saturation}: $(\hat{B} - \langle \hat{B} \rangle \mathbb1) \mid \psi \rangle$ = i $\lambda (\hat{A} - \langle \hat{A} \mathbb1)\mid \psi \rangle$, $\lambda \in \Re$.  
 $\vartriangle{x} \vartriangle{p} \geq \frac{\hbar}{2}$. For $\psi$ ~ $\exp(- \frac{1}{4} \frac{x^2}{\vartriangle^2})$,  
 $\vartriangle{x} = \vartriangle$ and $\vartriangle{p} = \frac{\hbar}{2 \vartriangle}$.  
-$\vartriangle{H} \vartriangle{t} \geq \frac{\hbar}{2}$, $\vartriangle{t}$ $\equiv$ $\frac{\vartriangle Q } { |\mid \frac{d Q}{dt} \mid}$.  \\
+$\vartriangle{H} \vartriangle{t} \geq \frac{\hbar}{2}$, $\vartriangle{t}$ $\equiv$ $\frac{\vartriangle Q } {\mid \frac{d Q}{dt} \mid}$.  \\
 
 $\bullet$ (8) stationary state: $\psi${x,t} = $\psi (x)e^{- \frac{iEt}{\hbar}}$, $- \frac{\hbar^2}{2m} \nabla^2 \psi(x) + \mathbf V(\mathbf x) \Psi(\mathbf x) = E \psi(\mathbf x)$.   \\
 
@@ -1388,8 +1387,8 @@ We have $E_k(x)$ = $e^{ikx}$, k $\in$ $\mathbb Z$. Using Eulers formula($e^{i \a
 $E_k(x) \text{by substitution}$, $\equiv$ $E_k(x)$ = $\cos(kx) + i \sin(kx)$;  
 Here $E_k$ is an orthonormal set.  \\
 
-Now, for the Hermitian Scalar Product <f|g> = $\frac{1}{2 \pi}$ $\int_0^{2 \pi}$ $\overline {f(x)}$ $\cdot$ g(x) dx, we have $<E_k|E_s>$ =  $\frac{1}{2 \pi}$ $\int_0^{2 \pi}$ $e^{- ikx}$ $\cdot$ $e^{isx}$ = $\frac{1}{2 \pi}$ $\int_0^{2 \pi}$ $e^{i(s - k)x} dx$(factored),  
-= $\frac{1}{2 \pi}$ $\frac{1}{i(s - k)}$ $e^{i(s - k)x}$ $ |_{x = 0}^{x = 2 \pi}$ = 0. Note that s and k = 
+Now, for the Hermitian Scalar Product $<f \mid$ $\frac{1}{2 \pi}$ $\int_0^{2 \pi}$ $\overline {f(x)}$ $\cdot$ g(x) dx, we have $<E_k \mid E_s>$ =  $\frac{1}{2 \pi}$ $\int_0^{2 \pi}$ $e^{- ikx}$ $\cdot$ $e^{isx}$ = $\frac{1}{2 \pi}$ $\int_0^{2 \pi}$ $e^{i(s - k)x} dx$(factored),
+= $\frac{1}{2 \pi}$ $\frac{1}{i(s - k)}$ $e^{i(s - k)x}$ $|_{x = 0}^{x = 2 \pi}$ = 0. Note that $\iff$ s and k = 0,
 $\left\{
 \begin{array}{ll}
 0,  \text{if s $\neq$ k} \\
@@ -1399,7 +1398,7 @@ $\left\{
     
 Since its periodic($\frac{1}{2 \pi}$ $\int_0^{2 \pi}$1 dx = 1, if s = k); With the resulting anti-derivative of the function.  
 So, we can pass from ($f_0, f_1,...,f_{n-1})$ $\rightarrow$ Fourier coefficients ($c_0,c_1,...,c_{n - 1}$). This is the Discrete Fourier series; A discrete signal capturing frequency information, given that
-$C_k$ = $\frac{1}{\sqrt N}$ $\sum_{j = 0}^{N - 1}$ $f_j$ $e^{ \frac{i 2 \pi {kj}}{N}}$(DFT); Note that $C_k$ = $<E_k|f>$ = $\sum_{j = 0}^{N-1}$ $\overline {E_{kj}}$ $f_{j}$, where N is the  number of samples.  \\
+$C_k$ = $\frac{1}{\sqrt N}$ $\sum_{j = 0}^{N - 1}$ $f_j$ $e^{ \frac{i 2 \pi {kj}}{N}}$(DFT); Note that $C_k$ = $<E_k \mid f>$ = $\sum_{j = 0}^{N-1}$ $\overline {E_{kj}}$ $f_{j}$, where N is the  number of samples.  \\
 
 Inverse Dicrete Fourier Transform(IDFT) $\rightarrow$  \\
  
@@ -1498,7 +1497,7 @@ $\left\{
 \end{array}
 \right\}.$  \\
 
-Concept of Magnitude\index{Concept of Magnitude} $\rightarrow$ If w = 3 + 4i, then $\mid w \mid$ = $\sqrt{\Re(w^2) + \Im(w^2)}$ = $\sqrt{3^2 + 4^2}$ = 5 \\
+Concept of Magnitude\index{Concept of Magnitude} $\rightarrow$ If w = 3 + 4i, then $\mid w \mid$ = $\sqrt{\Re(w^2) + \Im(w^2)}$ = $\sqrt{3^2 + 4^2}$ = 5  \\
 
 Cube roots of 1 $\rightarrow$  \\
 
