@@ -159,11 +159,13 @@ E = $ ( \mathbf {p^2} c^2 + m^2 c^2)^ \frac{1}{2}$  \\
 
 $ \mathbf E$ = -$ \frac{\mathbf {\dot A}}{c} - \nabla \varphi$   \\
  
-$ \forall F \in H L^2(\mathbb C,\mu_\hbar)$, we have:  \\ 
-$ \Vert T_\mathbf a F \Vert^2 L^2(\mathbb C^n,\mu_\hbar)$ \\
-= $(\pi \hbar)^{-n}$ $\int \mathbb C_n$ $e^{- \hbar \vert \mathbf a \vert^2}$ $ \mathbf e^{-2 \mathbb R (  \bar {\mathbf a} \cdot \mathbf a ) }$ $ \vert \mathbf F (\mathbf z + \hbar \mathbf a ) \vert^2 $ $ \mathbf e^{- \frac{\vert \mathbf x \vert^2} {\hbar}} $ dx  
-= $(\pi \hbar)^{-n}$ $\int \mathbb C_n$ $e^{- \frac{\vert \mathbf z + \hbar \vert^2}{\hbar}}$ $\vert \mathbf F(\mathbf z + \hbar \mathbf a) \vert^2$ dz  
-= $ \Vert \mathbf F \Vert^2$ $L^2$ $ ( \mathbb C^n,\mu \hbar )$  \\
+$ \forall F \in H L^2(\mathbb C,\mu_\hbar)$, we have:  \\
+\begin{equation}
+\Vert T_\mathbf a F \Vert^2 L^2(\mathbb C^n,\mu_\hbar)
+= (\pi \hbar)^{-n} \int \mathbb C_n  e^{- \hbar \vert \mathbf a \vert^2}  \mathbf e^{-2 \mathbb R (  \bar {\mathbf a} \cdot \mathbf a ) } \vert \mathbf F (\mathbf z + \hbar \mathbf a ) \vert^2  \mathbf e^{- \frac{\vert \mathbf x \vert^2} {\hbar}}  dx  
+= (\pi \hbar)^{-n} \int \mathbb C_n e^{- \frac{\vert \mathbf z + \hbar \vert^2}{\hbar}} \vert \mathbf F(\mathbf z + \hbar \mathbf a) \vert^2 dz  
+= \Vert \mathbf F \Vert^2 L^2  ( \mathbb C^n,\mu \hbar )
+\end{equation}
   
 $\prod (e^X)$ = $e^{\pi (X)}$ = $ \sum_{x=0}^\infty \frac{\pi X^m}{m!}$ (Each element is a product of Lie algebra elements. 
                                                                          Its power series is finite dimensional and   closed.)  \\
