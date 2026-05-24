@@ -15,6 +15,8 @@
   \fancyfoot[C]{\hyperlink{toc}{\thepage}}
 }
 \usepackage{mathtools}
+\usepackage{listings}
+\usepackage{xcolor}
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 
 %\hypertarget{toc}{}
@@ -58,7 +60,10 @@ heading_suffix "}\\par\\nobreak"
 \mainmatter
 \section{Preface}
 
-The cover photo describes relationship between four graph invariants $\omega$, $\chi f$ , $\chi$, and $\vartriangle$.
+\begin{equation}
+\boxed{\text{The cover photo describes relationship between four graph invariant} \omega, \chi(f) , \chi, and \vartriangle}
+\end{equation} 
+ 
 
 Abstract Mathematics(models of inductive reasoning), is availed to avoid nonsensical answers, and bogus non-differentiable functions. This is the task for the human mind; to see this truth, and preserve it.
 It's accepted that the angular momentum of a closed system is conserved(hence production of particles by conversion of gravitational energy into matter energy, conditioned by Biological factors). The origin of the universe(a Physical picture of a polarizable space, and characterized as young by $\frac{\epsilon} {\epsilon_0}$ ~1, with an energy density when expressed in Newtonian units), is not a reproducible event, and cannot be duplicated in the laboratory. In trying to eliminate the Riemann curvature tensor, there's also the Ricci curvature tensor, assuming the photon travels without a shift in energy or frequency(red shift). There are formidable problems facing String Theory: it has no predictive power, it's a highly sophisticated theoretical laboratory(rather than experimental), it's defined at the Planck energy($10^{19}$ GeV), as any Physical theory that you can possibly come up with, it cannot be tested with the present technology, and it's tightly constrained as much as the graviton emerges as a massless state with spin-2.
@@ -107,10 +112,15 @@ Don't try to read these notes linearly, instead, come back here as a formula ref
 
 Elementary logic functions(Boolean gates), or Disjuctive Normal Forms, Computation complexities, Algorithms, and Quantum circuits, are not part of this material.
 
-$\bullet$ Schrodinger Equation: General linear homgeneous solution(from translation operators), to the time-dependent Schr$\ddot{o}$dinger Equation $\longrightarrow$ $\psi$(x,t) = $\sum_{n = 1}^\infty$ $C_n$ $\psi(x) e^{- \frac{i E t}{\hbar}}$, for t = 0; $C_n$ are constants.  \\  
+$\bullet$ Schrodinger Equation: General linear homgeneous solution(from translation operators), to the time-dependent Schr$\ddot{o}$dinger Equation $\longrightarrow$ \\
+\begin{equation}
+\psi(x,t) = \sum_{n = 1}^\infty C_n \psi(x) e^{- \frac{i E t}{\hbar}}, for t = 0; C_n are constants.
+\end{equation}  
          
-$\bullet$ Integral form, time-dependent $\longrightarrow$ $\psi(x,t)$ = $\int \mathbf K[x,t:q_0,t_0]\psi(q_0,t_0)dx_0$, where  
-$\mathbf K$ is the kernel/propagator. \\
+$\bullet$ Integral form, time-dependent $\longrightarrow$  \\
+\begin{equation} 
+\psi(x,t) = \int \mathbf K[x,t:q_0,t_0]\psi(q_0,t_0)dx_0, \mathbf{\text{where K is the kernel or propagator.}}
+\end{equation}
 
 $\bullet$ The identity Zero: Zero has no multiplicative inverse!!  \\
 
@@ -131,7 +141,11 @@ $ e^{i \mathbf a \cdot \mathbf X} e^{1 \mathbf b \cdot \mathbf P} \phi_0$ is als
 
 $a^\dagger |n \rangle$ = $\sqrt{n + 1} |n +1 \rangle$  \\
   
-${\hat j_\pm} |j,m \rangle$ = $\hbar$ $\sqrt{j(j + 1) - m(m \pm 1)} |j, m \pm 1 \rangle$ $\longrightarrow$  \\
+\begin{equation}
+{\hat j_\pm} \mid j,m \rangle = \hbar \sqrt{j (j + 1) - m \mid m \pm 1)} \mid j, m \pm 1 \rangle
+\end{equation} 
+
+$\implies$ \\
 Angular-momentum\index{Angular-momentum} identity/[discrete orientation vector\index{discrete orientation vector} with Quantum-number\index{Quantum-number}(in units of $\frac{\hbar}{2\pi}$).  \\
   
 A(t) = $e^{+ \frac{iHt}{h}} \mathbf {A}e^{- \frac{iHt}{h}}$  \\
@@ -502,7 +516,7 @@ $\frac{1}{\sqrt 2}$ $\left( | \uparrow \rangle_1 \otimes | \downarrow \rangle_2 
 Clebsch-Gordan-coefficient\index{Clebsch-Gordan-coefficient}(expansion)/vector coupling/Wigner $\longrightarrow$ \\ 
 $ | J,M \rangle$ = $\sum_{m_1 = {-j_1}}^{j_1}$ $\sum_{m_2 = {-j_2}}^{j_2} \langle{JM} | {m_1,m_2} \rangle \langle{m_1,m_2} |J^{prime},M^{prime} \rangle$ = $\delta_{jj^{prime}}$ $\delta_{MM^{prime}}$  \\
     
-Hydrogen\index{Hydrogen} hyperfine split $\longrightarrow$ $\mathbf{Energy shift/difference}$ of the lowest antiparallel state of the spin of the protons magnetic moment and the electrons magnetic field, pointing in the same direction(corresponds to the fine-structure\index{fine-structure} splitting).  \\  
+Hydrogen\index{Hydrogen} hyperfine split $\longrightarrow$ $\mathbf{\text{Energy shift/difference}}$ of the lowest antiparallel state of the spin of the protons magnetic moment and the electrons magnetic field, pointing in the same direction(corresponds to the fine-structure\index{fine-structure} splitting).  \\  
     
 Collision-broadening\index{Collision-broadening} $\longrightarrow$ Distortion of an emitted wave during radiation, thus smearing the spectral line. \\
  
@@ -562,7 +576,7 @@ $\bullet$ $\mathbf{\textbf{Physical-law\index{Physical-law}}}$ (Seiberg-Witten-e
 $\bullet$ Light $\longrightarrow$ Vibrations in the electromagnetic-field\index{electromagnetic-field}  \\
 
 Energy $\longrightarrow$ An observable corresponding to $\hbar$, times the dynamical operator, and that its an integral
-so that we have an $\mathbf{\text{energy conservation law}}$. \\
+so that we have an $\mathbf{\textbf{energy conservation law}}$. \\
  
 $\bullet$ Heisenberg commutation relation $\longrightarrow$ ${Q_j}{Q_k} - {P_j}{P_k}$ = $i$ $\hbar$ $\delta_j^k$ \\
  
