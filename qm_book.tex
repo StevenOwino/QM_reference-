@@ -168,24 +168,43 @@ $ \forall F \in H L^2(\mathbb C,\mu_\hbar)$, we have:  \\
 = \Vert \mathbf F \Vert^2 L^2  ( \mathbb C^n,\mu \hbar )
 \end{equation}
   
-$\prod (e^X)$ = $e^{\pi (X)}$ = $ \sum_{x=0}^\infty \frac{\pi X^m}{m!}$ (Each element is a product of Lie algebra elements. 
-                                                                         Its power series is finite dimensional and   closed.)  \\
+$\prod (e^X)$ = $e^{\pi (X)}$ = $ \sum_{x=0}^\infty \frac{\pi X^m}{m!}$ (Each element is a product of Lie algebra elements. Its power series is finite dimensional, and closed.)  \\
                                                                   
-The Hilbert-Schmidt-norm\index{Hilbert-Schmidt-norm} of a matrix X $\in$ $M_n(\mathbb C)$ $\longrightarrow$ $\Vert X \Vert^2_{HS}$ = $ \sum_{j,k = 1}^{n} |X_{jk}|^2$  \\
+The Hilbert-Schmidt-norm\index{Hilbert-Schmidt-norm} of a matrix X $\in$ $M_n(\mathbb C)$ $\longrightarrow$  \\
+\begin{equation} 
+\Vert X \Vert^2_{HS} = \sum_{j,k = 1}^{n} |X_{jk}|^2  
+\end{equation}
   
-Cauchy-Schwarz inequality\index{Cauchy-Schwarz inequality} - $\Vert {XY} \Vert_{HS} \leq \Vert X \Vert_{HS} \Vert Y \Vert_{HS}$ $\forall$ X,Y $\in$ $M_n(\mathbb C)$  \\
- 
-SO(3)\index{SO(3)} $\longrightarrow \sigma_{\ell}$ = $\pi^{^prime}_{\ell} \circ \phi^{-1}$ = $\pi_\ell$ \\
- 
+Cauchy-Schwarz inequality\index{Cauchy-Schwarz inequality} 
+\begin{equation}
+\Vert {XY} \Vert_{HS} \leq \Vert X \Vert_{HS} \Vert Y \Vert_{HS} \forall X,Y \in M_n(\mathbb C) 
+\end{equation}
+
+SO(3)\index{SO(3)} $\longrightarrow$
+\begin{equation} 
+\sigma_{\ell} = \pi'_{\ell} \circ \phi^{-1} = \pi_\ell
+\end{equation}
+
 $\hat \otimes \longrightarrow$ Hilbert tensor product \\
  
-Feynmann Path-Integral\index{Path-Integral} $\longrightarrow$ $e^{- \frac{i t \hat {H}}{\hbar}}$ $\psi$ $(X_0)$ = C $\int_{\text{paths with} \\ X(0)=X_0}$ $exp\left\{ \frac{i}{\hbar}S(x(\cdot),0,t) \right\}$ $\psi$(x(t)) Dx \\
-
+Feynmann Path-Integral\index{Path-Integral} $\longrightarrow$  \\
+\begin{equation}
+e^{- \frac{i t \hat {H}}{\hbar}} \psi (X_0) = C \int_{\text{paths with} \\ X(0) = X_0} exp\left\{ \frac{i}{\hbar}(x(\cdot),0,t) \right\} \psi(x(t)) Dx
+\end{equation}
  
-Gauge-transformation\index{Gauge-transformation} $\longrightarrow$ $U_\gamma Q^{1}_{pre}(f)U^{-1}_{\gamma}$ = $Q^{2}{_{pre}}(f)$, where $U_\gamma$ is the map, and "pre" is for prequantization\index{prequantization}.  \\
+Gauge-transformation\index{Gauge-transformation} $\longrightarrow$ \\
+\begin{equation}
+U_\gamma Q^{1}_{pre}(f)U^{-1}_{\gamma} = Q^{2}{_{pre}}(f), \quad where (U_\gamma) \text{is the map, and "pre" is for prequantization\index{prequantization}}. 
+\end{equation}
 
-$\psi_n(r,\phi)$ = $f(r) e^{-i n\phi}$, where n is an integer, and f is an arbitrary holomorphic-function\index{holomorphic-function} on $\mathbb C$ with
-$\int_0^{\infty}|f(r)|^2$r dr < $\infty$ \\
+$a^{\prime}$ = $a - \nabla \psi$ $\quad$  $\phi^{\prime}$ = $\phi$ + $\frac{1}{c}$ $\frac{\partial \psi}{\partial t}$
+
+\boxed{\text{This was David Bohms' view of the character of Electromagnetic potentials.}} 
+
+\begin{equation}
+\psi_n(r,\phi) = f(r) e^{-i n\phi},\quad \text{where n is an integer, and f is an arbitrary holomorphic function\index{holomorphic function} on} \mathbb (C), with
+\int_0^{\infty}\mid f(r)\mid^2r dr < \infty
+\end{equation}
  
 Sympletic-potential\index{Sympletic-potential} $\longrightarrow$ $\theta$ = $\frac{1}{2}$(p dx - x dp) = $\frac{1}{{2m} \omega}$(p dy - y dp)  \\
   
