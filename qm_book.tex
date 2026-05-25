@@ -1,4 +1,7 @@
-\documentclass[10pt,fancy]{elegantbook}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt. fancy]{elegantbook}
 \usepackage{amsmath}
 \usepackage{imakeidx} % Recommended for modern LaTeX
 \makeindex[intoc, title=Index, options={-s \jobname.ist}]         % Mandatory command to initialize indexing
@@ -6,6 +9,7 @@
 \usepackage{lmodern}
 \usepackage{fancyhdr}
 \usepackage[utf8]{inputenc}
+\usepackage{amssymb}
 %\usepackage[pagestyles]{titlesec}
 \usepackage{hyperref}
 \hypersetup{colorlinks} % Comment this line if you don't wish to have colored links
@@ -17,9 +21,53 @@
 \usepackage{mathtools}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{ifthen}
+\usepackage{perpage}
+\usepackage{wrapfig}
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 
-%\hypertarget{toc}{}
+%\IfFileExists{indentfirst.sty}{%
+%  \usepackage{indentfirst}
+%}{}
+
+%\usepackage{calc]
+
+% for running heads
+\usepackage{fancyhdr}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Interlude:  Set up PRINTING (default) or SCREEN VIEWING %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ForPrinting=true (default)           false
+% Asymmetric margins                   Symmetric margins
+% Black hyperlinks                     Blue hyperlinks
+% Start Preface, ToC, etc. recto       No blank verso pages
+%
+% Chapter-like ``Sections'' start both recto and verso in the scanned
+% book. This behavior has been retained.
+\newboolean{ForPrinting}
+
+%% UNCOMMENT the next line for a PRINT-OPTIMIZED VERSION of the text %%
+%\setboolean{ForPrinting}{true}
+
+%% Initialize values to ForPrinting=false
+\newcommand{\Margins}{hmarginratio=1:1}     % Symmetric margins
+\newcommand{\HLinkColor}{blue}              % Hyperlink color
+\newcommand{\PDFPageLayout}{SinglePage}
+\bigskip
+
+% Re-crop screen-formatted version, accommodating wide displays
+%\ifthenelse{\boolean{ForPrinting}}
+%  {}
+%  {\hypersetup{pdfpagescrop= 20 0 412 580}}
+
+
+%%newcounter{mytnote}
+%newcommand{\TNote}[1]{%
+%  \refstepcounter{mytnote}%
+
+\hypertarget{toc}{}
 \title{Quantum Mechanics(reference guide)}
 \subtitle{With magnetic deflection, notes(Theory, barely descriptive)}
 \author{Owino Stephen}
@@ -31,7 +79,7 @@
 \extrainfo{What one fool can do, another can.
 (Ancient Simian Proverb.)}
 
-\logo{Poussin_graph_planar.svg}
+%\logo{Poussin_graph_planar.svg}
 \cover{The-Chvatal-graph-a-triangle-free-4-regular-4-chromatic-graph.png}
 
 \definecolor{customcolor}{RGB}{32,178,170}
@@ -46,22 +94,293 @@ heading_prefix "\\par\\penalty-50\\textbf{"
 heading_suffix "}\\par\\nobreak"
 \end{filecontents}
 
+%\newboolean{ForPrinting}
+
+\newcommand{\DPPageSep}[2]{\Pagelabel{#2}}
+
+\def\ebook{43}
+
+%% Macro for reducing space between adjacent display environments
+\newcommand{\CancelMathSkip}{\vspace{-\belowdisplayskip}}
+\newcommand{\BindMath}[1]{%
+{\vspace{\abovedisplayskip}%
+{\setlength{\abovedisplayskip}{0pt}%
+\setlength{\belowdisplayskip}{0pt}%
+#1}\vspace{\belowdisplayskip}}%
+}
+
+%\newcommand{\ToCBox}[1]{%
+%  \PadTxt[r]{XVIII.}{#1}\quad%
+%}
+
+\newcommand{\ToCAnchor}{}
+
+%\ToCLine[font style]{Chapter}{Title}{label}
+\newcommand{\ToCLine}[4][\scshape]{%
+  \par\noindent\label{toc:#4}%
+  \ifthenelse{\not\equal{\pageref{toc:#4}}{\ToCAnchor}}{%
+    \noindent\textsc{\scriptsize Chapter\hfill Page}\medskip%
+    \renewcommand{\ToCAnchor}{\pageref{toc:#4}}\par%
+  }{}%
+  \settowidth{\TmpLen}{9999}%
+  \noindent\parbox[b]{\linewidth-\TmpLen}{\ToCBox{#2}%
+    \rule{0pt}{16pt}#1\hangindent6em #3\dotfill}% [** TN: Hard-coded spaces]
+  \PadTxt[r]{9999}{\pageref{#4}}\smallskip%
+}
+
+\newcommand{\ChapterSkip}{\vspace*{0.1\linewidth}}
+\newcommand{\flushpage}{\clearpage\fancyhf{}\cleardoublepage}
+
+% Numbered: \Chapter[Running Head]{number}{Title}
+\newcommand{\Chapter}[3][]{%
+  \flushpage
+  \phantomsection\label{chap:#2}\pdfbookmark[0]{Chapter #2}{Chapter #2}%
+  \ifthenelse{\not\equal{#1}{}}{%
+    \SetOddHead{#1}%
+  }{%
+    \SetOddHead{#3}%
+  }%
+
+  \addtocontents{toc}{\protect\ToCLine{#2.}{#3}{chap:#2}}
+  \thispagestyle{empty}
+  \ChapterSkip%
+  \section*{\centering\normalfont\Large CHAPTER #2.}
+  \subsection*{\centering\normalfont\large\MakeUppercase{#3}.}
+}
+
+% Unnumbered, but has a ToC entry: \AltChapter[Running Head]{Title}
+%[** TN: Uses the book's chapter structure to select ToC entry font]
+\newcommand{\AltChapter}[2][]{%
+  \ifthenelse{\equal{#2}{Prologue}}{%
+    \pagestyle{fancy}
+  }{}
+  \flushpage
+  \phantomsection\label{#2}\pdfbookmark[0]{#2}{#2}%
+  \ifthenelse{\not\equal{#1}{}}{%
+    \SetOddHead{#1}%
+    \addtocontents{toc}{\protect\ToCLine{}{#1}{#2}}%
+  }{%
+    \SetOddHead{#2}%
+    \ifthenelse{\equal{#2}{Table of Standard Forms}}{%
+      \addtocontents{toc}{\protect\ToCLine[\bfseries]{}{#2}{#2}}%
+    }{%
+      \addtocontents{toc}{\protect\ToCLine{}{#2}{#2}}%
+      \ChapterSkip%
+    }%
+  }%
+
+  \thispagestyle{empty}
+  \section*{\centering\normalfont\Large\MakeUppercase{#2.}}
+}
+
+% For the Preface and Epilogue; no ToC entry
+\newcommand\ChapterStar[2][]{%
+  \flushpage
+  \phantomsection
+
+  \ifthenelse{\not\equal{#1}{}}{%
+    \SetOddHead{#1}%
+    \pdfbookmark[0]{#1}{#1}%
+  }{%
+    \SetOddHead{#2}%
+    \pdfbookmark[0]{#2}{#2}%
+  }%
+  \thispagestyle{empty}
+  \ChapterSkip%
+  \section*{\centering\normalfont\Large\MakeUppercase{#2.}}
+}
+
+\newcounter{SectionNo}
+\setcounter{SectionNo}{0}
+
+\newcommand\Section[2][]{%
+  \section*{\centering\normalfont\normalsize\bfseries#2}%
+  \refstepcounter{SectionNo}%
+  \phantomsection\pdfbookmark[1]{#2}{#2}\label{section:\theSectionNo}%
+  \ifthenelse{\not\equal{#1}{}}{\SetOddHead{#1}}{}%
+}
+
+%tweaking \subsection - added italics & indent
+\newcommand\Subsection[1]{%
+  \medskip\pagebreak[1]\par\textit{#1}\pagebreak[0]\par%
+}
+
+%tweaking \paragraph - added italics & indent
+\newcommand{\Paragraph}[1]{\medskip\pagebreak[1]\par\textit{#1}}
+
+\newcommand{\Note}[1]{%
+  \clearpage
+  \section*{\centering\normalfont\normalsize #1}
+}
+
+% Dedicated structural macros
+\newcommand{\Case}[1]{\Subsection{Case~\upshape{#1}.}}
+
+% List item formatting
+\newcommand{\ListInit}{%
+  \setlength{\leftmargin}{0pt}%
+  \setlength{\labelwidth}{\parindent}%
+  \setlength{\labelsep}{0.5em}%
+  \setlength{\itemsep}{0pt}%
+  \setlength{\listparindent}{\parindent}
+  \setlength{\itemindent}{2\parindent}%
+}
+
+\newcommand{\License}{%
+  \flushpage
+  \thispagestyle{empty}
+  \phantomsection\pdfbookmark[0]{License}{License}
+  \SetBothHeads{License}
+}
+
+%\newcommand{\Z}{\phantom{0}}
+\newcommand{\DStrut}{\rule[-12pt]{0pt}{32pt}}
+\newcommand{\Strut}{\rule{0pt}{16pt}}
+
+\newcommand{\First}[1]{\noindent\textsc{#1}}
+
+% "exponent fraction" factored out for special handling, if desired
+\newcommand{\efrac}[2]{\frac{#1}{#2}}
+
+\DeclareMathOperator{\Arccos}{arc\,cos}
+\renewcommand{\arccos}{\Arccos}
+
+\DeclareMathOperator{\Arcsin}{arc\,sin}
+\renewcommand{\arcsin}{\Arcsin}
+
+\DeclareMathOperator{\Arctan}{arc\,tan}
+\renewcommand{\arctan}{\Arctan}
+
+\DeclareMathOperator{\arcsec}{arc\,sec}
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\cotan}{cotan}
+\DeclareMathOperator{\sech}{sech}
+
+% DPalign
+\makeatletter
+\providecommand\shortintertext\intertext
+\newcount\DP@lign@no
+\newtoks\DP@lignb@dy
+\newif\ifDP@cr
+\newif\ifbr@ce
+\def\f@@zl@bar{\null}
+\def\addto@DPbody#1{\global\DP@lignb@dy\@xp{\the\DP@lignb@dy#1}}
+\def\parseb@dy#1{\ifx\f@@zl@bar#1\f@@zl@bar
+    \addto@DPbody{{}}\let\@next\parseb@dy
+  \else\ifx\end#1
+    \let\@next\process@DPb@dy
+    \ifDP@cr\else\addto@DPbody{\DPh@@kr&\DP@rint}\@xp\addto@DPbody\@xp{\@xp{\the\DP@lign@no}&}\fi
+    \addto@DPbody{\end}
+  \else\ifx\intertext#1
+    \def\@next{\eat@command0}%
+  \else\ifx\shortintertext#1
+    \def\@next{\eat@command1}%
+  \else\ifDP@cr\addto@DPbody{&\DP@lint}\@xp\addto@DPbody\@xp{\@xp{\the\DP@lign@no}&\DPh@@kl}
+          \DP@crfalse\fi
+    \ifx\begin#1\def\begin@stack{b}
+      \let\@next\eat@environment
+  \else\ifx\lintertext#1
+    \let\@next\linter@text
+  \else\ifx\rintertext#1
+    \let\@next\rinter@text
+  \else\ifx\\#1
+    \addto@DPbody{\DPh@@kr&\DP@rint}\@xp\addto@DPbody\@xp{\@xp{\the\DP@lign@no}&\\}\DP@crtrue
+    \global\advance\DP@lign@no\@ne
+    \let\@next\parse@cr
+  \else\check@braces#1!Q!Q!Q!\ifbr@ce\addto@DPbody{{#1}}\else
+    \addto@DPbody{#1}\fi
+    \let\@next\parseb@dy
+  \fi\fi\fi\fi\fi\fi\fi\fi\@next}
+\def\process@DPb@dy{\let\lintertext\@gobble\let\rintertext\@gobble
+  \@xp\start@align\@xp\tw@\@xp\st@rredtrue\@xp\m@ne\the\DP@lignb@dy}
+\def\linter@text#1{\@xp\DPlint\@xp{\the\DP@lign@no}{#1}\parseb@dy}
+\def\rinter@text#1{\@xp\DPrint\@xp{\the\DP@lign@no}{#1}\parseb@dy}
+\def\DPlint#1#2{\@xp\def\csname DP@lint:#1\endcsname{\text{#2}}}
+\def\DPrint#1#2{\@xp\def\csname DP@rint:#1\endcsname{\text{#2}}}
+\def\DP@lint#1{\ifbalancedlrint\@xp\ifx\csname
+DP@lint:#1\endcsname\relax\phantom
+  {\csname DP@rint:#1\endcsname}\else\csname DP@lint:#1\endcsname\fi
+  \else\csname DP@lint:#1\endcsname\fi}
+\def\DP@rint#1{\ifbalancedlrint\@xp\ifx\csname
+DP@rint:#1\endcsname\relax\phantom
+  {\csname DP@lint:#1\endcsname}\else\csname DP@rint:#1\endcsname\fi
+  \else\csname DP@rint:#1\endcsname\fi}
+\def\eat@command#1#2{\ifcase#1\addto@DPbody{\intertext{#2}}\or
+  \addto@DPbody{\shortintertext{#2}}\fi\DP@crtrue
+  \global\advance\DP@lign@no\@ne\parseb@dy}
+\def\parse@cr{\new@ifnextchar*{\parse@crst}{\parse@crst{}}}
+\def\parse@crst#1{\addto@DPbody{#1}\new@ifnextchar[{\parse@crb}{\parseb@dy}}
+\def\parse@crb[#1]{\addto@DPbody{[#1]}\parseb@dy}
+\def\check@braces#1#2!Q!Q!Q!{\def\dp@lignt@stm@cro{#2}\ifx
+  \empty\dp@lignt@stm@cro\br@cefalse\else\br@cetrue\fi}
+\def\eat@environment#1{\addto@DPbody{\begin{#1}}\begingroup
+  \def\@currenvir{#1}\let\@next\digest@env\@next}
+\def\digest@env#1\end#2{%
+  \edef\begin@stack{\push@begins#1\begin\end \@xp\@gobble\begin@stack}%
+  \ifx\@empty\begin@stack
+    \@checkend{#2}
+    \endgroup\let\@next\parseb@dy\fi
+    \addto@DPbody{#1\end{#2}}
+    \@next}
+\def\lintertext{lint}\def\rintertext{rint}
+\newif\ifbalancedlrint
+\let\DPh@@kl\empty\let\DPh@@kr\empty
+\def\DPg@therl{&\omit\hfil$\displaystyle}
+\def\DPg@therr{$\hfil}
+
+\newenvironment{DPalign*}[1][a]{%
+  \if m#1\balancedlrintfalse\else\balancedlrinttrue\fi
+  \global\DP@lign@no\z@\DP@crfalse
+  \DP@lignb@dy{&\DP@lint0&}\parseb@dy
+}{%
+  \endalign
+}
+\newenvironment{DPgather*}[1][a]{%
+  \if m#1\balancedlrintfalse\else\balancedlrinttrue\fi
+  \global\DP@lign@no\z@\DP@crfalse
+  \let\DPh@@kl\DPg@therl
+  \let\DPh@@kr\DPg@therr
+  \DP@lignb@dy{&\DP@lint0&\DPh@@kl}\parseb@dy
+}{%
+  \endalign
+}
+\makeatother
+
+\pagenumbering{arabic}
+
 \begin{document}
 
 \setcounter{tocdepth}{4}
 \mbox{}
-\pagenumbering{arabic}
+%\pagenumbering{arabic}
 
 \maketitle
 
 \frontmatter
 \tableofcontents
 
+% Table of Contents
+% Redefine headings for table of contents & index
+\renewcommand{\contentsname}{%
+  \protect\Large\protect\normalfont\protect\centering%
+  CONTENTS.\\
+}
+
+%pagestyle{empty}
+
+
+%\phantomsection
+%\pdfbookmark[-1]{Front Matter}{Front Matter}
+
+%%%% PG BOILERPLATE %%%%
+%\phantomsection
+%\pdfbookmark[0]{Boilerplate}{Boilerplate}
+
 \mainmatter
 \section{Preface}
 
 \begin{equation}
-\boxed{\text{The cover photo describes relationship between four graph invariant} \omega, \chi(f) , \chi, and \vartriangle}
+\boxed{\text{The cover photo describes relationship between four graph invariant} \quad \omega, \chi(f) , \chi, and \vartriangle}
 \end{equation} 
  
 
@@ -130,7 +449,7 @@ $\bullet$ Informational Warning: All descriptions here are in the literature, an
 $\bullet$ On Rational numbers: If (a) $\neq$ 0, there is no rational number($\mathbb Q$), where (b) $\times$ 0 = (a), can be fulfilled. \\
 
 
-$\mathbf{\textbf{Familiar, recognized, and understood equations:}}$  \\
+\chapter{\textbf{Familiar, recognized, and understood equations:}}
 
 If $ \frac{d \alpha} {dt} $ = 0 $\forall$ t, then $\alpha$ is constant \\
  
@@ -212,7 +531,8 @@ Fourier-transform($\mathcal{F})$\index{Fourier-transform} $\longrightarrow$ A co
   
 $C_c^{\infty}(\mathbb {R^n})$ $\longrightarrow$ Space of smooth, compactly supported functions\index{Space of smooth, compactly supported functions} \\
 \end{note}
-$\mathbf{\textbf{Common nomenclecture}}$ 
+
+\chapter{\textbf{Common nomenclecture}}
 
 \begin{enumerate}
     \item Written in polar coordinates, $\rho$ and $\theta$ are in the unit circle; When $\rho < 1$, we have the series u = $ \sum_{\nu=1}^\infty a_\nu \rho^{\nu} \cos \nu \theta$  
@@ -242,11 +562,11 @@ I would like to appreciate \LaTeX{} ,
 
 \includegraphics[width=2cm]{overleaf_wide_colour.pdf}, for making ""learning coding" possible, for industry standards.
 
-\chapter{Introduction}
+\chapter{Physical Ideas that captivate...}
 
 There is NO electronic ink for philosophical arguments! i.e. local realism does not exist, 
 how long will $\mathbb Z$ remain a bachelor, cold fusion, climate change, singularities, why wave-functions overlap, determinism, 
-hidden variables(proof that subquantum level don't exist), why periodicity of quantum numbers lead to periodicity of chemical elements, quantum jumps, spin-flip transitions(oscillating magnetic monopoles/distance transverse magnetic $\mathbf B$ produced by an oscillating magnetic dipole, etc.... 
+hidden variables(proof that subquantum level don't exist), why periodicity of quantum numbers lead to periodicity of chemical elements, spin-flip transitions(oscillating magnetic monopoles/distance transverse magnetic $\mathbf B$ produced by an oscillating magnetic dipole, etc....
 Ultra-cold atoms(lock-stepped with the same spin), 
 have been realized in the laboratory(Bose-Einstein condensate[BEC]), 
 through observing the center of mass system(a trick) of wave-like
@@ -256,26 +576,27 @@ in quantum computers(cryptography - quantum key distribution),
 and is realized only for very low temperature Kelvin scales, not for classical computers. 
 Even the speed of light (c) - has been stopped!, using slow light pulses. 
 The wave-particle duality(using a super-computer) was proved by an experiment in 1974 by 
-John Clauser( concludes that the wave-function collapse is an objective real process - not a physical process, 
-and not relativistic invariant - agreed). The idea of measurement of the wavefunction with any apparatus(alters the azimuthal quantum number/angular momentum of the orbital plane - resulting to
+John Clauser( concludes that the wave-function collapse is an objective $\mathbb R$ process - not a physical process,
+and not relativistic invariant - agreed). The idea of measurement of the wave-function with any apparatus(alters the azimuthal quantum number/angular momentum of the orbital plane - resulting to
 a breakup of eigenvalues into a one-dimensional representation cylindrical symmetry of 2j + 1, from spherical symmetry of j.                  
 Why, currently no answer/solutions...maybe its' even a wrong question. Considering Faradays' Law, knowing
-the Fourier transform, invoke a linear and orthogonal tranformation to Stokes' theorem, generalizing how the electric field remain constant,
+the Fourier transform, invoke a linear and orthogonal tranformation to Stokes' theorem, generalizing how the electric field remains constant,
 the magnetic field too(curl $\mathbf E$ = - $\frac{\partial \mathbf B}{\partial t})$, with $\iint_s \mathbf F dS$ = $\int_c \mathbf F dt$,
-where C is a closed curve, and $\mathbf F$ is a vector field defined in C. It can be calculated by making the electric field constant, 
+where C is a closed curve, and $\mathbf F$ is a vector field defined in $\mathbb C$. It can be calculated by making the electric field constant,
 and varying the magnetic field e.g.
-$\mathbf B(t)$ = $\langle tx, ty, -2tz \rangle$, $0<t<\infty$. Note that in general, the z component of angular momentum is $\hbar$m, with probability $\mathbb 1$, and m is the state of the magnetic quantum number.                 
+$\mathbf B(t)$ = $\langle tx, ty, -2tz \rangle$, $0<t<\infty$. Note that in general, the z component of angular momentum is $\hbar$m, with probability $\mathbb 1$, and (m) is the state of the magnetic quantum number.
 This analysis is ficticiously true, and is based on accepting the theory of
-of complex numbers, Maxwells' equation, Fourier transform, homogeneous linear differential equations, the double-slit
-experiment(results on the screen is a transmitted split beam intensity profile), Stern-Gerlach experiment(represents an entangled magnetic moment of Silver atoms), and Schr$\ddot{o}$dingers' equation.
-There are no visible sources of some forms though, they're(strange and arbitrary) shematic representation of  physical ideas(Force, momentum, energy, mass, work, acceleration. length of interval, time, and velocity)...are all approximations!
-The simultaneous probability distributions of various observables, given differential equations, which may be integrated
+of complex numbers, Maxwells' equations, Fourier transform, homogeneous linear differential equations, the double-slit
+experiment(the results on the screen is a transmitted split beam intensity profile), Stern-Gerlach experiment(represents an entangled magnetic moment of Silver atoms), and Schr$\ddot{o}$dingers' equation.
+There are no visible sources of some forms though, they're(strange and arbitrary) schematic representation of Physical ideas(Force, Momentum, Energy, Mass, Work, Acceleration. Length Of Interval, Time, and Velocity)...are all approximations!
+The simultaneous probability distributions of various observables, given differential equations, which may be integrated,
 show how these observables change in time.  
-Keep in mind, we've evolved from thinking the Sun (a linear combination of a stationary state[not static], its' probablities don't change!! revolved around the Earth{a linear combination of a stationary state, with no changing probabilities), it's now the other way around.  \\
+Keep in mind, we've evolved from thinking the Sun was static, (It is a linear combination of a stationary state[ not static], its' probablities don't change!!, and that it revolved around the Earth{a linear combination of a stationary state, with no changing probabilities), it's now the other way around.  \\
 
 \begin{figure}
-\includegraphics[width=15cm]{BinEnDiag.png}
+\includegraphics[width=15cm]{Binary Entropy Diagram.png}
 \caption{Binary Entropy}
+\label{fig:Binary Entropy Diagram.png}
 \end{figure}
 
 . For any questions, suggestion or comment, feel free to contact me on GitHub \href{https://github.com/StevenOwino}{issues} or email me at \email{stowino21@gmail.com}.
@@ -1388,7 +1709,9 @@ $E_k(x) \text{by substitution}$, $\equiv$ $E_k(x)$ = $\cos(kx) + i \sin(kx)$;
 Here $E_k$ is an orthonormal set.  \\
 
 Now, for the Hermitian Scalar Product $<f \mid$ $\frac{1}{2 \pi}$ $\int_0^{2 \pi}$ $\overline {f(x)}$ $\cdot$ g(x) dx, we have $<E_k \mid E_s>$ =  $\frac{1}{2 \pi}$ $\int_0^{2 \pi}$ $e^{- ikx}$ $\cdot$ $e^{isx}$ = $\frac{1}{2 \pi}$ $\int_0^{2 \pi}$ $e^{i(s - k)x} dx$(factored),
-= $\frac{1}{2 \pi}$ $\frac{1}{i(s - k)}$ $e^{i(s - k)x}$ $|_{x = 0}^{x = 2 \pi}$ = 0. Note that $\iff$ s and k = 0,
+= $\frac{1}{2 \pi}$ $\frac{1}{i(s - k)}$ $e^{i(s - k)x}$ $|_{x = 0}^{x = 2 \pi}$.  \\
+
+Note that $\iff$ s and k = 0,
 $\left\{
 \begin{array}{ll}
 0,  \text{if s $\neq$ k} \\
@@ -1414,19 +1737,11 @@ Fermats' Little Theorem $\rightarrow$ Let p be a prime; Then $\forall$ a $\in$ $
 In an RSA setting, m = $p \cdot q$, p and q are Primes; For n = $|\mathbb Z_m^*|$ = (p -1) $\cdot$ (q - 1); 
 If (a) is not divisible by p or q, then $a^{(p - 1)(q - 1)}$ = 1 mod {pq}. \\
 
-Hadamard $\longrightarrow$ H; $\mid 0>$ $\rightarrow$   \\
+Hadamard $\longrightarrow$ H; $ \mid 0>$ $\rightarrow$  \\
 
-$\frac{1}{\sqrt 2}$ $\mid 0>$ + $\mid 1>$, and $\mid 1>$ $\rightarrow$ $ - \frac{1}{\sqrt 2}$ $\mid 0> + \mid 1>$  \\
-                                                         
-H =  
-$
-\begin{bmatrix}
-\frac{1}{\sqrt 2} &  - \frac{1}{\sqrt 2} \\
-\frac{1}{\sqrt 2} &   \frac{1}{\sqrt 2}
-\end{bmatrix}
-$  \\
+$\frac{1}{\sqrt 2}$ $ \mid 0>$ + $\mid 1>$, and $ \mid 1>$ $\rightarrow$ $ - \frac{1}{\sqrt 2}$ $ \mid 0> + \mid 1>$  \\
 
-Eulers Identity $\rightarrow$ $e^{i \pi}$ = -1  \\
+Eulers' Identity $\rightarrow$ $e^{i \pi}$ = -1 \\
 
 Adiabatic-approximation\index{Adiabatic-approximation} $\rightarrow$ $\Psi(t)$ = $e^i {\theta_k (t)}$ $e^i {\gamma_k (t)}$ $|\mid  \psi_k(t)>$  \\
 
@@ -1534,21 +1849,26 @@ Klein-Gordon equation $\rightarrow$ \\
 
 $\frac{1}{c^2}$ $\frac{\partial^2}{\partial t^2}$ - $\nabla^2$ +  $ ( {\frac{m_e c}{\hbar}})^2$] $\psi$ = 0  \\
     
-Note that [$\partial^\mu, \partial^nu$ = [$\partial^{\mu \nu}$]. The matching-index-height rule\index{matching-index-height rule} is satisfied.     
+Note that [$\partial^\mu, \partial^nu$ = [$\partial^{\mu \nu}$]. The matching-index-height rule\index{matching-index-height rule} is satisfied.  \\
                                                                                                                            
-\chapter{Sampled wave-function distribution}
+\section{Sampled wave-function distribution}
 
-\begin{figure}
-\includegraphics[width=15cm]{Ground state search.png} \\
-\caption{Mnimizing energy for a ground-state}.  \\
+\begin{figure}[!h]
+\includegraphics[width=15cm]{Ground state search.png}
+\caption{Mnimizing energy for a ground-state}.
+\label{fig:Ground state search.png}
 \end{figure}
-\begin{figure}
-\includegraphics[width=15cm]{Sampled wave function distribution.png} \\
-\caption{Estimated Ground State Energy, with its' analytical solution}.  \\
+
+\begin{figure}[!h]
+\includegraphics[width=15cm]{Sampled wave function distribution.png}
+\caption{Estimated Ground State Energy, with its' analytical solution}.
+\label{fig:Sampled wave function distribution.png}
 \end{figure}
-\begin{figure}
-\includegraphics[width=15cm]{BW.png} \\
-\caption{Breit-Wigner distribution}.  \\
+
+\begin{figure}[!h]
+\includegraphics[width=15cm]{BW.png}
+\caption{Breit-Wigner distribution}.
+\label{fig:BW.png}
 \end{figure} 
 
 \chapter{List of experiments}
