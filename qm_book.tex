@@ -572,7 +572,7 @@ have been realized in the laboratory(Bose-Einstein condensate[BEC]),
 through observing the center of mass system(a trick) of wave-like
 properties of atoms, so that the Pauli exclusion principle is NOT violated. 
 This technology, although limited(interaction with the external enviroment depolarizes particles) has applications
-in quantum computers(cryptography - quantum key distribution), 
+in quantum computers(cryptography - quantum key distribution ; Refer to figure \ref{fig:Binary Entropy Diagram.png}),
 and is realized only for very low temperature Kelvin scales, not for classical computers. 
 Even the speed of light (c) - has been stopped!, using slow light pulses. 
 The wave-particle duality(using a super-computer) was proved by an experiment in 1974 by 
@@ -1691,19 +1691,24 @@ Calculus is also necessary to understand much of this material, for it is always
 Plane-waves\index{Plane-waves} $\longrightarrow$ $\psi(x,t)$ = $e^{(ikx - i\omega t)}$; we then differentiate this function to obtain the
 Energy, and Momentum operator, using the Chain Rule...and applying Plancks' rule\index{Plancks' rule}(multiplying by i$\hbar$).  \\
 
-$i \hbar \frac{\partial}{\partial t} \psi(x,t)$ = $i \omega e^{(ikx - i \omega t)}$ = $i \omega \psi(x,t)$, seeing the eigenfunction on the left side of the equation(taking thee derivative), and the resulting constant eigenvalue on the right hand side of the equation.  \\
+$i \hbar \frac{\partial}{\partial t} \psi(x,t)$ = $i \omega e^{(ikx - i \omega t)}$ = $i \omega \psi(x,t)$, seeing the eigenfunction on the left side of the equation(taking the derivative), and the resulting constant eigenvalue on the right hand side of the equation.  \\
 
-Energy-operator\index{Energy-operator}($\hat E$) $\rightarrow$  \\
+Energy-operator\index{Energy-operator}($\hat E$) $\rightarrow$
+\begin{equation}
+i \hbar \frac{\partial}{\partial t} \psi(x,t) = i \hbar(-i) \omega \psi(x,t) = \hbar \psi(x,t)
+\end{equation}
 
-Momentum opertor($\hat P$) $\rightarrow$  \\ 
-$ (-i \hbar) \frac{\partial}{\partial x} \psi(x,t)$ = $( -i \hbar) {ik}e^{ikx - i \omega t}$ =  $\hbar k \psi(x,t)$  
+Momentum operator($\hat P$) $\rightarrow$  \\
+\begin{equation}
+(-i \hbar) \frac{\partial}{\partial x} \psi(x,t) = ( -i \hbar) {ik}e^{ikx - i \omega t} =  \hbar k \psi(x,t)
+\end{equation}
 (Note -i cancels i), k = $\frac{2 \pi}{\lambda}$; $\omega$ = kc  \\
 
 Vector and Matrix multiplication $\rightarrow$ A$\vec{v}$ = $ \lambda$ $\vec{v}$, where $\lambda$ is an eigenvalue, and $\vec{v}$ is the eigenvector. \\
 
 Energy of a photon $\rightarrow$ E = $\hbar \omega$ ; $\vec{P}$ = $\hbar$k ; $\vartriangle$ m = 0(m is for mass); E = Pc \\
 
-Dicrete Fourier Transform $\rightarrow$ Consider the space of 2$\pi$ periodic functions f: $\mathbb R$ $\rightarrow$ $\mathbb C$, with a continous 1st derivative;  
+Discrete Fourier Transform $\rightarrow$ Consider the space of 2$\pi$ periodic functions f: $\mathbb R$ $\rightarrow$ $\mathbb C$, with a continous 1st derivative;
 We have $E_k(x)$ = $e^{ikx}$, k $\in$ $\mathbb Z$. Using Eulers formula($e^{i \alpha}$ = $\cos \alpha + i \sin \alpha)$; $e^{2 \pi i}$ = 1,  
 $E_k(x) \text{by substitution}$, $\equiv$ $E_k(x)$ = $\cos(kx) + i \sin(kx)$;  
 Here $E_k$ is an orthonormal set.  \\
@@ -1741,11 +1746,22 @@ Hadamard $\longrightarrow$ H; $ \mid 0>$ $\rightarrow$  \\
 
 $\frac{1}{\sqrt 2}$ $ \mid 0>$ + $\mid 1>$, and $ \mid 1>$ $\rightarrow$ $ - \frac{1}{\sqrt 2}$ $ \mid 0> + \mid 1>$  \\
 
-Eulers' Identity $\rightarrow$ $e^{i \pi}$ = -1 \\
+H =
+$
+\begin{bmatrix}
+\frac{1}{\sqrt 2} &  - \frac{1}{\sqrt 2} \\
+\frac{1}{\sqrt 2} &    \frac{1}{\sqrt 2}
+\end{bmatrix}
+$
+
+Eulers' Identity $\rightarrow$ $e^{i \pi}$ = -1  \\
 
 Adiabatic-approximation\index{Adiabatic-approximation} $\rightarrow$ $\Psi(t)$ = $e^i {\theta_k (t)}$ $e^i {\gamma_k (t)}$ $|\mid  \psi_k(t)>$  \\
 
-Lowest-Landau-level\index{Lowest-Landau-level} $\rightarrow$ $\Psi_m(z)$ $\propto$ $z^m$ $e^{-|z|^2}$ \\
+Lowest-Landau-level\index{Lowest-Landau-level} $\rightarrow$  \\
+\begin{equation}
+\Psi_m(z) \propto z^m e^{-|z|^2}
+\end{equation}
 
 \begin{remark}  
 
@@ -1756,7 +1772,10 @@ while Hadamard leves them as $\mathbb R$. QFT also allows derivation of Fourier 
 
 Baker-Campbell-Hausedorff Theorem\index{Baker-Campbell-Hausedorff Theorem} $\rightarrow$ \\
 
-$\log(e^Xe^Y)$ = X + $\int_{0}^1$ $g(e^{\text{ad X}} e^{\text{t adY}}$)(Y)dt. Derivation from Dynkins analysis of Lie group.  \\
+\begin{equation}
+\log(e^Xe^Y) = X + \int_{0}^1 g(e^{\text{ad X}} e^{\text{t ad Y}})(Y)dt.
+\end{equation}
+Derivation from Dynkins analysis of Lie group.
 
 Perturbed-System\index{Perturbed-System} $\rightarrow$  \\
 
@@ -1764,8 +1783,9 @@ $\hat H$ = $\frac{\hat p^2}{2m}$ + $\frac{1}{2} m^2 \omega^2 x^2$ - $\frac{\lamb
 with an exact solution of E $\approx$ $\frac{\hbar}{2}$ - $\frac{\hbar \lambda}{4m \omega}$  \\
 
 Perturbation-Theory\index{Perturbation-Theory} $\rightarrow$ \\
-
-E = $E^{(0)}$ + $\langle \psi^{(0)} \mid \lambda \hat w \mid \psi^{(0)} \rangle$ = $\frac{\hbar \omega}{2}$ + $\langle \psi^{(0)} \mid {-(\frac{\lambda}{2}) x^2} \mid  \psi^{(0)} \rangle$ = $ \frac{\hbar \omega}{2} - \lambda \frac{\lambda \hbar}{4m \omega}$ = $ - \frac{\lambda}{2} \langle x^2 \rangle$ = $ - \frac{\lambda}{2} \sigma^2$.  \\
+\begin{equation}
+E = E^{(0)} + \langle \psi^{(0)} \mid \lambda \hat w \mid \psi^{(0)} \rangle = \frac{\hbar \omega}{2} + \langle \psi^{(0)} \mid {-(\frac{\lambda}{2}) x^2} \mid  \psi^{(0)} \rangle =  \frac{\hbar \omega}{2} - \lambda \frac{\lambda \hbar}{4m \omega} =  - \frac{\lambda}{2} \langle x^2 \rangle =  - \frac{\lambda}{2} \sigma^2.
+\end{equation}
 
 Note that $\psi^{(0)}$(x) = c$e^{- \frac{x^2}{4 \sigma^2}}$ and $\sigma^2$ = $\frac{\hbar}{2m \omega}$.  \\
 
@@ -1786,10 +1806,12 @@ Note that (u $\times$ u) = 0,  \\
 $\Vert u  \times v \Vert$ = $\Vert u \Vert$ $\Vert v \Vert \mid \sin \theta \mid$, and $\mid u \cdot v \mid$ = $\Vert u \Vert$ $\Vert v \Vert$ $\mid \cos \theta 
 \mid$.  \\
 
-Time evolution Hamiltonian operator\index{Time evolution Hamiltonian operator}r(form a complete basis) $\rightarrow$  \\
+Time evolution Hamiltonian operator\index{Time evolution Hamiltonian operator}, form a complete basis $\rightarrow$  \\
 
-$i \frac{d}{dt}$ $\mid$ $\psi \rangle(t)$ = $i \frac{d}{dt}$ $\hat U$ (t) $\mid$ $\psi (0) \rangle$ = $\hat H$ $\hat U$(t) $\mid \psi(0) \rangle$ = $\hat H$ $\mid \psi (t) \rangle$.  \\
-
+\begin{equation}
+i \frac{d}{dt} \mid \psi \rangle(t) = i \frac{d}{dt} \hat U (t) \mid \psi (0) \rangle = \hat H \hat U(t) \mid \psi(0) \rangle = \hat H \mid \psi (t) \rangle
+\end{equation}
+\noindent
 Note that $\frac{d}{dt}$ $\hat U$(t) = $ - \frac{i}{\hbar}$ $\hat H$ $\hat U$(t), its like the Schr$\ddot{o}$inger equation!, and
 $\hat U$(t)|$\psi_n \rangle$ = $e^ \frac{ - iE_nt}{\hbar}$ $\psi_n \rangle$ too. \\
 
@@ -1801,16 +1823,14 @@ The evolution of the system starts from zero, ruled by the effective Hamiltonian
 
 Monte Carlo Wave-function(MCWF) simulation\index{Monte Carlo Wave-function(MCWF) simulation} $\rightarrow$  \\ 
 
-$\psi$(t) $\hookrightarrow$ \\
-
-$\mid \psi(t + dt) \rangle$ $\equiv$  \\ 
+$\psi$(t) $\hookrightarrow$ $\mid \psi(t + dt) \rangle$ $\equiv$  \\
 
 $\left\{
 \begin{array} {ll}
 \frac{(1 - i \hat H dt) \mid  \psi(t + dt) \rangle}{\sqrt{ \langle \psi(t) \mid \psi(t) \rangle}} \text{ if $\zeta$ > 1 - $\langle \psi(t) \mid\psi(t) \rangle$} \\
 \mid \psi_0 \rangle \text{ if $\zeta$ < 1 - $\langle \psi(t) \mid \psi(t) \rangle$} \\
 \end{array}
-\right\}.$  \\
+\right\}.$
 
 Concept of Magnitude\index{Concept of Magnitude} $\rightarrow$ If w = 3 + 4i, then $\mid w \mid$ = $\sqrt{\Re(w^2) + \Im(w^2)}$ = $\sqrt{3^2 + 4^2}$ = 5  \\
 
@@ -1830,10 +1850,14 @@ Note that,  \\
 the principal cube root of a negative number is a complex number, instance $\sqrt[3]{-8}$ is NOT -2, but rather (1 + i$\sqrt{3}$). Quartic equations can also be solved in terms of cube roots and square roots. \\
 
 Seiberg-Witten functional\index{Seiberg-Witten functional} $\rightarrow$ $D_{A \varphi}$ = 0,  \\
-  
-$F^+_A$ = $\frac{1}{4}$ $\langle e_j$ $\cdot$ $e_k$ $\cdot$ $\varphi, \varphi \rangle$ $e^j$ $\wedge$ $e^k$ \\
+\begin{equation}
+F^+_A = \frac{1}{4} \langle e_j \cdot e_k \cdot \varphi, \varphi \rangle e^j \wedge e^k
+\end{equation}
 
-Fundamental electron velocity of the Hydrogen states\index{velocity of the Hydrogen states} $\rightarrow$ $E_1$ = $\frac{- \hbar^2}{2m_e a^2_B}$  \\ 
+Fundamental electron velocity of the Hydrogen states\index{velocity of the Hydrogen states} $\rightarrow$  \\
+\begin{equation}
+E_1 = \frac{- \hbar^2}{2m_e a^2_B}
+\end{equation}
 
 Relativistic velocity of the electron $\rightarrow$  \\
 
@@ -1843,7 +1867,7 @@ Velocity-operator\index{Velocity-operator} $\langle \hat{v} \rangle$ $\rightarro
 
 $\frac{i \hbar}{m}$ $\int \psi^*$ $\frac{\partial \psi}{\partial x}$ dx \\
  
-[Velocity as motion of expectation, applies to momentum(p), ($\mathbf H$)Hamiltonian[total Energy of a system], and kinetic energy(T) too]. \\
+[Velocity as motion of expectation, applies to Momentum(p), $\mathbf H$(Hamiltonian total Energy of a system), and Kinetic Energy + Potential Energy\quad(T). \\
 
 Klein-Gordon equation $\rightarrow$ \\
 
