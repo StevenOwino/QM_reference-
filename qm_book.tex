@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[12pt. fancy]{elegantbook}
+\documentclass[a4paper, 10pt, openany]{elegantbook}
 \usepackage{amsmath}
 \usepackage{imakeidx} % Recommended for modern LaTeX
 \makeindex[intoc, title=Index, options={-s \jobname.ist}]         % Mandatory command to initialize indexing
@@ -34,6 +34,8 @@
 
 % for running heads
 \usepackage{fancyhdr}
+%\usepackage{pdfstartpage=1}
+\usepackage{cleveref}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Interlude:  Set up PRINTING (default) or SCREEN VIEWING %%%%
@@ -46,6 +48,7 @@
 %
 % Chapter-like ``Sections'' start both recto and verso in the scanned
 % book. This behavior has been retained.
+%\cleardoublepage
 \newboolean{ForPrinting}
 
 %% UNCOMMENT the next line for a PRINT-OPTIMIZED VERSION of the text %%
@@ -69,18 +72,23 @@
 
 \hypertarget{toc}{}
 \title{Quantum Mechanics(reference guide)}
-\subtitle{With magnetic deflection, notes(Theory, barely descriptive)}
+
+%\subtitle{With magnetic deflection, notes(Theory, barely descriptive)}
 \author{Owino Stephen}
+
 \institute{\copyright \the\year{} This book was typeset using \LaTeX{} Program}
+
 \date{May, 18, 2026}
+
 \version{1.0}
+
 \bioinfo{Bio}{https://github.com/StevenOwino}
 
 \extrainfo{What one fool can do, another can.
 (Ancient Simian Proverb.)}
 
 %\logo{Poussin_graph_planar.svg}
-\cover{The-Chvatal-graph-a-triangle-free-4-regular-4-chromatic-graph.png}
+\cover{Particle-in-a-box.png}
 
 \definecolor{customcolor}{RGB}{32,178,170}
 \colorlet{coverlinecolor}{customcolor}
@@ -96,7 +104,7 @@ heading_suffix "}\\par\\nobreak"
 
 %\newboolean{ForPrinting}
 
-\newcommand{\DPPageSep}[2]{\Pagelabel{#2}}
+%\newcommand{\DPPageSep}[2]{\Pagelabel{#2}}
 
 \def\ebook{43}
 
@@ -169,7 +177,7 @@ heading_suffix "}\\par\\nobreak"
     }%
   }%
 
-  \thispagestyle{empty}
+  %\thispagestyle{empty}
   \section*{\centering\normalfont\Large\MakeUppercase{#2.}}
 }
 
@@ -185,7 +193,7 @@ heading_suffix "}\\par\\nobreak"
     \SetOddHead{#2}%
     \pdfbookmark[0]{#2}{#2}%
   }%
-  \thispagestyle{empty}
+%  \thispagestyle{empty}
   \ChapterSkip%
   \section*{\centering\normalfont\Large\MakeUppercase{#2.}}
 }
@@ -227,9 +235,9 @@ heading_suffix "}\\par\\nobreak"
 }
 
 \newcommand{\License}{%
-  \flushpage
-  \thispagestyle{empty}
-  \phantomsection\pdfbookmark[0]{License}{License}
+%  \flushpage
+%  \thispagestyle{empty}
+%   \phantomsection\pdfbookmark[0]{License}{License}
   \SetBothHeads{License}
 }
 
@@ -350,6 +358,16 @@ DP@rint:#1\endcsname\relax\phantom
 
 \begin{document}
 
+%\pagestyle{empty}
+%\pagenumbering{Alph}
+
+%\phantomsection
+%\pdfbookmark[-1]{Front Matter}{Front Matter}
+
+%%%% PG BOILERPLATE %%%%
+%\phantomsection
+%\pdfbookmark[0]{Boilerplate}{Boilerplate}
+
 \setcounter{tocdepth}{4}
 \mbox{}
 %\pagenumbering{arabic}
@@ -379,10 +397,8 @@ DP@rint:#1\endcsname\relax\phantom
 \mainmatter
 \section{Preface}
 
-\begin{equation}
-\boxed{\text{The cover photo describes relationship between four graph invariant} \quad \omega, \chi(f) , \chi, and \vartriangle}
-\end{equation} 
- 
+
+The \emph{cover} is a figure of a plot of $\psi_n$(x) for the first 7 wavefunctions, n = 1(darkest) to n = 7(lightest).  \\
 
 Abstract Mathematics(models of inductive reasoning), is availed to avoid nonsensical answers, and bogus non-differentiable functions. This is the task for the human mind; to see this truth, and preserve it.
 It's accepted that the angular momentum of a closed system is conserved(hence production of particles by conversion of gravitational energy into matter energy, conditioned by Biological factors). The origin of the universe(a Physical picture of a polarizable space, and characterized as young by $\frac{\epsilon} {\epsilon_0}$ ~1, with an energy density when expressed in Newtonian units), is not a reproducible event, and cannot be duplicated in the laboratory. In trying to eliminate the Riemann curvature tensor, there's also the Ricci curvature tensor, assuming the photon travels without a shift in energy or frequency(red shift). There are formidable problems facing String Theory: it has no predictive power, it's a highly sophisticated theoretical laboratory(rather than experimental), it's defined at the Planck energy($10^{19}$ GeV), as any Physical theory that you can possibly come up with, it cannot be tested with the present technology, and it's tightly constrained as much as the graviton emerges as a massless state with spin-2.
@@ -395,7 +411,8 @@ jupyter notebook/lab, and ipynb viewer(Android).
 
 These are notes/references, few functional code!, and compiling.
 
-An electron plays a central role, and can be assumed to move in a spherically symmetric field, where all binding energies are negative. These are advanced core notes(reference sheet) in Quantum Mechanics(describing how particles behave like waves - 
+
+\First{An} electron plays a central role, and can be assumed to move in a spherically symmetric field, where all binding energies are negative. These are advanced core notes(reference sheet) in Quantum Mechanics(describing how particles behave like waves -
 the state of a given system[internal structure], and its' probabilities), 
 and some equations of Mathematical Physics[some theorems are mentioned to emphasize the concept of unitarity].
 The key important formulas are the Schr$\ddot{o}$dinger equation, 
@@ -412,7 +429,7 @@ of the identity of $\hbar$, with $\frac{\hbar}{2 \pi}$. Your objective, dear rea
 asymptotic formulas for the eigenvalue distribution of differential operators.                                                                      
 Don't try to read these notes linearly, instead, come back here as a formula reference. \\
 
-\section{List of Figures}
+\section{List of Figures in Chapters}
 
 \begin{enumerate}
 
@@ -420,12 +437,41 @@ Don't try to read these notes linearly, instead, come back here as a formula ref
 \item Vector pointing towards the Sun
 \item Quantum Harmonic Oscillator
 \item Anharmonic vs simple Harmonic Oscillator
-\item Relativistic mass increase  
+\item Relativistic mass increase
 \item Ground state search
 \item Sampled wave function distribution
 \item Breit-Wigner distribution
 
 \end{enumerate}
+
+\section{Diagnostic}
+
+%%%% PG BOILERPLATE %%%%
+%$\phantomsection
+%\pdfbookmark[0]{Boilerplate}{Boilerplate}
+%\begin{center}
+%\begin{minipage}{\textwidth}
+%\small
+%\section{Diagnostic}
+%\begin{PGtext}
+
+(a) Show that $y = 2x^2$ is a solution to the differential equation: $\frac{1}{2}x^2y''-xy'+y$ = 0, \\
+
+(b) If $y_1(t)$ = $e^{3t}$, and $y_2(t)$ = $e^{-3t}$ are solutions to $y'' - 9y$ = 0, what is the general solution? Note that $y_1$ and  \\
+$y_2$ are NOT constant multiples of one another, so they are linearly independent. Thus the general solution in the differential equation is  \\
+y(t) = $c_1e^{3t} + c_2e^{-3t}$. \\
+
+(c) If $y^{''} - 2y^{'} + 5y $= 0, has the associated characteristic equation $\lambda^2 - 2\lambda + 5$ = 0,  \\
+by the quadratic formula, the roots of the characteristic equation are 1$\pm 2{i}$.
+Therefore, the general solution to this differential equation is y(x) = $e^x(c_1cos2{x}+c_2sin2{x})$.  \\
+
+(d) Knowing when to apply the $\mathbf{\textbf{Product and Chain Rules, Total and Partial Derivatives}}$.  \\
+
+NOTE: $\frac{\hbar}{i}$ = -i$\hbar$ (Multiplying by -i is the same as dividing by i.)  \\
+
+PROCEED  \\
+
+%\vspace{2\MySkip}
 
 \begin{note}
 
@@ -442,6 +488,12 @@ $\bullet$ Integral form, time-dependent $\longrightarrow$  \\
 \psi(x,t) = \int \mathbf K[x,t:q_0,t_0]\psi(q_0,t_0)dx_0, \mathbf{\textbf{where K is the kernel or propagator}}.
 \end{equation}
 
+Schr$\ddot{o}$dinger Time Independent Equation  \\
+\begin{equation}
+\boxed{E \psi_0 (x) = - \frac{\hbar^2}{2m} \frac{\partial^2 \psi}{\partial x^2}  + V \psi_0 (x)}
+\end{equation}
+
+
 $\bullet$ The identity Zero: Zero has no multiplicative inverse!!  \\
 
 $\bullet$ Informational Warning: All descriptions here are in the literature, and not original. DO NOT attempt to frame a physical picture!!, or take Relativity into sufficient account. Quantum Field Theory follows once these principles are mastered. \\
@@ -451,16 +503,16 @@ $\bullet$ On Rational numbers: If (a) $\neq$ 0, there is no rational number($\ma
 
 \chapter{\textbf{Familiar, recognized, and understood equations:}}
 
-If $ \frac{d \alpha} {dt} $ = 0 $\forall$ t, then $\alpha$ is constant \\
- 
-$(f,\phi,) = \lim_{\alpha \to 0} (f, \phi_n) = 0 $ \\
- 
-$\frac{d \sigma} {d \Omega}$ = $|f(\theta, \phi)|^2$  \\
+ If $ \frac{d \alpha} {dt} $ = 0 $\forall$ t, then $\alpha$ is constant \\
 
-$ e^{i \mathbf a \cdot \mathbf X} e^{1 \mathbf b \cdot \mathbf P} \phi_0$ is also a minimum uncertainty state  \\
+ $(f,\phi,) = \lim_{\alpha \to 0} (f, \phi_n) = 0 $ \\
 
-$a^\dagger |n \rangle$ = $\sqrt{n + 1} |n +1 \rangle$  \\
-  
+ $\frac{d \sigma} {d \Omega}$ = $|f(\theta, \phi)|^2$  \\
+
+ $ e^{i \mathbf a \cdot \mathbf X} e^{1 \mathbf b \cdot \mathbf P} \phi_0$ is also a minimum uncertainty state  \\
+
+ $a^\dagger |n \rangle$ = $\sqrt{n + 1} |n +1 \rangle$ \\
+
 \begin{equation}
 {\hat j_\pm} \mid j,m \rangle = \hbar \sqrt{j (j + 1) - m \mid m \pm 1)} \mid j, m \pm 1 \rangle
 \end{equation} 
@@ -508,7 +560,7 @@ $\hat \otimes \longrightarrow$ Hilbert tensor product \\
  
 Feynmann Path-Integral\index{Path-Integral} $\longrightarrow$  \\
 \begin{equation}
-e^{- \frac{i t \hat {H}}{\hbar}} \psi (X_0) = C \int_{\text{paths with} \\ X(0) = X_0} exp\left\{ \frac{i}{\hbar}(x(\cdot),0,t) \right\} \psi(x(t)) Dx
+e^{- \frac{i t \hat {H}}{\hbar}} \psi (X_0) = C \int_{\text{paths with} \\ X(0)=X_0} exp\left\{ \frac{i}{\hbar}(x(\cdot),0,t) \right\} \psi(x(t)) Dx
 \end{equation}
  
 Gauge-transformation\index{Gauge-transformation} $\longrightarrow$ \\
@@ -533,7 +585,7 @@ $C_c^{\infty}(\mathbb {R^n})$ $\longrightarrow$ Space of smooth, compactly suppo
 \end{note}
 
 \chapter{\textbf{Common nomenclecture}}
-
+\paragraph{nomenclecture}
 \begin{enumerate}
     \item Written in polar coordinates, $\rho$ and $\theta$ are in the unit circle; When $\rho < 1$, we have the series u = $ \sum_{\nu=1}^\infty a_\nu \rho^{\nu} \cos \nu \theta$  
     \item $\pm$ means $-1^{|r|}$ 
@@ -554,15 +606,19 @@ $C_c^{\infty}(\mathbb {R^n})$ $\longrightarrow$ Space of smooth, compactly suppo
 
 \end{enumerate}
 
+\paragraph{Structure}
+
 \begin{lstlisting}
 The content of the book is based on spaced structuring, and iterative deepening.
 \end{lstlisting}
 
-I would like to appreciate \LaTeX{} ,  
+I would like to appreciate \LaTeX{} ,  and
 
 \includegraphics[width=2cm]{overleaf_wide_colour.pdf}, for making ""learning coding" possible, for industry standards.
 
-\chapter{Physical Ideas that captivate...}
+\chapter{Physical Ideas that captivate}
+
+\paragraph{Characteristics of describing Energy}
 
 There is NO electronic ink for philosophical arguments! i.e. local realism does not exist, 
 how long will $\mathbb Z$ remain a bachelor, cold fusion, climate change, singularities, why wave-functions overlap, determinism, 
@@ -581,7 +637,7 @@ and not relativistic invariant - agreed). The idea of measurement of the wave-fu
 a breakup of eigenvalues into a one-dimensional representation cylindrical symmetry of 2j + 1, from spherical symmetry of j.                  
 Why, currently no answer/solutions...maybe its' even a wrong question. Considering Faradays' Law, knowing
 the Fourier transform, invoke a linear and orthogonal tranformation to Stokes' theorem, generalizing how the electric field remains constant,
-the magnetic field too(curl $\mathbf E$ = - $\frac{\partial \mathbf B}{\partial t})$, with $\iint_s \mathbf F dS$ = $\int_c \mathbf F dt$,
+the magnetic field too (curl$\mathbf E$) = - ($\frac{\partial \mathbf B}{\partial t}$), with $\iint_s \mathbf F dS$ = $\int_c \mathbf F dt$,
 where C is a closed curve, and $\mathbf F$ is a vector field defined in $\mathbb C$. It can be calculated by making the electric field constant,
 and varying the magnetic field e.g.
 $\mathbf B(t)$ = $\langle tx, ty, -2tz \rangle$, $0<t<\infty$. Note that in general, the z component of angular momentum is $\hbar$m, with probability $\mathbb 1$, and (m) is the state of the magnetic quantum number.
@@ -594,14 +650,14 @@ show how these observables change in time.
 Keep in mind, we've evolved from thinking the Sun was static, (It is a linear combination of a stationary state[ not static], its' probablities don't change!!, and that it revolved around the Earth{a linear combination of a stationary state, with no changing probabilities), it's now the other way around.  \\
 
 \begin{figure}
-\includegraphics[width=15cm]{Binary Entropy Diagram.png}
+\includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{Binary Entropy Diagram.png}
 \caption{Binary Entropy}
 \label{fig:Binary Entropy Diagram.png}
 \end{figure}
 
 . For any questions, suggestion or comment, feel free to contact me on GitHub \href{https://github.com/StevenOwino}{issues} or email me at \email{stowino21@gmail.com}.
 
-\section{Axioms of Quantum Mechanics}
+\paragraph{Axioms of Quantum Mechanics}
 \begin{enumerate}
   \item \textbf{A1}: The wavefunction is the complete description of a quantum system.
   \item \textbf{A2}: Hernitian operators are observables.                             
@@ -609,14 +665,14 @@ Keep in mind, we've evolved from thinking the Sun was static, (It is a linear co
   \item \textbf{A4}: Time evolution via the Schr$\ddot{o}$dinger equation.            
 \end{enumerate}
 
-\section{Illustrating vectors\index{vectors}}
+\paragraph{Illustrating vectors\index{vectors}}
 
 \begin{figure}
-\includegraphics[width=15cm]{vector pointing towards the Sun.png} 
+\includegraphics[width=10cm]{vector pointing towards the Sun.png}
 \caption{vector pointing towards the Sun}
 \end{figure}
 
-\subsection{Some Conceptual Frameworks; The names in color are Nobel prize receipients, and nomenees.}
+\section{Some Conceptual Frameworks; The names in color are Nobel prize receipients, and nomenees.}
 
 $\bullet$ Copenhagen interpretation(s) - $\color{blue}{\text{Bohr, Heisenberg, Pauli}}$, von Weis$\ddot{a}$cker, $\color{blue}{\text{Peierls}}$. \\  
 
@@ -663,15 +719,13 @@ $\bullet$ Electromagnetic theory of light. \\
 
 \end{remark}
 
-\subsection{Definitions}
+\chapter{Definitions}
 
 \begin{figure}
-\includegraphics[width=15cm]{qho.png}
+\includegraphics[width=10cm]{qho.png}
 \caption{This is a figure of the Quantum Harmonic Oscillator. It is defined by $E_n$ = ($n + \frac{1}{2}) \hbar \omega$}
+\label{fig:qho.png}
 \end{figure}
-
-
-\begin{definition}
 
 \index{Jacobi Identity|(}
 
@@ -687,20 +741,32 @@ Quantum Fourier Transform\index{Quantum Fourier Transform} $\longrightarrow$
   
 An-entangled-pair\index{An-entangled-pair} $\longrightarrow$ Applying one qubit by manipulating the larger set of the four possible states.  \\
 
-Von Neumann entropy\index{entropy} $\longrightarrow$ S($\rho$) = - tr($\rho \ln \rho$) = - $\sum_j \lambda_j \ln \lambda_j$(These are diagonalized values); $S(\rho)$ = 0 $\iff$ $\rho^2$ = $\rho$(case of a pure state/projector) \\
+Von Neumann entropy\index{entropy} $\longrightarrow$
+\begin{equation}
+S(\rho) = - tr(\rho \ln \rho) = - \sum_j \lambda_j \ln \lambda_j (These are diagonalized values); S(\rho) = 0 \iff \rho^2 = \rho(case of a pure state/projector)
+\end{equation}
  
 Maximally mixed state $\longrightarrow$ $S(\rho_m)$ = - N $\frac{1}{N} \ln \frac{1}{N}$ = $\ln N$  \\
 
-Gibbs entropy(classical statistical mechanics) $\longrightarrow$ $S_G$ = - $k_B \sum_i {P_i \ln P_i}$, where $k_B$ is the Bolzmann constant, and P is probabilities. \\
+Gibbs entropy(classical statistical mechanics) $\longrightarrow$
+\begin{equation}
+S_G = - k_B \sum_i {P_i \ln P_i}, where k_B is the Bolzmann constant, and P is probabilities
+\end{equation}
   
-Shannon entropy(classical information theory) $\longrightarrow$ H(X) = $\mathbf E(\log_b P(X))$ = - $\sum_x P(x) \log_b P(x)$, where H is for Shannon, $\mathbf E$ is the expectation/average value, X is a variable, and P is probabilities. \\
+Shannon entropy(classical information theory) $\longrightarrow$
+\begin{equation}
+H(X) = \mathbf E(\log_b P(X)) = - \sum_x P(x) \log_b P(x), where H is for Shannon, \mathbf E is the expectation/average value, X is a variable, and P is probabilities
+\end{equation}
   
 State-reduction\index{State-reduction} $\longrightarrow$ The effective two-level Hamiltonian( $\hat H_{eff}$ = $\begin{pmatrix}0 & \Omega \cr \Omega & \vartriangle - i \frac{\Gamma}{2} \end{pmatrix} )$, dissipating via spontaneous emission, during "measurement", included in the dynamics(A Quantum trajectory is NOT reversible).
 Note that $[\hat H_{eff}, \hat H^\dagger_{eff}]$ $\neq$ 0, this Hamiltonian also generates a non-unitary dynamics $e^{- i \hbar_{eff}(t)}$ $\neq$ $e^{i \hat H^\dagger_{eff}(t)}$  \\
 
-Measurement-of-a-state\index{Measurement-of-a-state}(indicates a loss of energy) $\longrightarrow$ $\langle \psi | \psi \rangle$ = $\langle \psi_0 | e^{- i \hat H_{eff}(t)} e^{i \hat H_{eff}(t)} | \psi_0 \rangle$ $\rightarrow$ $e^{- \Gamma(t)}$.  
-($\log_b$ can take any of the values 2[classical bits], e[the natural logarithm], and base 10[orders of magnitude]);  
-$H_{bin}(p)$ = $ -p \log p - (1 - p) \log (1 - p)$ $\rightarrow$ e.g. $H_{bin}\frac{1}{2}$ = $ - \frac{1}{2} \log \frac{1}{2} - \frac{1}{2} \log \frac{1}{2}$ = $\log 2$  \\
+Measurement-of-a-state\index{Measurement-of-a-state}(indicates a loss of energy) $\longrightarrow$
+\begin{equation}
+\langle \psi | \psi \rangle = \langle \psi_0 | e^{- i \hat H_{eff}(t)} e^{i \hat H_{eff}(t)} | \psi_0 \rangle \rightarrow e^{- \Gamma(t)}.
+(\log_b can take any of the values 2[classical bits], e[the natural logarithm], and base 10[orders of magnitude]);
+H_{bin}(p) =  -p \log p - (1 - p) \log (1 - p) \rightarrow e.g. H_{bin}\frac{1}{2} =  - \frac{1}{2} \log \frac{1}{2} - \frac{1}{2} \log \frac{1}{2} = \log 2
+\end{equation}
  
 Normalization\index{Normalization} - technical manipulation of Mathematical symbols(to
 eliminate the physical vacuum contribution, and to simplify the one electron contribution).  \\
@@ -710,7 +776,10 @@ Vacuum-region\index{Vacuum-region} $\rightarrow$ discontinuity of fields in the 
 Limit\index{Limit} - $\forall$ total infinities, the degrees of freedom ceases to increase
 without limit as shorter and shorter time intervals are considered. \\
 
-Wave-equation\index{Wave-equation} $\longrightarrow$ $\frac{\partial^2u(x,t)}{\partial t^2}$ = $c^2$ $\frac{\partial^2 u(x,t)}{\partial x^2}$  [Relates acceleration and curvature]. \\
+Wave-equation\index{Wave-equation} $\longrightarrow$
+\begin{equation}
+\frac{\partial^2u(x,t)}{\partial t^2} = c^2 \frac{\partial^2 u(x,t)}{\partial x^2}  [Relates acceleration and curvature].
+\end{equation}
   
 Decoherence - The inevitable interaction of a system and its environment(quantum-to-classical transition; Its a fundamental limiting factor in the useful operation of Quantum Computers).  \\
                                                                          
@@ -722,21 +791,28 @@ Photons - A collection of an indefinite number of indistingishable particles, th
 
 Boson(Bose-Einstein statistics) - A particle with an integer spin  \\
 
-Fermion(Fermi-Dirac statistics) - A particle with half-integer spin e.g. an electron  
-For j,k,l $\in {1,2,3}$ we define $\epsilon_{j,k,l}$ by the formula:  
-$\epsilon_{j,k,l}$ = $\left\{ 
+Fermion(Fermi-Dirac statistics) - A particle with half-integer spin e.g. an electron  \\
+
+For j,k,l $\in$ {1,2,3} $\text{we define}$ $\epsilon_{j,k,l}$ $\text{by the formula:}$  \\
+\begin{equation}
+\epsilon_{j,k,l} = \left\{
 \begin{array}{ll}
-   1 \text{ if {j,k,l} is an even permutation of (1,2,3)} \\ 
-  -1 \text{ if {j,k,l} is  an odd permutation of (1,2,3)} \\
-   0 \text{ if any two of {j,k,l} are equal} \\
+   1 \text{ if {j,k,l} is an even permutation of (1,2,3)}  \\
+  -1 \text{ if {j,k,l} is  an odd permutation of (1,2,3)}  \\
+   0 \text{ if any two of {j,k,l} are equal}  \\
 \end{array}
-\right.$ e.g $\epsilon_{3,2,1}$ = -1 and $\epsilon _{2,1,2}$ = 0. 
-The commutation relations for the basis ${F_1,F_2,F_3}$ for SO(3)  
-may be written(using the summation convention!) as
-$[F_j,F_k]$ = $\epsilon_{j,k,l}F_l$ i.e. if we take j=1 and k=2, then the sum on $\ell$
-gives a nonzero value only when $\ell$ = 3, and we recover the relation $[F_1,F_2]$ = $F_3$ \\
- 
-Invariant\index{Invariant} $\rightarrow$ The density $\nu$ is irreducible under translations in the real directions \\
+\right.
+\end{equation}
+
+e.g $\epsilon_{3,2,1}$ = -1 and $\epsilon _{2,1,2}$ = 0.  \\
+
+The commutation relations for the basis ${F_1,F_2,F_3}$ for SO(3) may be written(using the summation convention!) as:  \\
+
+$[F_j,F_k]$ = $\epsilon_{j,k,l}F_l$  \\
+
+i.e. if we take j=1 and k=2, then the sum on $\ell$ gives a nonzero value only when $\ell$ = 3, and we recover the relation $[F_1,F_2]$ = $F_3$  \\
+
+Invariant\index{Invariant} $\rightarrow$ The density $\nu$ is irreducible under translations in the real directions. \\
  
 Polarization\index{Polarization} - The set of directions in which the elements of the quantum subspace are covariantly constant.  \\
  
@@ -746,45 +822,74 @@ Integrability\index{Integrability} $\rightarrow$ Two complex vector fields X and
  
 Hermitian-line-bundle\index{Hermitian-line-bundle} $\longrightarrow$ (L,$\nabla$) connection of $L^{{\otimes}{k}}$ having a curvature $\frac{\omega}{\hbar}$ for any positive integer n(things behave nicely when k tends to $\infty$)  \\
 
-Half-form-space\index{Half-form-space} $\longrightarrow$ s = ($\psi$ $\circ$ q ) $\otimes$ $\sqrt{q^*(\beta)}$  \\
+Half-form-space\index{Half-form-space} $\longrightarrow$
+\begin{equation}
+s = (\psi \circ q ) \otimes \sqrt{q^*(\beta)}
+\end{equation}
 
 A measurable-function\index{measurable-function} $\psi$: X $\longrightarrow$ $\mathbb C$ is said to be integrable,
-if $\int_X$ |$\psi$| d$\mu$ < $\infty$    \\
+if $\int_X$ $\mid \psi \mid$ d$\mu$ < $\infty$    \\
 
-Density of $\mu$ w.r.t. $\nu$ $\longrightarrow$ $\mu$(E) = $\int_E$ $\rho$ d$\mu$ $\forall$ E $\in$ $\omega$,
+Density of
+\begin{equation}
+\mu \quad w.r.t. \quad \nu \longrightarrow \mu(E) = \int_E \rho \quad d\mu \quad \forall E \in \omega
+\end{equation}
+
 supposing $\mu$ and $\nu$ are two $\sigma$-finite measures on a measure space(X,$\Omega$), 
 and that $\mu$ is absolutely continuos w.r.t. $\nu$: then there exists a non-negative, measurable function $\rho$ on X. \\
  
 Monotone-class\index{Monotone-class} $\longrightarrow$ Suppose $\mathscr M$ is a monotone class of subsets of a set X, and suppose $\mathscr M$ contains an
 algebra $\mathscr A$ of subsets X, then $\mathscr M$ contain the $\sigma$-algebra generated by $\mathscr A$ \\
  
-Dirac $\delta$ function\index{Dirac $\delta$ function} $\longrightarrow$ $\delta_\chi$ = $\chi$(0),  
-    roughly $\delta$(x - X) = $\left\{
+Dirac $\delta$ function\index{Dirac $\delta$ function} $\longrightarrow$
+\begin{equation}
+\delta_\chi = \chi(0),
+    roughly \quad \delta(x - X) = \left\{
     \begin{array}{ll}
     \infty \text{ if x = X} \\
     0      \text{ otherwise} \\
     \end{array} \\
-    \right.$ \\
+    \right.
+\end{equation}
  
-If $\Vert \cdot \Vert$: V $\longrightarrow$ $\mathbb R$, then $\Vert \psi \Vert$ = $\sqrt{\langle \psi,\psi \rangle}$, 
-$\Vert \cdot \Vert$ is a norm on V \\
- 
+If $\Vert \cdot \Vert$: V $\longrightarrow$ $\mathbb R$, then
+
+\begin{equation}
+\Vert \psi \Vert = \sqrt{\langle \psi,\psi \rangle}
+\end{equation}
+
+$\Vert \cdot \Vert$ is a norm on V  \\
+
 Hilbert-space\index{Hilbert-space} $\longrightarrow$ A vector space $\mathscr H$ over $\mathbb R$ or $\mathbb C$, equipped with an inner product $\langle \cdot, \cdot \rangle$,  
  such that $\mathscr H$ is complete in the norm above.       
  [For a seperable infinite dimensional $\mathscr H$, the partially ordered set of all questions in QM(Quantum Mechanics), is isomorphic
  to the partially ordered set of all closed sub-spaces].  \\
 
-Orthogonal-space\index{Orthogonal-space} $\longrightarrow$ If V is any closed subspace of $\mathscr H$, a subspace $V^\perp$ of $\mathscr H$, is
-$V^\perp$ = {$\phi$ $\in \mathscr H$|$\langle \phi, \psi \rangle$ = 0 $\forall$ $\psi$ $\in$ V}\\
-  
-Skew-self-adjoint\index{Skew-self-adjoint} $\longrightarrow$ $A^*$ = - A one-parameter group of orthogonal/unitary transformation \\
+Orthogonal-space\index{Orthogonal-space} $\longrightarrow$ If V is any closed subspace of $\mathscr H$, a subspace $V^\perp$ of $\mathscr H$, is:  \\
+
+\begin{equation}
+V^\perp = {\phi \in \mathscr H \mid \langle \phi, \psi \rangle = 0 \quad \forall \psi \in V}\\
+\end{equation}
+
+Skew-self-adjoint\index{Skew-self-adjoint} $\longrightarrow$
+
+\begin{equation}
+A^* = - A \quad \text{One-parameter group of orthogonal/unitary transformation.}
+\end{equation}
 
 Orthogonal-projection $\longrightarrow$ For a closed subspace V, where V = range(P), P is the projection if it is any bounded operator
 on $\mathscr H$ satisfying $P^2$ = P, and $P^*$ = P \\
  
-A definite-state\index{definite-state}(random sequence) $\longrightarrow$  $\Vert \bar{\sigma}_z^{N} | \psi \Vert^2$ = $\frac{1}{N^2}$ $\langle \psi|$ $\sum_{r=1}^N$ $\sum_{s=1}^N$ $\sigma_z^{(r)}\sigma_z^{(s)}|\psi \rangle$  
-$\langle \psi | \sigma_z^{(r)} \sigma_z^{(s)} | \psi \rangle$ = $\delta^{rs}$  
-$\implies$ $\lim_{N \to \infty}$ $\Vert \bar{\sigma_z}^{N} \Vert^2$ = $\lim_{N \to \infty}$ $\frac{1}{N^2}$N = 0  
+A definite-state\index{definite-state}(random sequence) $\longrightarrow$
+\begin{equation}
+\Vert \bar{\sigma}_z^{N} \mid \psi \Vert^2 = \frac{1}{N^2} \langle \psi \mid \sum_{r=1}^N \sum_{s=1}^N \sigma_z^{(r)}\sigma_z^{(s)} \mid \psi \rangle
+\end{equation}
+
+\begin{equation}
+\langle \psi \mid \sigma_z^{(r)} \sigma_z^{(s)} \mid \psi \rangle = \delta^{rs}
+\implies \lim_{N \to \infty} \Vert \bar{\sigma_z}^{N} \Vert^2 = \lim_{N \to \infty} \frac{1}{N^2}N = 0
+\end{equation}
+
 Likewise for $\bar{\sigma}_z^a$ etc.  \\
 
 Zorns' Lemma\index{Zorns' Lemma} $\longrightarrow$ Let P be a set of elements a,b...Suppose there is a binary relation defined between certain pairs (a,b) of elements P,
@@ -792,7 +897,7 @@ expressed by a $\prec$ b, with the properties:  $\left\{
             \begin{array}{ll}
             a \prec a \\
             \text{ if a $\prec$ b and b $\prec$ a, then a = b,} \\
-            \text{ if a $\prec$ b and b $\prec$ c, then a $\prec$ c(transitivity)} \\
+            \text{ if a $\prec$ b and b $\prec$ c, then a $\prec$ c \quad (transitivity)} \\
             \end{array} \\
             \right.$  $\text{Then P is said to be partially ordered or semi-ordered, by the relation $\prec$}$.  \\
 
@@ -801,10 +906,15 @@ Curl\index{Curl} $\longrightarrow$ Measure of the rotation in the vector field a
 Amperes Law(line integral along a closed path) $\longrightarrow$ $\oint \mathbf B \cdot d \mathbf l$ = $\mu_0 \mathbf l_{encl}$, 
 where $\mu_0$ is the magnetic constant, and $l_{encl}$ is the net current enclosed by the path.  \\
   
-Equipartition-principle\index{Equipartition-principle} $\longrightarrow$ E = $\frac{3}{2}kT$, where k is the Boltzmans constant. \\
- 
-Ground-state\index{Ground-state}/equilibrium position $\longrightarrow$ An electron in a stable innermost orbit/lowest energy state(most negative), and cannot fall into the nucleus.
-(Its positive definite at its local minimum, hence its energy is $\frac{\hbar \omega}{2 \pi}$ at 0). The equality $\frac{\hbar \omega}{2 \pi}$ is the minimum energy. $\psi_0$(x) = $(2 \pi \sigma^2)^- \frac{1}{4}$ $e^- \frac{x^2}{4 \sigma^2}$, with $\sigma^2$ = $\frac{\hbar}{2m \omega}$, and E = $\frac{\hbar \omega}{2}$. \\
+Equipartition-principle\index{Equipartition-principle} $\longrightarrow$
+\begin{equation}
+E = \frac{3}{2}kT, \text{where k is the Boltzmans constant.}
+\end{equation}
+
+See page \pageref{Sampled wave-function distribution} $\text{for Ground-state}$ $\longrightarrow$ An electron in a stable innermost orbit/lowest energy state(most negative), and cannot fall into the nucleus.  \\
+
+Equilibrium position $\longrightarrow$ An electron in a stable innermost orbit/lowest energy state(most negative), and cannot fall into the nucleus.
+(Its positive definite at its local minimum, hence its Energy is $\frac{\hbar \omega}{2 \pi}$ at 0). The equality $\frac{\hbar \omega}{2 \pi}$ is the Minimum Energy. $\psi_0$(x) = $(2 \pi \sigma^2)^{- \frac{1}{4}}$ $e^{- \frac{x^2}{4 \sigma^2}}$, with $\sigma^2$ = $\frac{\hbar}{2m \omega}$, and E = $\frac{\hbar \omega}{2}$. \\
  
 Pauli-exclusion-principle\index{Pauli-exclusion-principle} $\longrightarrow$ No two or more electrons in an atom, can have the same value, for any of the four quantum numbers. \\
  
@@ -813,54 +923,69 @@ Self-adjoint $\longrightarrow$ $T(F(\phi), \psi)$ = $T(F(\psi), \phi)$ = $T(\phi
 Eigenvalue-equation\index{Eigenvalue-equation} $\longrightarrow$ An equation, where the operator, operating on a function, produces a constant, times the function. [The function is called 
 an Eigenfunction, and the resulting numeric is called the Eigenvalue]. Eigen here is the German word meaning self, or own.  \\
                
-Hamiltonian-energy\index{Hamiltonian-energy}(discrete) $\longrightarrow$ $\hat {\mathbf H}$ = $\frac{1}{2} m \omega^2_c \hat {r}^2_c$: This is the kinetic energy of 
-a particle of mass m with cyclotron frequency $\omega_c$, and radius $\hat {\mathbf {r}_c}$ \\
+Hamiltonian-energy\index{Hamiltonian-energy}(discrete) $\longrightarrow$ $\hat {\mathbf H}$ = $\frac{1}{2} m \omega^2_c \hat {r}^2_c$: This is the Kinetic Energy of
+a particle of Mass m with Cyclotron Frequency $\omega_c$, and radius $\hat {\mathbf {r}_c}$ \\
  
-Dirac equation $\longrightarrow$ $i \hbar$ $\frac{\partial \psi}{\partial t}$ = $ \left[ c {\mathbf \alpha} \cdot \hat {\mathbf p} + \frac{e}{c} {\mathbf A} + {\beta m} {c^2} + V(r) \right]$ $\psi$,
-where the coupling of the electron to the scalar potential $\Phi(r)$ is included via V(r) = ${- e \Phi(r)}$.  \
+Dirac equation $\longrightarrow$
+\begin{equation}
+i \hbar \frac{\partial \psi}{\partial t} =  \left[ c {\mathbf \alpha} \cdot \hat {\mathbf p} + \frac{e}{c} {\mathbf A} + {\beta m} {c^2} + V(r) \right] \psi
+\end{equation}
+
+Where the coupling of the electron to the scalar potential $\Phi(r)$ is included via V(r) = ${- e \Phi(r)}$.  \\
 
 Gibbs Inequality $\longrightarrow$ $H(f_1,...,f_n)$ $\leq$ ${- \sum_{j=1}^{m} f_j log(u_j)}$ \\
  
 Projection-valued-measure\index{Projection-valued-measure}associated with f(A) $\longrightarrow$ f(A')  \\
   
 [ f(A) is the self-adjoint\index{self-adjoint} operator, corresponding to the observable $f(A')$ ]. \\ 
-E $\rightarrow$ $P^{A}_{f^{-1}(E)}$. [Note that the operators corresponding to the energy and momentum observables\index{observables} of a                                          
-quantum system are obtainable as infinitesimal generators of certain one-parameter groups\index{groups} of unitary operators]. \\
+
+E $\rightarrow$ $P^{A}_{f^{-1}(E)}$. Note that the operators corresponding to the Energy and Momentum observables\index{observables} of a
+quantum system are obtainable as infinitesimal generators of certain one-parameter groups\index{groups} of unitary operators. \\
                                                                         
 Eigenvector\index{Eigenvector} of a self-adjoint operator $\longrightarrow$ A state in which the corresponding observable takes
 on the corresponding Eigenvalue\index{Eigenvalue} with probability $\mathbf 1$ \\
  
 Von Neumann-density-matrix\index{Von Neumann-density-matrix} $\longrightarrow$ The matrix of an operator\index{operator} defining a mixed state.  \\
   
-Differentiable-function\index{Differentiable-function} $\psi$ [Schr$\ddot{o}$dingers equation] $\longrightarrow$ $\frac{\partial^2 \psi}{\partial x^2}$ + $\frac{\partial^2 \psi}{\partial y^2}$ + $\frac{\partial^2 \psi}{\partial z^2}$ + $\frac{2m}{\hbar^2}$ $\left(\mathbf E + \frac{e^2}{\sqrt{x^2 + y^2 + z^2}}\right)$ = 0, with $\hbar$ = $\mathbf K$.  \\
+Differentiable-function\index{Differentiable-function} $\psi$ [Schr$\ddot{o}$dingers equation] $\longrightarrow$
+\begin{equation}
+\frac{\partial^2 \psi}{\partial x^2} + \frac{\partial^2 \psi}{\partial y^2} + \frac{\partial^2 \psi}{\partial z^2} + \frac{2m}{\hbar^2} \left(\mathbf E + \frac{e^2}{\sqrt{x^2 + y^2 + z^2}}\right) = 0, with \hbar = \mathbf K.
+\end{equation}
 
-Canonical-commutation-relation\index{Canonical-commutation-relation} $\longrightarrow$ [$\hat X. \hat P$] = $i \hbar \delta_{ij}$, i,j = x,y,z.  \\
-  
-Heisenberg-commutation-relation\index{Heisenberg-commutation-relation} $\longrightarrow$ $(X_{\phi_1}, X_{\phi_2} - X_{\phi_2}, X_{\phi_1})$ = $(\frac{\hbar}{i})$[$f_{\phi_1}, f_{\phi_2}]$,
-where $f_\phi$ is an observable, and $X_\phi$ the self-adjoint\index{self-adjoint} operator.  \\
+Canonical-commutation-relation\index{Canonical-commutation-relation} $\longrightarrow$ [$\hat X, \hat P$] = $i \hbar \delta_{ij}$, i,j = x,y,z.  \\
+
+Heisenberg commutation relation $\longrightarrow$  \\
+
+$(X_{\phi_1}, X_{\phi_2} - X_{\phi_2}, X_{\phi_1})$ = $(\frac{\hbar}{i})$ [$f_{\phi_1}, f_{\phi_2}]$,
+where $f_\phi$ is an observable, and $X_\phi$ the self-adjoint operator.  \\
+
   
 Discrete\index{Discrete} $\longrightarrow$ A representation which can be decomposed as a direct sum of irreducibles. \\
   
 Schurs' Lemma\index{Schurs' Lemma}(only true in $\mathbb C$ representations, NOT $\mathbb R$ vector spaces) $\longrightarrow$ Let T be $\in$ R(L,M), then L restricted to the orthogonal complement of the null space
-of T, is $\equiv$ to M restricted to the closure of the range of T.  \\
+of T, is $\equiv$ to M restricted to the Closure\index{Closure} the Range of T.  \\
   
 Degeneracy\index{Degeneracy} $\longrightarrow$ Occurrence of multiple eigenvalues/states sharing the same energy. \\ 
 
 Zeeman-effect\index{Zeeman-effect} $\longrightarrow$ Splitting apart of eigenvalues, hence of spectral lines, in a magnetic field. \\
   
-Kronocker-delta\index{Kronocker-delta}(Orthonormality condition\index{Orthonormality condition}) $\longrightarrow$ $\delta_{ij}$ = $\left\{
+Kronocker-delta\index{Kronocker-delta}(Orthonormality condition\index{Orthonormality condition}) $\longrightarrow$
+$\delta_{ij}$ = $\left\{
 \begin{array}{ll}
 1 \text{ if i = j}  \\
 0 \text{ if i $\neq$ j} \\
 \end{array} \\
 \right.$ \\
  
-Tensor/Kronecker-product\index{Tensor/Kronecker-product} of two Spin\index{Spin} one-half state space[needed to calculate the hyperfine-splitting\index{hyperfine-splitting} in the Hydrogen-atom\index{Hydrogen-atom}]
-$\longrightarrow$ $ | 0, 0 \rangle$ =  
-$\frac{1}{\sqrt 2}$ $\left( | \uparrow \rangle_1 \otimes | \downarrow \rangle_2 -  | \downarrow \rangle_1 |  \otimes \uparrow_2 \right)$ = $\frac{1}{\sqrt 2}$ $\left( | \uparrow \downarrow \rangle - | \downarrow \uparrow \rangle \right)$  \\
+Tensor/Kronecker-product\index{Tensor/Kronecker-product} of two Spin\index{Spin} one-half state space[needed to calculate the hyperfine-splitting\index{hyperfine-splitting} in the Hydrogen-atom\index{Hydrogen-atom}] $\longrightarrow$  \\
+
+$ \mid 0, 0 \rangle$ =
+$\frac{1}{\sqrt 2}$ $\left( \mid \uparrow \rangle_1 \otimes \mid \downarrow \rangle_2 -  \mid \downarrow \rangle_1 \mid  \otimes \uparrow_2 \right)$ = $\frac{1}{\sqrt 2}$ $\left( \mid \uparrow \downarrow \rangle - \mid \downarrow \uparrow \rangle \right)$  \\
   
-Clebsch-Gordan-coefficient\index{Clebsch-Gordan-coefficient}(expansion)/vector coupling/Wigner $\longrightarrow$ \\ 
-$ | J,M \rangle$ = $\sum_{m_1 = {-j_1}}^{j_1}$ $\sum_{m_2 = {-j_2}}^{j_2} \langle{JM} | {m_1,m_2} \rangle \langle{m_1,m_2} |J^{prime},M^{prime} \rangle$ = $\delta_{jj^{prime}}$ $\delta_{MM^{prime}}$  \\
+Clebsch-Gordan-coefficient\index{Clebsch-Gordan-coefficient}(expansion)/vector coupling/Wigner $\longrightarrow$ \\
+\begin{equation}
+\mid J,M \rangle = \sum_{m_1 = {-j_1}}^{j_1} \sum_{m_2 = {-j_2}}^{j_2} \langle{JM} \mid {m_1,m_2} \rangle \langle{m_1,m_2} \mid J^{'},M^{'} \rangle = \delta_{jj^{'}} \delta_{MM^{'}}
+\end{equation}
     
 Hydrogen\index{Hydrogen} hyperfine split $\longrightarrow$ $\mathbf{\text{Energy shift/difference}}$ of the lowest antiparallel state of the spin of the protons magnetic moment and the electrons magnetic field, pointing in the same direction(corresponds to the fine-structure\index{fine-structure} splitting).  \\  
     
@@ -873,10 +998,12 @@ Entanglement\index{Entanglement} $\longrightarrow$ A Bell state that cannot be e
 No-cloning-theorem\index{No-cloning-theorem} $\longrightarrow$ One cannot create a copy of quantum states, although teleporting is permitted.  \\
   
 Teleportation\index{Teleportation} $\longrightarrow$ Same quantum state in different locations.  \\
-  
-Quantum-Harmonic-Oscillator\index{Quantum-Harmonic-Oscillator} $\longrightarrow$ $\hat H$ = $\hbar \omega$  $\left(\hat {a}^\dagger \hat {a} + \frac{1}{2} \right)$ = $\hbar \omega$ $\left(\hat N + \frac{1}{2} \right)$, where $\hat {a}$ = ${\sqrt \frac{m \omega}{2 \hbar}}$ $\left( \hat x + \frac{i}{m \omega} \hat p \right)$; \\
+
+See \ref{fig:qho.png} for the Quantum-Harmonic-Oscillator\index{Quantum-Harmonic-Oscillator} $\longrightarrow$
+
+$\hat H$ = $\hbar \omega$  $\left(\hat {a}^\dagger \hat {a} + \frac{1}{2} \right)$ = $\hbar \omega$ $\left(\hat N + \frac{1}{2} \right)$, where $\hat {a}$ = ${\sqrt \frac{m \omega}{2 \hbar}}$ $\left( \hat x + \frac{i}{m \omega} \hat p \right)$; \\
 $\hat {a}^\dagger$ = ${\sqrt \frac{m \omega}{2 \hbar}}$ $\left( \hat x - \frac{i}{m \omega} \hat p \right)$, and  \\
-$\hat N$ = $\hat {a}^\dagger \hat a$ = $\frac{m \omega}{2 \hbar}$ $\left(\hat x - \frac{i}{m \omega} \hat p \right)$ $ \left( \hat x + \frac{i}{m \omega} \hat p \right)$ \\
+$\hat N$ = $\hat {a}^\dagger \hat a$ = $\frac{m \omega}{2 \hbar}$ $\left(\hat x - \frac{i}{m \omega} \hat p \right)$ $ \left( \hat x + \frac{i}{m \omega} \hat p \right)$  \\
  
 Flux-quantum\index{Flux-quantum}(a dimensionless quantity) $\longrightarrow$ $\Phi$ = $\frac{\hbar}{2e}$, where 2e is the charge of the electron(Cooper pairs). \\
      
@@ -885,10 +1012,14 @@ similar to the Schr$\ddot{o}dinger$ equation, $i\hbar \partial_t \rho(t)$ = $[H,
   
 Resolution-of-an-dentity\index{Resolution-of-an-dentity} $\longrightarrow$ $\sum_{k_0} \sum_{\mathbf k_1}$ $<k_0|A_0| {\mathbf k_1}><{\mathbf k_1}|A_1|k_0>$ \\
 
-\includegraphics[width=15cm]{Anharmonic vs simple Harmonic Oscillator.png}
-\end{definition}
+\begin{figure}
+\includegraphics[width=10cm]{Anharmonic vs simple Harmonic Oscillator.png}
+\caption{Representation of Anharmonic vs simple Harmonic Oscillator}
+\label{fig:Anharmonic vs simple Harmonic Oscillator.png}
+\end{figure}
+%\end{Definitions}
 
-\begin{definition}
+\chapter{Ideas}
 
 $\mathbf{\textbf{Ideas that work[linear, and angular momentum of a field}}$
 
@@ -931,11 +1062,15 @@ trajectory $e^{-i Ht}(\psi)$ is a function on $\mathscr M \times \mathbf R$, whe
   
 $\bullet$ Expected-value\index{Expected-value} of the j-th momentum component $\longrightarrow$ $\frac{\hbar}{i}$ $\int$ $\left(\frac{\partial \psi}{\partial q_j} \overline {\psi} \right)$ $dq_1...dq_{3n}$.  \\
   
-\end{definition}
+\chapter{Physics of the Universe}
 
-$\mathbf{\textbf{Physics of the Universe(Manifolds of pairing maps on an invariant self-adjoint subspace)}}$ \\
+\section{Manifolds of pairing maps on an invariant self-adjoint subspace)}
 
-\includegraphics[width=15cm]{relativistic mass increase.png} 
+\begin{figure}
+\includegraphics[width=10cm]{relativistic mass increase.png}
+\caption{Limiit concept of Mass with the Speed of Light}
+\label{fig:relativistic mass increase.png}
+\end{figure}
 
 \subsection{Constants\index{Constants}}
 
@@ -949,7 +1084,7 @@ E = $E_{n,\ell}$[Energy shifts, and splitting of spectral lines]. \\
 
 Bohr Radius $\longrightarrow$ $r_B$ = $\frac{4 \pi \epsilon_0 \hbar^2}{e^2{m_e}}$ $\approx$ 0.53 $\times$ $10^{-10}$m  
 
-\section{Useful Formulae}
+\subsection{Useful Formulae}
 
 $\bullet$  (1) Relativity: p = mv$\gamma$, E = $\gamma$ m $c^2$, $E^2$ = $p^2$ * $c^2$ + $m^2$ * $c^4$, $\gamma$ = $\frac{1}{\sqrt1 - \beta^2}$,  
 $\beta$ = $\frac{v}{c}$  \\
@@ -1247,9 +1382,9 @@ $\mathbf r > \mathbf a$,  \\
 $\tan \delta_{l}$ $\equiv$  - $\frac{\mathbf B_{(l)}}{\mathbf A_{(l)}}$.  \
 
 
-\chapter{Sample practice, and other useful equations}
+\chapter{Sample practice}
 
-\section{Useful equations}
+\section{More Useful equations}
 
 $\bullet$  d'Alemberts' Principle $\longrightarrow$  $\sum_i \langle \mathbf {F}_i(\mathbf c(t),t) - \mathbf {m}_i {c_i(t)}, \mathbf {v}_{i} \rangle$ = 0 $\forall$ tangent vectors $\mathbf v$ at $\mathbf {M}_{\mathbf c(t)}$  \\
 
@@ -1329,11 +1464,11 @@ $\bullet$ Traceless-Pauli-matrices\index{Traceless-Pauli-matrices} $\longrightar
 
 $\rho$ = $\frac{1}{2}$ $\left[ \begin{pmatrix}1 & 0 \cr 0 & 1 \end{pmatrix} + x \begin{pmatrix}0 & 1 \cr 1 & 0 \end{pmatrix} + y \begin{pmatrix}0 & -i \cr i & 0  \\ \end{pmatrix} + z \begin{pmatrix}1 & 0 \cr 0 & -1 \end{pmatrix} \right]$  = $\frac{1}{2}$ ( $\mathbf{I}$ + $\vec{r} \cdot \vec{\sigma})$, where $\vec{r} \in \mathbb R^3$,\\ and $\vec{\sigma}$ = (x,y,z). \\
 
-\section{Test your comprehension}
+\subsection{Test your comprehension}
 
 Every equation has a meaning, and can be logically explained.
 
-\section{Section A}
+\paragraph{Test Case A}
 
 Q1. Time-dependent Schr$\ddot{o}$dinger Equation: \\
   
@@ -1367,7 +1502,7 @@ Significance: \\
 $\bullet$ Leads to uncertainty principle  \\    
 $\bullet$ Shows position and momentum, are incompatible observables \\
  
-\section{Section B}
+\paragraph{Test Case B}
 
 Q6. Particle in a box \\
 
@@ -1461,7 +1596,7 @@ $\bullet$ Measurement leads to a definite state  \\
 A collapse = Transition from probability to reality$\mathbb R$
 
 
-\section{Additional Notes}
+\paragraph{Additional Notes}
 
 I.  \\  
 
@@ -1676,7 +1811,7 @@ $\bullet$ Quantu Mechanics recovers Classical Mechanics \\
 
 Quantum Mechanics becomes Linear Algebra, Operator Theory, and Symmetry, NOT just formulas.  \\
 
-\appendix
+
 
 \begin{remark}
 
@@ -1686,7 +1821,9 @@ Calculus is also necessary to understand much of this material, for it is always
 
 \end{remark}
 
-\chapter{Appendix}
+\chapter{Example Functions}
+
+\subsection{Equations}
 
 Plane-waves\index{Plane-waves} $\longrightarrow$ $\psi(x,t)$ = $e^{(ikx - i\omega t)}$; we then differentiate this function to obtain the
 Energy, and Momentum operator, using the Chain Rule...and applying Plancks' rule\index{Plancks' rule}(multiplying by i$\hbar$).  \\
@@ -1876,26 +2013,33 @@ $\frac{1}{c^2}$ $\frac{\partial^2}{\partial t^2}$ - $\nabla^2$ +  $ ( {\frac{m_e
 Note that [$\partial^\mu, \partial^nu$ = [$\partial^{\mu \nu}$]. The matching-index-height rule\index{matching-index-height rule} is satisfied.  \\
                                                                                                                            
 \section{Sampled wave-function distribution}
+\label{Sampled wave-function distribution}
+
+
 
 \begin{figure}[!h]
-\includegraphics[width=15cm]{Ground state search.png}
+\includegraphics[width=10cm]{Ground state search.png}
 \caption{Mnimizing energy for a ground-state}.
 \label{fig:Ground state search.png}
 \end{figure}
 
 \begin{figure}[!h]
-\includegraphics[width=15cm]{Sampled wave function distribution.png}
+\includegraphics[width=10cm]{Sampled wave function distribution.png}
 \caption{Estimated Ground State Energy, with its' analytical solution}.
 \label{fig:Sampled wave function distribution.png}
 \end{figure}
 
 \begin{figure}[!h]
-\includegraphics[width=15cm]{BW.png}
+\includegraphics[width=10cm]{BW.png}
 \caption{Breit-Wigner distribution}.
 \label{fig:BW.png}
 \end{figure} 
 
-\chapter{List of experiments}
+\cite{https://citizendium.org/wiki/index.php?title=Particle_in_a_box&oldid=984214}
+
+\chapter{Appendix}
+
+\section{List of experiments}
 
 \begin{enumerate}
 
@@ -1910,9 +2054,9 @@ Note that [$\partial^\mu, \partial^nu$ = [$\partial^{\mu \nu}$]. The matching-in
 
 \end{enumerate} 
 
-\chapter{Reference}
+\subsection{Reference}
 
-\url{https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/CSV?response_type=display}}  \\
+\url{https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/CSV?response_type=display} \\
 
 \begin{enumerate}
 
