@@ -902,12 +902,14 @@ A definite-state\index{definite-state}(random sequence) $\longrightarrow$
 
 Likewise for $\bar{\sigma}_z^a$ etc.  \\
 
-Zorns'-Lemma\index{Zorns'-Lemma} $\longrightarrow$ Let P be a set of elements a,b...Suppose there is a binary relation defined between certain pairs (a,b) of elements P,
+Zorns'-Lemma\index{Zorns'-Lemma} $\longrightarrow$  \\
+
+Let P be a set of elements a,b...Suppose there is a binary relation defined between certain pairs (a,b) of elements P,
 expressed by a $\prec$ b, with the properties:  $\left\{
             \begin{array}{ll}
             a \prec a \\
             \text{ if a $\prec$ b and b $\prec$ a, then a = b,} \\
-            \text{ if a $\prec$ b and b $\prec$ c, then a $\prec$ c \quad (transitivity)} \\
+            \text{ if a $\prec$ b and b $\prec$ c, then a $\prec$ c(transitivity)} \\
             \end{array} \\
             \right.$  $\text{Then P is said to be partially ordered or semi-ordered, by the relation $\prec$}$.  \\
 
@@ -1666,49 +1668,72 @@ $\tan \delta_{l}$ $\equiv$  - $\frac{\mathbf B_{(l)}}{\mathbf A_{(l)}}$.  \\
 
 $\bullet$  d'Alemberts' Principle $\longrightarrow$  $\sum_i \langle \mathbf {F}_i(\mathbf c(t),t) - \mathbf {m}_i {c_i(t)}, \mathbf {v}_{i} \rangle$ = 0 $\forall$ tangent vectors $\mathbf v$ at $\mathbf {M}_{\mathbf c(t)}$  \\
 
-$\bullet$  $n^{th}$ Taylor Polynomial about x = $x_0$ for f,  \\   
+$\bullet$  $n^{th}$ Taylor Polynomial about x = $x_0$ for f,  \\
+
 $p_n(x)$ = $f(x_0) + f'(x_0)(x - x_0) + \frac{f''(x_0)}{2!}(x - x_0)^2 +...\frac{f^{(n)}{(x_0)}}{n!}(x - x_0)^n $,  \\    
-$\sum_{k=0}^\infty$ $\frac{ ({-i} * {\theta / 2} * {X} )^k} {k!}$  \\
+$\sum_{k=0}^\infty$ $\frac{ ({-i} * {\frac{\theta}{2} * {X} )^k}} {k!}$  \\
 
 $\bullet$ Airy equation $\longrightarrow$ $\frac{d^2 \psi} {dU^2}$ - $u \psi (u) = 0$  \\
 
 $\bullet$ Jacobi identity $\longrightarrow$ $[X,[Y,Z]] + [Y,[X,Z]] + [Z, [X,Y]] = 0$  \\
 
 $\bullet$ Stokes theorem(Line-Integrals\index{Line-Integrals})  \\
+
 $\iint_s curl \mathbf F \cdot d \mathbf S$ = $\int_c \mathbf F \cdot d \mathbf r$, where C is a closed curve, and $\mathbf F$ is a vector field defined on C. \\
 
 $\bullet$ A sympletic-manifold\index{sympletic-manifold} (N, $\omega$), is quantizable (for a particular value of $\hbar$), if
 $\frac{1}{{2 \pi \hbar}}$ $\int_s \omega \in \mathbb Z$, for every closed surface S in N.  \\
 
 $\bullet$ Probability-density-function(Gaussian-distribution\index{Gaussian-distribution}):  \\
-f(x) = $\frac{1}{\sigma \sqrt{2 \pi}}$ $e^{- \frac{(x - \mu)^2}{2 \sigma^2}}$ \\
+\begin{equation}
+f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{- \frac{(x - \mu)^2}{2 \sigma^2}}
+\end{equation}
 
 $\bullet$ Poisson bracket of f and g;  Moyal bracket $\longrightarrow$ [f,g] = \\
+
 $\frac{\partial f}{\partial q_1}$ $\frac{\partial g}{\partial p_1}$ +...+ $\frac{\partial f}{\partial q_n}$ $\frac{\partial g}{\partial p_n}$ - $\frac{\partial f}{\partial p_1}$ $\frac{\partial g}{\partial q_1}$ - ... - $\frac{\partial f}{\partial p_n}$ $\frac{\partial g}{\partial q_n}$ \\
 
-$\bullet$ Laguerre Polynomials $\longrightarrow$ $f_{n,l}(r) := L_{n - l - 1}^{2l +  1}$$ \left( \frac{2r}{nr_B} \right)$, where $r_B$ is the Borh-radius\index{Borh-radius}.  \\
+$\bullet$ Laguerre Polynomials $\longrightarrow$  \\
 
-$\bullet$ Rydberg formula $\longrightarrow$ $\frac{1}{\lambda}$ = $R_H \left({\frac{1}{n^2} - \frac{1}{m^2}} \right)$,  \\  
-where $R_H$ is the Rydberg constant. \\
+$f_{n,l}(r) := L_{n - l - 1}^{2l +  1}$$ \left( \frac{2r}{nr_B} \right)$, where $r_B$ is the Borh-radius\index{Borh-radius}.  \\
+
+$\bullet$ Rydberg formula $\longrightarrow$\\
+\begin{equation}
+\frac{1}{\lambda} = R_H \left({\frac{1}{n^2} - \frac{1}{m^2}} \right)
+\end{equation}
+
+where $R_H$ is the Rydberg constant.  \\
+
 
 $\bullet$ Rayleigh formula $\longrightarrow$  \\ 
- $\frac{8\pi\nu^2{kT}\vartriangle\nu}{c^3}$ $\hbar$ $e^{-\left(\frac{\hbar}{k}\right) \left(\frac{\nu}{T} \right)}$,  \\   
-Wiens formula $\longrightarrow$ $\frac{A \nu^3 e^{-b \nu}}{T \vartriangle \nu}$, where A and b are constants(does not fit experimental facts for small $\frac{ \nu}{T}$, although it avoids the paradox of infinite total energy.  \\
+
+ $\frac{8\pi\nu^2{kT}\vartriangle\nu}{c^3}$ $\hbar$ $e^{-\left(\frac{\hbar}{k}\right) \left(\frac{\nu}{T} \right)}$,  \\
+
+Wiens' formula $\longrightarrow$ \\
+
+$\frac{A \nu^3 e^{-b \nu}}{T \vartriangle \nu}$, where A and b are constants(does not fit experimental facts for small $\frac{ \nu}{T}$, although it avoids the paradox of infinite total energy.  \\
 
 
-$\bullet$ Radon-Nikodym Theorem(derivative of $\nu$ w.r.t $\mu$) $\longrightarrow$ $\nu (E)$ = $\int_E \rho(s) d\mu(s)$ \\ 
+$\bullet$ Radon-Nikodym Theorem(derivative of $\nu$ w.r.t $\mu$) $\longrightarrow$  \\
+
+$\nu (E)$ = $\int_E \rho(s) d\mu(s)$ \\
 There exists a measurabe function $\rho$ which is the density of $\nu$ w.r.t $\mu$ \\
 
 $\bullet$ Schr$\ddot{o}$dinger operator $\longrightarrow$  \\ 
+
 $\lim_{X \to \infty} \frac{\beta([0,X])}{\beta_q([0,X])}$ = $(2 \pi \hbar)^N$, where \\
-$\beta([0,X])$ is a continous measure space of the set of classic Hamiltonian, $\beta_q([0,X])$ is the dicrete  \\
-measure of the number of eigenvalues < X, and N is the number of dimensions in configuration space.  \\
 
-$\bullet$ Schurs Theorem $\longrightarrow$ $U^*{\mathbf A}U$ = T = $[T_{ij}] \in M_n(\mathbb C)$, $T_{ij}$ = 0(i > j). \\
+$\beta([0,X])$ is a continuous measure space of the set of classic Hamiltonian, $\beta_q([0,X])$ is the discrete
+measure of the number of eigenvalues < (X), and (N) is the number of dimensions in configuration space.  \\
 
-$\bullet$ Angular momentum in the tensor product space\index{tensor product space} $\longrightarrow$ $\hat j_i$ = ${\hat j_i^{(1)}} \otimes \mathbb 1 + \mathbb 1 \otimes  {\hat j_i^{(2)}}$  satisfy [$\hat j_i, \hat j_j$] = ${i \hbar \epsilon_{ijk} {\hat j_k}}$ acting on $V_1 \otimes V_2$ \\
+$\bullet$ Schurs' Theorem $\longrightarrow$ $U^*{\mathbf A}U$ = T = $[T_{ij}] \in M_n(\mathbb C)$, $T_{ij}$ = 0(i > j). \\
 
-$\bullet$ Maxwells'-equations\index{Maxwells'-equations} $\longrightarrow$  \\  
+$\bullet$ Angular momentum in the tensor product space\index{tensor product space} $\longrightarrow$  \\
+
+$\hat j_i$ = ${\hat j_i^{(1)}} \otimes \mathbf{1} + \mathbf{1} \otimes  {\hat j_i^{(2)}}$  satisfy [$\hat j_i, \hat j_j$] = ${i \hbar \epsilon_{ijk} {\hat j_k}}$ acting on $V_1 \otimes V_2$ \\
+
+$\bullet$ Maxwells'-equations\index{Maxwells'-equations} $\longrightarrow$  \\
+\noindent
 $\nabla \cdot \mathbf E$ = $ \frac{\rho}{\epsilon_0}$ \\ 
 $\nabla \cdot \mathbf B$ = 0  \\
 $\nabla \times \mathbf E$ = $ - \frac{\partial B}{\partial t}$ \\ 
@@ -1717,26 +1742,43 @@ $\nabla \times \mathbf B$ = $\mu_0$  $\left( \mathbf {J} + \epsilon_0 \frac{\par
 $\bullet$ Abelian/Commutatitive\index{Abelian/Commutatitive} $\longrightarrow$ $\forall$ a,b $\in$ G, a $\cdot$ b = b $\cdot$ a \\
 
 $\bullet$ Matrix representation of 2-D Hilbert space\index{Matrix representation of 2-D Hilbert space} $\longrightarrow$  \\ 
+
 $H^2$ = $\frac{1}{2}$ $\begin{pmatrix}1 & 1 \cr 1 & -1 \end{pmatrix}$ $\begin{pmatrix}1 & 1 \cr 1 & -1 \end{pmatrix}$ = $\begin{pmatrix}1 & 0 \cr 0 & 1 \end{pmatrix}$ = I,  \\  
+
 where H is for the Hadamard gate, and (I) is the identity.  \\
 
 $\bullet$ Liebniz-Rule\index{Liebniz-Rule} $\longrightarrow$  \\
-$\frac{d}{dt} \int_{- \infty}^\infty |\psi{x,t}|^2$ dx = $\int_{- \infty}^\infty \frac{\partial}{\partial t} |\psi{x,t}|^2$ dx = 0 \\
+\begin{equation}
+\frac{d}{dt} \int_{- \infty}^\infty \mid \psi{x,t} \mid^2 dx = \int_{- \infty}^\infty \frac{\partial}{\partial t} \mid \psi{x,t} \mid^2 dx = 0
+\end{equation}
 
-$\bullet$ Wave function for a particle in a box: \\ 
-$\longrightarrow$ $\Psi$(x,t) = $\sum_{n=1}^\infty$ $C_n$ $\sqrt{\frac{2}{a}}$ $\sin(\frac{n \pi}{a}x)$ $e^{- i\left( \frac{n^2 \pi^2 \hbar}{2m {a}^2} \right)t}$ \\
+$\bullet$ Wave function for a particle in a box: $\longrightarrow$
+\begin{equation}
+\Psi(x,t) = \sum_{n=1}^\infty C_n \sqrt{\frac{2}{a}} \sin(\frac{n \pi}{a}x) e^{- i\left( \frac{n^2 \pi^2 \hbar}{2m {a}^2} \right)t}
+\end{equation}
 
 $\bullet$ Ground-state\index{Ground-state} for a particle in a box $\longrightarrow$ $\Psi_n$(x) = ${\sqrt \frac{2}{a}}$ $\sin \left( \frac{n \pi}{a}x \right)$  \\
 
-$\bullet$ Gaussian-integral\index{Gaussian-integral} $\longrightarrow$ If $z^2$ = ${a}x^2$, and dz = $\sqrt{a}$dx, then $\int_{- \infty}^\infty$ $e^{- a x^2}$ dx = $\sqrt{ \frac{\pi}{a}}$[Highly simplified] \\
+$\bullet$ Gaussian-integral\index{Gaussian-integral} $\longrightarrow$  \\
 
-$\bullet$ $\mathbf{\textbf{Hookes' Law}\index{Hookes' Law}}$ $\longrightarrow$ F = - $\frac{dV}{dx}$ = - $\frac{d}{dx}$ $\left( \frac{1}{2} k {x^2} \right)$ = -k x = m a = m $\frac{d^2(x)}{dt^2}$ \\
+If $z^2$ = ${a}x^2$, and dz = $\sqrt{a}$dx, then $\int_{- \infty}^\infty$ $e^{- a x^2}$ dx = $\sqrt{ \frac{\pi}{a}}$[Highly simplified] \\
+
+$\bullet$ $\mathbf{\textbf{Hookes' Law}\index{Hookes' Law}}$ $\longrightarrow$ \\
+
+F = - $\frac{dV}{dx}$ = - $\frac{d}{dx}$ $\left( \frac{1}{2} k {x^2} \right)$ = -k x = m a = m $\frac{d^2(x)}{dt^2}$ \\
 
 $\bullet$ Energy-spectrum\index{Energy-spectrum} of the Transmon qubit $\longrightarrow$  \\ 
+
 $\omega_j$ = $\left( \omega - \frac{\delta}{2} \right) j$ + $\frac{\delta}{2} j^2$ \\
 
 $\bullet$ Pure density operator, and state\index{state} $\longrightarrow$ \\
-$tr \rho^2$ = $tr \rho$ = $\mathbb 1$ ; $\frac{1}{N}$ < tr $\rho$ < $\mathbb 1$ $\rightarrow$ positive-definiteness, where $\lambda_j$ $\geq$ 0 ($\lambda_j$ are the eigenvalues and 'N' is the Hilbert space dimension. \\
+\begin{equation}
+\mathbf{tr} \rho^2 = tr \rho = \mathbf{1} ; \frac{1}{N} < \mathbf{tr} \rho < \mathbf{1}
+\end{equation}
+
+$\rightarrow$  \\
+
+positive-definiteness, where $\lambda_j$ $\geq$ 0 ($\lambda_j$ are the eigenvalues, and 'N' is the Hilbert space dimension. \\
 
 $\bullet$ Traceless-Pauli-matrices\index{Traceless-Pauli-matrices} $\longrightarrow$  \\
 
@@ -1747,28 +1789,34 @@ $\rho$ = $\frac{1}{2}$ $\left[ \begin{pmatrix}1 & 0 \cr 0 & 1 \end{pmatrix} + x 
 Every equation has a meaning, and can be logically explained.
 
 \paragraph{Test Case A}
+\noindent
 
 Q1. Time-dependent Schr$\ddot{o}$dinger Equation: \\
   
-Describes how aquantum system evolves $\longrightarrow$ \\
-
-i$\hbar$ $\frac{\partial \psi(x,t)}{\partial t}$ = $\left( -\frac{\hbar^2}{2m} \frac{ \partial^2}{ \partial x^2} + V(x,t) \right) \psi(x,t)$ = $\hat {H} \psi$ \\
+Describes how a quantum system evolves $\longrightarrow$
+\begin{equation}
+i \hbar \frac{\partial \psi(x,t)}{\partial t} = \left( -\frac{\hbar^2}{2m} \frac{ \partial^2}{ \partial x^2} + V(x,t) \right) \psi(x,t) = \hat {H} \psi
+\end{equation}
    
-$\bullet$ $\psi$(x,t): wavefunction (probability amplitude); Had to include (x), the configuration space/trajectory of the particle in (t), to make the equation unambigous, although there's no magnetic deflection in the x-axis.\\
+$\bullet$ $\psi$(x,t): wave-function (probability amplitude); Had to include (x), the configuration space/trajectory of the particle in (t), to make the equation un-ambigous, although there's no magnetic deflection in the x-axis.\\
 
 One-Dimensional Time-independent Scr$\ddot{o}$dinger Equation $\longrightarrow$ \\
+
 -$\frac{i \hbar^2}{2m}$ $\frac{d^2 \psi}{d {X}^2}$ + V$\psi$ = $\hat {H} \psi$  \\
 
 Q2. Heisenberg Uncertainty Principle/Minimum uncertainty wave-packet $\longrightarrow$ \\ 
+
 $\vartriangle{x} \vartriangle{p}$ $\geq$ $\frac{\hbar}{2}$(Note that $| \frac{i \hbar \langle \psi \mid\psi \rangle}{2i} \mid^2$ = $ \sqrt{\frac{\hbar^2}{4}}$ = $\frac{\hbar}{2}$). \\
 
 $\bullet$ You cannot measure position and momentum precisely at the same time \\
  
 $\bullet$ More precision in one, less precision in the other \\
 
-Q4. Particle in a box energies $\longrightarrow$ $E_n$ = $\frac{n^2 \pi^2 \hbar^2}{{2m}{L^2}}$, n = 1,2,3,..  \\
+Q4. Particle in a box Energies $\longrightarrow$ \\
+
+$E_n$ = $\frac{n^2 \pi^2 \hbar^2}{{2m}{L^2}}$, n = 1,2,3,..  \\
     
-$\bullet$ $\hbar$: reduced Plancks constant($\frac{\hbar}{2 \pi}$) [$\text{h is the Plancks constant}$].  \\
+$\bullet$ $\hbar$: reduced Plancks' constant($\frac{\hbar}{2 \pi}$) [$\text{h is the Plancks constant}$].  \\
   
 $\bullet$ i: imaginary unit/Lateral-unit\index{Lateral-unit}  \\
       
@@ -1777,14 +1825,16 @@ $\bullet$ $\hat {H}$: Hamiltonian (total energy operator)  \\
 Q5. Commutation-relation $\longrightarrow$ [ $\hat {x}, \hat {p}$ ] = i$\hbar$ \\
 
 Significance: \\ 
-$\bullet$ Leads to uncertainty principle  \\    
+
+$\bullet$ Leads to uncertainty principle  \\
+
 $\bullet$ Shows position and momentum, are incompatible observables \\
  
 \paragraph{Test Case B}
 
 Q6. Particle in a box \\
 
-(a) Wavefunction  \\
+(a) Wave-function  \\
  
 Boundary conditions:  \\
   
@@ -1796,7 +1846,7 @@ So:  \\
 
     k = $\frac{{n} \pi}{L}$  \\
 
-Final wavefunction: \\
+Final wave-function: \\
  
 $\psi_n$(x) = $\sqrt{\frac{2}{L}}$ $\sin$ $\left( \frac{{n} \pi {x}}{L} \right)$ \\
  
@@ -1865,7 +1915,7 @@ Q9. Hydrogen-Atom\index{Hydrogen-Atom} \\
  
     $\bullet$ Bound-states\index{Bound-states} \\
 
-$\mathbf{\textbf{Wavefunction-collapse\index{Wavefunction-collapse}}}$   \\
+$\mathbf{\textbf{Wave-function-collapse\index{Wave-function-collapse}}}$   \\
  
 $\bullet$ Before measurement, we have superposition  \\
   
@@ -1875,10 +1925,9 @@ A collapse = Transition from probability to reality$\mathbb R$
 
 
 \paragraph{Additional Notes}
+\noindent
 
-I.  \\  
-
-(a) Completeness  \\
+I.(a) Completeness  \\
 
 A Hilbert space is complete if:  \\
 
@@ -2004,8 +2053,9 @@ Compute: \\
     [$\hat a, \hat a{\dagger}]$ = 1 \\ 
     
 (b) Hamiltonian\index{Hamiltonian} 
-
-$\mathbf{\hat H}$ = $\hbar \omega$ ($\hat a{\dagger} \hat a$ + $\frac{1}{2}$)  \\
+\begin{equation}
+\mathbf{\hat H} = \hbar \omega (\hat a{\dagger} \hat a + \frac{1}{2})
+\end{equation}
 
 (c) Orthonomality\index{Orthonomality}  \\  
 
@@ -2085,7 +2135,7 @@ Classical-Limit\index{Classical-Limit}
 
 $\bullet$ Does not account for a dominant path/stationary action  \\
 
-$\bullet$ Quantu Mechanics recovers Classical Mechanics \\ 
+$\bullet$ Quantum Mechanics recovers Classical Mechanics \\
 
 Quantum Mechanics becomes Linear Algebra, Operator Theory, and Symmetry, NOT just formulas.  \\
 
@@ -2093,7 +2143,8 @@ Quantum Mechanics becomes Linear Algebra, Operator Theory, and Symmetry, NOT jus
 
 \begin{remark}
 
-This appendix covers some of the  Mathematics used in this short exposition of operators, and linear equations. Here you will find the special functions that are relevant to our current application. These require algebraic techniques.  \\
+
+\This appendix covers some of the  Mathematics used in this short exposition of operators, and linear equations. Here you will find the special functions that are relevant to our current application. These require algebraic techniques.  \\
 
 Calculus is also necessary to understand much of this material, for it is always used in advanced topics.  \\
 
@@ -2103,7 +2154,9 @@ Calculus is also necessary to understand much of this material, for it is always
 
 \subsection{Equations}
 
-Plane-waves\index{Plane-waves} $\longrightarrow$ $\psi(x,t)$ = $e^{(ikx - i\omega t)}$; we then differentiate this function to obtain the
+Plane-waves\index{Plane-waves} $\longrightarrow$  \\
+
+$\psi(x,t)$ = $e^{(ikx - i\omega t)}$; we then differentiate this function to obtain the
 Energy, and Momentum operator, using the Chain Rule...and applying Plancks' rule\index{Plancks' rule}(multiplying by i$\hbar$).  \\
 
 $i \hbar \frac{\partial}{\partial t} \psi(x,t)$ = $i \omega e^{(ikx - i \omega t)}$ = $i \omega \psi(x,t)$, seeing the eigenfunction on the left side of the equation(taking the derivative), and the resulting constant eigenvalue on the right hand side of the equation.  \\
@@ -2123,8 +2176,10 @@ Vector and Matrix multiplication $\rightarrow$ A$\vec{v}$ = $ \lambda$ $\vec{v}$
 
 Energy of a photon $\rightarrow$ E = $\hbar \omega$ ; $\vec{P}$ = $\hbar$k ; $\vartriangle$ m = 0(m is for mass); E = Pc \\
 
-Discrete Fourier Transform $\rightarrow$ Consider the space of 2$\pi$ periodic functions f: $\mathbb R$ $\rightarrow$ $\mathbb C$, with a continous 1st derivative;
-We have $E_k(x)$ = $e^{ikx}$, k $\in$ $\mathbb Z$. Using Eulers formula($e^{i \alpha}$ = $\cos \alpha + i \sin \alpha)$; $e^{2 \pi i}$ = 1,  
+Discrete Fourier Transform $\rightarrow$  \\
+
+Consider the space of 2$\pi$ periodic functions f: $\mathbb R$ $\rightarrow$ $\mathbb C$, with a continuous 1st derivative;
+We have $E_k(x)$ = $e^{ikx}$, k $\in$ $\mathbb Z$. Using Eulers' formula($e^{i \alpha}$ = $\cos \alpha + i \sin \alpha)$; $e^{2 \pi i}$ = 1,
 $E_k(x) \text{by substitution}$, $\equiv$ $E_k(x)$ = $\cos(kx) + i \sin(kx)$;  
 Here $E_k$ is an orthonormal set.  \\
 
@@ -2143,7 +2198,7 @@ Since its periodic($\frac{1}{2 \pi}$ $\int_0^{2 \pi}$1 dx = 1, if s = k); With t
 So, we can pass from ($f_0, f_1,...,f_{n-1})$ $\rightarrow$ Fourier coefficients ($c_0,c_1,...,c_{n - 1}$). This is the Discrete Fourier series; A discrete signal capturing frequency information, given that
 $C_k$ = $\frac{1}{\sqrt N}$ $\sum_{j = 0}^{N - 1}$ $f_j$ $e^{ \frac{i 2 \pi {kj}}{N}}$(DFT); Note that $C_k$ = $<E_k \mid f>$ = $\sum_{j = 0}^{N-1}$ $\overline {E_{kj}}$ $f_{j}$, where N is the  number of samples.  \\
 
-Inverse Dicrete Fourier Transform(IDFT) $\rightarrow$  \\
+Inverse Discrete Fourier Transform(IDFT) $\rightarrow$  \\
  
 $f_j$ = $\sum_{k = 0}^{N - 1}$ $C_k$ $E_{kj}$ = $\frac{1}{\sqrt N}$ $\sum_{k = 0}^{N - 1}$ $C_k$ $e^{- \frac{i 2 \pi {kj}}{N}}$.  \\
 
@@ -2179,18 +2234,17 @@ Lowest-Landau-level\index{Lowest-Landau-level} $\rightarrow$  \\
 \end{equation}
 
 \begin{remark}  
-
-Quantum Fourier Transform $\rightarrow$ $U_{QFT}$ is not a Hermitian operator, $U_{QFT}$ $\neq$ $U_{QFT}^{\dagger}$. It creates an equally weighted superposition of states, leaving amplitudes as complex numbers,
-while Hadamard leves them as $\mathbb R$. QFT also allows derivation of Fourier Basis, used in Quantum Mechanics inorder to ease and describe  various calculations involved in the Theory.  
-     
+Quantum Fourier Transform $\rightarrow$ $U_{QFT}$ is not a Hermitian operator,
+$U_{QFT}$ $\neq$ $U_{QFT}^{\dagger}$. It creates an equally weighted superposition of states, leaving amplitudes as complex numbers,
+while Hadamard leves them as $\mathbb R$. QFT also allows derivation of Fourier Basis, used in Quantum Mechanics inorder to ease and describe  various calculations involved in the Theory.
 \end{remark}
 
 Baker-Campbell-Hausedorff Theorem\index{Baker-Campbell-Hausedorff Theorem} $\rightarrow$ \\
-
 \begin{equation}
 \log(e^Xe^Y) = X + \int_{0}^1 g(e^{\text{ad X}} e^{\text{t ad Y}})(Y)dt.
 \end{equation}
-Derivation from Dynkins analysis of Lie group.
+
+For a complete derivation, see Dynkins' analysis of Lie groups.
 
 Perturbed-System\index{Perturbed-System} $\rightarrow$  \\
 
@@ -2227,14 +2281,15 @@ Time evolution Hamiltonian operator\index{Time evolution Hamiltonian operator}, 
 i \frac{d}{dt} \mid \psi \rangle(t) = i \frac{d}{dt} \hat U (t) \mid \psi (0) \rangle = \hat H \hat U(t) \mid \psi(0) \rangle = \hat H \mid \psi (t) \rangle
 \end{equation}
 \noindent
+
 Note that $\frac{d}{dt}$ $\hat U$(t) = $ - \frac{i}{\hbar}$ $\hat H$ $\hat U$(t), its like the Schr$\ddot{o}$inger equation!, and
 $\hat U$(t)|$\psi_n \rangle$ = $e^ \frac{ - iE_nt}{\hbar}$ $\psi_n \rangle$ too. \\
 
 Quantum-jump\index{Quantum-jump} $\rightarrow$ \\
     
-An abrupt projection of a system to an eigenstate $\psi_0$, with a dissipative process(spontaneous emission). \\
+An abrupt projection of a system to an Eigenstate $\psi_0$, with a dissipative process(spontaneous emission). \\
 
-The evolution of the system starts from zero, ruled by the effective Hamiltonian. The modification of $\psi (t)$ by $\mathbf{\textbf{non-observation}}$ of spontaneous emission, reduces the population of the state excited by 1 - $\frac{1}{2} \Gamma$dt, while the groundstate remains unchanged. Every $\mathbf{\textbf{quantum jump}}$ projecting the system into the groundstate constitutes a $\mathbf{\textbf{measurement\index{measurement}}}$.  \\
+The evolution of the system starts from zero, ruled by the effective Hamiltonian. The modification of $\psi (t)$ by $\mathbf{\textbf{non-observation}}$ of spontaneous emission, reduces the population of the state excited by 1 - $\frac{1}{2} \Gamma$dt, while the ground-state remains unchanged. Every $\mathbf{\textbf{quantum jump}}$ projecting the system into the ground-state constitutes a $\mathbf{\textbf{measurement\index{measurement}}}$.  \\
 
 Monte Carlo Wave-function(MCWF) simulation\index{Monte Carlo Wave-function(MCWF) simulation} $\rightarrow$  \\ 
 
@@ -2292,8 +2347,6 @@ Note that [$\partial^\mu, \partial^nu$ = [$\partial^{\mu \nu}$]. The matching-in
                                                                                                                            
 \section{Sampled wave-function distribution}
 \label{Sampled wave-function distribution}
-
-
 
 \begin{figure}[!h]
 \includegraphics[width=10cm]{Ground state search.png}
