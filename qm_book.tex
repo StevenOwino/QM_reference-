@@ -34,6 +34,7 @@
 
 % for running heads
 \usepackage{fancyhdr}
+\usepackage{xcolor}
 %\usepackage{pdfstartpage=1}
 
 
@@ -524,7 +525,7 @@ Angular-momentum\index{Angular-momentum} identity/discrete orientation vector\in
   
 A(t) = $e^{+ \frac{iHt}{h}} \mathbf {A}e^{- \frac{iHt}{h}}$  \\
   
-$\mathbf H$ = $p \hat q - \mathbf L$ \\
+$\hat{\mathbf{H}}$ = $p \hat q - \mathbf L$ \\
  
 ct' = $ \gamma(ct - \beta x)$ \\
  
@@ -535,10 +536,11 @@ $ \mathbf E$ = -$ \frac{\mathbf {\dot A}}{c} - \nabla \varphi$   \\
 $ \forall F \in H L^2(\mathbb C,\mu_\hbar)$, we have:  \\
 \begin{equation}
 \Vert T_\mathbf a F \Vert^2 L^2(\mathbb C^n,\mu_\hbar)
-= (\pi \hbar)^{-n} \int \mathbb C_n  e^{- \hbar \vert \mathbf a \vert^2}  \mathbf e^{-2 \mathbb R (  \bar {\mathbf a} \cdot \mathbf a ) } \vert \mathbf F (\mathbf z + \hbar \mathbf a ) \vert^2  \mathbf e^{- \frac{\vert \mathbf x \vert^2} {\hbar}}  dx  
-= (\pi \hbar)^{-n} \int \mathbb C_n e^{- \frac{\vert \mathbf z + \hbar \vert^2}{\hbar}} \vert \mathbf F(\mathbf z + \hbar \mathbf a) \vert^2 dz  
-= \Vert \mathbf F \Vert^2 L^2  ( \mathbb C^n,\mu \hbar )
+= (\pi \hbar)^{-n} \int \mathbb C_n  e^{- \hbar \vert \mathbf{a} \vert^2}  \mathbf{e}^{-2 \mathbb{R} (\bar{\mathbf{a}} \cdot {\mathbf{a}})} \vert \mathbf F (\mathbf z + \hbar \mathbf a ) \vert^2  \mathbf e^{- \frac{\vert \mathbf x \vert^2} {\hbar}}  dx
+= (\pi \hbar)^{-n} \int \mathbb C_n e^{- \frac{\vert \mathbf z + \hbar \vert^2}{\hbar}} \vert \mathbf F(\mathbf z +\hbar \mathbf a) \vert^2 dz
 \end{equation}
+\noindent
+= $\Vert \mathbf{F} \Vert^2$ $L^2(\mathbb{C^n}$,$\mu \hbar)$  \\
   
 $\prod (e^X)$ = $e^{\pi (X)}$ = $ \sum_{x=0}^\infty \frac{\pi X^m}{m!}$ (Each element is a product of Lie algebra elements. Its power series is finite dimensional, and closed.)  \\
                                                                   
@@ -772,11 +774,13 @@ Note that $[\hat H_{eff}, \hat H^\dagger_{eff}]$ $\neq$ 0, this Hamiltonian also
 
 Measurement-of-a-state\index{Measurement-of-a-state}(indicates a loss of energy) $\longrightarrow$
 \begin{equation}
-\langle \psi | \psi \rangle = \langle \psi_0 | e^{- i \hat H_{eff}(t)} e^{i \hat H_{eff}(t)} | \psi_0 \rangle \rightarrow e^{- \Gamma(t)}.
-\quad (\log_b \text{can take any of the values 2[classical bits], e[the natural logarithm], and base 10[orders of magnitude]);}
+\langle \psi \mid \psi \rangle = \langle \psi_0 \mid e^{- i \hat H_{eff}(t)} e^{i \hat H_{eff}(t)} \mid \psi_0 \rangle \rightarrow e^{- \Gamma(t)}
 \end{equation}
+\noindent
 
-$H_{bin}(p)$ = $ -p \log p - (1 - p) \log (1 - p)$ $\rightarrow$ e.g. $H_{bin}\frac{1}{2}$ = $ - \frac{1}{2} \log \frac{1}{2} - \frac{1}{2} \log \frac{1}{2}$ = $\log 2$
+$\log_b$ $\text{can take any of the values 2[Classical bits], e[the Natural Logarithm], and Base 10[orders of magnitude]}$ \\
+
+$H_{bin}(p)$ = $ -p \log p - (1 - p) \log (1 - p)$ $\rightarrow$ e.g. $H_{bin}(\frac{1}{2})$ = $ - \frac{1}{2} \log \frac{1}{2} - \frac{1}{2} \log \frac{1}{2}$ = $\log 2$  \\
 
 Normalization\index{Normalization} - technical manipulation of Mathematical symbols(to
 eliminate the physical vacuum contribution, and to simplify the one electron contribution).  \\
@@ -795,7 +799,7 @@ Decoherence - The inevitable interaction of a system and its environment(quantum
                                                                          
 Spin(total-angular-momentum)\index{Spin(total-angular-momentum)}/directional quantization) - a particle $\ell$ of non-negative integer or half integer. The Hilbert space for such a particle is
 $\mathscr L^2(\mathbb R^3) \hat \otimes V_{\ell}$, where $V_{\ell}$ is an irreducible projective representation of SO(3)
-of dimension 2$\ell$ + 1  \\
+of dimension 2$\ell$ + 1
 
 Photons - A collection of an indefinite number of indistingishable particles, that obey Bose-Einstein statistics, with integer spin $\mathbb 1$.  \\
 
@@ -862,6 +866,8 @@ Dirac $\delta$ function\index{Dirac $\delta$ function} $\longrightarrow$
     \right.
 \end{equation}
  
+\textcolor{blue}{The function illustrates the limit of a distribution.}  \\
+
 If $\Vert \cdot \Vert$: V $\longrightarrow$ $\mathbb R$, then
 
 \begin{equation}
@@ -918,7 +924,7 @@ Curl\index{Curl} $\longrightarrow$ Measure of the rotation in the vector field a
 Amperes Law(line integral along a closed path) $\longrightarrow$ $\oint \mathbf B \cdot d \mathbf l$ = $\mu_0 \mathbf l_{encl}$, 
 where $\mu_0$ is the magnetic constant, and $l_{encl}$ is the net current enclosed by the path.  \\
   
-Equipartition-principle\index{Equipartition-principle} $\longrightarrow$
+Equi-partition-principle\index{Equi-partition-principle} $\longrightarrow$
 \begin{equation}
 E = \frac{3}{2}kT, \text{where k is the Boltzmans' constant.}
 \end{equation}
@@ -1003,7 +1009,59 @@ Hydrogen\index{Hydrogen} hyperfine split $\longrightarrow$ $\mathbf{\text{Energy
     
 Collision-broadening\index{Collision-broadening} $\longrightarrow$ Distortion of an emitted wave during radiation, thus smearing the spectral line. \\
  
-Inner-product\index{Inner-product} $\longrightarrow$ <A|B> = $\frac{1}{2}tr(A,B^\dagger)$ \\
+See equation \eqref{eq:adjoint-action} \quad \textcolor{blue}{Inner-product}\index{Inner-product} $\longrightarrow$ <A|B> = $\frac{1}{2}tr(A,B^\dagger)$ \\
+
+A Matrix changes  a derivative, so A = $frac{d}{dt}$. To find the transpose of this (A) we need to define
+the Inner Product between two functions x(t) and y(t). \\
+
+The Inner Product changes from the sum of $X_k Y_k$ to the integral of x(t) y(t). \\
+
+Inner product of functions $X^{T}y$ = (X, y) = $\int_{- \infty}^\infty$ x(t)y(t)dt  \\
+
+From this Inner Product, we know the requirement on $A^T$ . The word "adjoint" is more
+correct than "transpose" when we are working with derivatives.  \\
+
+The transpose of a matrix has $(Ax)^{T} \mathbf y$ = $\mathbf{x}^T$ $(A^T \mathbf y)$. The adjoint of A = $\frac{d}{dt}$ has:
+
+(Ax,y) = $\int_{- \infty}^\infty$ $\frac{d}{dt}$ y(t) dt = $(x, A^{T}y)$
+
+Recognize integration by parts. The derivative moves from the first
+function x(t), to the second function y(t). During that move, a minus sign appears.
+This tells us that the transpose of the derivative is minus the derivative.
+
+The derivative is antisymmetric: $\mathbf{A}$ = $\frac{d}{dt}$, and $\mathbf{A^T}$ = ${- \frac{d}{dt}}$. Symmetric matrices
+have $S^T$ = S, antisymmetric matrices have $A^T$ = -A. Linear algebra includes derivatives
+and integrals, because those are both linear.  \\
+
+\textcolor{blue}{This anti-symmetry of the derivative applies to centered difference matrices.} A =  \\
+
+$
+\begin{bmatrix}
+0 & 1 & 0 & 0 \\
+-1 & 0 & 1 & 0 \\
+0 & -1 & 0 & 1 \\
+0 & 0 & -1 & 0
+\end{bmatrix}
+$
+\noindent
+
+\textcolor{blue}{;transposes to} $A^T$ =  \\
+
+$
+\begin{bmatrix}
+0 & -1 & 0 & 0 \\
+1 & 0 & -1 & 0 \\
+0 & 1 & 0 & -1 \\
+0 & 0 & 1 & 0
+\end{bmatrix}
+$
+
+= -A.  \\
+
+And a forward difference matrix transposes to a backward difference matrix, multiplied
+by -1. In differential equations, the second derivative (Acceleration) is symmetric. The
+first derivative (Velocity) is antisymmetric.  \\
+
  
 Entanglement\index{Entanglement} $\longrightarrow$ A Bell state that cannot be expressed as a tensor product of a single qubit state with another single qubit state. \\
  
@@ -1150,15 +1208,18 @@ $\bullet$ (11) virial theorem: one dimension: $\langle$ $\frac{\hat{p}^2}{2m} $ 
 
 $\bullet$ (12) central potential: $\langle \frac{\hat{p}^2}{2m} \rangle$ = $\frac{1}{2}$ $\langle{r}$ $\frac{\partial{V}}{\partial{r}} \rangle $.  \\
 
-$\bullet$ (13) commutator identities: \\
+$\bullet$ (13) \textcolor{blue}{commutator identities:} \\
 
 [A,BC] = [A,B]C + B[A,C] \\
 
-\begin{equation}
+\begin{equation} \label{eq:adjoint-action}
 e^A Be^{-A} = e^{ad_A}B = B + [A,B] + \frac{1}{2!} [A,[A,B]] + \frac{1}{3!} [A,[A,[A,B]]] +...,
 \end{equation}
  
-$\text{This is Hadamards' Lemma using Taylors' expansion, with}$ $(ad_A)$ $\text{as an adjoint action}$; $(ad_A(X)$ = [A,X]).  \\
+$\text{This is Hadamards' Lemma using Taylors' expansion, with}$
+\begin{equation}
+(ad_A) \text{as an adjoint action;}\quad (ad_A(X) = [A,X])
+\end{equation}
 
 Note that $e^A$ $e^B$ $\neq$ $e^{A + B}$ = $e^C$, with C = A + B + $\frac{1}{2}$[A,B] + $\frac{1}{12}$([A,[A,B]] - $\frac{1}{12}$[B[A,B]]) + ...,  
 Its' not evident what the higher terms(...) refer to, although its' been expanded and expressed in terms of commutators. \\
@@ -1191,11 +1252,9 @@ T({u}) = A^{-1} T ({v}) A
 
 $\bullet$ (18) Inner-product\index{Inner-product}:  \\
 
-$\langle{v,v} \rangle$ $\geq$ 0, for all v,  \\
-
-$\langle{v,v} \rangle$ = 0 $\iff$ v = 0, \\
-
-$\langle{u,v} \rangle$ = $\langle{vu} \rangle^*$.  \\
+\begin{equation} \label{eq:Inner-Product}
+\langle{v,v} \rangle \geq 0, for all v, \langle{v,v} \rangle = 0 \iff v = 0, \langle{u,v} \rangle = \langle{vu} \rangle^*
+\end{equation}
 
 $\bullet$ (19) Schwarz inequality:  \\
 \begin{equation}
@@ -1342,9 +1401,7 @@ $\mid \alpha, t \rangle$ = $e^{-i \omega \frac{t}{2}}$ $\mid e^{-i \omega t} \al
 
 $\bullet$ (32) orbital-angular-momentum\index{orbital-angular-momentum} \\
 
-$\hat{L}_x$ = $\hat{y} \hat{p}_z - \hat{z} \hat{p}_y$, $\hat{L}_y$ = $\hat{z} \hat{p}_x - \hat{x} \hat{p}_z$,  \\
-
-$\hat{L}_z$ = $\hat{x} \hat{p}_y - \hat{y} \hat{p}_x$,  \\
+$\hat{L}_x$ = $\hat{y} \hat{p}_z - \hat{z} \hat{p}_y$, $\hat{L}_y$ = $\hat{z} \hat{p}_x - \hat{x} \hat{p}_z$, $\hat{L}_z$ = $\hat{x} \hat{p}_y - \hat{y} \hat{p}_x$,  \\
 
 $[\hat{L}_x, \hat{L}_y]$ = $i \hbar \hat{L}_z$, \\
 
@@ -1840,7 +1897,7 @@ Boundary conditions:  \\
   
 $\bullet$ $\psi$(0) = 0 $\implies$ $\mathbf {B}$ = 0  \\
 
-$\bullet$ $\psi ( \mathbf {L}$) = 0 $\sin ({k}{\mathbf L})$ = 0  \\
+$\bullet$ $\psi ( \mathbf{L}$) = 0 $\sin ({k}{\mathbf L})$ = 0  \\
   
 So:  \\
 
@@ -2110,6 +2167,7 @@ $\bullet$ Solve matrix: \\
     Diagonalize\index{Diagonalize} within subspace \\
 
 VII. Conceptual \\ 
+
 
 Decoherence\index{Decoherence} \\  
 
