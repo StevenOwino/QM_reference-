@@ -1,17 +1,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[a4paper, 10pt, openany]{elegantbook}
+\documentclass[a4paper, 10pt, oneside]{elegantbook}
 \usepackage{amsmath}
-\usepackage{imakeidx} % Recommended for modern LaTeX
+\usepackage{imakeidx}
+\usepackage{hyperref}
+% Recommended for modern LaTeX
 \makeindex[intoc, title=Index, options={-s \jobname.ist}]         % Mandatory command to initialize indexing
 \usepackage[T1]{fontenc}
-\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{pdfpages} % For inserting your cover photo as a PDF
 \usepackage{fancyhdr}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb}
 %\usepackage[pagestyles]{titlesec}
-\usepackage{hyperref}
 \hypersetup{colorlinks} % Comment this line if you don't wish to have colored links
 \pagestyle{fancy}
 \fancypagestyle{plain}{
@@ -70,12 +72,11 @@
 %%newcounter{mytnote}
 %newcommand{\TNote}[1]{%
 %  \refstepcounter{mytnote}%
+%\title{Quantum Mechanics(reference guide)}
 
-\hypertarget{toc}{}
-\title{Quantum Mechanics(reference guide)}
 
 %\subtitle{With magnetic deflection, notes(Theory, barely descriptive)}
-\author{Owino Stephen}
+%\author{Owino Stephen}
 
 \institute{\copyright \the\year{} This book was typeset using \LaTeX{} Program}
 
@@ -89,14 +90,14 @@
 (Ancient Simian Proverb.)}
 
 %\logo{Poussin_graph_planar.svg}
-\cover{infinity.png}
+
+%cover{infinity.png}
 
 \definecolor{customcolor}{RGB}{32,178,170}
 \colorlet{coverlinecolor}{customcolor}
 
 % Patch hyperref to ensure index page numbers remain clickable links
-%\newcommand*{\hyperpage}[1]{\hyperlink{page.#1}{#1}}
-
+%\newcommand*{\hyperpage}[1]{\hyper
 \begin{filecontents}[force]{\jobname.ist}
 headings_flag 1
 heading_prefix "\\par\\penalty-50\\textbf{"
@@ -359,7 +360,24 @@ DP@rint:#1\endcsname\relax\phantom
 
 \begin{document}
 
-%\pagestyle{empty}
+\begin{titlepage}
+    \centering
+    \noindent
+    \includegraphics[width=8cm]{infinity.pdf}
+    %\vspace*{\fill}
+    \vspace*{5cm} % Adjust to push text down from the top
+    {\Huge \textbf{Quantum Mechanics (reference guide)}}\\[2cm]
+    {\Large OWINO STEVE}\\[1cm]
+    \vfill % Pushes the remaining text/publisher info to the bottom
+    {\large STEVE\\ 2026}  %Publisher Name\\ Year
+    \clearpage
+\end{titlepage}
+\thispagestyle{empty} % Removes page number from cover
+\hypertarget{toc}{}
+
+\maketitle
+\thispagestyle{empty}
+\clearpage
 %\pagenumbering{Alph}
 
 %\phantomsection
@@ -373,9 +391,9 @@ DP@rint:#1\endcsname\relax\phantom
 \mbox{}
 %\pagenumbering{arabic}
 
-\maketitle
+%\maketitle
 
-\frontmatter
+%\frontmatter
 \tableofcontents
 
 % Table of Contents
@@ -399,10 +417,10 @@ DP@rint:#1\endcsname\relax\phantom
 \section{Preface}
 
 
-The \emph{cover} is a figure of the infinity symbol \\
+The \emph{cover} is a figure of the infinity symbol. These notes takes broad studying to comprehend. \\
 
 Abstract Mathematics(models of inductive reasoning), is availed to avoid nonsensical answers, and bogus non-differentiable functions. This is the task for the human mind; to see this truth, and preserve it.
-It's accepted that the angular momentum of a closed system is conserved(hence production of particles by conversion of gravitational energy into matter energy, conditioned by Biological factors). The origin of the universe(a Physical picture of a polarizable space, and characterized as young by $\frac{\epsilon} {\epsilon_0}$ ~1, with an energy density when expressed in Newtonian units), is not a reproducible event, and cannot be duplicated in the laboratory. In trying to eliminate the Riemann curvature tensor, there's also the Ricci curvature tensor, assuming the photon travels without a shift in energy or frequency(red shift). There are formidable problems facing String Theory: it has no predictive power, it's a highly sophisticated theoretical laboratory(rather than experimental), it's defined at the Planck energy($10^{19}$ GeV), as any Physical theory that you can possibly come up with, it cannot be tested with the present technology, and it's tightly constrained as much as the graviton emerges as a massless state with spin-2.
+It's accepted that the Angular Momentum of a closed system is conserved(hence production of particles by conversion of gravitational energy into matter energy, conditioned by Biological factors). The origin of the universe(a Physical picture of a polarizable space, and characterized as young by $\frac{\epsilon} {\epsilon_0}$ ~1, with an energy density when expressed in Newtonian units), is not a reproducible event, and cannot be duplicated in the laboratory. In trying to eliminate the Riemann curvature tensor, there's also the Ricci curvature tensor, assuming the photon travels without a shift in energy or frequency(red shift). There are formidable problems facing String Theory: it has no predictive power, it's a highly sophisticated theoretical laboratory(rather than experimental), it's defined at the Planck energy($10^{19}$ GeV), as any Physical theory that you can possibly come up with, it cannot be tested with the present technology, and it's tightly constrained as much as the graviton emerges as a massless state with spin-2.
 Space-time is beyond being verified experimentally, and of the vacua states, only one is needed to be isolated, and the  Cosmological constant is very close to 0. However, in this theory, when there's spontaneous symmetry breaking, one does not know how to keep the Cosmological constant 0, perhaps a solution will be found to isolate the one vacuum.
 
 No space/time for boredom! Have fun, and ask a Physics lab fundamental questions.  
@@ -521,7 +539,7 @@ $\bullet$ On Rational numbers: If (a) $\neq$ 0, there is no rational number($\ma
 
 $\implies$ \\
 
-Angular-momentum\index{Angular-momentum} identity/discrete orientation vector\index{discrete orientation vector}, with Quantum-number\index{Quantum-number}. \quad (In units of $\frac{\hbar}{2\pi}$).  \\
+Angular-momentum\index{Angular-momentum}identity/discrete orientation, with Quantum-number\index{Quantum-number}. \quad (In units of $\frac{\hbar}{2\pi}$).  \\
   
 A(t) = $e^{+ \frac{iHt}{h}} \mathbf {A}e^{- \frac{iHt}{h}}$  \\
   
@@ -1134,7 +1152,7 @@ $\bullet$ Expected-value\index{Expected-value} of the j-th Momentum component $\
   
 \chapter{Physics of the Universe}
 
-\section{Manifolds of pairing maps on an invariant self-adjoint subspace)}
+\section{Manifolds of pairing maps on an invariant self-adjoint subspace}
 
 \subsection{Constants\index{Constants}}
 
@@ -1185,10 +1203,22 @@ $\langle\hat{\mathbf Q} \rangle$ $\equiv$ $\langle\psi,  \\
 \hat{\mathbf Q}\psi \rangle$, $i \hbar \frac{d}{dt} \langle \hat{\mathbf Q \rangle}$ = $\langle[ \hat{\mathbf Q},{\mathbf H}] \rangle$,
 $\hat{\mathbf Q}$ time independent.  \\
 
-$\bullet$ (6) uncertainty:  \\
+$\bullet$ (6) Uncertainty:  \\
+
+Consider Schwarz Inequality. Since $[\sigma^2_Q, \sigma^2_R]$ $\geq$ $(\frac{1}{2i} \langle [\hat{Q}, \hat{R}])^2$,
+\begin{equation}
+[\sigma^2_x, \sigma^2_p] = (\frac{1}{2i} \langle i \hbar \rangle)^2 \implies (\frac{[i \hbar]}{2i})^2
+\end{equation}
+
+ Resulting to [$\frac{\hbar^2}{4}$] \\
+
+So, $\boxed{[\sigma^2_x, \sigma^2_p$] = $\frac{\hbar}{2}}$  \\
+
 $\vartriangle{A} \equiv \vert {A} - \langle \hat{A} \rangle \mathbf{1} \psi \vert$  \\
+
 $(\vartriangle{A})^2$ = $\langle \hat{A}^2 \rangle - \langle \hat{A} \rangle^2 \geq$ 0.  \\
-$\vartriangle{A} \vartriangle{B}$ $\geq$ $\mid$ $\langle \psi$ $\mid$ $\frac{1}{2i}$ $[\hat{A},\hat{B}]$ $\mid$ $\psi$ $\rangle$  \\
+
+$\vartriangle{A} \vartriangle{B}$ $\geq$ $\langle \psi$ \quad $\mid$ $\frac{1}{2i}$ $[\hat{A},\hat{B}]$ \quad $\mid$ $\psi$ $\rangle$  \\
 
 $\bullet$ (7) saturation\index{saturation}: $(\hat{B} - \langle \hat{B} \rangle \mathbb1) \mid \psi \rangle$ = i $\lambda (\hat{A} - \langle \hat{A} \mathbb1)\mid \psi \rangle$, $\lambda \in \Re$.  \\
 $\vartriangle{x} \vartriangle{p} \geq \frac{\hbar}{2}$. For $\psi$ ~ $\exp(- \frac{1}{4} \frac{x^2}{\vartriangle^2})$, \\
@@ -1258,7 +1288,7 @@ $\bullet$ (18) Inner-product\index{Inner-product}:  \\
 
 $\bullet$ (19) Schwarz inequality:  \\
 \begin{equation}
-\mid (u,v) \mid \leq  = \Vert u \Vert \quad  \Vert v \Vert
+\mid (u,v) \mid \leq \Vert u \Vert \quad  \Vert v \Vert
 \end{equation}
 
 $\bullet$ (20) Complex-vector-space\index{Complex-vector-space}:  \\
@@ -1399,9 +1429,12 @@ $\mid \alpha \rangle$ = $e^{-{\frac{1}{2} \mid \alpha \mid^2}}$ $e^\alpha$ $a^\d
 
 $\mid \alpha, t \rangle$ = $e^{-i \omega \frac{t}{2}}$ $\mid e^{-i \omega t} \alpha \rangle$.  \\
 
-$\bullet$ (32) orbital-angular-momentum\index{orbital-angular-momentum} \\
-
-$\hat{L}_x$ = $\hat{y} \hat{p}_z - \hat{z} \hat{p}_y$, $\hat{L}_y$ = $\hat{z} \hat{p}_x - \hat{x} \hat{p}_z$, $\hat{L}_z$ = $\hat{x} \hat{p}_y - \hat{y} \hat{p}_x$,  \\
+$\bullet$ See equation \eqref{eq:orbital-angular-momentum} \quad(32) orbital-angular-momentum\index{orbital-angular-momentum} \\
+\begin{equation}
+\hat{L}_x = \hat{y} \hat{p}_z - \hat{z} \hat{p}_y, \hat{L}_y = \hat{z} \hat{p}_x - \hat{x} \hat{p}_z, \hat{L}_z = \hat{x} \hat{p}_y - \hat{y} \hat{p}_x
+\end{equation}
+\label{eq:orbital-angular-momentum}
+\noindent
 
 $[\hat{L}_x, \hat{L}_y]$ = $i \hbar \hat{L}_z$, \\
 
@@ -1854,10 +1887,12 @@ Describes how a quantum system evolves $\longrightarrow$
 \begin{equation}
 i \hbar \frac{\partial \psi(x,t)}{\partial t} = \left( -\frac{\hbar^2}{2m} \frac{ \partial^2}{ \partial x^2} + V(x,t) \right) \psi(x,t) = \hat {H} \psi
 \end{equation}
-   
-$\bullet$ $\psi$(x,t): wave-function (probability amplitude); Had to include (x), the configuration space/trajectory of the particle in (t), to make the equation un-ambigous, although there's no magnetic deflection in the x-axis.\\
 
-One-Dimensional Time-independent Scr$\ddot{o}$dinger Equation $\longrightarrow$ \\
+
+   
+$\bullet$ $\psi$(x,t): The above equation is a wave-function (Probability amplitude).  \\
+
+One-Dimensional Time-independent Schr$\ddot{o}$dinger Equation $\longrightarrow$ \\
 
 -$\frac{i \hbar^2}{2m}$ $\frac{d^2 \psi}{d {X}^2}$ + V$\psi$ = $\hat {H} \psi$  \\
 
@@ -1865,7 +1900,7 @@ Q2. Heisenberg Uncertainty Principle/Minimum uncertainty wave-packet $\longright
 
 $\vartriangle{x} \vartriangle{p}$ $\geq$ $\frac{\hbar}{2}$(Note that $| \frac{i \hbar \langle \psi \mid\psi \rangle}{2i} \mid^2$ = $ \sqrt{\frac{\hbar^2}{4}}$ = $\frac{\hbar}{2}$). \\
 
-$\bullet$ You cannot measure position and momentum precisely at the same time \\
+$\bullet$ You cannot measure Position and Momentum precisely at the same time \\
  
 $\bullet$ More precision in one, less precision in the other \\
 
@@ -1888,6 +1923,7 @@ $\bullet$ Leads to uncertainty principle  \\
 $\bullet$ Shows position and momentum, are incompatible observables \\
  
 \paragraph{Test Case B}
+\noindent
 
 Q6. Particle in a box \\
 
@@ -2126,7 +2162,7 @@ Proof:  \\
 
 V. Advanced Systems \\ 
 
-Angular-momentum\index{Angular-momentum}  \\ 
+Angular-Momentum\index{Angular-Momentum}  \\
 
 (a) Lie Algebra \\ 
 
@@ -2505,4 +2541,5 @@ Contour Integrals $\rightarrow$ If the function f(z) has isolated singularities 
 \end{enumerate}
 
 \printindex
+\label{sec:index}
 \end{document}
