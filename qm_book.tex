@@ -10,6 +10,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{pdfpages} % For inserting your cover photo as a PDF
+\usepackage{makecell}
+\usepackage{tabularx}
 \usepackage{fancyhdr}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb}
@@ -37,7 +39,12 @@
 % for running heads
 \usepackage{fancyhdr}
 \usepackage{xcolor}
+\usepackage{booktabs} % For professional horizontal lines (\toprule, \midrule, \bottomrule)
+\usepackage{enumitem} % For tight list spacing using "nosep"
+\usepackage{tabularx} % For auto-wrapping text columns to text width
+%\usepackage{array} % Required for enhanced table controls
 %\usepackage{pdfstartpage=1}
+\usepackage{ragged2e,array,booktabs}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -539,7 +546,7 @@ $\bullet$ On Rational numbers: If (a) $\neq$ 0, there is no rational number($\ma
 
 $\implies$ \\
 
-Angular-momentum\index{Angular-momentum}identity/discrete orientation, with Quantum-number\index{Quantum-number}. \quad (In units of $\frac{\hbar}{2\pi}$).  \\
+Angular-momentum\index{Angular-momentum} \text{identity/Discrete orientation, with Quantum-number}\index{Quantum-number}. \quad (In units of $\frac{\hbar}{2\pi}$).  \\
   
 A(t) = $e^{+ \frac{iHt}{h}} \mathbf {A}e^{- \frac{iHt}{h}}$  \\
   
@@ -605,7 +612,7 @@ Fourier-transform($\mathcal{F})$\index{Fourier-transform} $\longrightarrow$ A co
 $C_c^{\infty}(\mathbb {R^n})$ $\longrightarrow$ Space of smooth, compactly supported functions\index{Space of smooth, compactly supported functions} \\
 \end{note}
 
-\subsection{\textbf{Common nomenclecture}}
+\section{\textbf{Common nomenclacture}}
 \paragraph{Nomenclecture}
 \begin{enumerate}
     \item Written in polar coordinates, $\rho$ and $\theta$ are in the unit circle; When $\rho < 1$, we have the series u = $ \sum_{\nu=1}^\infty a_\nu \rho^{\nu} \cos \nu \theta$  
@@ -639,7 +646,7 @@ I would like to appreciate \LaTeX{} ,  and
 
 \chapter{Physical Ideas that captivate}
 
-\paragraph{Characteristics of describing Energy}
+\section{Characteristics of describing Energy}\label{sec:Characteristics of describing Energy}
 
 There is NO electronic ink for philosophical arguments! i.e. local realism does not exist, 
 how long will $\mathbb Z$ remain a bachelor, cold fusion, climate change, singularities, why wave-functions overlap, determinism, 
@@ -671,7 +678,9 @@ show how these observables change in time.
 Keep in mind, we've evolved from thinking the Sun was static, (It is a linear combination of a stationary state[ not static], its' probablities don't change!!, and that it revolved around the Earth{a linear combination of a stationary state, with no changing probabilities), it's now the other way around.  \\
 
 \begin{figure}
+\begin{center}
 \includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{Binary Entropy Diagram.png}
+\end{center}
 \caption{Binary Entropy}
 \label{fig:Binary Entropy Diagram.png}
 \end{figure}
@@ -686,14 +695,16 @@ Keep in mind, we've evolved from thinking the Sun was static, (It is a linear co
   \item \textbf{A4}: Time evolution via the Schr$\ddot{o}$dinger equation.            
 \end{enumerate}
 
-\paragraph{Illustrating vectors\index{vectors}}
+\paragraph{Illustrating Vectors\index{Vectors}} \label{para:Illustrating Vectors}
 
 \begin{figure}
-\includegraphics[width=10cm]{vector pointing towards the Sun.png}
-\caption{vector pointing towards the Sun}
+\begin{center}
+\includegraphics[width=12cm]{Vector pointing towards the Sun.png}
+\end{center}
+\caption{Vector pointing towards the Sun}
 \end{figure}
 
-\section{Some Conceptual Frameworks; The names in color are Nobel prize receipients, and nomenees.}
+\section{Some Conceptual Frameworks; \texttt{The names in color are Nobel prize receipients, and nomenees.}}
 
 $\bullet$ Copenhagen interpretation(s) - $\color{blue}{\text{Bohr, Heisenberg, Pauli}}$, von Weis$\ddot{a}$cker, $\color{blue}{\text{Peierls}}$. \\  
 
@@ -730,28 +741,32 @@ $\bullet$ Spectral Theorem \\
  
 $\bullet$ Linear Algebra(particularly Matrix Theory)  \\
 
-$\bullet$ Continous Functional Calculus(systems of 2nd order differential equations for vector-valued functions, and factoring) \\
+$\bullet$ Continuous Functional Calculus(systems of 2nd order differential equations for vector-valued functions, and factoring) \\
  
 $\bullet$ Measure Theory  \\
 
-$\bullet$ Equipartition theorem(law of equipartition of energy)  \\
+$\bullet$ Equi-partition theorem(law of equi-partition of Energy)  \\
 
 $\bullet$ Electromagnetic theory of light. \\
 
 \end{remark}
 
-\chapter{Definitions}
+\chapter{Terminology}
 \section{Definitions}
 \label{sec:Definitions}
 
 \begin{figure}
+\begin{center}
 \includegraphics[width=10cm]{qho.png}
+\end{center}
 \caption{This is a figure of the Quantum Harmonic Oscillator. It is defined by $E_n$ = ($n + \frac{1}{2}) \hbar \omega$}
 \label{fig:qho.png}
 \end{figure}
 
 \begin{figure}
+\begin{center}
 \includegraphics[width=15cm]{relativistic mass increase.png}
+\end{center}
 \caption{Limit concept of Mass with the Speed of Light}
 \label{fig:relativistic mass increase.png}
 \end{figure}
@@ -1101,13 +1116,17 @@ similar to the Schr$\ddot{o}dinger$ equation, $i\hbar \partial_t \rho(t)$ = $[H,
 Resolution-of-an-dentity\index{Resolution-of-an-dentity} $\longrightarrow$ $\sum_{k_0} \sum_{\mathbf k_1}$ $<k_0|A_0| {\mathbf k_1}><{\mathbf k_1}|A_1|k_0>$ \\
 
 \begin{figure}
+\begin{center}
 \includegraphics[width=10cm]{Anharmonic vs simple Harmonic Oscillator.png}
+\end{center}
 \caption{Representation of Anharmonic vs simple Harmonic Oscillator}
+\begin{center}
 \label{fig:Anharmonic vs simple Harmonic Oscillator.png}
+\end{center}
 \end{figure}
 %\end{Definitions}
 
-\chapter{Ideas}
+\section{Ideas}
 
 $\mathbf{\textbf{Ideas that work[linear, and angular momentum of a field}}$
 
@@ -1152,7 +1171,32 @@ $\bullet$ Expected-value\index{Expected-value} of the j-th Momentum component $\
   
 \chapter{Physics of the Universe}
 
-\section{Manifolds of pairing maps on an invariant self-adjoint subspace}
+\section{Historical Timeline of the Quantization of Light}
+
+\begin{table}[ht]
+\centering
+\caption{Historical Timeline of the Quantization}
+\label{tab:quantization}
+\begin{tabular}{|l|p{6cm}|}
+\hline
+\textbf{Year} & \textbf{Description} \\ \hline
+\textbf{1670--1678}          &  \textbf{Isaac Newton} proposes the corpuscular theory of light, suggesting light consists of particles.  \\ \hline    \textbf{1801}                &  \textbf{Thomas Young} performs the double-slit experiment, demonstrating the wave nature of light. \\    \hline
+\textbf{1864}                &  \textbf{James Clerk Maxwell} formulates the theory of electromagnetism, describing light as an electromagnetic wave.  \\ \hline
+\textbf{1900}                &  \textbf{Max Planck} introduces the concept of quantization to explain blackbody radiation, proposing that energy is emitted or absorbed in discrete packets called \textit{quanta}. \\  \hline
+\textbf{1905}                &  \textbf{Albert Einstein} explains the photoelectric effect using Plancks' quantum hypothesis, suggesting that light consists of discrete packets of energy called \textit{photons}  \\  \hline
+\end{tabular}
+\end{table}
+
+where:  \\
+\noindent
+
+E = h $\nu$ \\
+
+\subsection{Key Takeaways}
+
+The quantization of light marked a paradigm shift in Physics, leading to the development of Quantum Mechanics. Light exhibits both wave-like and particle-like properties, a concept known as $\textbf{wave-particle duality\index{wave-particle duality}}$.
+
+\section{Manifolds of pairing maps on an invariant self-adjoint subspace} \label{sec:Manifolds of pairing maps on an invariant self-adjoint subspace}
 
 \subsection{Constants\index{Constants}}
 
@@ -2475,9 +2519,10 @@ That is, if [ f(x) = f(x) g(x) ], then [ f(x) = $f^{'}(x) g(x) + g^{'}(x) f(x)$ 
 
 This means that the derivative of a product of two functions is the derivative of the first function times the second function, plus, the derivative of the second function times the first function.
 
+
 \begin{enumerate}
-\item Quotient Rule
-\item Power Rule
+\item \textbf{Quotient Rule}
+\item \textbf{Power Rule}
 \end{enumerate}
 
 Chain Rule $\rightarrow$ Let f and g be functions. $\forall$ x in the domain of g, for which g is differentiable at x, and f is differentiable at g(x), the derivative of the composite function h(x) = f(g(x) is given by
