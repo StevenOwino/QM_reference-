@@ -14,6 +14,8 @@
 \usepackage{tabularx}
 \usepackage{fancyhdr}
 \usepackage[utf8]{inputenc}
+%\inputpackage{csquotes}
+%\allowdisplaybreaks
 \usepackage{amssymb}
 %\usepackage[pagestyles]{titlesec}
 \hypersetup{colorlinks} % Comment this line if you don't wish to have colored links
@@ -45,7 +47,6 @@
 %\usepackage{array} % Required for enhanced table controls
 %\usepackage{pdfstartpage=1}
 \usepackage{ragged2e,array,booktabs}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Interlude:  Set up PRINTING (default) or SCREEN VIEWING %%%%
@@ -93,8 +94,8 @@
 
 \bioinfo{Bio}{https://github.com/StevenOwino}
 
-\extrainfo{What one fool can do, another can.
-(Ancient Simian Proverb.)}
+\extrainfo{The principles of reality are atoms, and emptiness, while other things are mere opinion.
+(Democritus)}
 
 %\logo{Poussin_graph_planar.svg}
 
@@ -115,7 +116,7 @@ heading_suffix "}\\par\\nobreak"
 
 %\newcommand{\DPPageSep}[2]{\Pagelabel{#2}}
 
-\def\ebook{43}
+%\def\ebook{43}
 
 %% Macro for reducing space between adjacent display environments
 \newcommand{\CancelMathSkip}{\vspace{-\belowdisplayskip}}
@@ -373,10 +374,10 @@ DP@rint:#1\endcsname\relax\phantom
     \includegraphics[width=8cm]{infinity.pdf}
     %\vspace*{\fill}
     \vspace*{5cm} % Adjust to push text down from the top
-    {\Huge \textbf{Quantum Mechanics (reference guide)}}\\[2cm]
+    {\Huge \textbf{Quantum Mechanics reference guide}}\\[2cm]
     {\Large OWINO STEVE}\\[1cm]
     \vfill % Pushes the remaining text/publisher info to the bottom
-    {\large STEVE\\ 2026}  %Publisher Name\\ Year
+    {\large S\\ 2026}  %Publisher Name\\ Year
     \clearpage
 \end{titlepage}
 \thispagestyle{empty} % Removes page number from cover
@@ -463,10 +464,11 @@ Don't try to read these notes linearly, instead, come back here as a formula ref
 \item Vector pointing towards the Sun
 \item Quantum Harmonic Oscillator
 \item Anharmonic vs simple Harmonic Oscillator
-\item Relativistic mass increase
+\item Relativistic Mass increase
 \item Ground state search
-\item Sampled wave function distribution
+\item Sampled wave-function distribution
 \item Breit-Wigner distribution
+\item Stern-Gerlach projection
 
 \end{enumerate}
 
@@ -527,7 +529,7 @@ $\bullet$ Informational Warning: All descriptions here are in the literature, an
 $\bullet$ On Rational numbers: If (a) $\neq$ 0, there is no rational number($\mathbb Q$), where (b) $\times$ 0 = (a), can be fulfilled. \\
 
 
-\chapter{\textbf{Familiar, recognized, and understood equations}}
+\chapter{\textbf{Familiar, Recognized, And Understood Equations}}
 \label{ch:Familiar, recognized, and understood equations}
 
  If $ \frac{d \alpha} {dt} $ = 0 $\forall$ t, then $\alpha$ is constant \\
@@ -644,7 +646,7 @@ I would like to appreciate \LaTeX{} ,  and
 
 \includegraphics[width=2cm]{overleaf_wide_colour.pdf}, for making ""learning coding" possible, for industry standards.
 
-\chapter{Physical Ideas that captivate}
+\chapter{Physical Ideas That Captivate}
 
 \section{Characteristics of describing Energy}\label{sec:Characteristics of describing Energy}
 
@@ -655,16 +657,16 @@ Ultra-cold atoms(lock-stepped with the same spin),
 have been realized in the laboratory(Bose-Einstein condensate[BEC]), 
 through observing the center of mass system(a trick) of wave-like
 properties of atoms, so that the Pauli exclusion principle is NOT violated. 
-This technology, although limited(interaction with the external enviroment depolarizes particles) has applications
+This technology, although limited(interaction with the external envinroment depolarizes particles) has applications
 in quantum computers(cryptography - quantum key distribution ; Refer to figure \ref{fig:Binary Entropy Diagram.png}),
 and is realized only for very low temperature Kelvin scales, not for classical computers. 
 Even the speed of light (c) - has been stopped!, using slow light pulses. 
 The wave-particle duality(using a super-computer) was proved by an experiment in 1974 by 
 John Clauser( concludes that the wave-function collapse is an objective $\mathbb R$ process - not a physical process,
-and not relativistic invariant - agreed). The idea of measurement of the wave-function with any apparatus(alters the azimuthal quantum number/angular momentum of the orbital plane - resulting to
+and not Relativistic Invariant - agreed). The idea of measurement of the wave-function with any apparatus(alters the azimuthal quantum number/angular momentum of the orbital plane - resulting to
 a breakup of eigenvalues into a one-dimensional representation cylindrical symmetry of 2j + 1, from spherical symmetry of j.                  
 Why, currently no answer/solutions...maybe its' even a wrong question. Considering Faradays' Law, knowing
-the Fourier transform, invoke a linear and orthogonal tranformation to Stokes' theorem, generalizing how the electric field remains constant,
+the Fourier transform, invoke a linear and orthogonal transformation to Stokes' theorem, generalizing how the electric field remains constant,
 the magnetic field too (curl$\mathbf E$) = - ($\frac{\partial \mathbf B}{\partial t}$), with $\iint_s \mathbf F dS$ = $\int_c \mathbf F dt$,
 where C is a closed curve, and $\mathbf F$ is a vector field defined in $\mathbb C$. It can be calculated by making the electric field constant,
 and varying the magnetic field e.g.
@@ -688,10 +690,14 @@ Keep in mind, we've evolved from thinking the Sun was static, (It is a linear co
 . For any questions, suggestion or comment, feel free to contact me on GitHub \href{https://github.com/StevenOwino}{issues} or email me at \email{stowino21@gmail.com}.
 
 \paragraph{Axioms of Quantum Mechanics}
+\noindent
+
+In Dirac notation, an element of space state is a Ket($\mid \quad \rangle$). Time at $t_0$ is defined by specifying a Ket $\mid \Psi(t_0) \rangle$, belonging to  a Vector space.  \\
+
 \begin{enumerate}
-  \item \textbf{A1}: The wavefunction is the complete description of a quantum system.
-  \item \textbf{A2}: Hernitian operators are observables.                             
-  \item \textbf{A3}: The measurement axiom.                                           
+  \item \textbf{A1}: The wave-function is the complete description of a quantum system of an abstract vector space(state space $\epsilon$).
+  \item \textbf{A2}: Hermitian operators are observables.
+  \item \textbf{A3}: The measurement axiom; A measurable physical quantity A, is described by an observable A, acting on $\epsilon$.
   \item \textbf{A4}: Time evolution via the Schr$\ddot{o}$dinger equation.            
 \end{enumerate}
 
@@ -802,7 +808,9 @@ Shannon entropy(classical information theory) $\longrightarrow$
 H(X) = \mathbf E(\log_b P(X)) = - \sum_x P(x) \log_b P(x), \text{where H is for Shannon,} \mathbf E \text{is the expectation/average value, X is a variable, and P is probabilities}
 \end{equation}
   
-State-reduction\index{State-reduction} $\longrightarrow$ The effective two-level Hamiltonian( $\hat H_{eff}$ = $\begin{pmatrix}0 & \Omega \cr \Omega & \vartriangle - i \frac{\Gamma}{2} \end{pmatrix} )$, dissipating via spontaneous emission, during "measurement", included in the dynamics(A Quantum trajectory is NOT reversible).
+State-reduction\index{State-reduction} $\longrightarrow$
+
+The effective two-level Hamiltonian( $\hat H_{eff}$ = $\begin{pmatrix}0 & \Omega \cr \Omega & \vartriangle - i \frac{\Gamma}{2} \end{pmatrix} )$, dissipating via spontaneous emission, during "measurement", included in the dynamics(A Quantum trajectory is NOT reversible).
 Note that $[\hat H_{eff}, \hat H^\dagger_{eff}]$ $\neq$ 0, this Hamiltonian also generates a non-unitary dynamics $e^{- i \hbar_{eff}(t)}$ $\neq$ $e^{i \hat H^\dagger_{eff}(t)}$  \\
 
 Measurement-of-a-state\index{Measurement-of-a-state}(indicates a loss of energy) $\longrightarrow$
@@ -877,9 +885,9 @@ s = (\psi \circ q ) \otimes \sqrt{q^*(\beta)}
 A measurable-function\index{measurable-function} $\psi$: X $\longrightarrow$ $\mathbb C$ is said to be integrable,
 if $\int_X$ $\mid \psi \mid$ d$\mu$ < $\infty$    \\
 
-Density of
+Density of $\mu$ w.r.t. $\nu$ $\longrightarrow$
 \begin{equation}
-\mu \quad w.r.t. \quad \nu \longrightarrow \mu(E) = \int_E \rho \quad d\mu \quad \forall E \in \omega
+\mu(E) = \int_E \rho \quad d\mu \quad \forall E \in \omega
 \end{equation}
 
 supposing $\mu$ and $\nu$ are two $\sigma$-finite measures on a measure space(X,$\Omega$), 
@@ -967,16 +975,20 @@ See page \pageref{Sampled wave-function distribution} $\text{for Ground-state}$ 
 Equilibrium position $\longrightarrow$ An electron in a stable innermost orbit/lowest energy state(most negative), and cannot fall into the nucleus.
 (Its positive definite at its local minimum, hence its Energy is $\frac{\hbar \omega}{2 \pi}$ at 0). The equality $\frac{\hbar \omega}{2 \pi}$ is the Minimum Energy. $\psi_0$(x) = $(2 \pi \sigma^2)^{- \frac{1}{4}}$ $e^{- \frac{x^2}{4 \sigma^2}}$, with $\sigma^2$ = $\frac{\hbar}{2m \omega}$, and E = $\frac{\hbar \omega}{2}$. \\
  
-Pauli-exclusion-principle\index{Pauli-exclusion-principle} $\longrightarrow$ No two or more electrons in an atom, can have the same value, for any of the four quantum numbers. \\
+Pauli-exclusion-principle\index{Pauli-exclusion-principle} $\longrightarrow$ No two or more electrons in an atom(Fermions), can have the same value, for any of the four quantum numbers. \\
  
 Self-adjoint $\longrightarrow$ $T(F(\phi), \psi)$ = $T(F(\psi), \phi)$ = $T(\phi, F(\psi))$  \\
  
 Eigenvalue-equation\index{Eigenvalue-equation} $\longrightarrow$ An equation, where the operator, operating on a function, produces a constant, times the function. [The function is called 
 an Eigenfunction, and the resulting numeric is called the Eigenvalue]. Eigen here is the German word meaning self, or own.  \\
                
-Hamiltonian-energy\index{Hamiltonian-energy}(discrete) $\longrightarrow$ $\hat {\mathbf H}$ = $\frac{1}{2} m \omega^2_c \hat {r}^2_c$: This is the Kinetic Energy of
-a particle of Mass m with Cyclotron Frequency $\omega_c$, and radius $\hat {\mathbf {r}_c}$ \\
- 
+Hamiltonian-energy\index{Hamiltonian-energy}(discrete)   $\longrightarrow$
+\begin{equation}
+\hat {\mathbf H} = \frac{1}{2} m \omega^2_c \hat {r}^2_c
+\end{equation}
+
+\text{This is the Kinetic Energy of a particle of Mass m with Cyclotron Frequency} $\omega_c$, $\text{and radius}$ $\hat {\mathbf {r}_c}$.
+
 Dirac equation $\longrightarrow$
 \begin{equation}
 i \hbar \frac{\partial \psi}{\partial t} =  \left[ c {\mathbf \alpha} \cdot \hat {\mathbf p} + \frac{e}{c} {\mathbf A} + {\beta m} {c^2} + V(r) \right] \psi
@@ -994,7 +1006,7 @@ E $\rightarrow$ $P^{A}_{f^{-1}(E)}$. Note that the operators corresponding to th
 quantum system are obtainable as infinitesimal generators of certain one-parameter groups\index{groups} of unitary operators. \\
                                                                         
 Eigenvector\index{Eigenvector} of a self-adjoint operator $\longrightarrow$ A state in which the corresponding observable takes
-on the corresponding Eigenvalue\index{Eigenvalue} with probability $\mathbf 1$ \\
+on the corresponding Eigenvalues\index{Eigenvalues} with probability $\mathbf 1$ \\
  
 Von Neumann-density-matrix\index{Von Neumann-density-matrix} $\longrightarrow$ The matrix of an operator\index{operator} defining a mixed state.  \\
   
@@ -1042,7 +1054,7 @@ Hydrogen\index{Hydrogen} hyperfine split $\longrightarrow$ $\mathbf{\text{Energy
     
 Collision-broadening\index{Collision-broadening} $\longrightarrow$ Distortion of an emitted wave during radiation, thus smearing the spectral line. \\
  
-See equation \eqref{eq:adjoint-action} \quad \textcolor{blue}{Inner-product}\index{Inner-product} $\longrightarrow$ <A|B> = $\frac{1}{2}tr(A,B^\dagger)$ \\
+See Eq. \eqref{eq:adjoint-action} \quad \textcolor{blue}{Inner-product}\index{Inner-product} $\longrightarrow$ <A|B> = $\frac{1}{2}tr(A,B^\dagger)$ \\
 
 A Matrix changes  a derivative, so A = $frac{d}{dt}$. To find the transpose of this (A) we need to define
 the Inner Product between two functions x(t) and y(t). \\
@@ -1130,8 +1142,8 @@ Resolution-of-an-dentity\index{Resolution-of-an-dentity} $\longrightarrow$ $\sum
 
 $\mathbf{\textbf{Ideas that work[linear, and angular momentum of a field}}$
 
-$\bullet$ A perfect crystal lattice is effectively empty, for an electron in the lowest band, 
-even though the space is full of atoms  \\
+$\bullet$ A perfect crystal lattice( i.e. a One-Dimensional system) is effectively empty, for an electron in the lowest band,
+even though the space is full of atoms.  \\
 
 $\bullet$ The absolute value of Energy is equivalent to the fraction of a reduced mass of a proton-electron system, times Charge to the fourth power,
 over twice an integer squared times the square of the Plancks' constant $\longrightarrow$ $|E|$ = $\frac{\mu Q^4}{{2n^2} \hbar^2}$  \\
@@ -1146,7 +1158,7 @@ $\bullet$ Pairing maps $\longrightarrow$ $\int_\mathbb R$ $\overline {\int_\math
  
 $\bullet$ Dirac $\delta$ function $\longrightarrow$ $\delta_xi$ = $\xi$(0)  \\
 
-$\bullet$ Faradays Law(The Electric field is the negative of the rate of change of the corresponding Magnetic field w.r.t time) $\longrightarrow$ $curl \mathbf E$ = - $\frac{\partial \mathbf B}{\partial t}$ \\
+$\bullet$ Faradays' Law(The Electric field is the negative of the rate of change of the corresponding Magnetic field w.r.t time) $\longrightarrow$ $curl \mathbf E$ = - $\frac{\partial \mathbf B}{\partial t}$ \\
  
 Linear-system\index{Linear-system} $\longrightarrow$ Its properties satisfy a finite-dimensional vector space, has a posive-definite quadratic form,
 and is independent. \\
@@ -1192,14 +1204,17 @@ where:  \\
 
 E = h $\nu$ \\
 
+
 \subsection{Key Takeaways}
 
 The quantization of light marked a paradigm shift in Physics, leading to the development of Quantum Mechanics. Light exhibits both wave-like and particle-like properties, a concept known as $\textbf{wave-particle duality\index{wave-particle duality}}$.
 
 \section{Manifolds of pairing maps on an invariant self-adjoint subspace} \label{sec:Manifolds of pairing maps on an invariant self-adjoint subspace}
 
-\subsection{Constants\index{Constants}}
 
+
+
+\section{Constants\index{Constants}}
 $\mathbf{\textbf{A few constants:}}$  \\
 
 $\hbar$*c $\simeq$197.327 MeV $ \cdot$ fm  \\
@@ -1278,11 +1293,14 @@ $\bullet$ (9) variational-principle\index{variational-principle}: $E_{gs} \leq \
 
 $\bullet$ (10) Hellmann-Feynmann: $\hat{H}$ $(\lambda)$ $\psi_n$ $(\lambda)$ = $E_n$ $(\lambda)$ $\psi_n$ $(\lambda)$ $\longrightarrow$ $\frac{dE_n (\lambda) } {d \lambda} $ = $\langle \psi_n (\lambda), \frac{d \hat{\mathbf H}{\lambda}} {d \lambda} \Psi_n(\lambda) \rangle$.  \\
 
-$\bullet$ (11) virial theorem: one dimension: $\langle$ $\frac{\hat{p}^2}{2m} $  $\rangle $ = $\frac{1}{2}$ $\langle \hat{x}$  $\frac{dV}{dx}$ $\rangle$  \\
+$\bullet$ (11) virial Theorem: One dimension/Single particle moving under a central potential:
+\begin{equation} \label{eq:virial Theorem}
+\langle \frac{\hat{p}^2}{2m} \rangle = \frac{1}{2} \langle \hat{x}  \frac{dV}{dx} \rangle
+\end{equation}
 
-$\bullet$ (12) central potential: $\langle \frac{\hat{p}^2}{2m} \rangle$ = $\frac{1}{2}$ $\langle{r}$ $\frac{\partial{V}}{\partial{r}} \rangle $.  \\
+$\bullet$ (12) Central potential: $\langle \frac{\hat{p}^2}{2m} \rangle$ = $\frac{1}{2}$ $\langle{r}$ $\frac{\partial{V}}{\partial{r}} \rangle $.  \\
 
-$\bullet$ (13) \textcolor{blue}{commutator identities:} \\
+$\bullet$ (13) \textcolor{blue}{Commutator Identities:} \\
 
 [A,BC] = [A,B]C + B[A,C] \\
 
@@ -1473,9 +1491,9 @@ $\mid \alpha \rangle$ = $e^{-{\frac{1}{2} \mid \alpha \mid^2}}$ $e^\alpha$ $a^\d
 
 $\mid \alpha, t \rangle$ = $e^{-i \omega \frac{t}{2}}$ $\mid e^{-i \omega t} \alpha \rangle$.  \\
 
-$\bullet$ See equation \eqref{eq:orbital-angular-momentum} \quad(32) orbital-angular-momentum\index{orbital-angular-momentum} \\
+$\bullet$ See \eqref{eq:orbital-angular-momentum} for the quantization of $\hat{L_z}$, and $\hat{L^2}$ for angular momentum Eigenvalues\index{Eigenvalues}. \quad (32) orbital-angular-momentum\index{orbital-angular-momentum} \\
 \begin{equation}
-\hat{L}_x = \hat{y} \hat{p}_z - \hat{z} \hat{p}_y, \hat{L}_y = \hat{z} \hat{p}_x - \hat{x} \hat{p}_z, \hat{L}_z = \hat{x} \hat{p}_y - \hat{y} \hat{p}_x
+\hat{L}_x = \hat{y} \hat{p}_z - \hat{z} \hat{p}_y, \quad \hat{L}_y = \hat{z} \hat{p}_x - \hat{x} \hat{p}_z, \quad \hat{L}_z = \hat{x} \hat{p}_y - \hat{y} \hat{p}_x
 \end{equation}
 \label{eq:orbital-angular-momentum}
 \noindent
@@ -1518,7 +1536,7 @@ $\psi(r, \theta, \phi)$ = $\frac{u(r)}{r}$ $Y_{\ell m}(\theta, \phi)$,  \\
 
 $ (- {\frac{\hbar^2}{2m}}$ $ \frac{d^2}{dr^2}$ + V(r) + $\frac{\hbar^2 \ell (\ell + 1)} {2mr^2}) u(r) $ = u(r), u(r) $\approx$ $r^{\ell + 1}$, as r $\longrightarrow$ 0.  \\
 
-$\bullet$ (34) Spin one-half\index{Spin one-half}:  \\ 
+$\bullet$ (34) Spin one-half\index{Spin one-half} \\
 
 $\hat{H}$ = $- \mu \cdot B$, $\hat{\mu}$ = $ g \frac{e \hbar}{2mc}$ $\frac{1}{\hbar} \hat{S}$,  \\  
 
@@ -1795,10 +1813,32 @@ $\mathbf r > \mathbf a$,  \\
 
 $\tan \delta_{l}$ $\equiv$  - $\frac{\mathbf B_{(l)}}{\mathbf A_{(l)}}$.  \\
 
+\chapter{The Simple Harmonic Oscillator}
 
-\chapter{Sample practice}
+When Energy is quantized, the only allowed values for
+E = $\epsilon \hbar \omega$, are values that yield solutions in the physical Hilbert space: $E_n$ = $(n + \frac{1}{2}) \hbar \omega$, $(n) = 0, 1, 2,...$.  \\
+For each value of (n), the corresponding polynomials is of ($n_{th}$) order, called Hermite polynomials. We know that: $\boxed{[x, p] = i \hbar}$, and that the Hamiltonian $\hat H$ = $\frac{p^2}{2m}$ $\frac{1}{2}$ $m$ $\omega^2 \hat x^2$.The Quantum Harmonic Oscillator is an extension of the Classical Oscillator. We expect that Energy eigenstates, only exist for certain quantized values of (E). This is a differential equation:
+\begin{equation}
+- \frac{\hbar^2}{2m}\frac{d^2 \psi (x)}{d x^2} + \frac{1}{2} m \omega^2 x^2 \psi (x) = E \psi (x)
+\end{equation}
 
-\section{More Useful equations}
+The length scale $L_0$ = $\sqrt{\frac{\hbar}{m \omega}}$, to be called the $\mathbf{\textbf{oscillator size\index{oscillator size}}}$, is as relevant to the harmonic oscillator as the Bohr radius ($a_0$), is to the Hydrogen atom. The ground state energy of the quantum oscillator, is ($\frac{\hbar \omega}{2}$), and ($L_0$), is precisely the Classical oscillation amplitude of an oscillator with that Energy. A recursion relation of ($\epsilon$ = $2n + 1$) must terminate, for us to get an Energy eigenstate. The corresponding physical Energies $E_n$ = $\frac{\hbar \omega}{2}$ $(2n + 1)$ = $\boxed{\hbar \omega$ $(n + \frac{1}{2})$, $n = 0,1,2,...}$.The spectrum of this result is non-degenerate, and all energy eigenstates of the harmonic oscillator are bound states of a one-dimensional potential. The polynomial solutions are normalized Hermite polynomials and satisfy $2^{nd}$ order differential equation. We can write the eigenstate as a function of the physical coordinate (x), from Hermite polynomials. \emph{The Energy eigenstates are real functions of (x)}. We have full orthonormality of the Energy eigenstates $\langle \varphi_n, \varphi \rangle$ = $\delta_{mn}$, from the normalization
+constant ($N_n$), determined from the condition $\langle \varphi_n, \varphi_n \rangle$ = $\int_{- \infty}^\infty$ dx $\varphi_n$ (x) = $1$. ($\hat x)$  and ($\hat p$) are Hermitian operators. All Energy eigenstates satisfy Energy (E),  so E $\geq$ $\frac{1}{2}$ $\hbar \omega$, since $\langle \hat H \rangle_\psi$ = $E$ $\hat p$, is $\frac{\hbar}{i}$ $\frac{\partial}{\partial x}$ in \emph{Position} space, and $\hat x$ is $i \hbar$ $\frac{\partial}{\partial p}$ in \emph{Momentum} space. The normalized ($n_th$) excited state of the simple harmonic oscillator is:
+\begin{equation}
+\varphi_n \equiv \frac{1}{\sqrt N!} \underbrace{\hat a^{+}...\hat a^{+}}_\text{n} \psi_0 = \frac{1}{\sqrt N!} (\hat a^{+})^n \psi_0
+\end{equation}
+Since $\hat N \varphi_n$ = $\varphi_n$, means ($\hat N$) counts the number of creation operators acting on the ground state, and its' Energy is given by:
+\begin{equation}
+E_n = \hbar \omega (n + \frac{1}{2})
+\end{equation}
+$\therefore$ $(\vartriangle x)^2_n$ = $L^2_0$ $(n + \frac{1}{2})$ $\approx$ $L_0 \sqrt{n}$, comparable to the amplitude of the Classical oscillation of a particle with Energy $\hbar \omega n$. Only for the ground state $\phi_0$, does the product of uncertainties saturate the lower bound given by the Heisenberg uncertainty inequality:
+\begin{equation}
+(\vartriangle(x), \vartriangle (p)) \geq \frac{\hbar}{2}
+\end{equation}
+
+\chapter{Sample Practice}
+
+\section{More Useful Equations}
 
 $\bullet$  d'Alemberts' Principle $\longrightarrow$  $\sum_i \langle \mathbf {F}_i(\mathbf c(t),t) - \mathbf {m}_i {c_i(t)}, \mathbf {v}_{i} \rangle$ = 0 $\forall$ tangent vectors $\mathbf v$ at $\mathbf {M}_{\mathbf c(t)}$  \\
 
@@ -1868,13 +1908,15 @@ $\hat j_i$ = ${\hat j_i^{(1)}} \otimes \mathbf{1} + \mathbf{1} \otimes  {\hat j_
 
 $\bullet$ Maxwells'-equations\index{Maxwells'-equations} $\longrightarrow$  \\
 \noindent
-$\nabla \cdot \mathbf E$ = $ \frac{\rho}{\epsilon_0}$ \\ 
+$\nabla \cdot \mathbf E$ = $ \frac{\rho}{\epsilon_0}$ \\
 $\nabla \cdot \mathbf B$ = 0  \\
-$\nabla \times \mathbf E$ = $ - \frac{\partial B}{\partial t}$ \\ 
+$\nabla \times \mathbf E$ = $ - \frac{\partial B}{\partial t}$ \\
 $\nabla \times \mathbf B$ = $\mu_0$  $\left( \mathbf {J} + \epsilon_0 \frac{\partial \mathbf E}{\partial t} \right)$  \\
 
-$\bullet$ Abelian/Commutatitive\index{Abelian/Commutatitive} $\longrightarrow$ $\forall$ a,b $\in$ G, a $\cdot$ b = b $\cdot$ a \\
-
+$\bullet$ Abelian/Commutatitive\index{Abelian/Commutatitive} $\longrightarrow$
+\begin{equation} \label{eq:Abelian/Commutatitive}
+\forall a,b \in G, \quad a \cdot b = b \cdot a
+\end{equation}
 $\bullet$ Matrix representation of 2-D Hilbert space\index{Matrix representation of 2-D Hilbert space} $\longrightarrow$  \\ 
 
 $H^2$ = $\frac{1}{2}$ $\begin{pmatrix}1 & 1 \cr 1 & -1 \end{pmatrix}$ $\begin{pmatrix}1 & 1 \cr 1 & -1 \end{pmatrix}$ = $\begin{pmatrix}1 & 0 \cr 0 & 1 \end{pmatrix}$ = I,  \\  
@@ -2189,8 +2231,8 @@ Compute: \\
  
     [$\hat a, \hat a{\dagger}]$ = 1 \\ 
     
-(b) Hamiltonian\index{Hamiltonian} 
-\begin{equation}
+(b) Hamiltonian\index{Hamiltonian}
+\begin{equation} \label{eq:Hamiltonian}
 \mathbf{\hat H} = \hbar \omega (\hat a{\dagger} \hat a + \frac{1}{2})
 \end{equation}
 
@@ -2220,7 +2262,7 @@ $J_\pm$ = $J_x \pm$ i$J_y$ \\
  
 [$J_z,J_\pm$] = $\pm \hbar J_\pm$  \\  
 
-(c) Eigenvalue\index{Eigenvalue}  \\ 
+(c) Eigenvalues\index{Eigenvalues}  \\
 
 $J^2$ $\mid$ ${jm} \rangle$ = $\hbar^2j(j + 1)| {jm}$ $\rangle$ \\
  
@@ -2276,17 +2318,6 @@ $\bullet$ Does not account for a dominant path/stationary action  \\
 $\bullet$ Quantum Mechanics recovers Classical Mechanics \\
 
 Quantum Mechanics becomes Linear Algebra, Operator Theory, and Symmetry, NOT just formulas.  \\
-
-
-
-\begin{remark}
-
-
-This appendix covers some of the  Mathematics used in this short exposition of operators, and linear equations. Here you will find the special functions that are relevant to our current application. These require algebraic techniques.  \\
-
-Calculus is also necessary to understand much of this material, for it is always used in advanced topics.  \\
-
-\end{remark}
 
 \chapter{Example Functions}
 
@@ -2413,7 +2444,8 @@ Note that (u $\times$ u) = 0,  \\
 $\Vert u  \times v \Vert$ = $\Vert u \Vert$ $\Vert v \Vert \mid \sin \theta \mid$, and $\mid u \cdot v \mid$ = $\Vert u \Vert$ $\Vert v \Vert$ $\mid \cos \theta 
 \mid$.  \\
 
-Time evolution Hamiltonian operator\index{Time evolution Hamiltonian operator}, form a complete basis $\rightarrow$  \\
+Time evolution Hamiltonian operator\index{Time evolution Hamiltonian operator} \label{eq:
+Time evolution Hamiltonian operator}, form a complete basis $\rightarrow$  \\
 
 \begin{equation}
 i \frac{d}{dt} \mid \psi \rangle(t) = i \frac{d}{dt} \hat U (t) \mid \psi (0) \rangle = \hat H \hat U(t) \mid \psi(0) \rangle = \hat H \mid \psi (t) \rangle
@@ -2477,18 +2509,20 @@ $\frac{i \hbar}{m}$ $\int \psi^*$ $\frac{\partial \psi}{\partial x}$ dx \\
  
 [Velocity as motion of expectation, applies to Momentum(p), $\mathbf H$(Hamiltonian total Energy of a system), and Kinetic Energy + Potential Energy\quad(T). \\
 
+Bells' Inequality $\rightarrow$ $\mid P\mathbf{\textbf{(a,b)}}$ - $P(\mathbf{\textbf{a,c)}} \mid$ $\leq$ $1 + P\mathbf{\textbf{(b,c)}}$  \\
+
 Klein-Gordon equation $\rightarrow$ \\
 
 $\frac{1}{c^2}$ $\frac{\partial^2}{\partial t^2}$ - $\nabla^2$ +  $ ( {\frac{m_e c}{\hbar}})^2$] $\psi$ = 0  \\
     
 Note that [$\partial^\mu, \partial^nu$ = [$\partial^{\mu \nu}$]. The matching-index-height rule\index{matching-index-height rule} is satisfied.  \\
-                                                                                                                           
+
 \section{Sampled wave-function distribution}
 \label{Sampled wave-function distribution}
 
 \begin{figure}[!h]
 \includegraphics[width=10cm]{Ground state search.png}
-\caption{Mnimizing energy for a ground-state}.
+\caption{Mnimizing Energy for a ground-state}.
 \label{fig:Ground state search.png}
 \end{figure}
 
@@ -2506,13 +2540,163 @@ Note that [$\partial^\mu, \partial^nu$ = [$\partial^{\mu \nu}$]. The matching-in
 
 \cite{https://citizendium.org/wiki/index.php?title=Particle_in_a_box&oldid=984214}
 
+\chapter{Angular Momentum}
+
+The Angular Momentum of a rigid body rotating with an angular velocity ($\vec{\omega}$) about a fixed axis, and having a moment of inertia (I) matrix elements, with respect to that axis, is given by L = $\mathit{I} \vec{\omega}$ \quad ($\vec{\omega}$ in rad/s).
+The rate of change of angular momentum of a particle equals the torque of the net force acting on it. The moment of inertia about
+some given axis is related to the moment about a parallel axis through the center of mass.  \\
+
+\section{Rigid-Body Rotation}
+
+Any general displacement of a rigid body can be represented by a translation plus a rotation. We split the problem of rigid body motion into two separate phases, one concerned solely with the translational motion of the body, the other, with its' rotational motion. The total
+angular momentum divides naturally into contributions from the translation of the center of mass and, from the rotation about the center of mass.
+
+The total angular momentum will involve the Cartesian coordinates of the center of mass, and
+the Euler angle coordinates. The Potential Energy in a uniform gravitational field will depend only upon the Cartesian vertical coordinate of the center of gravity. The two groups of coordinates will then be completely separated, and the translational and rotational problems can be solved independently of each other. We will link derivatives relative to a coordinate system fixed at some point in the rigid body.
+
+The derivatives relative to any rigid body axes must vanish, and with $\vec{\omega}$ as being the angular velocity vector appropriate to the first coordinate system.The angular momentum vector is related to the angular velocity by a linear transformation. The operator (I), a Tensor of the second rank, acting upon the vector $\vec{\omega}$, results in the physically new vector (L). This rotation can be expressed in terms of the Euler angles ($\phi$), ($\theta$), and ($\psi$). A proper choice of these angles will transform (I) into its diagonal form:
+$(I_D)$ = $\begin{pmatrix}\mathit{I_1} & 0 & 0 \cr 0 & \mathit{I_2} & 0 \cr 0 & 0 & \mathit{I_3} \end{pmatrix}$, where $(I_1)$, $(I_2)$, and $(I_3)$, are the eigenvalues of (I), referred to as the components of the principal moment of inertia tensor. Three roots are the desired principal moments.
+All directions perpendicular to the axis of symmetry are then alike, which is the mark of a double root to the equation. The principal axes are then the symmetry axis, and any two perpendicular axes in the plane normal to the symmetry axis. The principal moments of inertia cannot be negative, because as the diagonal elements in the principal axes system have the form of sums of squares. For one of the principal moments to vanish, all points of the body must be such that two coordinates of each particle are zero. See Figure~\ref{fig:Spinning top.pdf}  \\
+This can happen only if all points of the body are collinear with the principal axis corresponding to the zero principal moment. Any two axes perpendicular to the line of the body will then be the other principal axes. Indeed, this is a limiting case of a body with an axis of symmetry passing through the origin. If two of the roots of the equation are equal, the inertia ellipsoid thus has two equal axes, and is an ellipsoid of revolution. If all three principal moments are equal, the inertia ellipsoid is a sphere.  \\
+It is worth emphasizing that the inertia tensor (I), and all the quantities associated with it(principal axes, principal moments, inertia ellipsoid...), are only relative to some particular point fixed in the body. If the point is shifted elsewhere in the body, all the quantities will in general be changed.The $\vec{\omega}$ vector, will always move such that the corresponding normal to the inertia ellipsoid is in the direction of the angular momentum. In particular, the direction of (L) is fixed in space, and it is the inertia ellipsoid (fixed with respect to the body), that must move in space in order to preserve this connection between $\omega$ and (L). Both $\mathit{T}$, the Kinetic Energy, and $\mathit{L}$, the Angular Momentum, are constants of the motion, and the tangent plane is always a fixed distance from the origin of the ellipsoid. The total angular velocity $\vec{\omega}$ is constant in magnitude, and precesses about the (z) axis with the same frequency. The symmetry axis, is one of the principal axes, and will be chosen as the (z) axis of the coordinate system fixed in the body. Since one point is stationary, the configuration of the top is completely specified by the three Euler angles: ($\theta$) gives the inclination of the (z) axis from the vertical, ($\phi$) measures the azimuth of the top about the vertical, while ($\psi$) is the rotation angle of the top about its own (z) axis. $\mathbf{\textbf{The distance of the center of gravity (located on the symmetry axis), from the fixed point, will be denoted by (I).}}$.The angular velocity of precession, is given by $\dot \phi$ = $\frac{1}{\mathit I_3 \omega_3}$ $\frac{\partial V}{\partial (\cos \theta)}$.There are two examples of precession phenomena in nature: The types of precession that arise from the torques induced by Earths' equatorial “bulge," and the precession of moving charges in
+a magnetic field.  \\
+The Earth is a top whose figure axis, is precessing about the normal to the ecliptic, the plane of Earths' orbit, a motion known astronomically as the precession of the equinoxes. The precession rate, relative to the orbital angular velocity, $\omega_0$, is then: $\frac{\dot \phi}{\omega_0}$ = - $\frac{3}{2}$ $\frac{\omega_0}{\omega_3}$ $\frac{\mathit I_3 - \mathit I_1}{\mathit I_3} \cos \theta$.  \\
+$\theta$ = $23^{\circ} 27^{\prime}$, from the solar-induced precession, such as to cause a complete rotation of the figure axis, about the normal to the ecliptic (plane of Earths' orbit).\\
+Magnetic moment, and the angular momentum also have a similar form. For the Classical gyromagnetic ratio, the precession angular velocity is known as the Larmor-frequency\index{Larmor-frequency}. To first order in $\mathbf{\textbf{B}}$, the effect of a constant magnetic field on a Classical
+system, is to superimpose on its' normal motion, a uniform $\mathbf{\textbf{precession\index{precession}}}$, with $\mathbf{\textbf{angular
+frequency}}$.
+
+
+
+
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=10cm]{Spinning top.pdf}
+\end{center}
+\caption{The relation between $\phi$, $\theta$, and $\psi$}
+\label{fig:Spinning top.pdf}
+\end{figure}
+
+
+
+
+
+
+\chapter{Spin}
+
+This is a property of the universe.  \\
+A two-particle wave-function is a difficult proposition, calculated with $\hat H$, integrated on all dimensions of an indistinguishable particle! See Eq.~ \eqref{eq:Hamiltonian}. Electrons are confined, and DON'T interact.  \\
+
+\paragraph{Quantum Projection}
+\noindent
+
+\textcolor{blue}{Now, for the contradiction of the proposal:}  \\
+Suppose that we have a molecule containing two atoms in a state in which the total spin is zero, and that the spin of each atom is $\frac{\hbar}{2}$, and does not change the total angular momentum. The two atoms will begin to separate, and will soon cease to interact. Their combined spin angular momentum, however, remains equal to zero, because by hypothesis, no torques have acted on the system. If the spin were a Classical angular momentum variable, the interpretation of this process would be as follows: While the two atoms were together in the form of a molecule, each component of the angular momentum of each atom would have a definite value that was always opposite to that of the other, thus making the total angular momentum equal to zero. When the atoms separated, each atom would continue to have every component of its spin angular momentum opposite to that of the other. The two spin-angular-momentum vectors would therefore be $\mathbf{correlated}$. These correlations were originally produced when the atoms interacted in such a way as to $\mathbf{\textbf{form a molecule of zero total spin}}$, but after the atoms separate, the correlations are maintained by the deterministic equations of motion of each spin vector separately, which bring about $\mathbf{\textbf{conservation of each component of the separate spin-angular momentum vectors}}$.
+This means that, a measurement of any component of the spin of atom No. 1 provides, as in Classical Theory, an indirect measurement of the same component of the spin of atom No. 2, without in any way disturbing that particle! For since there is no interaction with particle No. 2, the process of measurement cannot have affected this particle in any way.
+But now let us remember that, in each case, the observer is always free to reorient the apparatus in an arbitrary direction while the atoms are still in flight, and thus to obtain a definite (but unpredictable) value of the spin component in any direction that he chooses. Since this can be accomplished without in any way disturbing the second atom, we conclude that if ERP assumptions are applicable, precisely defined elements must exist in the second atom, corresponding to the simultaneous definition of all three components of its spin. Because the wave-function can specify, at most, only one of these components at a time with complete precision, we are then led to the conclusion that the wave-function does not provide a complete description of all elements of reality existing in the second atom.
+If this conclusion were valid, then we should have to look for a new Theory in terms of which a more nearly complete description was possible. We shall see, however, that the analysis given by ERP involves in an integral way the implicit assumptions that the world is actually made up of separately existing and precisely defined “elements of reality.” Quantum Theory, however, implies a quite different picture of the structure of the world at the microscopic level. This picture leads, as we shall see, to a perfectly rational interpretation of the hypothetical experiment of ERP within the present framework of the Theory. Such correlations can be demonstrated, for example, in a process in which the (z) component of the spin of each atom is measured by allowing each atom to pass through a separate Stern-Gerlach apparatus. After the measurement, the system has been transformed from one that has a indefinite combined angular momentum, $\mathbf{\textbf{The wave-function for a system of zero total spin is the same}}$. Both particles have a positive value together, or that both particles have a negative value together, with the constant phase factor of [$e^\frac{\pm \mu \mathscr H \alpha^{\prime} \vartriangle t(x_1 - x_2)}{\hbar}$], where each atom obtains an opposite momentum corresponding to its opposite spin. Because the apparatus is Classically describable, the apparatus wave-functions [which depend on the axes of $(z_1)$ and $(z2)$], multiply the spin wave-function by phase factors, so that we finally obtain: $\psi$ = $\frac{1}{\sqrt 2}$ $(\psi_{x_1}$ $e^{i \alpha x_1 }$ + $\psi _{x_2}$ $e^{i \alpha x_2})$, where $\alpha x_1$ and $\alpha x_2$ are seperate in the phase factor. We conclude that the value of $\sigma_x$, for each particle is also correlated to that of the other, in such a way that the sum of the two is zero. We see therefore, that the type of correlation of $\sigma_x$ which can develop depends on the sign with which $\psi_{x_1}$ and $\psi{x_2}$ are added, and therefore also on the combined $\mathbf{\textbf{angular momentum}}$.
+We assert that the wave-function (in principle), can provide the most complete possible description of a system,
+that is consistent with the actual structure of matter.
+There are actually no precisely defined “elements of reality” belonging to the $\mathbf{\textbf{electron}}$.
+The $\mathbf{\textbf{probability}}$ for the development of a definite value of any spin component in a suitable process of measurement is proportional to the square of the amplitude of the coefficient of the part of the wave-function corresponding to this component.
+Thus, we must give up the Classical picture of a precisely defined spin variable associated with each atom, and replace it by our Quantum concept of a potentiality, the probability of whose development is given by the wave-function.
+As long as definite phase relations exist between $(x_1)+$ and $(x_2)-$, one cannot categorize (or classify) the system as having a spin which corresponds either entirely to $(x_1)+$ or entirely to $(x_2)-$, with respective probabilities $\mid {x_1+} \mid^2$, and $\mid {x_2-} \mid^2$.
+It is only when the wave-function is an eigenfunction of a given spin component, that the system is certain (in interaction with a suitable apparatus) to develop a predictable value of that spin component.The wave-function therefore describes the propagation of correlated potentialities.
+The concept of spin is a one-to-one correlation, and precisely define Mathematical abstractions.
+
+\paragraph{Self-rotation of the Electron}
+
+Spin is an abstract property(A small rigid particle, rotating about an axis), exceeding the speed of light (C).
+
+
+
+
+
+\chapter{Spherical Harmonics}
+\chapter{Scattering}
+\chapter{Perturbation Theory}
+
+
+\chapter{Related Theorems}
+\paragraph{Blochs' Theorem}\index{Blochs' Theorem}
+\noindent
+
+For periodic potentials, V(x + a) = V(x); So, $\Psi(x + a)$ = $e^{i K a} \Psi(x)$, for some constant K. \\
+
+K = $\frac{2 \pi n}{a}$, n = $0, \pm 1, \pm 2, ....$  \\
+
+$K^2$ = $\frac{2 m E}{\hbar^2}$  \\
+
+$\therefore$ $\Psi(x)$ = $e^{i K a}$ [$A \sin(K(x + a))$ + $B(\cos(K(x + a))$]
+
+\paragraph{Wicks' Theorem}
+\paragraph{Wignar-Eckart Theorem}
+
+\paragraph{virial Theorem} See Eq. \eqref{eq:virial Theorem}
+
+\paragraph{Gram-Schmidt Theorem}
+\paragraph{Optical Theorem}
+\paragraph{Parsevals' Theorem}
+\paragraph{Ritz Theorem}
+
+
+
+
+
+
+
+\paragraph{Steiners' Parallel-Axis Theorem}
+\paragraph{Larmors' Theorem}
+
+
+
+
+
+
+
+
+
+\chapter{Time-Dependent Problems}
+
+There's no possible state with E = 0, as illustrated by Figure \ref{fig:Ground state search.png}; Thus, it is convenient
+to adopt periodic boundary conditions, which require that the wave-function is unaffected by a translation of any of the three Cartesian coordinates.
+
+\chapter{Allowed Energies In Materials, Considering Temperature}
+
+In \url{http:\\pages.cs.wisc.edu/kovar/hall.html},
+
+\chapter{Quanglement}
+\section{Entanglement}
+There is a need to describe systems that extend over macroscopic distances in ways that are inconsistent with Classical ideas. In Quantum Mechanics, two observable particles ($x_1$), and ($x_2$) commute by Eq. \eqref{eq:Abelian/Commutatitive}. How can measurement of particle $(x_2$)s' Momentum, interfere with ($x_1$)s', if they're far apart? The way out of this dilemma within Quantum Mechanics is to suppose that the second measurement, which gives particle 1 a definite Position, does indeed prevent particle 2 from having a definite Momentum, even though the two particles are far apart. The states of the two particles are said to be $\mathbf{entangled}$. When two systems have wave-functions which differ by at most a constant phase factor, they are said to be in the same Quantum state. It is essential that in every measurement, there shall actually be a disturbance arising from the apparatus that destroys all elements of corresponding to observables that do not commute with the measured variable.
+
+\chapter{Problems}
+
+
+
+
+
+
+
 \chapter{Appendix}
+
+
+\begin{remark}
+
+
+This appendix covers some of the  Mathematics used in  exposition of operators, and linear equations. Here you will find the special functions that are relevant to our current application. These require algebraic techniques.  \\
+
+Calculus is also necessary to understand much of this material, for it is always used in advanced topics.  \\
+
+\end{remark}
+
 
 \section{Rules for Continuous Functions[Apply Limit Laws]}
 
 Product Rule $\rightarrow$ Let f(x) and g(x) be differential functions. Then,  \\
 \begin{equation}
-\boxed{\frac{d}{dx}f(x)g(x) = \frac{d}{dx} [ f(x) \cdot g(x) ] + \frac{d}{dx} [ g(x) \cdot f(x)} ]
+\boxed{\frac{d}{dx}f(x)g(x) = \frac{d}{dx} [ f(x) \cdot g(x) ] + \frac{d}{dx} [ g(x) \cdot f(x) ]}
 \end{equation}
 
 That is, if [ f(x) = f(x) g(x) ], then [ f(x) = $f^{'}(x) g(x) + g^{'}(x) f(x)$ ].  \\
@@ -2535,10 +2719,17 @@ Alternatively, if (y) is a function of (u), and (u) is a function of (x), then $
 Contour Integrals $\rightarrow$ If the function f(z) has isolated singularities (poles) inside a closed contour $(\gamma)$, the integral around that contour is equal to
 2$\pi$i times the sum of the residues at those singularities; $\oint _{\gamma} f(z) dz$ = 2 $\pi$i $\sum \text{Res}$ $(f,z_{k})$  \\
 
+\subsection{Rank-of-a-Matrix\index{Rank-of-a-Matrix}}
+
+
+
+
+
 \section{List of experiments}
 
 \begin{enumerate}
 
+\item Franck-Hertz
 \item Davisson-Germer  
 \item Photo-electric effect  
 \item Youngs double-slit 
@@ -2550,7 +2741,21 @@ Contour Integrals $\rightarrow$ If the function f(z) has isolated singularities 
 
 \end{enumerate} 
 
-\subsection{Reference}
+\begin{thebibliography}{99}
+
+
+\bibitem{Mermin}
+N. D. Mermin,  Phys. Rev. Lett. 65, 1838 (1990).
+
+\bibitem{Zweibach}
+B. Zweibach, Mastering Quantum Mechanics, {2022}.
+
+
+\end{thebibliography}
+
+
+\chapter{Reference}
+
 
 \url{https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/CSV?response_type=display} \\
 
