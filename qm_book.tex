@@ -726,9 +726,9 @@ $\bullet$ Objective Collapse Models - Ghiradi-Rimini-Weber, Pearl, $\color{blue}
 
 $\bullet$ Consistent/Decoherent Histories - Griffiths, Omn$\acute{e}$s, $\color{blue}{\text{Gell-Mann}}$, Hartle.  \\
 
-$\bullet$ Superdeterminsm - $\color{blue}{\text{t'Hooft}}$, Hossenfelder.  \\
+$\bullet$ Super-determinsm - $\color{blue}{\text{t'Hooft}}$, Hossenfelder.  \\
                                                 
-$\bullet$ Rational Interpretations - Rovelli \\
+$\bullet$ Rational Interpretations(Loop Quantum Gravity) - Rovelli \\
                                                 
 $\bullet$ Ensemble Interpretations - Ballentine, $\color{blue}{\text{Einstein}}$  \\
                                                 
@@ -1042,8 +1042,8 @@ $\delta_{ij}$ = $\left\{
  
 Tensor/Kronecker-product\index{Tensor/Kronecker-product} of two Spin\index{Spin} one-half state space[needed to calculate the hyperfine-splitting\index{hyperfine-splitting} in the Hydrogen-atom\index{Hydrogen-atom}] $\longrightarrow$  \\
 
-$ \mid 0, 0 \rangle$ =
-$\frac{1}{\sqrt 2}$ $\left( \mid \uparrow \rangle_1 \otimes \mid \downarrow \rangle_2 -  \mid \downarrow \rangle_1 \mid  \otimes \uparrow_2 \right)$ = $\frac{1}{\sqrt 2}$ $\left( \mid \uparrow \downarrow \rangle - \mid \downarrow \uparrow \rangle \right)$  \\
+$ \mid 0, 0 \rangle$ =  \\
+$\frac{1}{\sqrt 2}$ $\left( \mid \uparrow \rangle_1 \otimes \mid \downarrow \rangle_2 - \mid \downarrow \rangle_1 \otimes \mid \uparrow_2 \right)$ = $\frac{1}{\sqrt 2}$ $\left( \mid \uparrow \downarrow \rangle - \mid \downarrow \uparrow \rangle \right)$  \\
   
 Clebsch-Gordan-coefficient\index{Clebsch-Gordan-coefficient}(expansion)/vector coupling/Wigner $\longrightarrow$ \\
 \begin{equation}
@@ -1746,6 +1746,8 @@ $\hat{\mathbf H}$ = $\hat{\mathbf H^{(0)}}$ + $2 \mathbf H' \cos \omega t$,  \\
 w = $\frac{2 \pi}{\hbar} \mid \mathbf V_f \mid^2 \rho(\mathbf E_f)$, \\
 
 w = $\frac{2 \pi}{\hbar} \mid \mathbf H'_f \mid 2 \rho(\mathbf E_f)$  \\
+
+The constant transition rate of Energy to a final state.  \\
 
 %$\hat{\mathbf{\textbf{H}}}$ = $\hat{\mathbf{\textbf{H}^{(0)}}}$ + $V$, \\
 
@@ -2620,11 +2622,23 @@ Spin is an abstract property(A small rigid particle, rotating about an axis), ex
 
 \chapter{Spherical Harmonics}
 
+Space-Inversion, or Parity\index{Parity} transformation property of the wave-function is:  \\
+$Y^m_\ell (\theta, \phi)$ $\rightarrow$ $\boxed{Y^m_\ell(\pi - \theta, \phi + \pi) = (-1)^{\ell}$ $Y^m_\ell$ $(\theta, \phi)}$, $\boxed{\ell = \nu_1 + \nu_2 + \nu_3}$, which is a homogeneous polynomial of rank $\ell$ in the unit vector $\vec{x}$.  \\
+Since $\vec{x}$ = - $\vec{x}$, a spherical harmonic change of sign factor,  \\
+$\implies$
+$\left\{
+\begin{array}{ll}
+   \theta^{'} = \pi - \theta  \\
+   \phi^{'}   = \phi + \pi  \\
+\end{array}
+\right.$
+
+
 \chapter{Scattering}
 
 
 
-\chapter{Time-Dependent Perturbation(The Dirac Analysis)}
+\chapter{Transitions}
 
 Consider Dyson Series, up to the $2_{nd}$ term. The probability of a perturbed wave-function from its' initial state(i), to the final state(f), is given by:
 \begin{equation}
@@ -2642,10 +2656,29 @@ The transition probability of finding the system in a state $\mid \psi_f \rangle
 \end{figure}
 
 \paragraph{Harmonic [Periodic] Perturbation}
+\noindent
 
+The time between the moments of turning the perturbation on or off, is given by:
+\begin{equation}
+\hat V (t) = \hat v e^{i \omega t} + \hat v^{\dagger} e^{ - i \omega t}
+\end{equation}
 
+We have transition probability peaks, when the frequency of the system is $\pm \omega$ $\implies$ RESONANCE. So,  \\
+$\boxed{p_{fi} (t)$ = $\frac{2 \pi t}{\hbar}$ $\Big| \langle \psi_{f} \mid \hat{v} \mid \psi_{i} \rangle \Big|^2$ $\delta(E_f - E_i + \hbar \omega)}$
+and,
+$\boxed{p_{fi} (t)$ = $\frac{2 \pi t}{\hbar}$ $\Big| \langle \psi_f \mid \hat{v}^{\dagger} \mid \psi_{i} \rangle \Big|^2$ $\delta(E_f - E_i - \hbar \omega)}$.  \\
+The \emph{Physical} meaning of the above equations $\implies$ that when the system is excited through perturbation, and if $E_f$ < $E_i$, there's photon energy release $\hbar \omega$, to the potential $\hat V (t)$. This process is called $\mathbf{\textbf{STIMULATED EMISSION}}$. When $E_f$ > $E_i$, we have $\mathbf{\textbf{ABSORPTION}}$. The objective of constant harmonic perturbation, is the result of the transmission rate; The relation of the rate of absorption, and emission is known as the $\emph{condition of Detailed-Balancing\index{ Detailed-Balancing}}$.
 
+\paragraph{Rapid Approximations}
+\noindent
 
+As $e^{i \omega_{fi} t}$ = $\frac{1}{i \omega_{fi}}$ $\frac{\partial e^{i \omega_{fi} t}}{\partial t}$ $\therefore$ \\
+-$\frac{i}{\hbar}$ $\int_0^{\tau}$ $\langle \psi_f \mid \hat V \mid \psi_i \rangle$ $e^{i \omega_{fi} t}$ dt = -$\frac{i}{\hbar \omega_{fi}}$ $\int_0^{\tau}$ $\langle \psi_f \mid \hat V \mid \psi_i \rangle$ $\frac{\partial}{\partial t}$ $e^{i \omega_{fi} t}$ dt  \\
+The approximation is valid only when the time change in the Energy of perturbation during one period of oscillation. If the rate of change ($\hat V$), and hence ($\hat H(t)$) is very small, then $\frac{\partial}{\partial t}$ $\langle \psi_f \mid \hat V \mid \psi_i \rangle$ $\rightarrow$ 0, $\implies$ $p_{fi}$ $\rightarrow$ 0, hence no \emph{transition}. Approximation is applicable only for transitions between discrete states.
+So,
+\begin{equation}
+p_{fi} (t) = \frac{\Big| \langle \psi_f \mid \hat V (t) \mid \psi_i \rangle \Big|^2}{\hbar^2 \omega_{(fi)^2}}
+\end{equation}
 
 
 \chapter{Related Theorems}
@@ -2693,6 +2726,7 @@ There's no possible state with E = 0, as illustrated by Figure \ref{fig:Ground s
 to adopt periodic boundary conditions, which require that the wave-function is unaffected by a translation of any of the three Cartesian coordinates.
 
 \chapter{Allowed Energies In Materials, Considering Temperature}
+\section{Properties of Helium}
 
 In \url{http:\\pages.cs.wisc.edu/kovar/hall.html},
 
@@ -2772,13 +2806,20 @@ Contour Integrals $\rightarrow$ If the function f(z) has isolated singularities 
 
 \begin{thebibliography}{99}
 
-
 \bibitem{Mermin}
 N. D. Mermin,  Phys. Rev. Lett. 65, 1838 (1990).
 
 \bibitem{Zweibach}
-B. Zweibach, Mastering Quantum Mechanics, {2022}.
+B. Zweibach, Mastering Quantum Mechanics, (2022).
 
+\bibitem{Bates}
+D.R.Bates, Vol I-III(Elements(I), Aggregate of Particles(II), Radiation and High Energy Physics(III)), (1961)
+
+\bibitem{Strang}
+G.Strang, Introduction To Linear Algebra(5th Edition), (2016)
+
+\bibitem{Landau}
+L.D.Landau and E.M.Lifshitz, Quantum Mechanics; Non-relativistic Theory(Volume 3), (1977)
 
 \end{thebibliography}
 
@@ -2790,7 +2831,6 @@ B. Zweibach, Mastering Quantum Mechanics, {2022}.
 
 \begin{enumerate}
 
-\item Quantum Theory volumes I-III - David Robert Bates 
 \item Quantum Theory for Mathematicians - Brian C. Hall  
 \item Notes from Sidney Coleman's Physics 253a - Sidney Coleman$^*$  
 \item Courant and Hilbert: Methods of Mathematical Physics volumes I and II - R. Courant and D. Hilbert 
@@ -2806,12 +2846,10 @@ B. Zweibach, Mastering Quantum Mechanics, {2022}.
 \item Physics for Scientists and Engineers - Paul A. Tipler, Gene Mosca  
 \item Understanding Quantum Mechanics - Roland Omn$\acute{e}$s  
 \item A course of modern analysis - E.T.Whittaker, and G.N.Watson  
-\item Handbook of Mathematical Functions; With formulas, Graphs, and Mathematical Tables - Milton Abramowitz, and Irene A. Stegun 
-\item Quantum Mechanics; Non-relativistic Theory(Volume 3) - Lev Landau, Evgeny Lifshitz, Vladimir Berestetskii, and Lev Pitaevsk  
+\item Handbook of Mathematical Functions; With formulas, Graphs, and Mathematical Tables - Milton Abramowitz, and Irene A. Stegun
 \item Zaarur E Schaum's outline of Quantum Mechanics including hundred of solved problems  
 \item Pauli and the Spin-Statistics Theorem - Ian Duck, and E.C.G.Sudarshan 
 \item Lectures on Quantum Mechanics - Dirac Paul A.M.  
-\item Introduction to Linear Algebra - Gilbert Strang  
 \item Quantum Mechanics; Concepts and Applications - Nouredine Zettili  
 \item Riemannian Geometry and Geometric Analsysis - J$\ddot{u}gen$ Jost  
 \item Lectures on Quantum Mechanics - Steven Weinberg
