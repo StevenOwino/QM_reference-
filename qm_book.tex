@@ -374,7 +374,7 @@ DP@rint:#1\endcsname\relax\phantom
     \includegraphics[width=8cm]{infinity.pdf}
     %\vspace*{\fill}
     \vspace*{5cm} % Adjust to push text down from the top
-    {\Huge \textbf{Quantum Mechanics reference guide}}\\[2cm]
+    {\Huge \textbf{Quantum Mechanics basic reference guide}}\\[2cm]
     {\Large OWINO STEVE}\\[1cm]
     \vfill % Pushes the remaining text/publisher info to the bottom
     {\large S\\ 2026}  %Publisher Name\\ Year
@@ -422,6 +422,7 @@ DP@rint:#1\endcsname\relax\phantom
 %\pdfbookmark[0]{Boilerplate}{Boilerplate}
 
 \mainmatter
+
 \section{Preface}
 
 
@@ -728,7 +729,7 @@ $\bullet$ Consistent/Decoherent Histories - Griffiths, Omn$\acute{e}$s, $\color{
 
 $\bullet$ Super-determinsm - $\color{blue}{\text{t'Hooft}}$, Hossenfelder.  \\
                                                 
-$\bullet$ Rational Interpretations(Loop Quantum Gravity) - Rovelli \\
+$\bullet$ Rational Interpretations(Loop Quantum Gravity) - Rovelli (\emph{ Approximates Space using the geometry of a Tetrahedron}) \\
                                                 
 $\bullet$ Ensemble Interpretations - Ballentine, $\color{blue}{\text{Einstein}}$  \\
                                                 
@@ -1823,7 +1824,24 @@ $\mathbf r > \mathbf a$,  \\
 
 $\tan \delta_{l}$ $\equiv$  - $\frac{\mathbf B_{(l)}}{\mathbf A_{(l)}}$.  \\
 
+\chapter{Stationary-State\index{Stationary-State}}
+
+There is time-dependence on a stationary-state. If we separate the variables of the wave-function $\Psi(x,t)$, to $\psi(x)$, and $\phi(t)$, we have a constant on the (t) component: $\psi(x)e^{\frac{-i E}{\hbar}t}$; The probability density of the wave-function(or the magnitude squared), complex conjugated, guarantees oscillation in establishing a \emph{time-independent wave-function:} $\Big| \Psi(x,t) \Big|^2$ = $\psi^{*}(x) e^{ + \frac{i E}{\hbar}t}$ \quad $\psi(x) e^{ - \frac{i E}{\hbar}t}$ = $e^{0} (\psi^{*}(x) \psi(x))$ = $\Big| \psi(x) \Big|^2$, where $\mathbf{e^{0}}$ = $\mathbf{1}$.  \\
+$\therefore$ with an index (n) on the $\psi$'s, and (E), we can obtain the ($n^{th}$) (E) of the time-independent Schr$\ddot{o}$dinger wave-function.  \\
+Stationary, and static aren't the same! \\
+
+In general, $\Psi(x,t)$ = $\sum_{n = 1}^\infty$ $C_n$ $\Psi(x,t)$ = $\sum_{n = 1}^\infty$ $\psi(x) e^{\frac{i E}{\hbar}t}$, with constant ($C_n$ = $a_n + i b_n$). The evolution of the wave-function is Linear, and collapses, when there's a measurement.  \\
+At $t = 0$, the \emph{Initial-State}\index{Initial-State}, $\psi(x,0)$ = $\sum_{n = 1}^\infty$ $C_n$ $\psi_{n} (x)$.  \\
+Any $t^{'}$, can be approximated, with this set of wave-function.
+
+
+
+
+
+
+
 \chapter{The Simple Harmonic Oscillator}
+
 
 When Energy is quantized, the only allowed values for
 E = $\epsilon \hbar \omega$, are values that yield solutions in the physical Hilbert space: $E_n$ = $(n + \frac{1}{2}) \hbar \omega$, $(n) = 0, 1, 2,...$.  \\
@@ -2667,7 +2685,7 @@ We have transition probability peaks, when the frequency of the system is $\pm \
 $\boxed{p_{fi} (t)$ = $\frac{2 \pi t}{\hbar}$ $\Big| \langle \psi_{f} \mid \hat{v} \mid \psi_{i} \rangle \Big|^2$ $\delta(E_f - E_i + \hbar \omega)}$
 and,
 $\boxed{p_{fi} (t)$ = $\frac{2 \pi t}{\hbar}$ $\Big| \langle \psi_f \mid \hat{v}^{\dagger} \mid \psi_{i} \rangle \Big|^2$ $\delta(E_f - E_i - \hbar \omega)}$.  \\
-The \emph{Physical} meaning of the above equations $\implies$ that when the system is excited through perturbation, and if $E_f$ < $E_i$, there's photon energy release $\hbar \omega$, to the potential $\hat V (t)$. This process is called $\mathbf{\textbf{STIMULATED EMISSION}}$. When $E_f$ > $E_i$, we have $\mathbf{\textbf{ABSORPTION}}$. The objective of constant harmonic perturbation, is the result of the transmission rate; The relation of the rate of absorption, and emission is known as the $\emph{condition of Detailed-Balancing\index{ Detailed-Balancing}}$.
+The \emph{Physical} meaning of the above equations $\implies$ that when the system is excited through perturbation, and if $E_f$ < $E_i$, there's photon energy release $\hbar \omega$, to the potential $\hat V (t)$. This process is called $\mathbf{\textbf{STIMULATED EMISSION}}$. When $E_f$ > $E_i$, we have $\mathbf{\textbf{ABSORPTION}}$. The objective of constant harmonic perturbation, is the result of the transmission rate; The relation of the rate of absorption, and emission is known as the $\emph{condition of Detailed-Balancing}$\index{Detailed-Balancing}.
 
 \paragraph{Rapid Approximations}
 \noindent
@@ -2782,7 +2800,8 @@ Alternatively, if (y) is a function of (u), and (u) is a function of (x), then $
 Contour Integrals $\rightarrow$ If the function f(z) has isolated singularities (poles) inside a closed contour $(\gamma)$, the integral around that contour is equal to
 2$\pi$i times the sum of the residues at those singularities; $\oint _{\gamma} f(z) dz$ = 2 $\pi$i $\sum \text{Res}$ $(f,z_{k})$  \\
 
-\subsection{Rank-of-a-Matrix\index{Rank-of-a-Matrix}}
+\section{Hamilton Function}
+\section{Wheeler-De Witt equation}
 
 
 
