@@ -17,6 +17,7 @@
 %\inputpackage{csquotes}
 %\allowdisplaybreaks
 \usepackage{amssymb}
+ \usepackage{afterpage}
 %\usepackage[pagestyles]{titlesec}
 \hypersetup{colorlinks} % Comment this line if you don't wish to have colored links
 \pagestyle{fancy}
@@ -97,7 +98,10 @@
 \extrainfo{The principles of reality are atoms, and emptiness, while other things are mere opinion.
 (Democritus)}
 
-%\logo{Poussin_graph_planar.svg}
+\afterpage{\clearpage}
+
+
+%\logo{infinity.png}
 
 %cover{infinity.png}
 
@@ -131,7 +135,7 @@ heading_suffix "}\\par\\nobreak"
 %  \PadTxt[r]{XVIII.}{#1}\quad%
 %}
 
-\newcommand{\ToCAnchor}{}
+%\newcommand{\ToCAnchor}{}
 
 %\ToCLine[font style]{Chapter}{Title}{label}
 \newcommand{\ToCLine}[4][\scshape]{%
@@ -147,7 +151,7 @@ heading_suffix "}\\par\\nobreak"
 }
 
 \newcommand{\ChapterSkip}{\vspace*{0.1\linewidth}}
-\newcommand{\flushpage}{\clearpage\fancyhf{}\cleardoublepage}
+%\newcommand{\flushpage}{\clearpage\fancyhf{}\cleardoublepage}
 
 % Numbered: \Chapter[Running Head]{number}{Title}
 \newcommand{\Chapter}[3][]{%
@@ -227,7 +231,7 @@ heading_suffix "}\\par\\nobreak"
 \newcommand{\Paragraph}[1]{\medskip\pagebreak[1]\par\textit{#1}}
 
 \newcommand{\Note}[1]{%
-  \clearpage
+  %\clearpage
   \section*{\centering\normalfont\normalsize #1}
 }
 
@@ -362,7 +366,7 @@ DP@rint:#1\endcsname\relax\phantom
 }{%
   \endalign
 }
-\makeatother
+%\makeatother
 
 \pagenumbering{arabic}
 
@@ -371,38 +375,33 @@ DP@rint:#1\endcsname\relax\phantom
 \begin{titlepage}
     \centering
     \noindent
-    \includegraphics[width=8cm]{infinity.pdf}
-    %\vspace*{\fill}
-    \vspace*{5cm} % Adjust to push text down from the top
-    {\Huge \textbf{Quantum Mechanics basic reference guide}}\\[2cm]
+    \includegraphics[width=4.2cm]{infinity.pdf}
+    \vspace*{\fill}
+    \vspace*{1cm} % Adjust to push text down from the top
+    {\Huge \textbf{QM Basic Reference Guide}}\\[2cm]
     {\Large OWINO STEVE}\\[1cm]
     \vfill % Pushes the remaining text/publisher info to the bottom
     {\large S\\ 2026}  %Publisher Name\\ Year
-    \clearpage
+    %\clearpage
 \end{titlepage}
-\thispagestyle{empty} % Removes page number from cover
-\hypertarget{toc}{}
+
+%\newpage
+
+%\thispagestyle{empty} % Removes page number from cover
+%\hypertarget{toc}{}
 
 \maketitle
-\thispagestyle{empty}
-\clearpage
-%\pagenumbering{Alph}
+\afterpage{\clearpage}
 
-%\phantomsection
-%\pdfbookmark[-1]{Front Matter}{Front Matter}
-
-%%%% PG BOILERPLATE %%%%
-%\phantomsection
-%\pdfbookmark[0]{Boilerplate}{Boilerplate}
+%\thispagestyle{empty}
+%\clearpage
 
 \setcounter{tocdepth}{4}
 \mbox{}
 %\pagenumbering{arabic}
 
-%\maketitle
-
 %\frontmatter
-\tableofcontents
+%\tableofcontents
 
 % Table of Contents
 % Redefine headings for table of contents & index
@@ -411,17 +410,7 @@ DP@rint:#1\endcsname\relax\phantom
   CONTENTS.\\
 }
 
-%pagestyle{empty}
-
-
-%\phantomsection
-%\pdfbookmark[-1]{Front Matter}{Front Matter}
-
-%%%% PG BOILERPLATE %%%%
-%\phantomsection
-%\pdfbookmark[0]{Boilerplate}{Boilerplate}
-
-\mainmatter
+%\mainmatter
 
 \section{Preface}
 
@@ -1128,15 +1117,7 @@ similar to the Schr$\ddot{o}dinger$ equation, $i\hbar \partial_t \rho(t)$ = $[H,
   
 Resolution-of-an-dentity\index{Resolution-of-an-dentity} $\longrightarrow$ $\sum_{k_0} \sum_{\mathbf k_1}$ $<k_0|A_0| {\mathbf k_1}><{\mathbf k_1}|A_1|k_0>$ \\
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=10cm]{Anharmonic vs simple Harmonic Oscillator.png}
-\end{center}
-\caption{Representation of Anharmonic vs simple Harmonic Oscillator}
-\begin{center}
-\label{fig:Anharmonic vs simple Harmonic Oscillator.png}
-\end{center}
-\end{figure}
+
 %\end{Definitions}
 
 \section{Ideas}
@@ -2156,7 +2137,7 @@ $\bullet$ Add $\psi$, normalize enlarge set \\
 
 Zorns'-Lemma\index{Zorns'-Lemma} argument:  \\
 
-Maximal orthonormal-set\index{orthonormal-set} = orthonormal basis  \\  
+Maximal orthonormal-set\index{orthonormal-set} = orthonormal basis  \\
 
 (c) Projection is bounded\index{bounded}  \\
 
@@ -2874,6 +2855,16 @@ L.D.Landau and E.M.Lifshitz, Quantum Mechanics; Non-relativistic Theory(Volume 3
 \item Lectures on Quantum Mechanics - Steven Weinberg
 
 \end{enumerate}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=10cm]{Anharmonic vs simple Harmonic Oscillator.png}
+\end{center}
+\caption{Representation of Anharmonic vs simple Harmonic Oscillator}
+\begin{center}
+\label{fig:Anharmonic vs simple Harmonic Oscillator.png}
+\end{center}
+\end{figure}
 
 \printindex
 \label{sec:index}
