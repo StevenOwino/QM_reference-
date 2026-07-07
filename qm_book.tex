@@ -3383,6 +3383,29 @@ Contour Integrals $\rightarrow$ If the function f(z) has isolated singularities 
 
 \section{Hermite Polynomials}
 
+A polynomial multiplying $e^{\frac{(-u)^2}{2}}$ could be a solution of a differential equation. The solution could take the form $\psi$(u) = h(u)$e^{\frac{(-u)^2}{{2}}}$, where h(u) is a polynomial in (u). \\
+
+An Energy parameter $\epsilon$, takes special values. Any function $\phi$(u) can be written as some other function, times $e^{\frac{(-u)^(2)}{2}}$; if h(u), then we've found $\phi$(u), leading to a second-order linear differential equation for h(u):The polynomial solutions $h_n(u)$ is normalized with a specific choice of the
+leading coefficient, and satisfy a diffrential equation. The first few Hermite polynomials are:  \\
+
+$\bullet$ $H_0(u)$ = $1$  \\
+
+$\bullet$ $H_1(u)$ = $2u$  \\
+
+$\bullet$ $H_2(u)$ = $4u^2 - 2$  \\
+
+$\bullet$ $H_3(u)$ = $8u^3 - 12u$  \\
+
+There exists a generating function for Hermite polynomials $H_n(u)$. It is a function of (u), and a formal expansion parameter (z):  \\
+
+$e^{-z^2 + 2zu}$ = $\sum_{n = 0}^\infty$ $\frac{z^n}{n!}$ $H_n(u)$.  \\
+
+Taking a normalization constant $N_n$, and using $H_0(u)$ = $1$, we get:  \\
+
+$\phi_0$(x) = $N_0$ $e^- {\frac{(x)^2}{2L^{2}_0}}$, with $N^{2}_0$ = $\sqrt{\frac{(m) \omega}{\pi \hbar}}$ = $\frac{1}{\sqrt{\pi}L_0}$. \\
+
+The ground-state is a pure Gaussian in (x), and the excited states are \emph{polynomials}, times that same Gaussian.  \\
+
 \begin{tikzpicture}
 \begin{axis}[
     title={First Four Hermite Polynomials},
@@ -3418,7 +3441,111 @@ Contour Integrals $\rightarrow$ If the function f(z) has isolated singularities 
 
 \subsection{Laguerre Polynomials}
 
+ A set of orthogonal polynomials defined over the interval $[0, \infty]$. In Quantum Mechanics, the Schrödinger equation for the Hydrogen-like atom, is solvable by separation of variables, in spherical coordinates. The radial part of the wave-function is a (generalized) Laguerre polynomial.  \\
+
+ A potential (V) is the Coulomb potential $\frac{-Ze^2}{r}$, where (Z) is the atomic number. The reduced mass $\mu$ is nearly equal to the electron mass $m_e$, so $\mu$ $\approx$ $m_e$ can be made.  \\
+
+The hydrogenic radial wave-function is:  \\
+
+$\phi$(r) = $R_{nl}$(r) = $N_{nl}$ $(\frac{2Zr}{na_0})^l$ $e^{\frac{-Zr}{na_0}}$ $\mathbf{\textbf{L}}^{2l + 1}_{n + l}$ $(\frac{2Zr}{na_0})$, where   \\
+
+$a_0$ = $\frac{\hbar^2}{m_e e^2}$, and $N_{nl}$ = $\left[\frac{4Z^3(n - l - 1)!}{n^4a^3_0[(n + l]!]^3} \right]^\frac{1}{2}$, and \\
+
+$L^{2l + 1}_{n + !}$ is an associated \emph{Laguerre polynomial}. The Quantum Numbers in this case have the values l = 0, 1, \ldots, n - 1, and n = 1, 2, \ldots, $\infty$.  \\
+
+Energy eigenvalues for the Hydrogen Atom are given by: $E_n$ = - $\frac{Z^2}{2n^2}$ $\frac{e^2}{a_0}$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{tikzpicture}
+\begin{axis}[
+    title={Laguerre Polynomials $L_n(x)$},
+    xlabel={$x$},
+    ylabel={$L_n(x)$},
+    xmin=0, xmax=5,
+    ymin=-2, ymax=5,
+    grid=major,
+    axis lines=middle,
+    legend pos=north east,
+    domain=0:5,
+    samples=100,
+    thick
+]
+
+% L_0(x) = 1
+\addplot[color=blue] {1};
+\addlegendentry{$L_0(x)$}
+
+% L_1(x) = -x + 1
+\addplot[color=red] {-x + 1};
+\addlegendentry{$L_1(x)$}
+
+% L_2(x) = 0.5*(x^2 - 4*x + 2)
+\addplot[color=green!60!black] {0.5*(x^2 - 4*x + 2)};
+\addlegendentry{$L_2(x)$}
+
+% L_3(x) = (1/6)*(-x^3 + 9*x^2 - 18*x + 6)
+\addplot[color=orange] {(1/6)*(-x^3 + 9*x^2 - 18*x + 6)};
+\addlegendentry{$L_3(x)$}
+
+\end{axis}
+\end{tikzpicture}
+
+
+\begin{table}[htbp]
+\centering
+\caption{Table of First Few Laguerre and Associated Laguerre Polynomials}
+\label{tab:laguerre_polynomials}
+\begin{tabular}{ccl}
+\toprule
+$n$ & Standard Laguerre Polynomial $L_n(x)$ & Associated Laguerre Polynomial $L_n^\alpha(x)$ \\
+\midrule
+$0$ & $1$ & $1$ \\
+\addlinespace
+$1$ & $-x + 1$ & $-x + \alpha + 1$ \\
+\addlinespace
+$2$ & $\frac{1}{2}(x^2 - 4x + 2)$ & $\frac{1}{2}\left[x^2 - 2(\alpha + 2)x + (\alpha + 1)(\alpha + 2)\right]$ \\
+\addlinespace
+$3$ & $\frac{1}{6}(-x^3 + 9x^2 - 18x + 6)$ & $\frac{1}{6}\left[-x^3 + 3(\alpha + 3)x^2 - 3(\alpha + 2)(\alpha + 3)x + (\alpha + 1)(\alpha + 2)(\alpha + 3)\right]$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
 \subsection{Legendre Polynomials}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Proof of Fouriers' Theorem}
 
