@@ -2,6 +2,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[a4paper, 10pt, oneside]{elegantbook}
+\usepackage{geometry}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{calc}
 \usepackage{amsmath}
 \usepackage{imakeidx}
 \usepackage{hyperref}
@@ -27,11 +31,13 @@
 }
 \usepackage{mathtools}
 \usepackage{listings}
-\usepackage{xcolor}
 \usepackage{ifthen}
 \usepackage{perpage}
 \usepackage{wrapfig}
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
+ \usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 
 %\IfFileExists{indentfirst.sty}{%
 %  \usepackage{indentfirst}
@@ -41,7 +47,8 @@
 
 % for running heads
 \usepackage{fancyhdr}
-\usepackage{xcolor}
+%\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor} % Accesses a wide range of colors
 \usepackage{booktabs} % For professional horizontal lines (\toprule, \midrule, \bottomrule)
 \usepackage{enumitem} % For tight list spacing using "nosep"
 \usepackage{tabularx} % For auto-wrapping text columns to text width
@@ -87,18 +94,18 @@
 %\subtitle{With magnetic deflection, notes(Theory, barely descriptive)}
 %\author{Owino Stephen}
 
-\institute{\copyright \the\year{} This book was typeset using \LaTeX{} Program}
+%\institute{\copyright \the\year{} This book was typeset using \LaTeX{} Program}
 
-\date{May, 18, 2026}
+%\date{May, 18, 2026}
 
-\version{1.0}
+%\version{1.0}
 
-\bioinfo{Bio}{https://github.com/StevenOwino}
+%\bioinfo{Bio}{https://github.com/StevenOwino}
 
-\extrainfo{The principles of reality are atoms, and emptiness, while other things are mere opinion.
-(Democritus)}
+%\extrainfo{The principles of reality are atoms, and emptiness, while other things are mere opinion.
+%(Democritus)}
 
-\afterpage{\clearpage}
+%\afterpage{\clearpage}
 
 
 %\logo{infinity.png}
@@ -212,8 +219,8 @@ heading_suffix "}\\par\\nobreak"
   \section*{\centering\normalfont\Large\MakeUppercase{#2.}}
 }
 
-\newcounter{SectionNo}
-\setcounter{SectionNo}{0}
+%\newcounter{SectionNo}
+%\setcounter{SectionNo}{0}
 
 \newcommand\Section[2][]{%
   \section*{\centering\normalfont\normalsize\bfseries#2}%
@@ -373,28 +380,41 @@ DP@rint:#1\endcsname\relax\phantom
 \begin{document}
 
 \begin{titlepage}
+ % Set the cover background color (e.g., MidnightBlue)
+    %\pagecolor{MidnightBlue}
+% Change text color to white for readability
+    %\color{white}
     \centering
     \noindent
     \includegraphics[width=4.2cm]{infinity.pdf}
-    \vspace*{\fill}
-    \vspace*{1cm} % Adjust to push text down from the top
-    {\Huge \textbf{QM Reference Guide}}\\[2cm]
-    {\Large OWINO STEVE}\\[1cm]
-    \vfill % Pushes the remaining text/publisher info to the bottom
-    {\large S\\ 2026}  %Publisher Name\\ Year
+    %\vspace*{\fill}
+    %\vspace*{1cm} % Adjust to push text down from the top
+    {\Huge \textbf{Pre-QFT Notes}}\\[2cm]
+    {\Large OWINO STEVE}\\[0.5cm]
+    %\vfill % Pushes the remaining text/publisher info to the bottom
+    %{\large S\\ 2026}  %Publisher Name\\ Year
     %\clearpage
+    This book was typeset using \LaTeX{}; The Photon(Massless Particle in QFT): U($\Lambda$)$\Psi_{p, \sigma}$ = $\sqrt{\frac{(\Lambda)P^{0}}{P^{0}}}$ $e^{i \sigma \theta(\Lambda, P)}$ $\Psi_{\Lambda P,\sigma}$
+    \date{May, 18, 2026}
+    %\version{1.0}
+    \bioinfo{Bio}{https://github.com/StevenOwino}
+    \extrainfo{Someone asks if it's measurable, and you say, yes it is. You’re going to feel pretty silly if they spend a million and a half dollars to do the measurement, and can’t find it, because you’ve put a $(2 \pi)^2$ in a numerator, when it should have been in the denominator... - Sidney Coleman}
 \end{titlepage}
+%\makecoverpage % This prints the cover with the equation
+
 
 %\newpage
 
 %\thispagestyle{empty} % Removes page number from cover
 %\hypertarget{toc}{}
 
+\setcounter{page}{1}
 \maketitle
-\afterpage{\clearpage}
+%%\afterpage{\clearpage}
 
 %\thispagestyle{empty}
 %\clearpage
+\nopagecolor
 
 \setcounter{tocdepth}{4}
 \mbox{}
@@ -411,22 +431,62 @@ DP@rint:#1\endcsname\relax\phantom
 }
 
 %\mainmatter
+\section{Units}
+
+C = 1, $\hbar$ = $1$  \\
+
+C (Speed of Light in Vacuum) = $299792458 \quad m s^{-1}$  \\
+
+$\hbar$ (Reduced Plancks' Constant) = $1.054571817$ \ldots $\times$ $10^{-34}$ J s  \\
+
+$G$ (Newtonian Constant of Gravitation) = $6.674 30(15)$ $\times$ $10^{-11} m^{3} kg^{-1} s^{-2}$  \\
+
+C, $\hbar$, and G, are the three fundamental Constants.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
 
 \section{Preface}
 
 
-The \emph{cover} is a figure of the infinity symbol. These notes takes broad studying to comprehend. \\
+The \emph{cover} is a figure of the infinity symbol. These are my notes, NOT pedagogical. I shall try to make QFT penetrable. A lot of intellectual buggage isn't exhaustive in this material at all. \\
 
-Abstract Mathematics(models of inductive reasoning), is availed to avoid nonsensical answers, and bogus non-differentiable functions. This is the task for the human mind; to see this truth, and preserve it.
-It's accepted that the Angular Momentum of a closed system is conserved(hence production of particles by conversion of gravitational energy into matter energy, conditioned by Biological factors). The origin of the universe(a Physical picture of a polarizable space, and characterized as young by $\frac{\epsilon} {\epsilon_0}$ ~1, with an energy density when expressed in Newtonian units), is not a reproducible event, and cannot be duplicated in the laboratory. In trying to eliminate the Riemann curvature tensor, there's also the Ricci curvature tensor, assuming the photon travels without a shift in energy or frequency(red shift). There are formidable problems facing String Theory: it has no predictive power, it's a highly sophisticated theoretical laboratory(rather than experimental), it's defined at the Planck energy($10^{19}$ GeV), as any Physical theory that you can possibly come up with, it cannot be tested with the present technology, and it's tightly constrained as much as the graviton emerges as a massless state with spin-2.
+ I assume the \emph{"Principle of Locality"} in general,   where the action (S), in the equation of motion is:  \\
+
+ $\int$ ${d^4}$(x) $\left[ - \frac{1}{\sum}\partial_\mu \phi \quad \partial^{\mu} \phi - V(\phi) \right]$; $\forall$ parameters in V($\phi$) constant.  \\
+
+The framework of attempting to comprehend nature is on Energy scales \ldots. I do not give References/Citations of original papers, and the Bibliography given, makes no pretence of being exhaustive.
+
+Abstract Mathematics(models of inductive reasoning), is availed to avoid non-sensical answers, and bogus non-differentiable functions. This is the task for the human mind; to see this truth, and preserve it.  \\
+It's accepted that the Angular Momentum of a closed system, is conserved(hence production of particles by conversion of Gravitational Energy, into matter Energy, conditioned by Biological factors).  \\
+The origin of the Universe(a Physical picture of a polarizable space, and characterized as young by $\frac{\epsilon} {\epsilon_0}$ ~1, with an Energy density when expressed in \emph{Newtonian Units}), is not a reproducible event, and cannot be duplicated in the laboratory. In trying to eliminate the Riemann curvature tensor, there's also the Ricci curvature tensor, assuming the Photon travels without a shift in Energy or Frequency(red shift).  \\
+String Theory is a highly sophisticated Theoretical laboratory(rather than experimental), it's defined at the Planck Energy($10^{19}$ GeV), as any Physical theory that you can possibly come up with, it cannot be tested with the present technology, and it's tightly constrained, as much as the Graviton emerges as a massless state, with Spin-2.  \\
 Space-time is beyond being verified experimentally, and of the vacua states, only one is needed to be isolated, and the  Cosmological constant is very close to 0. However, in this theory, when there's spontaneous symmetry breaking, one does not know how to keep the Cosmological constant 0, perhaps a solution will be found to isolate the one vacuum.
 
-No space/time for boredom! Have fun, and ask a Physics lab fundamental questions.  
+There's no Space/Time for boredom! Have fun, and ask a Physics lab fundamental questions.
 
-The letters in bold transform like vectors!, and the entire notebook parses on TeX Live 2023/Debian kpathsea version 6.3.5,
-jupyter notebook/lab, and ipynb viewer(Android).  
+The letters in bold transform like vectors!, and the entire notes parses on TeX Live 2023/Debian kpathsea, version 6.3.5.
 
-These are notes/references, few functional code!, and compiling.
+These are notes/references, contains a few functional code!, and compiling.
 
 
 \First{An} electron plays a central role, and can be assumed to move in a spherically symmetric field, where all binding energies are negative. These are advanced core notes(reference sheet) in Quantum Mechanics(describing how particles behave like waves -
@@ -446,6 +506,35 @@ of the identity of $\hbar$, with $\frac{\hbar}{2 \pi}$. Your objective, dear rea
 asymptotic formulas for the eigenvalue distribution of differential operators.                                                                      
 Don't try to read these notes linearly, instead, come back here as a formula reference. \\
 
+\section{Why Quantum Mechanics?}
+
+A complete description of the state of a Physical System, in Classical Mechanics, is effected by stating all its Coordinates, and Velocities at a given instant; With these initial data, the \emph{Equations Of Motion} completely determine the behaviour of the system at all subsequent instants. \\
+In Quantum Mechanics, such a description is in principle impossible, since the Coordinates, and the corresponding Velocities, cannot exist simultaneously.
+Thus a description of the state of a Quantum System is effected by means of a smaller number of quantities, than in Classical Mechanics, i.e. it is less detailed than a Classical description.  \\
+A very important consequence follows from this, regarding the nature of the \textbf{predictions}, made in Quantum Mechanics. Whereas a Classical description suffices to predict the future motion of a mechanical system with complete accuracy, the less detailed description given in Quantum Mechanics evidently cannot be enough to do this. This means that, even if an \emph{Electron} is in a state described in the most complete manner possible in Quantum Mechanics, its' behaviour at subsequent instants, is still in principle \textbf{uncertain}. Hence Quantum Mechanics, cannot make completely definite predictions concerning the future behaviour of the Electron. For a given initial state of the Electron, a subsequent \textbf{measurement} can give various results. The problem in Quantum Mechanics, consists in determining the \textbf{probability} of obtaining various results on performing this \emph{measurement}. It is understood, of course, that in some cases, the \emph{probability} of a given result of \emph{measurement} may be equal to  \textbf{unity}, i.e. \emph{certainty}, so that the result of that \emph{measurement} is \emph{unique}.  \\
+Completely described states, occur as a result of the \emph{simultaneous measurement} of a complete set of Physical quantities. From the results of such a \emph{measurement}, it's possible to determine the probability of various results of any subsequent \emph{measurement}, regardless of the history of the Electron, prior to the first \emph{measurement}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
 \section{List of Figures in Chapters}
 
 \begin{enumerate}
@@ -461,6 +550,8 @@ Don't try to read these notes linearly, instead, come back here as a formula ref
 \item Stern-Gerlach projection
 
 \end{enumerate}
+
+\newpage
 
 \section{Diagnostic}
 
@@ -487,15 +578,20 @@ Therefore, the general solution to this differential equation is y(x) = $e^x(c_1
 
 NOTE: $\frac{\hbar}{i}$ = -i$\hbar$ (Multiplying by -i is the same as dividing by i.)  \\
 
+(e) $\int (a_0 x^4 + 4a_1 x^3 + 6a_2 x^2 + 4a_3 x + a_4)^{- \frac{1}{2}}$ $\rightarrow$  \\
+
+
+
+
 PROCEED  \\
 
 %\vspace{2\MySkip}
 
 \begin{note}
 
-Elementary logic functions(Boolean gates), or Disjuctive Normal Forms, Computation complexities, Algorithms, and Quantum circuits, are not part of this material.
+Elementary logic functions(Boolean gates), or Disjunctive Normal Forms, Computation complexities, Algorithms, and Quantum circuits, are not part of this material.
 
-$\bullet$ Schr$\ddot{o}$dinger Equation: General linear homgeneous solution(from translation operators), to the time-dependent Schr$\ddot{o}$dinger Equation $\longrightarrow$ \\
+$\bullet$ Schr$\ddot{o}$dinger Equation: General linear homogeneous solution(from translation operators), to the Time-Dependent Schr$\ddot{o}$dinger Equation $\longrightarrow$ \\
 
 \begin{equation}
 \psi(x,t) = \sum_{n = 1}^\infty C_n \psi(x) e^{- \frac{i E t}{\hbar}}, \mathbf{\textbf{\quad t = 0}}
@@ -517,6 +613,8 @@ $\bullet$ The identity Zero: Zero has no multiplicative inverse!!  \\
 $\bullet$ Informational Warning: All descriptions here are in the literature, and not original. DO NOT attempt to frame a physical picture!!, or take Relativity into sufficient account. Quantum Field Theory follows once these principles are mastered. \\
 
 $\bullet$ On Rational numbers: If (a) $\neq$ 0, there is no rational number($\mathbb Q$), where (b) $\times$ 0 = (a), can be fulfilled.
+
+
 
 \chapter{\textbf{Familiar, Recognized, And Understood Equations}}
 \label{ch:Familiar, recognized, and understood equations}
@@ -1078,34 +1176,16 @@ been a \emph{linear progress}.  And the road, no doubts, is \emph{fascinating}. 
 
 \section{Characteristics of describing Energy}\label{sec:Characteristics of describing Energy}
 
-There is NO electronic ink for philosophical arguments! i.e. local realism does not exist, 
-how long will $\mathbb Z$ remain a bachelor, cold fusion, climate change, singularities, why wave-functions overlap, determinism, 
-hidden variables(proof that subquantum level don't exist), why periodicity of quantum numbers lead to periodicity of chemical elements, spin-flip transitions(oscillating magnetic monopoles/distance transverse magnetic $\mathbf B$ produced by an oscillating magnetic dipole, etc....
-Ultra-cold atoms(lock-stepped with the same spin), 
-have been realized in the laboratory(Bose-Einstein condensate[BEC]), 
-through observing the center of mass system(a trick) of wave-like
-properties of atoms, so that the Pauli exclusion principle is NOT violated. 
-This technology, although limited(interaction with the external envinroment depolarizes particles) has applications
-in quantum computers(cryptography - quantum key distribution ; Refer to figure \ref{fig:Binary Entropy Diagram.png}),
-and is realized only for very low temperature Kelvin scales, not for classical computers. 
-Even the speed of light (c) - has been stopped!, using slow light pulses. 
-The wave-particle duality(using a super-computer) was proved by an experiment in 1974 by 
-John Clauser( concludes that the wave-function collapse is an objective $\mathbb R$ process - not a physical process,
-and not Relativistic Invariant - agreed). The idea of measurement of the wave-function with any apparatus(alters the azimuthal quantum number/angular momentum of the orbital plane - resulting to
-a breakup of eigenvalues into a one-dimensional representation cylindrical symmetry of 2j + 1, from spherical symmetry of j.                  
-Why, currently no answer/solutions...maybe its' even a wrong question. Considering Faradays' Law, knowing
-the Fourier transform, invoke a linear and orthogonal transformation to Stokes' theorem, generalizing how the electric field remains constant,
-the magnetic field too (curl$\mathbf E$) = - ($\frac{\partial \mathbf B}{\partial t}$), with $\iint_s \mathbf F dS$ = $\int_c \mathbf F dt$,
-where C is a closed curve, and $\mathbf F$ is a vector field defined in $\mathbb C$. It can be calculated by making the electric field constant,
-and varying the magnetic field e.g.
-$\mathbf B(t)$ = $\langle tx, ty, -2tz \rangle$, $0<t<\infty$. Note that in general, the z component of angular momentum is $\hbar$m, with probability $\mathbb 1$, and (m) is the state of the magnetic quantum number.
-This analysis is ficticiously true, and is based on accepting the theory of
-of complex numbers, Maxwells' equations, Fourier transform, homogeneous linear differential equations, the double-slit
-experiment(the results on the screen is a transmitted split beam intensity profile), Stern-Gerlach experiment(represents an entangled magnetic moment of Silver atoms), and Schr$\ddot{o}$dingers' equation.
-There are no visible sources of some forms though, they're(strange and arbitrary) schematic representation of Physical ideas(Force, Momentum, Energy, Mass, Work, Acceleration. Length Of Interval, Time, and Velocity)...are all approximations!
-The simultaneous probability distributions of various observables, given differential equations, which may be integrated,
-show how these observables change in time.  
-Keep in mind, we've evolved from thinking the Sun was static, (It is a linear combination of a stationary state[ not static], its' probablities don't change!!, and that it revolved around the Earth{a linear combination of a stationary state, with no changing probabilities), it's now the other way around.  \\
+We'll not expend electronic ink for philosophical arguments! i.e. How long will $\mathbb Z$ remain a bachelor, cold fusion, climate change, singularities, why wave-functions overlap, determinism(e.g. Wigners' friend, Schr$\ddot{o}$dingers' cat), why periodicity of Quantum numbers lead to periodicity of chemical elements, Spin-flip transitions(oscillating magnetic monopoles/distance transverse magnetic fields($\mathbf B$), produced by an oscillating magnetic dipole, etc....  \\
+Ultra-cold atoms(lock-stepped with the same spin), have been realized in the laboratory(Bose-Einstein condensate[BEC]), through observing the center of mass system(a trick) of wave-like properties of atoms, so that the Pauli exclusion principle is NOT violated.  \\
+This technology, although limited(interaction with the external envinroment, depolarizes particles), has applications in Quantum computers(cryptography - Quantum key distribution ; Refer to figure \ref{fig:Binary Entropy Diagram.png}), and is realized only for very low temperature Kelvin scales, not for Classical computers.  \\
+Even the speed of light (C) - has been stopped!, using slow light pulses. The wave-particle duality(using a super-computer), was proved by an experiment in 1974, by John Clauser( concludes that the wave-function collapse is an objective $\mathbb R$ process - not a physical process, and not Relativistic Invariant - agreed). The idea of measurement of the wave-function, with any apparatus(alters the azimuthal Quantum number/angular momentum of the orbital plane - resulting to a breakup of Eigenvalues into a one-dimensional unitary representation cylindrical symmetry of 2j + 1, from spherical symmetry of j.  \\
+Why, currently no answer/solutions...maybe its' even a wrong question. Considering Faradays' Law, knowing the Fourier transform, invoke a linear, and orthogonal transformation of Stokes' theorem, generalizing how the Electric Field remains Constant, the Magnetic Field too (curl$\mathbf E$) = - ($\frac{\partial \mathbf B}{\partial t}$), with $\iint_s \mathbf F dS$ = $\int_c \mathbf F dt$, where (C) is a closed curve, and $\mathbf F$ is a Vector Field defined in $\mathbb C$. It can be calculated, by making the Electric Field Constant, and varying the Magnetic Field e.g.
+$\mathbf B(t)$ = $\langle tx, ty, -2tz \rangle$, $0<t<\infty$. Note that in general, the z component of angular momentum is $\hbar$m, with probability 1, and (m) is the state of the Magnetic Quantum number.  \\
+This analysis is fiducial, and is based on the Theory of Complex Numbers, Maxwells' equations, Fourier transform, homogeneous linear differential equations, the double-slit experiment(the results on the screen is a transmitted split beam intensity profile), Stern-Gerlach experiment(represents an entangled Magnetic moment of Silver atoms), and Schr$\ddot{o}$dingers' equation.  \\
+There are no visible sources of some forms though, they're(strange, and arbitrary) schematic representation of Physical ideas(Force, Momentum, Energy, Mass, Work, Acceleration. Length Of Interval, Time, and Velocity)...which are all approximations!  \\
+The simultaneous probability distributions of various observables, given differential equations, which may be integrated, show how these observables change in time.  \\
+Keep in mind, we've evolved from thinking the Sun was static, (It's a linear combination of a Stationary State[ \textbf{NOT} static], its' \emph{probabilities} don't change!!, and that it revolves around the Earth{defined also a linear combination of a Stationary State, with no changing probabilities), it's now the other way around.  \\
 
 \begin{figure}
 \begin{center}
@@ -1501,9 +1581,7 @@ Recognize integration by parts. The derivative moves from the first
 function x(t), to the second function y(t). During that move, a minus sign appears.
 This tells us that the transpose of the derivative is minus the derivative.
 
-The derivative is antisymmetric: $\mathbf{A}$ = $\frac{d}{dt}$, and $\mathbf{A^T}$ = ${- \frac{d}{dt}}$. Symmetric matrices
-have $S^T$ = S, antisymmetric matrices have $A^T$ = -A. Linear algebra includes derivatives
-and integrals, because those are both linear.  \\
+The derivative is antisymmetric: $\mathbf{A}$ = $\frac{d}{dt}$, and $\mathbf{A^T}$ = ${- \frac{d}{dt}}$. Symmetric matrices have $S^T$ = S, antisymmetric matrices have $A^T$ = -A. Linear algebra includes derivatives and integrals, because those are both linear.  \\
 
 \textcolor{blue}{This anti-symmetry of the derivative applies to centered difference matrices.} A =  \\
 
@@ -1553,6 +1631,8 @@ Von Neumann-equation\index{Von Neumann-equation} $\longrightarrow$ $\partial_t$ 
 similar to the Schr$\ddot{o}dinger$ equation, $i\hbar \partial_t \rho(t)$ = $[H, \rho(t)]$(describes the time-evolution\index{time-evolution} of the density operator).  \\
   
 Resolution-of-an-identity\index{Resolution-of-an-identity} $\longrightarrow$ $\sum_{k_0} \sum_{\mathbf k_1}$ $<k_0|A_0| {\mathbf k_1}><{\mathbf k_1}|A_1|k_0>$ \\
+
+Analytic definition of an angle $\longrightarrow$
 
 
 %\end{Definitions}
@@ -1605,10 +1685,12 @@ so that we have an $\mathbf{\textbf{energy conservation law}}$. \\
  
 $\bullet$ Heisenberg-commutation-relation\index{Heisenberg-commutation-relation} $\longrightarrow$ ${Q_j}{Q_k} - {P_j}{P_k}$ = $i$ $\hbar$ $\delta_j^k$ \\
  
-$\bullet$ Wavefunction of a system\index{Wavefunction of a system} $\longrightarrow$ A state vector $\psi$, is a square summable function on $\mathscr M$, and
+$\bullet$ Wave-function of a system\index{Wave-function of a system} $\longrightarrow$ A state vector $\psi$, is a square summable function on $\mathscr M$, and
 trajectory $e^{-i Ht}(\psi)$ is a function on $\mathscr M \times \mathbf R$, where $\mathbf R$ is the real line(This is a function of $\mathbf{3n + 1}$ real variable).  \\
   
 $\bullet$ Expected-value\index{Expected-value} of the j-th Momentum component $\longrightarrow$ $\frac{\hbar}{i}$ $\int$ $\left(\frac{\partial \psi}{\partial q_j} \overline {\psi} \right)$ $dq_1...dq_{3n}$.  \\
+
+Negative Energy $\longrightarrow$ Bound State
 
 
   
@@ -1662,7 +1744,7 @@ $\bullet$ (2) de Broglie: $\lambda$ = $\frac{h}{p}$,  \\
 Compton: $\lambda_C$ = $\frac{2 \pi h}{mc}(1 - \cos \theta)$,  \\
 
 \noindent
-$\hat{p}$ = $\frac{h}{i}$ $\frac{\partial}{\partial{x}}$,  \\
+$\hat{p}$ = $\frac{h}{i}$ $\frac{\partial}{\partial x}$,  \\
 $\hat{\mathbf p}$ = $\frac{\hbar}{i}$ $\nabla$,  \\
 $[\hat{x_i},\hat{p_j}]$ = $i\hbar \delta_{ij}$,  \\
 $[\hat{p_i},f(\hat{\mathbf x})]$ = $\frac{\hbar}{i}$ $\frac{\partial{f}} {\partial{x_i}}$.  \\
@@ -1725,6 +1807,9 @@ $\bullet$ (11) virial Theorem: One dimension/Single particle moving under a cent
 \begin{equation} \label{eq:virial Theorem}
 \langle \frac{\hat{p}^2}{2m} \rangle = \frac{1}{2} \langle \hat{x}  \frac{dV}{dx} \rangle
 \end{equation}
+\noindent
+
+The virial Theorem is the principal tool, in Classical Kinetic Theory, for calculating the equation of state corresponding to an imperfect gases; It can be used to derive ideal gas law for perfect gases.  \\
 
 $\bullet$ (12) Central potential: $\langle \frac{\hat{p}^2}{2m} \rangle$ = $\frac{1}{2}$ $\langle{r}$ $\frac{\partial{V}}{\partial{r}} \rangle $.  \\
 
@@ -2998,12 +3083,11 @@ Note that [$\partial^\mu, \partial^nu$ = [$\partial^{\mu \nu}$]. The matching-in
 \chapter{Angular Momentum}
 
 The Angular Momentum of a rigid body rotating with an angular velocity ($\vec{\omega}$) about a fixed axis, and having a moment of inertia (I) matrix elements, with respect to that axis, is given by L = $\mathit{I} \vec{\omega}$ \quad ($\vec{\omega}$ in rad/s).
-The rate of change of angular momentum of a particle equals the torque of the net force acting on it. The moment of inertia about
-some given axis is related to the moment about a parallel axis through the center of mass.  \\
+The rate of change of angular momentum of a particle equals the torque of the net force acting on it. The moment of inertia about some given axis is related to the moment about a parallel axis through the center of mass. It's represented on the SO(3) unitary group.  \\
 
 \section{Rigid-Body Rotation}
 
-Any general displacement of a rigid body can be represented by a translation plus a rotation. We split the problem of rigid body motion into two separate phases, one concerned solely with the translational motion of the body, the other, with its' rotational motion. The total
+Any general displacement of a rigid body, can be represented by a translation plus a rotation. We split the problem of rigid body motion into two separate phases, one concerned solely with the translational motion of the body, the other, with its' rotational motion. The total
 angular momentum divides naturally into contributions from the translation of the center of mass and, from the rotation about the center of mass.
 
 The total angular momentum will involve the Cartesian coordinates of the center of mass, and
@@ -3021,11 +3105,6 @@ Magnetic moment, and the angular momentum also have a similar form. For the Clas
 system, is to superimpose on its' normal motion, a uniform $\mathbf{\textbf{precession\index{precession}}}$, with $\mathbf{\textbf{angular
 frequency}}$.
 
-
-
-
-
-
 \begin{figure}
 \begin{center}
 \includegraphics[width=10cm]{Spinning top.pdf}
@@ -3033,11 +3112,6 @@ frequency}}$.
 \caption{The relation between $\phi$, $\theta$, and $\psi$}
 \label{fig:Spinning top.pdf}
 \end{figure}
-
-
-
-
-
 
 \chapter{Spin}
 
@@ -3162,13 +3236,35 @@ In \url{http:\\pages.cs.wisc.edu/kovar/hall.html},
 \section{Entanglement}
 There is a need to describe systems that extend over macroscopic distances in ways that are inconsistent with Classical ideas. In Quantum Mechanics, two observable particles ($x_1$), and ($x_2$) commute by Eq. \eqref{eq:Abelian/Commutatitive}. How can measurement of particle $(x_2$)s' Momentum, interfere with ($x_1$)s', if they're far apart? The way out of this dilemma within Quantum Mechanics is to suppose that the second measurement, which gives particle 1 a definite Position, does indeed prevent particle 2 from having a definite Momentum, even though the two particles are far apart. The states of the two particles are said to be $\mathbf{entangled}$. When two systems have wave-functions which differ by at most a constant phase factor, they are said to be in the same Quantum state. It is essential that in every measurement, there shall actually be a disturbance arising from the apparatus that destroys all elements of corresponding to observables that do not commute with the measured variable.
 
+
+\chapter{Index Theorem}
+
+Clifford Algebra, and (K-Theory).
+
+
+
+
+
+
+
+
 \chapter{Problems}
+\paragraph{Canonical Quantization}
+\noindent
 
+(1) What is the form of Lagrange Density?  \\
 
+Answer:  \\
 
+$\mathscr{L}$ = i$\psi^{*}$ $\partial \psi$ + b$\nabla \psi^{*}$ $\times$ $\nabla \psi$  \\
 
+(2) Taking $\psi$, and $\psi^{*}$ as independent fields, what is the form for the Euler-Lagrange equations?  \\
 
+Answer:  \\
 
+For $\psi$, \quad $\frac{\partial \mathscr{L}}{\partial \psi^{*}}$ - $\partial_\mu \frac{\partial \mathscr{L}}{\partial(\partial_\mu \psi^{*})}$ = $i \partial_0 \psi$ - $0$ - $\partial_{i} (b \partial_{i} \psi)$ = $i \dot{\psi}$ - b$\nabla^{2} \psi$ = $0$ \\
+
+For $\psi^{*}$, \quad $\frac{\partial \mathscr{L}}{\partial \psi}$ - $\partial_\mu \frac{\partial \mathscr{L}}{\partial(\partial_\mu \psi)}$ = $0$ - $\partial_0(i \psi^{*})$ - $\partial_{i} (b \partial_{i} \psi^{*})$ = $i \dot{\psi^{*}}$ - b$\nabla^{2} \psi^{*}$ = $0$ \\
 
 \chapter{Appendix}
 
@@ -3179,6 +3275,8 @@ There is a need to describe systems that extend over macroscopic distances in wa
 This appendix covers some of the  Mathematics used in  exposition of operators, and linear equations. Here you will find the special functions that are relevant to our current application. These require algebraic techniques.  \\
 
 Calculus is also necessary to understand much of this material, for it is always used in advanced topics.  \\
+
+A table on the history of Quantum Field Theory is listed.  \\
 
 \end{remark}
 
@@ -3222,6 +3320,40 @@ The $\det{A}$ = $ad - bc$. \\
 
 If the $\det{A}$ = $0$, then $A^{-1}$ DOES NOT EXIST! The matrix \emph{isn't} invertible.
 
+\subsection{Finding Eigenvalues, and Eigenvectors in a Matrix}
+
+This is essential for the commutation relations of Poincar$\acute{e}$ Generators, Lie Group Algebras, in Quantum Field Theory.  \\
+
+Let the matrix (B) =  $\begin{pmatrix}0 \quad 1 \cr 0 \quad 0 \end{pmatrix}$, and [B(x) = $\lambda$(x)], is an Eigenvalue problem.  \\
+
+Let (B - $\lambda$I = 0); So, the det(B -$\lambda$I) = $\begin{pmatrix} - \lambda \quad 0 \cr 0 \quad - \lambda \end{pmatrix}$ = $\lambda^2$ = $0$; Making it the characteristic polynomial equation. This results to, $\lambda$ = $0$.  \\
+
+For the Eigenvector, [B(x) = 0]. Its' matrix becomes \ldots. $\begin{pmatrix}0 \quad 1 \cr 0 \quad 0 \end{pmatrix}$ $\times$ $\begin{pmatrix}v_1 \cr v_2 \end{pmatrix}$ = $\begin{pmatrix}0 \cr 0 \end{pmatrix}$; Here $v_2$ = $0$. For $v_1$ = $1$, makes the Eigenvector (x) - $\begin{pmatrix}1 \cr 0 \end{pmatrix}$, making it a 2 by 2 matrix, with single Eigenvalue, and Eigenvector. \\
+
+Consider a skew-symmetric matrix C = $\begin{pmatrix}0 \quad -1 \cr 1 \quad 0 \end{pmatrix}$; ($C^T$ = $-C$)  \\
+
+Its' det(C - $\lambda$I) = $\begin{pmatrix} - \lambda \quad -1 \cr 1 \quad - \lambda \end{pmatrix}$ = $\lambda^2 + 1$ = $0$; So, $\boxed{\lambda^2 = -1}$, which is a \textbf{lateral unit, or imaginary number}, since (i) = $\sqrt{-1}$.  \\
+
+$\therefore$ $\lambda$ has two \emph{roots}; $\lambda_1$ = $(i)$, and $\lambda_2$ = $ - (i)$. Thus, the matrix has \emph{complex Eigenvalues}.  \\
+
+"The shortest path between two truths in $\mathbb{R}$ domain, passes through the $\mathbb{C}$ domain. --- Jacques Hadamard"
+
+\subsection{Matrix Diagonalization}
+
+An [m by n] matrix, with $\mathbb{R}$ Eigenvalues, and \textbf{linear independent} Eigenvectors, is \index{symmetric}.  \\
+
+If [A S = S $\Lambda$], [A = S $\Lambda$ $S^{-1}$], and hence [$\Lambda$ = $S^{-1}$ A S], then $\Lambda$, is the diagonal matrix.  \\
+
+Let $\lambda_1$ = $a + b$. Then the Eigenvector is normalized as: $x_1$ = $\frac{1}{\sqrt(2)}$ $\begin{pmatrix}1 \cr 1 \end{pmatrix}$; \\
+
+$\lambda_2$ = $a - b$, $x_2$ = $\frac{1}{srt{2}}$ $\begin{pmatrix}1 \cr -1 \end{pmatrix}$. So, the matrix S =$\frac{1}{\sqrt{2}}$ $\begin{pmatrix}1\quad 1 \cr 1 \quad -1 \end{pmatrix}$, and $\Lambda$ = $S^{-1}$ A S, hence \textbf{orthonormal}. \\
+
+$S^{-1}$ = $S^{T}$ = S, making this matrix \emph{unique}. \\
+
+$\therefore$ $\boxed{\begin{pmatrix}a + b \quad 0 \cr0 \quad a - b \end{pmatrix} = \frac{1}{2} \begin{pmatrix}1 \quad \quad 1 \cr 1 \quad -1 \end{pmatrix} \begin{pmatrix}a \quad b \cr b \quad a \end{pmatrix} \begin{pmatrix}1 \quad \quad 1 \cr 1 \quad -1 \end{pmatrix}}$   \\
+
+Only the diagonal matrix elements, in this case, are different from zero. In particular, in the usual representation, with the wave-functions of the stationary states as the functions $\Psi_n$, the Energy matrix is diagonal; So are the matrices of all other Physical quantities having definite values, in the stationary states.   \\
+
 \section{Rules for Continuous Functions[Apply Limit Laws]}
 
 Product Rule $\rightarrow$ Let f(x) and g(x) be differential functions. Then,  \\
@@ -3249,9 +3381,186 @@ Alternatively, if (y) is a function of (u), and (u) is a function of (x), then $
 Contour Integrals $\rightarrow$ If the function f(z) has isolated singularities (poles) inside a closed contour $(\gamma)$, the integral around that contour is equal to
 2$\pi$i times the sum of the residues at those singularities; $\oint _{\gamma} f(z) dz$ = 2 $\pi$i $\sum \text{Res}$ $(f,z_{k})$  \\
 
+\section{Hermite Polynomials}
+
+\begin{tikzpicture}
+\begin{axis}[
+    title={First Four Hermite Polynomials},
+    xlabel={$x$},
+    ylabel={$H_n(x)$},
+    xmin=-2, xmax=2,
+    ymin=-15, ymax=15,
+    samples=200,
+    domain=-2:2,
+    grid=major,
+    legend pos=south east
+]
+
+% H_0(x) = 1
+\addplot[thick, blue] {1};
+\addlegendentry{$H_0$}
+
+% H_1(x) = 2x
+\addplot[thick, red] {2*x};
+\addlegendentry{$H_1$}
+
+% H_2(x) = 4x^2 - 2
+\addplot[thick, green!70!black] {4*x^2 - 2};
+\addlegendentry{$H_2$}
+
+% H_3(x) = 8x^3 - 12x
+\addplot[thick, orange] {8*x^3 - 12*x};
+\addlegendentry{$H_3$}
+
+\end{axis}
+\end{tikzpicture}
+
+
+\subsection{Laguerre Polynomials}
+
+\subsection{Legendre Polynomials}
+
+\section{Proof of Fouriers' Theorem}
+
+\section{The Canonical Commutation Relations}
+
+Annihilation Operation: $[\psi (\mathbf{x}, t), \psi (\mathbf{y}, t)]$ = $[\psi^{*} (\mathbf{x}, t). \psi^{*} (\mathbf{y}, t)]$ = $0$  \\
+
+Creation Operation: $[\psi (\mathbf{x}, t), i \psi^{*} (\mathbf{y}, t)]$  = i$\delta^{(3)} (\mathbf{x} - \mathbf{y})$   \\
+
+\section{Charge, Parity, and Time-Reversal}
+
+\paragraph{Charge}
+
+%\begin{align*}
+%Q &= \int d^{3}\mathbf{x} \, \psi^{*}(\mathbf{x}, t) \psi(\mathbf{x}, t) \\
+ % &= \int \frac{d^{3}\mathbf{p}}{(2 \pi)^3} d^{3}\mathbf{p}' \, a^{\dagger}_\mathbf{p} e^{-i(\mathbf{p} \cdot \mathbf{x} - \omega_\mathbf{p}t)} a_{\mathbf{p}'} %e^{i(\mathbf{p}' \cdot \mathbf{x} - \omega_{\mathbf{p}'}t)} \\
+  %&= \int d^{3}\mathbf{p} \, a^{\dagger}_\mathbf{p} a_\mathbf{p}
+%\end{align*}
+
+
+$Q$  \\
+= $\int$ $d^{3}$ $\mathbf{\textbf{x}}$ $\psi^{*}$ $(\mathbf{\textbf{x}}, t)$ $\psi$ $(\mathbf{x}, t)$ \\
+= $\int$ $\frac{d^{3}}{(2 \pi)^3}$ $d^{3}$ $\mathbf{\textbf{p}}$ $d^{3}$ $\mathbf{\textbf{p}}^{\prime}$ $a^{\dagger}_\mathbf{\textbf{p}}$ $e^{-i(\mathbf{\textbf{p}}
+\cdot \mathbf{\textbf{x}} - \omega \mathbf{\textbf{p}}t}$ $a_\mathbf{\textbf{p}}^{\prime}$ $e^{i(\mathbf{\textbf{p}} \cdot \mathbf{\textbf{x}} - \omega \mathbf{\textbf{p}}^{\prime}t)}$ \\
+= $\int$ $d^{3}$ $\mathbf{\textbf{p}}$ $a^{\dagger}_\mathbf{\textbf{p}}$ $a_\mathbf{\textbf{p}}$  \\
+
+This is the theory of a set of free, non-relativistic, identical bosons, all with mass (m). Each boson has momentum (p), and Energy [E] = $\omega$ = $\frac{\mid p \mid^2}{2m}$. The conserved charge (Q), is the number of bosons. All of the operators; the Hamiltonian (H), Momentum(P), and Charge(Q), are time-independent.  \\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Proof of the Derivative of the Delta Function}
+
+The proof uses integration by parts. Since the delta function $(\delta(x))$ vanishes at infinity, the \emph{boundary term is zero}.  \\
+
+$\int_{-\infty}^{\infty} \delta'(x) f(x) dx$ = $\left[ \delta(x) f(x) \right]_{-\infty}^{\infty} - \int_{-\infty}^{\infty} \delta(x) f'(x) dx$ = $0 - f'(0)$ = $-f'(0)$  \\
+
+\subsection{Proof of Mathieu Functions}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+\section{History Of Quantum Field Theory}
+
+\begin{longtable}{p{0.1\textwidth} p{0.3\textwidth} p{0.6\textwidth}}
+\caption{Historical Milestones of Quantum Field Theory} \\
+\toprule
+\textbf{Year} & \textbf{Event / Discovery} & \textbf{Significance / Description} \\
+\midrule
+\endfirsthead
+
+\multicolumn{3}{c}%
+{\tablename\ \thetable\ -- \textit{Continued from previous page}} \\
+\toprule
+\textbf{Year} & \textbf{Event / Discovery} & \textbf{Significance / Description} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{3}{r}{\textit{Continued on next page}} \\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+1900 & Planck's Radiation Law & Max Planck introduces energy quantization, planting the seeds for quantum theory. \\
+\midrule
+1905 & Einstein's Light Quanta & Albert Einstein proposes the photon hypothesis, establishing wave-particle duality. \\
+\midrule
+1926 & Heisenberg, Born, and Jordan & Formulation of matrix mechanics, treating fields as infinite sets of harmonic oscillators. \\
+\midrule
+1927 & Dirac's Quantization of Fields & Paul Dirac publishes a foundational paper on emission/absorption of radiation, formally initiating Quantum Electrodynamics (QED). \\
+\midrule
+1930s & Divergences and Infinities & Robert Oppenheimer identifies that higher-order perturbative calculations yield infinite quantities (e.g., self-energy of the electron). \\
+\midrule
+1947--1949 & Renormalization & Breakthroughs by Feynman, Schwinger, Tomonaga, and Dyson. They establish renormalization to systematically remove infinities from QED calculations. \\
+\midrule
+1950s & Feynman Diagrams & Richard Feynman introduces graphical representations of particle interactions, revolutionizing perturbative calculations. \\
+\midrule
+1954 & Yang-Mills Theory & Chen-Ning Yang and Robert Mills propose non-Abelian gauge theories, laying the mathematical foundation for the strong and weak forces. \\
+\midrule
+1964 & Quark Model & Murray Gell-Mann and George Zweig independently propose the quark model to explain the classification of hadrons. \\
+\midrule
+1967--1968 & Electroweak Unification & Glashow, Salam, and Weinberg formulate the electroweak theory, unifying the electromagnetic and weak forces. \\
+\midrule
+1970s & Asymptotic Freedom & Gross, Politzer, and Wilczek discover asymptotic freedom in Quantum Chromodynamics (QCD), explaining why quarks behave as free particles at high energies. \\
+\midrule
+1973 & Standard Model Established & The theoretical framework of the Standard Model of particle physics takes its modern shape, organizing all known fundamental particles. \\
+\midrule
+1980s & Lattice Gauge Theory & Kenneth Wilson establishes non-perturbative approaches using lattice gauge theory, allowing computer simulations of QCD. \\
+\midrule
+1998 & Neutrino Oscillations & Evidence from Super-Kamiokande shows that neutrinos have mass, requiring minor extensions to the Standard Model. \\
+\midrule
+2012 & Higgs Boson Discovery & CERN physicists announce the discovery of the Higgs boson, confirming the mechanism of electroweak symmetry breaking. \\
+\bottomrule
+\end{longtable}
+
+\newpage
+
 \section{Hamilton Equations Of Motion}
 
+
+
+
+
 \section{Wheeler-De Witt Equation}
+
+
+
+
+
 
 \section{List of experiments}
 
