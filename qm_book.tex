@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[a4paper, 10pt, oneside]{elegantbook}
+\documentclass[a4paper, 10pt, onepage]{elegantbook}
 \usepackage{geometry}
 \usepackage{longtable}
 \usepackage{booktabs}
@@ -35,7 +35,8 @@
 \usepackage{perpage}
 \usepackage{wrapfig}
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
- \usepackage{tikz}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 
@@ -55,6 +56,8 @@
 %\usepackage{array} % Required for enhanced table controls
 %\usepackage{pdfstartpage=1}
 \usepackage{ragged2e,array,booktabs}
+\usepackage{siunitx}  % For formatting units and alignment
+%\usetikzlibrary{arrows.meta}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Interlude:  Set up PRINTING (default) or SCREEN VIEWING %%%%
@@ -433,35 +436,34 @@ DP@rint:#1\endcsname\relax\phantom
 %\mainmatter
 \section{Units}
 
-C = 1, $\hbar$ = $1$  \\
+Space Energy Density
 
-C (Speed of Light in Vacuum) = $299792458 \quad m s^{-1}$  \\
-
-$\hbar$ (Reduced Plancks' Constant) = $1.054571817$ \ldots $\times$ $10^{-34}$ J s  \\
-
-$G$ (Newtonian Constant of Gravitation) = $6.674 30(15)$ $\times$ $10^{-11} m^{3} kg^{-1} s^{-2}$  \\
-
-C, $\hbar$, and G, are the three fundamental Constants.
+Dielectric Constant
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\begin{table}[htbp]
+\centering
+\caption{Commonly Used Physics Constants}
+\label{tab:physics_constants}
+\begin{tabular}{llcc}
+\toprule
+\textbf{Constant Name} & \textbf{Symbol} & \textbf{Approximate Value} & \textbf{SI Units} \\
+\midrule
+Speed of light in vacuum    & $c$             & $3.00 \times 10^8$         & \unit{\meter\per\second} \\
+Planck's constant           & $h$             & $6.63 \times 10^{-34}$     & \unit{\joule\second} \\
+Reduced Planck's constant   & $\hbar$         & $1.05 \times 10^{-34}$     & \unit{\joule\second} \\
+Gravitational constant      & $G$             & $6.67 \times 10^{-11}$     & \unit{\meter\cubed\per\kilogram\per\second\squared} \\
+Boltzmann constant          & $k_{\text{B}}$  & $1.38 \times 10^{-23}$     & \unit{\joule\per\kelvin} \\
+Elementary charge           & $e$             & $1.60 \times 10^{-19}$     & \unit{\coulomb} \\
+Electron mass               & $m_{\text{e}}$  & $9.11 \times 10^{-31}$     & \unit{\kilogram} \\
+Proton mass                 & $m_{\text{p}}$  & $1.67 \times 10^{-27}$     & \unit{\kilogram} \\
+Permittivity of free space  & $\varepsilon_0$ & $8.85 \times 10^{-12}$     & \unit{\farad\per\meter} \\
+Permeability of free space  & $\mu_0$         & $1.26 \times 10^{-6}$      & \unit{\henry\per\meter} \\
+Avogadro's number           & $N_{\text{A}}$  & $6.02 \times 10^{23}$      & \unit{\per\mole} \\
+Rydberg constant            & $R_{\infty}$    & $1.10 \times 10^7$         & \unit{\per\meter} \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \newpage
 
@@ -478,7 +480,7 @@ The framework of attempting to comprehend nature is on Energy scales \ldots. I d
 
 Abstract Mathematics(models of inductive reasoning), is availed to avoid non-sensical answers, and bogus non-differentiable functions. This is the task for the human mind; to see this truth, and preserve it.  \\
 It's accepted that the Angular Momentum of a closed system, is conserved(hence production of particles by conversion of Gravitational Energy, into matter Energy, conditioned by Biological factors).  \\
-The origin of the Universe(a Physical picture of a polarizable space, and characterized as young, by $\frac{\epsilon} {\epsilon_0}$ $\approx$ 1, with an Energy density when expressed in \emph{Newtonian Units}), is not a reproducible event, and cannot be duplicated in the laboratory. In trying to eliminate the Riemann curvature tensor, there's also the Ricci curvature tensor, assuming the Photon travels without a shift in Energy or Frequency(red shift).  \\
+The origin of the Universe(a Physical picture of a polarizable space, and characterized as young, by $\frac{\epsilon} {\epsilon_0}$ $\approx$ 1, with an Energy Density when expressed in \emph{Newtonian Units} [\unit{\joule\meter}], is not a reproducible event, and cannot be duplicated in the laboratory. In trying to eliminate the Riemann curvature tensor, there's also the Ricci curvature tensor, assuming the Photon travels without a shift in Energy or Frequency(red shift).  \\
 String Theory is a highly sophisticated Theoretical laboratory(rather than experimental), it's defined at the Planck Energy($10^{19}$ GeV), as any Physical theory that you can possibly come up with, it cannot be tested with the present technology, and it's tightly constrained, as much as the Graviton emerges as a massless state, with Spin-2.  \\
 Space-time is beyond being verified experimentally, and of the vacua states, only one is needed to be isolated, and the  Cosmological constant is very close to 0. However, in this theory, when there's spontaneous symmetry breaking, one does not know how to keep the Cosmological constant 0, perhaps a solution will be found to isolate the one vacuum.
 
@@ -505,6 +507,8 @@ the observed spectrum of the hydrogen atom, when one takes $\mathbf K$ = $\frac{
 of the identity of $\hbar$, with $\frac{\hbar}{2 \pi}$. Your objective, dear reader, is to show in theorems of analysis, providing
 asymptotic formulas for the eigenvalue distribution of differential operators.                                                                      
 Don't try to read these notes linearly, instead, come back here as a formula reference. \\
+
+Look up, and study these topics from the literature: Quantum particle in a box,Tensor fields,
 
 \section{Why Quantum Mechanics?}
 
@@ -743,6 +747,8 @@ The content of the book is based on spaced structuring, and iterative deepening.
 I would like to appreciate \LaTeX{} ,  and
 
 \includegraphics[width=2cm]{overleaf_wide_colour.pdf}, for making ""learning coding" possible, for industry standards.
+
+\newpage
 
 \chapter{\textbf{History Of Quantum Mechanics}}
 
@@ -1171,6 +1177,7 @@ computed -- within Loop Quantum Gravity.  The road is not yet at the end, much r
 developments might lead nowhere.  But it is difficult to deny, looking at the entire development of the subject, that there has
 been a \emph{linear progress}.  And the road, no doubts, is \emph{fascinating}.  \\
 
+\newpage
 
 \chapter{Physical Ideas That Captivate}
 
@@ -1265,6 +1272,8 @@ $\bullet$ Electromagnetic theory of light. \\
 
 \end{remark}
 
+\newpage
+
 \chapter{Terminology}
 \section{Definitions} \label{sec:Definitions}
 
@@ -1284,7 +1293,60 @@ $\bullet$ Electromagnetic theory of light. \\
 \label{fig:relativistic mass increase.png}
 \end{figure}
 
-\index{Jacobi Identity|(}
+\underline{Derivation of Time-dilation\index{Time-dilation}}  \\
+
+$\frac{Distance}{Length}$ = ${\sin \theta}^{-1}$
+
+$\text{Speed of Light}(c) \cdot \cos \theta = \text{Horizontal component of light speed} = V$
+
+$\cos \theta$ = $\frac{V}{c}$. Since ($\sin^2 \theta + \cos^2 \theta$ = $1$), ($\sin^2 \theta$ = $1 - \cos^2 \theta$) = $1 - \left( \frac{V}{c} \right)^2$
+
+$\therefore$ $\sin \theta$ = ${\sqrt{1 - \left(\frac{V}{c} \right)^2}}$ $\implies$ $\sin^{-1}$ = $\frac{1}{\sqrt{1 - \left(\frac{v}{c} \right)^2}}$ = $\gamma$
+
+
+\begin{tikzpicture}
+\begin{axis}[
+    title={\textbf{Time Dilation: Lorentz Factor ($\gamma$) vs. Speed ($v/c$)}},
+    xlabel={Relative Speed ($v/c$)},
+    ylabel={Lorentz Factor ($\gamma = \Delta t / \Delta t_0$)},
+    xmin=0, xmax=1.05,
+    ymin=1, ymax=6,
+    xtick={0, 0.2, 0.4, 0.6, 0.8, 1.0},
+    ytick={1, 2, 3, 4, 5, 6},
+    grid=both,
+    grid style={line width=.1pt, draw=gray!10},
+    major grid style={line width=.2pt, draw=gray!30},
+    axis lines=left,
+    samples=200,
+    width=10cm,
+    height=8cm
+]
+
+    % Plot the Lorentz Factor curve
+    \addplot[
+        domain=0:0.986, % Cut off slightly before 1 to avoid division by zero error
+        color=blue,
+        thick,
+    ] {1 / sqrt(1 - x^2)};
+    \addlegendentry{$\gamma = \frac{1}{\sqrt{1 - (v/c)^2}}$}
+
+    % Visual anchor: Dashed line at the speed of light asymptote
+    \draw[red, dashed, thick] (axis cs:1,0) -- (axis cs:1,6)
+        node[pos=0.5, right, rotate=90, yshift=2mm] {Speed of Light ($v=c$)};
+
+    % Highlight specific data points for context
+    % At v = 0.6c, gamma = 1.25
+    \node[circle, fill=blue, inner sep=1.5pt] at (axis cs:0.6, 1.25) {};
+    \draw[gray, dotted] (axis cs:0.6,0) -- (axis cs:0.6,1.25) -- (axis cs:0,1.25);
+
+    % At v = 0.8c, gamma = 1.66
+    \node[circle, fill=blue, inner sep=1.5pt] at (axis cs:0.8, 1.667) {};
+    \draw[gray, dotted] (axis cs:0.6,0) -- (axis cs:0.8,1.667) -- (axis cs:0,1.667);
+
+\end{axis}
+\end{tikzpicture}
+
+%\index{Jacobi Identity|(}
 
 Quantum-Theory\index{Quantum-Theory} $\rightarrow$ A generalization/systematic refinement of classical mechanics \\
  
@@ -1343,7 +1405,7 @@ Wave-equation\index{Wave-equation} $\longrightarrow$
 \frac{\partial^2u(x,t)}{\partial t^2} = c^2 \frac{\partial^2 u(x,t)}{\partial x^2}  \text{[Relates acceleration and curvature].}
 \end{equation}
   
-Decoherence - The inevitable interaction of a system and its environment(quantum-to-classical transition; Its a fundamental limiting factor in the useful operation of Quantum Computers).  \\
+Decoherence - The inevitable interaction of a system and its environment(quantum-to-classical transition; It's a fundamental limiting factor in the useful operation of Quantum Computers).  \\
                                                                          
 Spin(total-angular-momentum)\index{Spin(total-angular-momentum)}/directional quantization) - a particle $\ell$ of non-negative integer or half integer. The Hilbert space for such a particle is
 $\mathscr L^2(\mathbb R^3) \hat \otimes V_{\ell}$, where $V_{\ell}$ is an irreducible projective representation of SO(3)
@@ -1634,8 +1696,21 @@ Resolution-of-an-identity\index{Resolution-of-an-identity} $\longrightarrow$ $\s
 
 Analytic definition of an angle $\longrightarrow$
 
+Phase-Space $\longrightarrow$ Space of solutions to the Classical Equations Of Motion(E.O.M)/only linear vector spaces, with an inner product, mapping to Hilbert Space, $\iff$ Hilbert Space is of a single Quantum particle.
 
-%\end{Definitions}
+Potential Barrier\index{Potential Barrier} $\longrightarrow$ A finite-height square barrier described by the following Potential-Energy function:  \\
+
+\[
+V(x) = \begin{cases}
+0 & \text{when } x < 0 \\
+V_0 & \text{when } 0 \leq x \leq L \\
+0 & \text{when } x > 0
+\end{cases}
+\]
+
+This represents a simple model for the Potential Energy of an Electron in the presence of two slabs of metal separated by an air gap of thickness (L). The Potential Energy is lower within either slab, than in the gap between them.
+
+\newpage
 
 \section{Ideas}
 
@@ -1950,7 +2025,7 @@ $i \hbar \frac{d \hat{A}_H(t)}{dt}$ = $[\hat{A_\mathbf H}(t)]$,   \\
 
 $\hat{H}_H(t)]$ + $i \hbar$ $\frac{\partial \hat{A}_H(t)}{dt}$.  \\
 
-$\bullet$ (30) harmonic oscillator\index{harmonic oscillator}: \\
+$\bullet$ (30) harmonic oscillator\index{harmonic oscillator}; See \pageref{Harmonic Oscillator}  \\
 
 $\hat{H}$ = $\frac{1}{2m} \hat{p}^2$ + $\frac{1}{2}m \omega^2 \hat{x}^2$ = $ \hbar \omega(\hat{N}$ + $\frac{1}{2})$,  \\
 
@@ -2345,6 +2420,187 @@ Stationary, and static aren't the same! \\
 In general, $\Psi(x,t)$ = $\sum_{n = 1}^\infty$ $C_n$ $\Psi(x,t)$ = $\sum_{n = 1}^\infty$ $\psi(x) e^{\frac{i E}{\hbar}t}$, with constant ($C_n$ = $a_n + i b_n$). The evolution of the wave-function is Linear, and collapses, when there's a measurement.  \\
 At $t = 0$, the \emph{Initial-State}\index{Initial-State}, $\psi(x,0)$ = $\sum_{n = 1}^\infty$ $C_n$ $\psi_{n} (x)$.  \\
 Any $t^{'}$, can be approximated, with this set of wave-function.
+
+\newpage
+
+\chapter{Special Potentials}
+\label{Special Potentials}
+\paragraph{A Particle in an Infinite Square Well Potential}
+
+\noindent
+
+The Schr$\ddot{o}$dinger wave-equation has \emph{standing-wave} solutions, only if the Potential Energy function V, does NOT depend on Time, but depends on Position (x) alone. \\
+
+The calculation of the allowed Energy Levels in a system involves only the $\mathbf{\textbf{time-independent Schrödinger equation}}$, whereas finding the \emph{probabilities of transition} between these levels, requires the solution of the time-dependent equation.  \\
+
+A wave-function that does not vanish at the end points, is not an \emph{allowed state} in the space of states.  \\
+
+While the action of $\hat{p}$ is not well defined, the action of $\hat{p^2}$ is well defined:  \\
+
+Acting on Eigenstates, we have $\psi_n$ $\approx$ $\psi_n^{''}$ $\approx$ $\psi_n$.  \\
+
+It is important that $\hat{p^2}$ is well defined, since the Hamiltonian $\hat{H}$ contains this operator.  \\
+
+When V(x) is such that the particle is confined to some region of space, only certain \emph{discrete Energies} $E_n$ give solutions $\psi_n$, that can satisfy the \emph{normalization condition} $\int$ $\mid \psi \mid^2$ dt = $1$.  \\
+
+The complete time-dependent wave-functions are:  \\
+
+$\psi_n$(x, t) = $\psi_n$(x) $e^{-i \omega_n t}$ = $\psi_n$(x) $e^{-i(\frac{E_n}{h})t}$  \\
+
+I will illustrate the use of the time-independent Schr$\ddot{o}$dinger equation by solving it for the problem of a particle in a box. The potential Energy for a one-dimensional box from x = 0 to x = a; See the Mathematical description of \pageref{Harmonic Oscillator}. $\forall$ values of (x) , in the interval 0 < x < a, is a solution to the wave-equation. \\
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=1.4]
+    % Draw the potential walls (V = infinity)
+    \fill[pattern=north east lines, gray!30] (-0.5,0) rectangle (0,3.5);
+    \fill[pattern=north east lines, gray!30] (4,0) rectangle (4.5,3.5);
+
+    % Draw the well bottom (V = 0)
+    \draw[thick] (0,0) -- (4,0);
+    \draw[thick] (0,3.5) -- (4,3.5) node[midway, above] {$V(x) = \infty$};
+
+    % Draw the labels for the walls
+    \node at (-0.15, 1.65) {$V = \infty$};
+    \node at (4.15, 1.65) {$V = \infty$};
+    \node at (2, -0.4) {$0$};
+    \node at (4, -0.4) {$a$};
+
+    % Energy level 1 (n=1)
+    \draw[blue, thick] (0,0.8) -- (4,0.8);
+    \node[right, blue] at (3.0, 0.8) {$E_1$};
+
+    % Energy level 2 (n=2)
+    \draw[blue, thick] (0,1.8) -- (4,1.8);
+    \node[right, blue] at (4.1, 1.8) {$E_2$};
+
+    % Energy level 3 (n=3)
+    \draw[blue, thick] (0,2.8) -- (4,2.8);
+    \node[right, blue] at (4.1, 2.8) {$E_3$};
+
+    % Wavefunction n=1
+    \draw[red, thick, domain=0:4, samples=100] plot (\x, {0.8 + 0.4*sin(\x * 180 / 4)});
+
+    % Wavefunction n=2
+    \draw[red, thick, domain=0:4, samples=100] plot (\x, {1.8 + 0.4*sin(\x * 360 / 4)});
+
+    % Wavefunction n=3
+    \draw[red, thick, domain=0:4, samples=100] plot (\x, {2.8 + 0.4*sin(\x * 540 / 4)});
+\end{tikzpicture}
+\caption{Infinite square well potential with energy levels $E_n$ and wave-functions $\psi_n(x)$.}
+\end{figure}
+
+\paragraph{A Particle in a Finite Square Well Potential}
+
+The solutions of the Schr$\ddot{o}$dinger equation are well behaved (that is, they approach 0 as $\mid x \mid$ becomes very large), only for certain values of the Energy. These Energy values are the allowed Energies for the \emph{finite square well}.  \\
+
+The state $E_1$ is the ground-state, $E_2$ is the first excited state, \ldots. A few features of the wave-functions are manifest. They alternate in parity: $E_1$ is even, $E_2$ is odd, \ldots. The number of nodes increases as the Energy increases: $E_1$ has no nodes, $E_2$ has one node, \ldots. The exponential decay in the region $\mid x \mid$ > a is fastest for the ground-state, and slowest for the least bound state. The deeper the bound state Energy, the faster the wave-function must decay in the $\mathbf{\textbf{forbidden region}}$.  \\
+
+
+
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=1.2, samples=100]
+
+    % Draw Axes
+    \draw[->, thick] (-4.5, 0) -- (4.5, 0) node[right] {$x$};
+    \draw[->, thick] (0, -0.5) -- (0, 3.5) node[above] {$V(x), E$};
+
+    % Define Dimensions and Parameters
+    \def\a{2}     % Half-width of the well
+    \def\Vb{2.5}  % Potential Barrier height
+
+    % Draw Potential Well (V(x))
+    \draw[very thick, blue!80!black] (-4.5, \Vb) -- (-\a, \Vb)
+        -- (-\a, 0)
+        -- (\a, 0)
+        -- (\a, \Vb) -- (4.5, \Vb);
+    \draw[very thick, blue!80!black] (-\a, 0) -- (-\a, -0.5);
+    \draw[very thick, blue!80!black] (\a, 0) -- (\a, -0.5);
+
+    % Energy Level 1 (Ground State)
+    \def\Eone{0.8}
+    \draw[thick, red!70!black] (-\a, \Eone) -- (\a, \Eone) node[above right] {$E_1$};
+    % Wavefunction 1 (psi_1)
+    \draw[thick, black!70, domain=-4.5:-\a] plot (\x, {1.2*exp(1.2*(\x + \a)) + \Eone});
+    \draw[thick, black!70, domain=-\a:\a] plot (\x, {1.2*cos(deg(\x*1.5708/\a)) + \Eone});
+    \draw[thick, black!70, domain=\a:4.5] plot (\x, {1.2*exp(-1.2*(\x - \a)) + \Eone}) node[right] {$\psi_1(x)$};
+
+    % Energy Level 2 (First Excited State)
+    \def\Etwo{1.8}
+    \draw[thick, red!70!black] (-\a, \Etwo) -- (\a, \Etwo) node[above right] {$E_2$};
+    % Wavefunction 2 (psi_2)
+    \draw[thick, black!70, domain=-4.5:-\a] plot (\x, {1*exp(1.2*(\x + \a)) + \Etwo});
+    \draw[thick, black!70, domain=-\a:\a] plot (\x, {1*sin(deg(\x*3.1415/\a)) + \Etwo});
+    \draw[thick, black!70, domain=\a:4.5] plot (\x, {-1*exp(-1.2*(\x - \a)) + \Etwo}) node[right] {$\psi_2(x)$};
+
+    % Labels
+    \node[below] at (-\a, 0) {$-a$};
+    \node[below] at (\a, 0) {$a$};
+    \node[left] at (0, \Vb) {$V_0$};
+
+\end{tikzpicture}
+\caption{Finite square well potential showing the first two bound energy levels ($E_1, E_2$) and their respective wavefunctions ($\psi_1, \psi_2$), which decay exponentially into the classically forbidden regions $|x| > a$.}
+\end{figure}
+
+\paragraph{Potential Barriers, and Tunneling}
+\noindent
+
+In Classical Newtonian Mechanics, if a particle is located to the left of the barrier, which might be a hill, and if the total Mechanical Energy of the system is $E_1$, the particle cannot move farther to the right than (x = a). If it did, the Potential Energy (V), would be greater than the total Mechanical Energy (E), and the Kinetic Energy (K = E - V) would be negative. This is impossible in Classical Mechanics, since (K = $\frac{1}{2} mv^2$) can never be negative.  \\
+
+A Quantum-Mechanical particle behaves differently: If it encounters a barrier\index{barrier}, and has Energy less than $E_2$, it may appear on the other side. This phenomenon is called $\mathbf{\textbf{tunneling}}$.  \\
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=1.2]
+% Draw potential barrier
+\fill[gray!20] (-1.5,0) rectangle (1.5,2);
+\draw[thick, black] (-4,0) -- (-1.5,0) -- (-1.5,2) -- (1.5,2) -- (1.5,0) -- (4,0);
+\node at (0,1) {Barrier};
+
+% Draw energy level
+\draw[dashed, red, thick] (-4,0.8) -- (4,0.8) node[above right] {$E_2$};
+
+% Draw wave function (tunneling effect)
+% Region 1: Incident / Reflected Wave (x < -1.5)
+\draw[thick, blue, samples=150, domain=-4:-1.5] plot (\x,{0.8 + 0.3*sin(deg(5*(\x+1.5)))});
+
+% Region 2: Exponential Decay inside the barrier (-1.5 <= x <= 1.5)
+\draw[thick, blue, samples=100, domain=-1.5:1.5] plot (\x,{0.8 * exp(-1.2*(\x+1.5))});
+
+% Region 3: Transmitted Wave (x > 1.5)
+\draw[thick, blue, samples=150, domain=1.5:4] plot (\x,{0.8 * exp(-1.2*3) + 0.1*sin(deg(5*(\x-1.5)))});
+
+\end{tikzpicture}
+\caption{Quantum tunneling through a potential barrier.}
+\end{figure}
+
+Just as with the finite potential well, the functions have to join smoothly at the boundary points (x = 0) and (x = L), which means that both $\psi_x$ and $\frac{d \psi_x}{dx}$, have to be continuous at these points.
+
+
+
+
+
+\paragraph{Decay}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3159,7 +3415,7 @@ $\left\{
 
 \chapter{Transitions}
 
-Consider Dyson Series, up to the $2_{nd}$ term. The probability of a perturbed wave-function from its' initial state(i), to the final state(f), is given by:
+Consider Dyson Series, up to the $2^{nd}$ term. The probability of a perturbed wave-function from its' initial state(i), to the final state(f), is given by:
 \begin{equation}
 P_{fi} = \left| - \frac{i}{\hbar} \int_{0}^t \langle \psi_f \mid \hat V (t^{\prime}) \mid \psi_i \rangle e^{i \omega_{fi} (t^{\prime})} dt^{\prime} \right|^2
 \end{equation}
@@ -3212,15 +3468,33 @@ $K^2$ = $\frac{2 m E}{\hbar^2}$  \\
 
 $\therefore$ $\Psi(x)$ = $e^{i K a}$ [$A \sin(K(x + a))$ + $B(\cos(K(x + a))$]
 
-\paragraph{Wicks' Theorem}
+\paragraph{Stone-von Neumann Theorem}
+
+\paragraph{Segal-Bargmann Space}
+
 \paragraph{Wignar-Eckart Theorem}
+
 \paragraph{virial Theorem} See Eq. \eqref{eq:virial Theorem}
+
 \paragraph{Gram-Schmidt Theorem}
+
 \paragraph{Optical Theorem}
+
+\paragraph{Wicks' Theorem}
+
 \paragraph{Parsevals' Theorem}
+
+\paragraph{Cauchy Residue Formula/Yukawa Potential}
+
+\paragraph{Poisson Distribution}
+
 \paragraph{Ritz Theorem}
+
 \paragraph{Steiners' Parallel-Axis Theorem}
+
 \paragraph{Larmors' Theorem}
+
+\paragraph{Noethers' Theorem}
 
 \chapter{Time-Dependent Problems}
 
@@ -3232,9 +3506,23 @@ to adopt periodic boundary conditions, which require that the wave-function is u
 
 In \url{http:\\pages.cs.wisc.edu/kovar/hall.html},
 
-\chapter{Quanglement}
-\section{Entanglement}
+\chapter{Entanglement}
+
 There is a need to describe systems that extend over macroscopic distances in ways that are inconsistent with Classical ideas. In Quantum Mechanics, two observable particles ($x_1$), and ($x_2$) commute by Eq. \eqref{eq:Abelian/Commutatitive}. How can measurement of particle $(x_2$)s' Momentum, interfere with ($x_1$)s', if they're far apart? The way out of this dilemma within Quantum Mechanics is to suppose that the second measurement, which gives particle 1 a definite Position, does indeed prevent particle 2 from having a definite Momentum, even though the two particles are far apart. The states of the two particles are said to be $\mathbf{entangled}$. When two systems have wave-functions which differ by at most a constant phase factor, they are said to be in the same Quantum state. It is essential that in every measurement, there shall actually be a disturbance arising from the apparatus that destroys all elements of corresponding to observables that do not commute with the measured variable.
+
+\chapter{Path Integrals in Quantum Field Theory}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \chapter{Index Theorem}
@@ -3242,13 +3530,56 @@ There is a need to describe systems that extend over macroscopic distances in wa
 Clifford Algebra, and (K-Theory).
 
 
-
-
-
-
-
-
 \chapter{Problems}
+
+\paragraph{Harmonic Oscillator}
+\label{Harmonic Oscillator}
+\noindent
+
+Consider a non-relativistic particle of mass (M) in one dimension, confined in a potential that vanishes for $(-a \leq x \leq a)$, and becomes infinite at $x = \pm a$, so that the wave-function must vanish at $x = \pm a$.  \\
+
+$\bullet$ Find the Energy values of states with definite Energy, and the corresponding normalized wave-functions.  \\
+
+Answer:  \\
+
+The states of definite Energy are those which are solutions of the time-independent Schr$\ddot{o}$dinger equation:  \\
+
+$\frac{-\hbar^2}{2M}$ $\frac{d^2}{dx^2}$ $\psi$(x) + V(x)$\psi$(x) = E$\psi$(x).  \\
+
+The potential for the infinite square(See \pageref{Special Potentials}) well is given by:  \\
+
+\[
+V(x) = \begin{cases}
+0 & \text{for } |x| < a \\
+\infty & \text{for } |x| \geq a
+\end{cases}
+\]
+
+Continuity of the wave-function requires that we impose the boundary conditions $\psi$(x = $\pm$ a;  \\
+
+and so, \\
+
+\noindent
+$0 = A \sin(ka) + B \cos(ka)$, \qquad $0 = -A \sin(ka) + B \cos(ka)$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \paragraph{Canonical Quantization}
 \noindent
 
@@ -3455,28 +3786,7 @@ $L^{2l + 1}_{n + !}$ is an associated \emph{Laguerre polynomial}. The Quantum Nu
 
 Energy eigenvalues for the Hydrogen Atom are given by: $E_n$ = - $\frac{Z^2}{2n^2}$ $\frac{e^2}{a_0}$.  \\
 
-\href{https://en.wikipedia.org/wiki/Laguerre_polynomials#cite_note-24} for in-depth exposition of Edmond Laguerre polynomials.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Study \url{https://en.wikipedia.org/wiki/Laguerre_polynomials#cite_note-24}, for an in-depth exposition of Edmond Laguerre polynomials.
 
 \begin{tikzpicture}
 \begin{axis}[
@@ -3535,6 +3845,47 @@ $3$ & $\frac{1}{6}(-x^3 + 9x^2 - 18x + 6)$ & $\frac{1}{6}\left[-x^3 + 3(\alpha +
 
 \subsection{Legendre Polynomials}
 
+Exposited in the links, one can find the Mathematical expansion of Gravitational Potentials using polynomials. Study:
+
+$\bullet$ \url{https://en.wikipedia.org/wiki/Legendre_polynomials}, and
+
+$\bullet$ \url{https://www.theoretical-physics.com/dev/math/spherical-harmonics.html}, for an in-depth exposition.  \\
+
+Legendre polynomials function as a standardized Mathematical toolkit for dismantling complex Physical Potentials into scannable, independent Geometric layers.
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    title={First Four Legendre Polynomials},
+    xlabel={$x$},
+    ylabel={$P_n(x)$},
+    xmin=-1.1, xmax=1.1,
+    ymin=-1.1, ymax=1.1,
+    axis lines=center,
+    grid=major,
+    width=10cm,
+    height=8cm,
+    legend pos=outer north east,
+    legend entries={$P_0$, $P_1$, $P_2$, $P_3$}
+]
+
+% P_0(x) = 1
+\addplot[domain=-1:1, blue, thick] {1};
+
+% P_1(x) = x
+\addplot[domain=-1:1, red, thick] {x};
+
+% P_2(x) = (3x^2 - 1)/2
+\addplot[domain=-1:1, green!70!black, thick] {(3*x^2 - 1)/2};
+
+% P_3(x) = (5x^3 - 3x)/2
+\addplot[domain=-1:1, orange, thick] {(5*x^3 - 3*x)/2};
+
+\end{axis}
+\end{tikzpicture}
+\caption{The graphs of $P_0(x)$ through $P_3(x)$ on the interval $[-1, 1]$.}
+\end{figure}
 
 
 
@@ -3548,6 +3899,44 @@ $3$ & $\frac{1}{6}(-x^3 + 9x^2 - 18x + 6)$ & $\frac{1}{6}\left[-x^3 + 3(\alpha +
 
 
 
+
+
+
+
+
+
+\begin{table}[htbp]
+\centering
+\caption{First Six Legendre Polynomials}
+\label{tab:legendre_polynomials}
+\begin{tabular}{cl}
+\toprule
+\textbf{Order ($n$)} & \textbf{Polynomial $P_n(x)$} \\
+\midrule
+0 & $P_0(x) = 1$ \\
+1 & $P_1(x) = x$ \\
+2 & $P_2(x) = \frac{1}{2} (3x^2 - 1)$ \\
+3 & $P_3(x) = \frac{1}{2} (5x^3 - 3x)$ \\
+4 & $P_4(x) = \frac{1}{8} (35x^4 - 30x^2 + 3)$ \\
+5 & $P_5(x) = \frac{1}{8} (63x^5 - 70x^3 + 15x)$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Runge-Lenz Vector}
 
 \section{Proof of Fouriers' Theorem}
 
@@ -3672,24 +4061,58 @@ $\int_{-\infty}^{\infty} \delta'(x) f(x) dx$ = $\left[ \delta(x) f(x) \right]_{-
 \midrule
 1998 & Neutrino Oscillations & Evidence from Super-Kamiokande shows that neutrinos have mass, requiring minor extensions to the Standard Model. \\
 \midrule
-2012 & Higgs Boson Discovery & CERN physicists announce the discovery of the Higgs boson, confirming the mechanism of electroweak symmetry breaking. \\
+2012 & Higgs Boson Discover,y & CERN physicists announce the discovery of the Higgs boson, confirming the mechanism of electroweak symmetry breaking. \\
 \bottomrule
 \end{longtable}
 
 \newpage
 
-\section{Hamilton Equations Of Motion}
+\section{Hamilton Equations}
+
+The Hamiltonian satisfies;  \\
+
+$\mathcal {H}$ $\left(\frac{\partial \mathcal{L}}{\partial \boldsymbol \dot{q}}, {\boldsymbol {q}},t \right)$ = $E_{\mathcal{L}}$ $({\boldsymbol {q}},{\boldsymbol {\dot{q}}},t)$, \\
+
+which implies that $\mathcal{H}$ (${\boldsymbol {p}},{\boldsymbol {q}},t$) = $\sum_{i=1}^{n}$ $p_{i}$ ${\dot{q}}^{i}$ - $\mathcal{L}$ ($\boldsymbol {q},\boldsymbol \dot{q},t$), where the velocities $\boldsymbol \dot{q}$ = (${\dot{q}}^{1}, \ldots, \dot{q}^{n})$ are found from the (n-dimensional) equation  \\
+
+%$\boldsymbol {p}$ = $\frac{\partial \mathcal{L}}{\partial \boldsymbol {\dot{q}}}$ which, by assumption, is uniquely solvable for ⁠$\boldsymbol {\dot{q}}$⁠.
+
+$\mathbf{p} = \frac{\partial \mathcal{L}}{\partial \mathbf{\dot{q}}}$ which, by assumption, is uniquely solvable for $\mathbf{\dot{q}}$.
+
+
+The (2n-dimensional) pair ($\boldsymbol {p},\boldsymbol {q}$) is called \emph{phase space coordinates}; Also Canonical Coordinates.
+
+
+
+\section{Langragian}
+
+The Lagrangian Mechanics defines the Energy function.  \\
+
+$E_{\mathcal {L}}({\boldsymbol {q}},{\boldsymbol {\dot {q}}},t)\,{\stackrel {\text{def}}{=}}\,\sum _{i=1}^{n}{\dot {q}}^{i}{\frac {\partial {\mathcal {L}}}{\partial {\dot {q}}^{i}}}-{\mathcal {L}}$.
+
+The Legendre transform of ${\mathcal {L}}$ turns ${E_{\mathcal {L}}}$ into a function ${\mathcal {H}}({\boldsymbol {p}},{\boldsymbol {q}},t)$ known as the Hamiltonian.
+
+Arbitrary infinitesimal variations of coordinates, and a certain force-function, was introduced by Lagrange, involving the Masses, and Distances of several points of a system.
 
 
 
 
+
+
+
+
+
+
+
+\section{Path Integral}
 
 \section{Wheeler-De Witt Equation}
 
+\section{Greens' Function}
 
+\section{Symmetry Breaking}
 
-
-
+ Maxwell equations
 
 \section{List of experiments}
 
@@ -3723,6 +4146,15 @@ G.Strang, Introduction To Linear Algebra(5th Edition), (2016)
 
 \bibitem{Landau}
 L.D.Landau and E.M.Lifshitz, Quantum Mechanics; Non-relativistic Theory(Volume 3), (1977)
+
+\bibitem{Schatz and Ratner}
+George C. Schatz and Mark A. Ratner, Quantum Mechanics in Chemistry, (1993 and 2002)
+
+\bibitem{Coleman}
+Sidney Coleman, Quantum Field Theory - Lectures of Sidney Coleman, Forword by David Kaiser, (2019)
+
+\bibitem{Hall}
+Brian C. Hall, Quantum Theory For Mathematicians, (2013)
 
 \end{thebibliography}
 
