@@ -30,11 +30,13 @@
   \fancyfoot[C]{\hyperlink{toc}{\thepage}}
 }
 \usepackage{mathtools}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+
 \usepackage{listings}
 \usepackage{ifthen}
 \usepackage{perpage}
 \usepackage{wrapfig}
-\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+%\DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \usepackage{tikz}
 \usetikzlibrary{patterns}
 \usepackage{pgfplots}
@@ -58,6 +60,9 @@
 \usepackage{ragged2e,array,booktabs}
 \usepackage{siunitx}  % For formatting units and alignment
 %\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Interlude:  Set up PRINTING (default) or SCREEN VIEWING %%%%
@@ -392,7 +397,7 @@ DP@rint:#1\endcsname\relax\phantom
     \includegraphics[width=4.2cm]{infinity.pdf}
     %\vspace*{\fill}
     %\vspace*{1cm} % Adjust to push text down from the top
-    {\Huge \textbf{Pre-QFT Notes}}\\[2cm]
+    {\Huge \textbf{Pre-QFT Notes, a path to the Standard Model}}\\[2cm]
     {\Large OWINO STEVE}\\[0.5cm]
     %\vfill % Pushes the remaining text/publisher info to the bottom
     %{\large S\\ 2026}  %Publisher Name\\ Year
@@ -401,7 +406,11 @@ DP@rint:#1\endcsname\relax\phantom
     \date{May, 18, 2026}
     %\version{1.0}
     \bioinfo{Bio}{https://github.com/StevenOwino}
-    \extrainfo{Someone asks if it's measurable, and you say, yes it is. You’re going to feel pretty silly if they spend a million and a half dollars to do the measurement, and can’t find it, because you’ve put a $(2 \pi)^2$ in a numerator, when it should have been in the denominator... - Sidney Coleman}
+    \extrainfo{Someone asks if it's measurable, and you say, yes it is. You’re going to feel pretty silly if they spend a million and a half dollars to do the measurement, and can’t find it, because you’ve put a $(2 \pi)^2$ in a numerator, when it should have been in the denominator... - Sidney Coleman
+
+    A theory cannot be both soluble and relativistic - Steven Weinberg}
+
+
 \end{titlepage}
 %\makecoverpage % This prints the cover with the equation
 
@@ -503,11 +512,11 @@ to carry over to QM(Quantum Mechanics)...this is one of the most striking featur
 the correspondence between observables, and one-parameter groups of symmetries. We hereby have a Mathematical model
 capable in principle, of supplying the answer to any Physical question we might ask. The fact that the eigenvalues check with
 the observed spectrum of the hydrogen atom, when one takes $\mathbf K$ = $\frac{\hbar}{2 \pi}$, which provides a confirmation
-of the identity of $\hbar$, with $\frac{\hbar}{2 \pi}$. Your objective, dear reader, is to show in theorems of analysis, providing
-asymptotic formulas for the eigenvalue distribution of differential operators.                                                                      
+of the identity of $\hbar$, with $\frac{\hbar}{2 \pi}$. Your objective, reader, is to show in theorems of analysis, providing
+\emph{asymptotic formulas for the eigenvalue distribution of differential operators}. \\
 Don't try to read these notes linearly, instead, come back here as a formula reference. \\
 
-Look up, and study these topics from the literature: Quantum particle in a box,Tensor fields,
+Look up, and study these topics from the literature: Quantum particle in a box, Tensor fields, the Standard Model of elementary particles, the magnetic dipole moment of the electron, the force of Gravity, High Energy Physics,
 
 \section{Why Quantum Mechanics?}
 
@@ -613,7 +622,7 @@ Schr$\ddot{o}$dinger Time Independent Equation  \\
 
 $\bullet$ The identity Zero: Zero has no multiplicative inverse!!  \\
 
-$\bullet$ Informational Warning: All descriptions here are in the literature, and not original. DO NOT attempt to frame a physical picture!!, or take Relativity of simultaneity into sufficient account. Quantum Field Theory follows once these principles are mastered. \\
+$\bullet$ Informational Warning: All descriptions here are in the literature, and not original. DO NOT attempt to frame a physical picture!!, or take Relativity of simultaneity into sufficient account, characteristic quantities of Black Holes, the total mass of space-time........ Quantum Field Theory of Particle Physics follows, once these principles are mastered. \\
 
 $\bullet$ On Rational numbers: If (a) $\neq$ 0, there is no rational number($\mathbb Q$), where (b) $\times$ 0 = (a), can be fulfilled.
 
@@ -1182,7 +1191,7 @@ been a \emph{linear progress}.  And the road, no doubts, is \emph{fascinating}. 
 
 \section{Characteristics of describing Energy}\label{sec:Characteristics of describing Energy}
 
-We'll not expend electronic ink for philosophical arguments! i.e. How long will $\mathbb Z$ remain a bachelor, cold fusion, climate change, why Wave-functions overlap, determinism(e.g. Wigners' friend, Schr$\ddot{o}$dingers' cat), why periodicity of Quantum numbers lead to periodicity of chemical elements, Spin-flip transitions(oscillating magnetic monopoles/distance transverse magnetic fields($\mathbf B$), produced by an oscillating magnetic dipole, paradox of time-dilation, is the Earth an Inertial frame, Relativistic Doppler Effect, \ldots etc. \\
+We'll not expend electronic ink for philosophical arguments! i.e. How long will $\mathbb Z$ remain a bachelor, cold fusion, climate change, why Wave-functions overlap[Adding together several plane waves of different wavelengths can produce a wave that is relatively localized], determinism(e.g. Wigners' friend, Schr$\ddot{o}$dingers' cat), why periodicity of Quantum numbers lead to periodicity of chemical elements, Spin-flip transitions(oscillating magnetic monopoles/distance transverse magnetic fields($\mathbf B$), produced by an oscillating magnetic dipole, paradox of time-dilation, is the Earth an Inertial frame, Relativistic Doppler Effect, \ldots etc. \\
 Ultra-cold atoms(lock-stepped with the same spin), have been realized in the laboratory(Bose-Einstein condensate[BEC]), through observing the center of mass system(a trick) of wave-like properties of atoms, so that the Pauli exclusion principle is NOT violated.  \\
 This technology, although limited(interaction with the external envinroment, depolarizes particles), has applications in Quantum computers(cryptography - Quantum key distribution ; Refer to figure \ref{fig:Binary Entropy Diagram.png}), and is realized only for very low temperature Kelvin scales, not for Classical computers.  \\
 Even the speed of light (C) - has been stopped!, using slow light pulses. The wave-particle duality(using a super-computer), was proved by an experiment in 1974, by John Clauser( concludes that the wave-function collapse is an objective $\mathbb R$ process - not a physical process, and not Relativistic Invariant - agreed). The idea of measurement of the wave-function, with any apparatus(alters the azimuthal Quantum number/angular momentum of the orbital plane - resulting to a breakup of Eigenvalues into a one-dimensional unitary representation cylindrical symmetry of 2j + 1, from spherical symmetry of j.  \\
@@ -1693,7 +1702,13 @@ similar to the Schr$\ddot{o}dinger$ equation, $i\hbar \partial_t \rho(t)$ = $[H,
   
 Resolution-of-an-identity\index{Resolution-of-an-identity} $\longrightarrow$ $\sum_{k_0} \sum_{\mathbf k_1}$ $<k_0|A_0| {\mathbf k_1}><{\mathbf k_1}|A_1|k_0>$ \\
 
-Analytic definition of an angle $\longrightarrow$
+Analytic Geometrical definition of an angle:  \\
+
+$\longrightarrow$ $\cos \theta$ = $\frac{\textbf{a} \cdot \textbf{b}}{\lVert \textbf{a} \rVert \lVert \textbf{b} \rVert}$
+
+Relative phase of an angle:\\
+
+$\longrightarrow$
 
 Phase-Space $\longrightarrow$ Space of solutions to the Classical Equations Of Motion(E.O.M)/only linear vector spaces, with an inner product, mapping to Hilbert Space, $\iff$ Hilbert Space is of a single Quantum particle.
 
@@ -1709,9 +1724,18 @@ V_0 & \text{when } 0 \leq x \leq L \\
 
 This represents a simple model for the Potential Energy of an Electron in the presence of two slabs of metal separated by an air gap of thickness (L). The Potential Energy is lower within either slab, than in the gap between them.
 
+Equation of Motion $\longrightarrow$ A system of Partial Differential Equations[PDEs]; ($q, \partial \phi, \partial^2 \phi$) = $0$, of a Classical Field Theory, defined by the Lagrangian($\mathcal{L}$). Refer to page \pageref{sec:Lagrangian and Stationary Action}.\\
+
+i.e. $\boxed{\delta_\psi S(\phi) = 0 \iff (q, \partial \phi, \partial^2 \phi = 0}$  \\
+
+Causality $\longrightarrow$ A source producing an initial expectation value of a field, which is only non-vanishing in the future-light cone of the source.  \\
+i.e. for any space-like separation, ($x - x^{'}$ > 0), $\langle \left| 0[\phi(x), \phi(x^{'})] \right| 0 \rangle$ = $0$
+
+
 \newpage
 
 \section{Ideas}
+\label{sec:Ideas}
 
 \begin{figure}
 \begin{center}
@@ -1764,7 +1788,15 @@ trajectory $e^{-i Ht}(\psi)$ is a function on $\mathscr M \times \mathbf R$, whe
   
 $\bullet$ Expected-value\index{Expected-value} of the j-th Momentum component $\longrightarrow$ $\frac{\hbar}{i}$ $\int$ $\left(\frac{\partial \psi}{\partial q_j} \overline {\psi} \right)$ $dq_1...dq_{3n}$.  \\
 
-Negative Energy $\longrightarrow$ Bound State
+Negative Energy $\longrightarrow$ Bound State  \\
+
+Planck’s quantization rule for Energy/Planck’s postulate  $\longrightarrow$ The Energy of oscillators, such as pendulums, mass–spring systems, and electric
+oscillators, varies continuously in terms of the frequency. See page \pageref{sec:Ideas}.
+\[
+E = nh\nu, \quad n = 0, 1, 2, 3, \dots
+\]
+
+
 
 
   
@@ -2383,7 +2415,7 @@ $\bullet$ (59) Resonance\index{Resonance}, Breit-Wigner:  \\
 
 $\mid \Psi_s \mid^2$ $\simeq$ $\frac{ \frac{1}{4} \Gamma^2} {(\mathbf E - \mathbf E_\alpha)^2 + \frac{1}{4} \Gamma^2}$.  \\
 
-Energy dependence of the squared scattering amplitude $ \mid \Psi_s \mid^2$ near resonance.  \\
+Energy dependence of the squared scattering amplitude $ \mid \Psi_s \mid^2$ near resonance. It's sharp enough to be an unstable particle. \\
 
 $\bullet$ (60) Scattering in 3D:  \\  
 \begin{equation}
@@ -3408,7 +3440,7 @@ $\left\{
 \right.$
 
 
-\chapter{Scattering}
+\chapter{Scattering and Absorption of Radiation by a Bound System/S-Matrix Elements}
 
 
 
@@ -3528,9 +3560,6 @@ There is a need to describe systems that extend over macroscopic distances in wa
 
 Clifford Algebra, and (K-Theory).
 
-
-\chapter{Problems}
-
 \paragraph{Harmonic Oscillator}
 \label{Harmonic Oscillator}
 \noindent
@@ -3582,11 +3611,13 @@ $0 = A \sin(ka) + B \cos(ka)$, \qquad $0 = -A \sin(ka) + B \cos(ka)$.
 \paragraph{Canonical Quantization}
 \noindent
 
-(1) What is the form of Lagrange Density?  \\
+(1) What is the form of Lagrange Density for $\rho$ = $\lvert \psi \rvert^2$  \\
 
 Answer:  \\
 
 $\mathscr{L}$ = i$\psi^{*}$ $\partial \psi$ + b$\nabla \psi^{*}$ $\times$ $\nabla \psi$  \\
+
+Its' \textbf{non-relativistic} form is $\rho$(x) = $i[\phi*(x) \frac{\partial \phi(x)}{dt} - \frac{\partial \phi^*(x)}{dt} \phi(x)$]
 
 (2) Taking $\psi$, and $\psi^{*}$ as independent fields, what is the form for the Euler-Lagrange equations?  \\
 
@@ -3596,13 +3627,17 @@ For $\psi$, \quad $\frac{\partial \mathscr{L}}{\partial \psi^{*}}$ - $\partial_\
 
 For $\psi^{*}$, \quad $\frac{\partial \mathscr{L}}{\partial \psi}$ - $\partial_\mu \frac{\partial \mathscr{L}}{\partial(\partial_\mu \psi)}$ = $0$ - $\partial_0(i \psi^{*})$ - $\partial_{i} (b \partial_{i} \psi^{*})$ = $i \dot{\psi^{*}}$ - b$\nabla^{2} \psi^{*}$ = $0$ \\
 
+\chapter{Problems}
+\section{Estimation of the Plancks' constant}
+
+
 \chapter{Appendix}
 
 
 \begin{remark}
 
 
-This appendix covers some of the  Mathematics used in  exposition of operators, and linear equations. Here you will find the special functions that are relevant to our current application. These require algebraic techniques.  \\
+This appendix covers some of the  Mathematics used in  exposition of operators, and linear equations. Here you will find the special functions. These require algebraic techniques.  \\
 
 Calculus is also necessary to understand much of this material, for it is always used in advanced topics.  \\
 
@@ -3930,6 +3965,214 @@ Legendre polynomials function as a standardized Mathematical toolkit for dismant
 
 
 
+\section{Dominated Covergence}
+
+Uniform convergence on Compact sets is applied to protect the swap, whilst absolute conditions, guarantees that the tails of the infinite series don't contribute an infinite amount of area under the curve near the boundaries of the interval.  \\
+
+Let $(a,b)$ be a finite or infinite interval, and $f_0(t), f_1(t), \ldots$ be real or complex-valued continuous functions for $t \in (a,b)$.  \\
+
+Suppose $\sum_{n=0}^\infty f_n(t)$ converges uniformly on any compact subinterval of $(a,b)$, and at least one of the following two conditions is satisfied:  \\
+\[
+\int_a^b \sum_{n=0}^\infty |f_n(t)| \, dt < \infty \quad \text{or} \quad \sum_{n=0}^\infty \int_a^b |f_n(t)| \, dt < \infty
+\]
+Then, the summation and integration can be interchanged:
+\[
+\int_a^b \sum_{n=0}^\infty f_n(t) \, dt = \sum_{n=0}^\infty \int_a^b f_n(t) \, dt
+\]
+\noindent
+ An integrable envelope, (or "ceiling and floor"), traps a sequence of functions. The graph below shows how a sequence of oscillating functions ($f_n(t)$) is constrained by a stable, integrable dominating function (g(t)), and its reflection (-g(t)).  \\
+
+Because the area under \(g(t)\) is finite, it prevents the functions from escaping to infinity, or losing their area in the limit.  \\
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = middle,
+    xlabel = {$t$},
+    ylabel = {$y$},
+    xmin = -0.2, xmax = 4.5,
+    ymin = -2.5, ymax = 2.5,
+    xtick = {0.5, 3.8},
+    xticklabels = {$a$, $b$},
+    ytick = \empty,
+    axis line style = {->},
+    every axis x label/.style={at={(current axis.right of origin)},anchor=west},
+    every axis y label/.style={at={(current axis.above origin)},anchor=south},
+    legend style={at={(0.95,0.95)}, anchor=north east, draw=none, fill=none}
+]
+
+    % 1. Shade the integrable area under g(t) and above -g(t)
+    \addplot[
+        domain=0.5:3.8,
+        samples=100,
+        fill=gray!15,
+        draw=none,
+        forget plot
+    ] {2*exp(-0.5*(x-2)^2)} \closedcycle;
+
+    \addplot[
+        domain=0.5:3.8,
+        samples=100,
+        fill=gray!15,
+        draw=none,
+        forget plot
+    ] {-2*exp(-0.5*(x-2)^2)} \closedcycle;
+
+    % 2. Plot Upper Bound g(t)
+    \addplot[
+        line width=1.2pt,
+        dashed,
+        color=black,
+        domain=0.3:4.0,
+        samples=100
+    ] {2*exp(-0.5*(x-2)^2)} node[pos=0.5, above=3pt] {$g(t)$};
+
+    % 3. Plot Lower Bound -g(t)
+    \addplot[
+        line width=1.2pt,
+        dashed,
+        color=black,
+        domain=0.3:4.0,
+        samples=100,
+        forget plot
+    ] {-2*exp(-0.5*(x-2)^2)} node[pos=0.5, below=3pt] {$-g(t)$};
+
+    % 4. Plot Sequence of Functions f_n(t) trapped inside
+    % f_1(t)
+    \addplot[
+        line width=1pt,
+        color=blue,
+        domain=0.5:3.8,
+        samples=100
+    ] {1.2*sin(180*(x-0.5)/3.3)} ;
+    \addlegendentry{$f_1(t)$}
+
+    % f_2(t) - narrower peak
+    \addplot[
+        line width=1pt,
+        color=red,
+        domain=0.5:3.8,
+        samples=150
+    ] {1.8*exp(-3*(x-1.5)^2) - 0.5*sin(180*(x-0.5)/3.3)};
+    \addlegendentry{$f_2(t)$}
+
+    % f_3(t) - shifting/flattening out
+    \addplot[
+        line width=1pt,
+        color=purple,
+        domain=0.5:3.8,
+        samples=150
+    ] {1.5*exp(-4*(x-2.5)^2) + 0.3*cos(360*x)};
+    \addlegendentry{$f_3(t)$}
+
+\end{axis}
+\end{tikzpicture}
+
+The visualization below, demonstrates what happens when the dominating condition fails: a sequence of spikes grows or moves toward infinity, keeping a constant area (usually 1),under each curve, while the pointwise limit of the sequence drops down to (0). Because there is no integrable envelope to trap them, the integral of the limit (0), does not equal the limit of the integrals (1).  \\
+
+\begin{tikzpicture}
+\begin{axis} [
+    axis lines = middle,
+    xlabel = {$t$},
+    ylabel = {$y$},
+    xmin = -0.2, xmax = 5.5,
+    ymin = -0.2, ymax = 4.5,
+    xtick = {1, 2, 3, 4},
+    xticklabels = {$1$, $2$, $3$, $4$},
+    ytick = {1, 2, 4},
+    yticklabels = {$1$, $2$, $4$},
+    axis line style = {->},
+    every axis x label/.style={at={(current axis.right of origin)},anchor=west},
+    every axis y label/.style={at={(current axis.above origin)},anchor=south},
+    legend style={at={(0.95,0.95)}, anchor=north east, draw=none, fill=none}
+]
+
+    % f_1(t): Wide bump centered near 1, height = 1
+    \addplot[
+        line width=1.2pt,
+        color=blue,
+        domain=0:5,
+        samples=100
+    ] {1 * exp(-10*(x-1)^2)};
+    \addlegendentry{$f_1(t)$ (Area = 1)}
+
+    % f_2(t): Narrower bump centered near 2, height = 2
+    \addplot[
+        line width=1.2pt,
+        color=red,
+        domain=0:5,
+        samples=150
+    ] {2 * exp(-40*(x-2)^2)};
+    \addlegendentry{$f_2(t)$ (Area = 1)}
+
+    % f_3(t): Very narrow spike centered near 3, height = 4
+    \addplot[
+        line width=1.2pt,
+        color=purple,
+        domain=0:5,
+        samples=200
+    ] {4 * exp(-160*(x-3)^2)};
+    \addlegendentry{$f_3(t)$ (Area = 1)}
+
+    % Pointwise Limit f(t) = 0: Drawn heavily on the x-axis
+    \addplot[
+        line width=1.8pt,
+        color=black,
+        domain=0:5,
+        samples=10
+    ] {0} node[pos=0.85, below=4pt] {$f(t) = 0$};
+
+\end{axis}
+\end{tikzpicture}
+
+This counterexample breaks the dominant convergenc, since:  \\
+
+$\bullet$ The \textbf{"Escaping" Spikes}: As $f_1 \rightarrow f_2 \rightarrow f_3$), the spikes get \textbf{taller and narrower}. Because they grow vertically without bound as they move right, you cannot draw a single finite-area bounding function (g(t)) to cover them all.  \\
+
+$\bullet$ The \textbf{Area Constant}: Each spike is mathematically tuned (via the exponent coefficients), so that the total area underneath it remains exactly (1). Therefore:
+
+\[
+\lim_{n \to \infty} \int_{0}^{\infty} f_n(t) \, dt = \lim_{n \to \infty} (1) = 1
+\]
+
+$\bullet$ The \textbf{Pointwise Limit}: If you pick any fixed point (t) on the x-axis, and let ($n \to \infty$), the spike eventually passes completely to the right of that point. As a result, the functions converge pointwise to (0) everywhere:  \\
+
+\[
+f(t) = \lim_{n \to \infty} f_n (t) \ = 0 \implies \int_0^\infty f(t) \ dt = 0
+\]
+
+Because the sequence escaped domination, ($1 \neq 0$), proving that you cannot interchange the limit, and the integral.
+
+
+
+\section{Exponential and Logarithmic Integral}
+
+The \emph{principal value} of the \textbf{Exponential Integral} $E_1(z)$, for a complex variable (z), is defined by the contour integral  $E_1(z)$ = $\int_{z}^{\infty}$ $\frac{e^{-t}}{t}$ dt \quad ($\vert \arg z \vert$ < $\pi$)  \\
+
+The logarithmic integral is defined by $\text{li}$(x) = $\int_{0}^{x}$ $\frac{dt}{\ln t}$ = $\text{Ei}(\ln x)$  \\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4076,22 +4319,65 @@ which implies that $\mathcal{H}$ (${\boldsymbol {p}},{\boldsymbol {q}},t$) = $\s
 
 %$\boldsymbol {p}$ = $\frac{\partial \mathcal{L}}{\partial \boldsymbol {\dot{q}}}$ which, by assumption, is uniquely solvable for ⁠$\boldsymbol {\dot{q}}$⁠.
 
-$\mathbf{p} = \frac{\partial \mathcal{L}}{\partial \mathbf{\dot{q}}}$ which, by assumption, is uniquely solvable for $\mathbf{\dot{q}}$.
-
+$\mathbf{p} = \frac{\partial \mathcal{L}}{\partial \mathbf{\dot{q}}}$ which, by assumption, is uniquely solvable for $\mathbf{\dot{q}}$. \\
 
 The (2n-dimensional) pair ($\boldsymbol {p},\boldsymbol {q}$) is called \emph{phase space coordinates}; Also Canonical Coordinates.
 
-
-
-\section{Langragian}
+\section{Lagrangian and Stationary Action}
+\label{sec:Lagrangian and Stationary Action}
 
 The Lagrangian Mechanics defines the Energy function.  \\
 
-$E_{\mathcal {L}}({\boldsymbol {q}},{\boldsymbol {\dot {q}}},t)\,{\stackrel {\text{def}}{=}}\,\sum _{i=1}^{n}{\dot {q}}^{i}{\frac {\partial {\mathcal {L}}}{\partial {\dot {q}}^{i}}}-{\mathcal {L}}$.
+$E_{\mathcal {L}}({\boldsymbol {q}},{\boldsymbol {\dot {q}}},t)\,{\stackrel {\text{def}}{=}}\,\sum _{i=1}^{n}{\dot {q}}^{i}{\frac {\partial {\mathcal {L}}}{\partial {\dot {q}}^{i}}}-{\mathcal {L}}$.  \\
 
-The Legendre transform of ${\mathcal {L}}$ turns ${E_{\mathcal {L}}}$ into a function ${\mathcal {H}}({\boldsymbol {p}},{\boldsymbol {q}},t)$ known as the Hamiltonian.
+The Legendre transform of ${\mathcal {L}}$ turns ${E_{\mathcal {L}}}$ into a function ${\mathcal {H}}({\boldsymbol {p}},{\boldsymbol {q}},t)$ known as the Hamiltonian. \\
+
+Hamiltoinian density $\mathcal{H}$ = $\pi \dot{\phi} - \mathcal{L}$, where the momentum $\pi$ = $\frac{\partial \mathcal{L}}{\partial \dot{\phi}}$.  \\
 
 Arbitrary infinitesimal variations of coordinates, and a certain force-function, was introduced by Lagrange, involving the Masses, and Distances of several points of a system.
+
+\begin{tikzpicture}[>=stealth, scale=1.3]
+
+    % Axis lines
+    \draw[->, thick] (0,0) -- (6,0) node[below] {Time ($t$)};
+    \draw[->, thick] (0,0) -- (0,4.5) node[left] {Coordinate ($q$)};
+
+    % Time boundary coordinates
+    \coordinate (t1) at (1,0);
+    \coordinate (t2) at (5,0);
+
+    % Boundary points in phase space
+    \coordinate (A) at (1,1);
+    \coordinate (B) at (5,3.5);
+
+    % Dashed lines to time axis
+    \draw[dashed, gray] (A) -- (t1) node[below, black] {$t_1$};
+    \draw[dashed, gray] (B) -- (t2) node[below, black] {$t_2$};
+
+    % True physical path (Actual path)
+    \draw[very thick, blue] (A) to[out=20, in=210] (B);
+    \node[blue, below right] at (3,1.7) {Actual path ($q(t)$)};
+
+    % Varied path (Perturbed path)
+    \draw[thick, red, dashed] (A) to[out=65, in=160] (B);
+    \node[red, above left] at (3.2,3.0) {Varied path ($q(t) + \delta q(t)$)};
+
+    % Draw Variation arrow (delta q)
+    \draw[<->, purple, thick] (2.8, 1.75) -- (2.8, 2.9)
+        node[left, midway] {$\delta q(t)$};
+
+    % Endpoint dots
+    \filldraw[black] (A) circle (2pt) node[left] {$q(t_1)$};
+    \filldraw[black] (B) circle (2pt) node[right] {$q(t_2)$};
+
+    % Condition at endpoints node
+    \node[anchor=west, draw, rounded corners, fill=gray!5, text width=4cm, font=\small] at (0.5,3.8) {
+        $\delta q(t_1) = \delta q(t_2) = 0$ \\[1ex]
+        $\delta S = \delta \int_{t_1}^{t_2} L \, dt = 0$
+    };
+
+\end{tikzpicture}
+
 
 
 
@@ -4107,11 +4393,24 @@ Arbitrary infinitesimal variations of coordinates, and a certain force-function,
 
 \section{Wheeler-De Witt Equation}
 
+Since $\Psi$ doesn't depend on any non-dynamical variable, a funcion obeying quantum version of constraints is often called \emph{wave-function of the Universe}.
+
+
+
+
+
+
+
+
+
+
+
 \section{Greens' Function}
 
 \section{Symmetry Breaking}
 
  Maxwell equations
+
 
 \section{List of experiments}
 
@@ -4119,12 +4418,12 @@ Arbitrary infinitesimal variations of coordinates, and a certain force-function,
 
 \item Franck-Hertz
 \item Davisson-Germer  
-\item Photo-electric effect  
+\item Photo-electric effect{The corpuscular nature of electromagnetic radiation}
 \item Youngs double-slit 
 \item Stern-Gerlach  
 \item EPR   
 \item Badurek-Rauch-Tuppinger  
-\item SQUID(A Superconducting Quantum Interference Device (SQUID) experiment, measures extremely weak magnetic fields by exploiting Josephson junctions, and magnetic flux quantization within a superconducting loop, cooled by liquid nitrogen at $77^\circ$K or $-196.1^\circ$C. 
+\item SQUID(A Superconducting Quantum Interfer ence Device (SQUID) experiment, measures extremely weak magnetic fields by exploiting Josephson junctions, and magnetic flux quantization within a superconducting loop, cooled by liquid nitrogen at $77^\circ$K or $-196.1^\circ$C.
 \item Delayed-choice
 
 \end{enumerate} 
@@ -4191,5 +4490,5 @@ Brian C. Hall, Quantum Theory For Mathematicians, (2013)
 \end{enumerate}
 
 \printindex
-\label{sec:index}
+%\label{sec:index}
 \end{document}
