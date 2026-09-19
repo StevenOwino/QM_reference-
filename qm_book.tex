@@ -397,12 +397,12 @@ DP@rint:#1\endcsname\relax\phantom
     \includegraphics[width=4.2cm]{infinity.pdf}
     %\vspace*{\fill}
     %\vspace*{1cm} % Adjust to push text down from the top
-    {\Huge \textbf{Pre-QFT Notes, a path to the Standard Model}}\\[2cm]
+    {\Huge \textbf{Physics for Earth: From Quantum Mechanics to Quantum Field Theory Notes, a path to the Standard Model}}\\[2cm]
     {\Large OWINO STEVE}\\[0.5cm]
     %\vfill % Pushes the remaining text/publisher info to the bottom
     %{\large S\\ 2026}  %Publisher Name\\ Year
     %\clearpage
-    This book was typeset using \LaTeX{}; The Photon(Massless Particle in QFT): U($\Lambda$)$\Psi_{p, \sigma}$ = $\sqrt{\frac{(\Lambda)P^{0}}{P^{0}}}$ $e^{i \sigma \theta(\Lambda, P)}$ $\Psi_{\Lambda P,\sigma}$
+    This notes was typeset using \LaTeX{}
     \date{May, 18, 2026}
     %\version{1.0}
     \bioinfo{Bio}{https://github.com/StevenOwino}
@@ -481,13 +481,15 @@ Rydberg constant            & $R_{\infty}$    & $1.10 \times 10^7$         & \un
 
 The \emph{cover} is a figure of the infinity symbol. These are my notes, NOT pedagogical. I shall try to make QFT penetrable. A lot of intellectual buggage isn't exhaustive in this material at all. \\
 
- I assume the \emph{"Principle of Locality"} in general,   where the action (S), in the equation of motion is:  \\
+ The motivation for this study, is that of the idea that this subject is too engaging to be restricted only to the professional. Special Relaltivity + Quantum Mechanics = Quantum Field Theory. I assume the \emph{"Principle of Locality"} in general, where the action (S), in the equation of motion is given by a four dimensional integral over a given Lagrangian density(See \pageref{Canonical Quantization} ), where:  \\
 
- $\int$ ${d^4}$(x) $\left[ - \frac{1}{\sum}\partial_\mu \phi \quad \partial^{\mu} \phi - V(\phi) \right]$; $\forall$ parameters in V($\phi$) constant.  \\
+L = $\int d^3 x \mathcal{L}(\phi, \partial_\mu \phi)$, and S = $\int d^4 x \mathcal{L} (\phi, \partial_\mu \phi)$ = $\int$ dt L  \\
+
+ %$\int$ ${d^4}$(x) $\left[ - \frac{1}{\sum}\partial_\mu \phi \quad \partial^{\mu} \phi - V(\phi) \right]$; $\forall$ parameters in V($\phi$) constant.  \\
 
 The framework of attempting to comprehend nature is on Energy scales \ldots. I do not give References/Citations of original papers, and the Bibliography given, makes no pretence of being exhaustive.
 
-Abstract Mathematics(models of inductive reasoning), is availed to avoid non-sensical answers, and bogus non-differentiable functions. This is the task for the human mind; to see this truth, and preserve it.  \\
+Abstract Mathematics(models of inductive reasoning), is availed to avoid non-sensical answers or intuitions, and bogus non-differentiable functions. This is the task for the human mind; to see this truth, and preserve it.  \\
 It's accepted that the Angular Momentum of a closed system, is conserved(hence production of particles by conversion of Gravitational Energy, into matter Energy, conditioned by Biological factors).  \\
 The origin of the Universe(a Physical picture of a polarizable space, and characterized as young, by $\frac{\epsilon} {\epsilon_0}$ $\approx$ 1, with an Energy Density when expressed in \emph{Newtonian Units} [\unit{\joule\meter}], is not a reproducible event, and cannot be duplicated in the laboratory. In trying to eliminate the Riemann curvature tensor, there's also the Ricci curvature tensor, assuming the Photon travels without a shift in Energy or Frequency(red shift).  \\
 String Theory is a highly sophisticated Theoretical laboratory(rather than experimental), it's defined at the Planck Energy($10^{19}$ GeV), as any Physical theory that you can possibly come up with, it cannot be tested with the present technology, and it's tightly constrained, as much as the Graviton emerges as a massless state, with Spin-2.  \\
@@ -734,7 +736,7 @@ $C_c^{\infty}(\mathbb {R^n})$ $\longrightarrow$ Space of smooth, compactly suppo
     \item $\nabla$ $\cdot$ $\mathbf A$ - Divergence of a vector 
     \item $\nabla^2$ - Laplacian operator in ordinary 3D space spacetime $\longrightarrow$ $\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}$ 
     \item $\Box$ - nabla operator in 3D Minskowski spacetime 
-    \item $\Box^2$ - d'Alembertian operator in Minskowski 4D spacetime 
+    \item $\Box^2$ - d'Alembertian operator in Minskowski 4D spacetime /4D generalization of the Laplacian operator
     \item $\overline{V}$ = ($V^\perp)^\perp$ is the closure of V 
     \item $g_{i,j}, g^{i,j}$ - Covariant, contraviant metric tensor of 3D space, or its components
     \item $\epsilon_0$ - Permitivity\index{Permitivity} of free space 
@@ -1724,7 +1726,7 @@ V_0 & \text{when } 0 \leq x \leq L \\
 
 This represents a simple model for the Potential Energy of an Electron in the presence of two slabs of metal separated by an air gap of thickness (L). The Potential Energy is lower within either slab, than in the gap between them.
 
-Equation of Motion $\longrightarrow$ A system of Partial Differential Equations[PDEs]; ($q, \partial \phi, \partial^2 \phi$) = $0$, of a Classical Field Theory, defined by the Lagrangian($\mathcal{L}$). Refer to page \pageref{sec:Lagrangian and Stationary Action}.\\
+Equation of Motion $\longrightarrow$ A system of Partial Differential Equations[PDEs]; ($q, \partial \phi, \partial^2 \phi$) = $0$, of a Classical Field Theory, defined by the Lagrangian($\mathcal{L}$). Refer to page \pageref{sec:Lagrangian Formalism and Stationary Action}.\\
 
 i.e. $\boxed{\delta_\psi S(\phi) = 0 \iff (q, \partial \phi, \partial^2 \phi = 0}$  \\
 
@@ -2613,9 +2615,17 @@ Just as with the finite potential well, the functions have to join smoothly at t
 
 
 
-\paragraph{Decay}
+\chapter{Decay}
+\paragraph{Beta Decay; Mixed Neutrino Eigenstates}
 
 
+
+
+
+
+\chapter{Magnetic Dipole of the Electron}
+
+\chapter{Energy of a Recoil Nucleus}
 
 
 
@@ -3543,7 +3553,11 @@ There is a need to describe systems that extend over macroscopic distances in wa
 
 \chapter{Path Integrals in Quantum Field Theory}
 
+In field theory, the equivalents of $\hat{x}$ are the Schr$\ddot{o}$dinger picture fields $\hat{\phi}$ ($\vec{x}$), which at any time (t) can be written as:  \\
 
+$\hat{\phi}$ ($\vec{x}$) = $\int \frac{d^3 p}{(2 \pi)^3}$ $\frac{1}{\sqrt{2 \omega_p}}$ ($a_p$ $e^{i \vec{p} \vec{x}}$ + $a^{\dagger}_p$ $e^{-i \vec{p} \vec{x}}$).  \\
+
+Each field comprises an infinite number of operators, one at each point $\hat{x}$. Note that $\hat{\phi}$ is an \emph{operator}.
 
 
 
@@ -3609,6 +3623,7 @@ $0 = A \sin(ka) + B \cos(ka)$, \qquad $0 = -A \sin(ka) + B \cos(ka)$.
 
 
 \paragraph{Canonical Quantization}
+\label{Canonical Quantization}
 \noindent
 
 (1) What is the form of Lagrange Density for $\rho$ = $\lvert \psi \rvert^2$  \\
@@ -4323,8 +4338,10 @@ $\mathbf{p} = \frac{\partial \mathcal{L}}{\partial \mathbf{\dot{q}}}$ which, by 
 
 The (2n-dimensional) pair ($\boldsymbol {p},\boldsymbol {q}$) is called \emph{phase space coordinates}; Also Canonical Coordinates.
 
-\section{Lagrangian and Stationary Action}
-\label{sec:Lagrangian and Stationary Action}
+\section{Lagrangian Formalism and Stationary Action}
+\label{sec:Lagrangian Formalism and Stationary Action}
+
+Of the four fields(Mathematical objects): Scalar, Vector, Spinor, and Tensor fields, aspects of Classical Mechanics is indispensable.  \\
 
 The Lagrangian Mechanics defines the Energy function.  \\
 
