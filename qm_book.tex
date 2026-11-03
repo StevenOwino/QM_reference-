@@ -386,7 +386,6 @@ DP@rint:#1\endcsname\relax\phantom
 \pagenumbering{arabic}
 
 \begin{document}
-
 \begin{titlepage}
  % Set the cover background color (e.g., MidnightBlue)
     %\pagecolor{MidnightBlue}
@@ -407,8 +406,6 @@ DP@rint:#1\endcsname\relax\phantom
     %\version{1.0}
     \bioinfo{Bio}{https://github.com/StevenOwino}
     \extrainfo{A Theory cannot be both soluble and relativistic - Steven Weinberg}
-
-
 \end{titlepage}
 %\makecoverpage % This prints the cover with the equation
 
@@ -441,6 +438,8 @@ DP@rint:#1\endcsname\relax\phantom
 }
 
 %\mainmatter
+\section{PART I, Theory}
+
 \section{Units}
 
 Space Energy Density
@@ -478,11 +477,13 @@ Rydberg constant            & $R_{\infty}$    & $1.10 \times 10^7$         & \un
 \section{Preface}
 
 
-The \emph{cover} is a figure of Energy shifts, and splitting of spectral lines. The top is initials for Pl-Palmer, while the bottom is the corresponding wavelength. A lot of intellectual buggage isn't exhaustive in this material at all. \\
+The \emph{cover} shows  a schematic/map of the Hydrogen Spectrum/Energy shifts, and splitting of spectral lines. The top shows several series named for those who contributed most to their determination[Lyman(from 1906 to 1914), Balmer(1885), Paschen(1908), Brackett(1922), Pfund(1924), and Humphreys(1953)], while the bottom is the corresponding wavelength. A lot of intellectual buggage isn't exhaustive in this book at all. \\
 
- The motivation for this study, is that of the idea that this subject is too engaging to be restricted only to the professional. Special Relaltivity + Quantum Mechanics = Quantum Field Theory. I assume the \emph{"Principle of Locality"} in general, where the action (S), in the equation of motion is given by a four dimensional integral over a given Lagrangian density(See \pageref{Canonical Quantization} ), where:  \\
+ The motivation for this study, is that of the idea that this subject is too engaging to be restricted only to the professional. Special Relaltivity + Quantum Mechanics = Quantum Field Theory. This exposition is relying on an Understanding of the following principles: Classical Action(S = $\int L [q,\dot{q}] dt$ = $\int L [q, \frac{dq}{d\tau}] d\tau$), the Lagrangian(L) $\implies$ L, Hamilton Equations Of Motion, ($\dot{g} = [g, H_{Total}]$), Poisson Brackets, Jacobi Identity, Summation/Product Laws, Constraint Equations, Gauge Transformation(Corresponding to the same state), Heaviside Units, Maxwell Theory(Illustration of the general ideas of constraints), Fermis' Theory, Schr$\ddot{o}$dinger Equation($i \hbar \frac{d \psi}{dt} H^\prime \psi$, Wave Function, Scalar/Vector/Tensor/Spinor Fields, Curvilinear/Flat coordinates, Energy Density, Commutation and Ordering Factors, Electrodynamics, and Renormalization Group.
 
-L = $\int d^3 x \mathcal{L}(\phi, \partial_\mu \phi)$, and S = $\int d^4 x \mathcal{L} (\phi, \partial_\mu \phi)$ = $\int$ dt L  \\
+  I henceforth assume the \emph{"Principle of Locality"} in general, where the action (S), in the equation of motion is given by a four dimensional integral over a given Lagrangian density(See \pageref{Canonical Quantization} ), where:  \\
+
+L = $\int d^3 (x) \mathcal{L}(\phi, \partial_\mu \phi)$, and S = $\int d^4 (x) \mathcal{L} (\phi, \partial_\mu \phi)$ = $\int$ dt L  \\
 
  %$\int$ ${d^4}$(x) $\left[ - \frac{1}{\sum}\partial_\mu \phi \quad \partial^{\mu} \phi - V(\phi) \right]$; $\forall$ parameters in V($\phi$) constant.  \\
 
@@ -1302,8 +1303,9 @@ Equation of Motion $\longrightarrow$ A system of Partial Differential Equations[
 i.e. $\boxed{\delta_\psi S(\phi) = 0 \iff (q, \partial \phi, \partial^2 \phi = 0}$  \\
 
 Causality $\longrightarrow$ A source producing an initial expectation value of a field, which is only non-vanishing in the future-light cone of the source.  \\
-i.e. for any space-like separation, ($x - x^{'}$ > 0), $\langle \left| 0[\phi(x), \phi(x^{'})] \right| 0 \rangle$ = $0$
+i.e. for any space-like separation, ($x - x^{'}$ > 0), $\langle \left| 0[\phi(x), \phi(x^{'})] \right| 0 \rangle$ = $0$  \\
 
+Degrees of Freedom $\longrightarrow$ The minimum number of measurements needed to determine the state.  \\
 
 \newpage
 
@@ -1436,10 +1438,11 @@ $\frac{\partial}{\partial(t)}$ $\rho (x,t)$ + $\nabla$ $\cdot$ $\mathbf J$ (x,t)
 $\rho$ (x,t) = | $\Psi (x,t) |^2$,  \\
 $\mathbf J$ (x,t) = $\frac{\hbar} {m}$ Im $[\psi^*$ $\nabla \psi]$. \\
 
-$\bullet$ (4) Fourier transforms: $\psi x$ = $\frac{1}{\sqrt2 \pi}$ $\int{dk}$ $\phi$ (k) $e^{ikx}$,  \\
-$\Phi (k)$ = $\frac{1}{\sqrt2\pi}$ $\int{dx}$ $\Psi$ (x) $e^{-ikx}$,
-$\int${dx}| $\Psi (x) |^2$ = $\int {dk}$ | $\Phi k |^2$.
-$\frac{1}{2\pi}$ $\int_ {-\infty}^{\infty}$ $e^{ikx}{dx}$ = $\delta(k)$, $\frac{1}{(2\pi)^3}$ $\int$ $e^{ik}$ $\cdot$ ${x}(d)^3{x}$ = $\delta^{(3)}(k)$.  \\
+$\bullet$ (4) Fourier transforms:\\
+$\psi x$ = $\frac{1}{\sqrt2 \pi}$ $\int{dk}$ $\phi$ (k) $e^{ikx}$, $\Phi (k)$ = $\frac{1}{\sqrt2\pi}$ $\int{dx}$ $\Psi$ (x) $e^{-ikx}$, \\
+$\int${dx}| $\Psi (x) |^2$ = $\int {dk}$ | $\Phi k |^2$. \\
+$\frac{1}{2\pi}$ $\int_ {-\infty}^{\infty}$ $e^{ikx}{dx}$ = $\delta(k)$, \\
+$\frac{1}{(2\pi)^3}$ $\int$ $e^{ik}$ $\cdot$ ${x}(d)^3{x}$ = $\delta^{(3)}(k)$.  \\
   
 From the distribution-integral\index{distribution-integral} $\rightarrow$
 \begin{equation}
@@ -1965,6 +1968,9 @@ $\bullet$ (55) Berrys' phase\index{Berrys' phase}:  \\
 
 $\gamma_n(\Gamma_{if})$ = $\int_{\Gamma if} \mathbf A_n(\mathbf R) \cdot  d{\mathbf R}$, $ \mathbf A_n(\mathbf R)$ $\equiv$ $ i \langle \Psi_n(\mathbf R) \mid \nabla_{\mathbf R} \mid \Psi_n(\mathbf R) \rangle$. \\
 
+($\Gamma$) refers to a closed path in configuration space(traced by the tip of the unit vector (n), in an adiabatic process). The Berrys' phase is equivalent to zero, since the magnetic field on the solid angle doesn't change.  \\
+
+However, proofs based on coordinate free local representations, are clearer than proofs which replete with the claws of a rather \emph{unpleasant prying insect} such as $\Gamma^i_{jkl}$. \\
 
 $\bullet$ (56) Scattering-on-the-half-line\index{scattering-on-the-half-line}:  \\
 
@@ -2755,15 +2761,20 @@ Energy of a photon $\rightarrow$ E = $\hbar \omega$ ; $\vec{P}$ = $\hbar$k ; $\v
 
 Discrete Fourier Transform $\rightarrow$  \\
 
-Consider the space of 2$\pi$ periodic functions f: $\mathbb R$ $\rightarrow$ $\mathbb C$, with a continuous 1st derivative;
-We have $E_k(x)$ = $e^{ikx}$, k $\in$ $\mathbb Z$. Using Eulers' formula($e^{i \alpha}$ = $\cos \alpha + i \sin \alpha)$; $e^{2 \pi i}$ = 1,
+Consider the space of 2$\pi$ periodic functions f: $\mathbb R$ $\rightarrow$ $\mathbb C$, with a continuous 1st derivative;  \\
+We have $E_k(x)$ = $e^{ikx}$, k $\in$ $\mathbb Z$. \\
+Using Eulers' formula($e^{i \alpha}$ = $\cos \alpha + i \sin \alpha)$; $e^{2 \pi i}$ = 1,
 $E_k(x) \text{by substitution}$, $\equiv$ $E_k(x)$ = $\cos(kx) + i \sin(kx)$;  
 Here $E_k$ is an orthonormal set.  \\
 
-Now, for the Hermitian Scalar Product $<f \mid$ $\frac{1}{2 \pi}$ $\int_0^{2 \pi}$ $\overline {f(x)}$ $\cdot$ g(x) dx, we have $<E_k \mid E_s>$ =  $\frac{1}{2 \pi}$ $\int_0^{2 \pi}$ $e^{- ikx}$ $\cdot$ $e^{isx}$ = $\frac{1}{2 \pi}$ $\int_0^{2 \pi}$ $e^{i(s - k)x} dx$(factored),
+Now, for the Hermitian Scalar Product <f,g> = $\frac{1}{2 \pi}$ $\int_0^{2 \pi}$ $\overline {f(x)}$ $\cdot$ g(x) dx, we have:  \\
+
+$<E_k \mid E_s>$ =  $\frac{1}{2 \pi}$ $\int_0^{2 \pi}$ $e^{- ikx}$ $\cdot$ $e^{isx}$ = $\frac{1}{2 \pi}$ $\int_0^{2 \pi}$ $e^{i(s - k)x} dx$(factored),
 = $\frac{1}{2 \pi}$ $\frac{1}{i(s - k)}$ $e^{i(s - k)x}$ $|_{x = 0}^{x = 2 \pi}$.  \\
 
-Note that $\iff$ s and k = 0,
+The inverse of a transform, can be an \emph{impulse}(constant) e.g. in wavelet filters. \\
+
+Note that $\iff$ s and k
 $\left\{
 \begin{array}{ll}
 0,  \text{if s $\neq$ k} \\
@@ -2771,13 +2782,31 @@ $\left\{
 \end{array}              \\
 \right.$  \\
     
-Since its periodic($\frac{1}{2 \pi}$ $\int_0^{2 \pi}$1 dx = 1, if s = k); With the resulting anti-derivative of the function.  
-So, we can pass from ($f_0, f_1,...,f_{n-1})$ $\rightarrow$ Fourier coefficients ($c_0,c_1,...,c_{n - 1}$). This is the Discrete Fourier series; A discrete signal capturing frequency information, given that
-$C_k$ = $\frac{1}{\sqrt N}$ $\sum_{j = 0}^{N - 1}$ $f_j$ $e^{ \frac{i 2 \pi {kj}}{N}}$(DFT); Note that $C_k$ = $<E_k \mid f>$ = $\sum_{j = 0}^{N-1}$ $\overline {E_{kj}}$ $f_{j}$, where N is the  number of samples.  \\
+Since its periodic($\frac{1}{2 \pi}$ $\int_0^{2 \pi}$1 dx = 1, if s = k); With the resulting anti-derivative of the function. \\
+
+So, we can pass from ($f_0, f_1,...,f_{n-1})$ to obtain Fourier coefficients ($c_0,c_1,...,c_{n - 1}$). This is the Discrete Fourier series; A discrete signal capturing frequency information, given that:  \\
+$C_k$ = $\frac{1}{\sqrt N}$ $\sum_{j = 0}^{N - 1}$ $f_j$ $e^{ \frac{-2 \pi \imath {kj}}{N}}$(DFT); \\
+
+Each discrete signal becomes a vector component with (N) components.  \\
+
+$E_K \cdot E_k$ = $\sum_{j=0}^{N-1} \overline{E_{kj}} \cdot E_{sj}$ = \\
+
+$\frac{1}{N}$ $\sum_{j=0}^{N-1}$ $e^\frac{-2 Pi i kj}{N}$ $\cdot$ $e^\frac{2 Pi sj}{N}$ = $\frac{1}{N}$ $\sum_{j=0}^{N-1}$ $\left(e^\frac{2 Pi i(s-k)}{N} \right)^j$ \\
+
+= $\frac{1}{N}$ $\frac{\left(e^{2 \pi \imath(s-k)} - 1 \right)}{\left(\frac{e^{2 \pi \imath(s-k)}}{N} - 1 \right)}$ =
+$\left\{
+\begin{array}{ll}
+0 \\
+1  \\
+\end{array}  \\
+\right\}$  \\
+\ldots (Recall the Geometric Series $1 + a + a^2 +a^{N-1}$ = $\frac{a^{N} - 1}{a - 1}$ if a $\neq$ 1.) \\
+
+Note that $C_k$ = $<E_k \mid f>$ = $\sum_{j = 0}^{N-1}$ $\overline {E_{kj}}$ $f_{j}$, where N is the  number of samples.  \\
 
 Inverse Discrete Fourier Transform(IDFT) $\rightarrow$  \\
  
-$f_j$ = $\sum_{k = 0}^{N - 1}$ $C_k$ $E_{kj}$ = $\frac{1}{\sqrt N}$ $\sum_{k = 0}^{N - 1}$ $C_k$ $e^{- \frac{i 2 \pi {kj}}{N}}$.  \\
+$f_j$ = $\sum_{k = 0}^{N - 1}$ $C_k$ $E_{kj}$ = $\frac{1}{\sqrt N}$ $\sum_{k = 0}^{N - 1}$ $C_k$ $e^{\frac{2 \pi \imath {kj}}{N}}$. For a given Power Spectral Density, its' used in Multi-Resolution-Analysis, and compression in digital signal processing. \\
 
 Langranges' Theorem $\rightarrow$  \\ 
 
@@ -3107,6 +3136,17 @@ $\therefore$ $\Psi(x)$ = $e^{i K a}$ [$A \sin(K(x + a))$ + $B(\cos(K(x + a))$]
 \paragraph{Larmors' Theorem}
 
 \paragraph{Noethers' Theorem}
+\noindent
+
+Noethers' theorem states the following: \\
+
+If a continuous symmetry transformation $\phi$ $\rightarrow$ $\phi + D \phi$ only changes $\mathscr{L}$, by the addition of a four-divergence (i.e. D$\mathscr{L} = \partial_\mu W^\mu$) for arbitrary $\phi$, then this implies the existence of a current
+
+\[
+J_N^\mu = \prod^\mu D\phi - W^\mu(x)
+\]
+
+If $\phi$ obeys the equations of motion, then the current is conserved, i.e. $\partial_\mu J_N^\mu = 0$.  \\
 
 \chapter{Time-Dependent Problems}
 
@@ -3214,7 +3254,17 @@ For $\psi$, \quad $\frac{\partial \mathscr{L}}{\partial \psi^{*}}$ - $\partial_\
 For $\psi^{*}$, \quad $\frac{\partial \mathscr{L}}{\partial \psi}$ - $\partial_\mu \frac{\partial \mathscr{L}}{\partial(\partial_\mu \psi)}$ = $0$ - $\partial_0(i \psi^{*})$ - $\partial_{i} (b \partial_{i} \psi^{*})$ = $i \dot{\psi^{*}}$ - b$\nabla^{2} \psi^{*}$ = $0$ \\
 
 \chapter{Problems}
+\section{Developing Bergmann Constraints}
+
 \section{Estimation of the Plancks' constant}
+
+\section{Lagrange Multiplier}
+
+\section{Gauss Law}
+
+\section{Quantization in the Field Basis}
+
+
 
 
 \chapter{Appendix}
@@ -3464,7 +3514,7 @@ $3$ & $\frac{1}{6}(-x^3 + 9x^2 - 18x + 6)$ & $\frac{1}{6}\left[-x^3 + 3(\alpha +
 
 
 \subsection{Legendre Polynomials}
-
+\label{Legendre Polynomials}
 Exposited in the links, one can find the Mathematical expansion of Gravitational Potentials using polynomials. Study:
 
 $\bullet$ \url{https://en.wikipedia.org/wiki/Legendre_polynomials}, and
@@ -4001,12 +4051,50 @@ Arbitrary infinitesimal variations of coordinates, and a certain force-function,
 \item Stern-Gerlach  
 \item EPR   
 \item Badurek-Rauch-Tuppinger  
-\item SQUID(A Superconducting Quantum Interfer ence Device (SQUID) experiment, measures extremely weak magnetic fields by exploiting Josephson junctions, and magnetic flux quantization within a superconducting loop, cooled by liquid nitrogen at $77^\circ$K or $-196.1^\circ$C.
-\item Delayed-choice
+\item SQUID(A Superconducting Quantum Interference Device (SQUID) experiment, measures extremely weak magnetic fields by exploiting Josephson junctions(A
+Transmon device for Quantum Computation)). \\
 
-\end{enumerate} 
+Referring to Euler-Lagrange equation, electrons of superconducting Energy devices comes in pairs($\Phi_0$ = $\frac{\hbar}{2e}$), known as \emph{COOPER PAIRS}. This represents the fundamental constants(Plancks' constant, and the charge of the electron).  \\
+
+%Proceeding to the Classical Legendre tranform(H = Q$\dot{\Phi}$ - $\mathcal{L}$ = $\frac{c \Phi^2}{2}$ - $\frac{I_0 \Phi_0}{2 \pi}$ $\Cos$ $\left(\frac{2 \pi \Phi}{\Phi_0} \right)$, to find the Hamiltonian(H), from the Lagrangian(L). \\
+
+%We then translate Kinetic Energy to Momentum Energy, H = 4 $\left(\frac{e^2}{2c} \right)$ $\left(\frac{Q}{2e} \right)^2$ - $\frac{I_0 \Phi_0}{2 \pi}$ $\Cos$ $\left(2 \pi \Phi){\Phi_0} \right)$, where [$E_c$] is the Capacitive Energy[$\frac{e^2}{2c}$], and[$E_j$] is the Josephsons' junction[$\frac{I_0 \Phi_0}{2 \pi}$], and magnetic flux quantization within a superconducting loop, cooled by liquid nitrogen at $77^\circ$K or $-196.1^\circ$C. \\
+
+\item Delayed-choice
+\item Aharonov-Bohm effect!!
+\end{enumerate}
+
+\chapter{PART II, Computational Physics}
+
+\paragraph{Variational Calculation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \begin{thebibliography}{99}
+
+\bibitem{Dirac}
+Paul A.M. Dirac, Lectures on Quantum Mechanics, (1964).
 
 \bibitem{Mermin}
 N. D. Mermin,  Phys. Rev. Lett. 65, 1838 (1990).
@@ -4041,7 +4129,7 @@ Brian C. Hall, Quantum Theory For Mathematicians, (2013)
 \url{https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/CSV?response_type=display} \\
 
 \begin{enumerate}
-
+\item Lectures on Quantum Mechanics - Paul A.M. Dirac
 \item Quantum Theory for Mathematicians - Brian C. Hall  
 \item Notes from Sidney Coleman's Physics 253a - Sidney Coleman$^*$  
 \item Courant and Hilbert: Methods of Mathematical Physics volumes I and II - R. Courant and D. Hilbert 
@@ -4064,7 +4152,6 @@ Brian C. Hall, Quantum Theory For Mathematicians, (2013)
 \item Quantum Mechanics; Concepts and Applications - Nouredine Zettili  
 \item Riemannian Geometry and Geometric Analsysis - J$\ddot{u}gen$ Jost  
 \item Lectures on Quantum Mechanics - Steven Weinberg
-
 \end{enumerate}
 
 \printindex
