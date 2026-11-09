@@ -645,7 +645,7 @@ Schr$\ddot{o}$dinger Time Independent Equation  \\
 
 $\bullet$ The identity Zero: Zero has no multiplicative inverse!!  \\
 
-$\bullet$ Informational Warning: All descriptions here are in the literature, and not original. DO NOT attempt to frame a physical picture!!, or take Relativity of simultaneity into sufficient account, since it's incomplete; characteristic quantities of Black Holes, the total mass of space-time........ Quantum Field Theory of Particle Physics follows, once these principles are mastered. \\
+$\bullet$ Informational Warning: All descriptions here are in the literature, and not original. DO NOT attempt to frame a physical picture!!, or take Relativity of simultaneity, into sufficient account, since it's incomplete; characteristic quantities of Black Holes, the total mass of space-time........ Quantum Field Theory of Particle Physics follows, once these principles are mastered. \\
 
 $\bullet$ On Rational numbers: If (a) $\neq$ 0, there is no rational number($\mathbb Q$), where (b) $\times$ 0 = (a), can be fulfilled.
 
@@ -4061,6 +4061,55 @@ Annihilation Operation: $[\psi (\mathbf{x}, t), \psi (\mathbf{y}, t)]$ = $[\psi^
 
 Creation Operation: $[\psi (\mathbf{x}, t), i \psi^{*} (\mathbf{y}, t)]$  = i$\delta^{(3)} (\mathbf{x} - \mathbf{y})$   \\
 
+\subsection{Mathieu Functions}
+
+Mathieu functions are solutions of the Mathieu differential equation,
+
+\[
+y''(x) + \bigl(a - 2q\cos(2x)\bigr)y(x) = 0.
+\]
+
+For an even, \(\pi\)-periodic solution, write
+\[
+y(x) = \sum_{n=0}^{\infty} A_{2n}\cos(2nx).
+\]
+Then
+\[
+y''(x) = -\sum_{n=1}^{\infty}(2n)^2A_{2n}\cos(2nx),
+\]
+and the product-to-sum identity gives
+\[
+2\cos(2x)\cos(2nx)
+= \cos\bigl(2(n+1)x\bigr)+\cos\bigl(2(n-1)x\bigr).
+\]
+Substituting the series into the differential equation and equating
+the coefficients of the cosine terms yields
+\[
+aA_0-qA_2=0
+\]
+for the constant term, and
+\[
+\bigl(a-(2n)^2\bigr)A_{2n}
+-q\bigl(A_{2n-2}+A_{2n+2}\bigr)=0,
+\qquad n\geq 1.
+\]
+These recurrence relations determine the Fourier coefficients of the
+even Mathieu solution. Requiring the series to converge to a periodic
+solution selects the characteristic values \(a=a_n(q)\).
+
+For an odd, \(\pi\)-periodic solution, use
+\[
+y(x)=\sum_{n=1}^{\infty}B_{2n}\sin(2nx).
+\]
+The corresponding coefficient recurrence is
+\[
+\bigl(a-(2n)^2\bigr)B_{2n}
+-q\bigl(B_{2n-2}+B_{2n+2}\bigr)=0,
+\qquad n\geq 1,
+\]
+with \(B_0=0\).
+
+
 \section{Charge, Parity, and Time-Reversal}
 
 \paragraph{Charge}
@@ -4078,9 +4127,78 @@ $Q$  \\
 \cdot \mathbf{\textbf{x}} - \omega \mathbf{\textbf{p}}t}$ $a_\mathbf{\textbf{p}}^{\prime}$ $e^{i(\mathbf{\textbf{p}} \cdot \mathbf{\textbf{x}} - \omega \mathbf{\textbf{p}}^{\prime}t)}$ \\
 = $\int$ $d^{3}$ $\mathbf{\textbf{p}}$ $a^{\dagger}_\mathbf{\textbf{p}}$ $a_\mathbf{\textbf{p}}$  \\
 
+
 This is the theory of a set of free, non-relativistic, identical bosons, all with mass (m). Each boson has momentum (p), and Energy [E] = $\omega$ = $\frac{\mid p \mid^2}{2m}$. The conserved charge (Q), is the number of bosons. All of the operators; the Hamiltonian (H), Momentum(P), and Charge(Q), are time-independent.  \\
 
 
+Charge conjugation (\(C\)), parity (\(P\)), and time reversal (\(T\))
+are discrete transformations used to study symmetries in physics. Their
+precise action on fields depends on the field and convention; the
+relations below give their general meaning.
+
+\subsection{Charge Conjugation}
+
+Charge conjugation replaces each particle with its antiparticle. It
+reverses additive internal charges, such as electric charge:
+\[
+C:\quad Q\longmapsto -Q.
+\]
+For the electromagnetic four-potential, one commonly writes
+\[
+C A^\mu(x) C^{-1}=-A^\mu(x).
+\]
+A theory is \(C\)-invariant if its physical predictions are unchanged
+under this transformation.
+
+\subsection{Parity}
+
+Parity reverses spatial coordinates while leaving time unchanged:
+\[
+P:\quad (t,\mathbf{x})\longmapsto(t,-\mathbf{x}).
+\]
+For a scalar field \(\phi\), the transformation is conventionally
+written
+\[
+P\phi(t,\mathbf{x})P^{-1}
+=\eta_P\,\phi(t,-\mathbf{x}),
+\]
+where \(\eta_P\) is its intrinsic parity. A theory is \(P\)-invariant
+if its laws are unchanged after spatial reflection.
+
+\subsection{Time Reversal}
+
+Time reversal reverses the direction of time:
+\[
+T:\quad (t,\mathbf{x})\longmapsto(-t,\mathbf{x}).
+\]
+It reverses momentum and angular momentum:
+\[
+T\mathbf{p}T^{-1}=-\mathbf{p},
+\qquad
+T\mathbf{J}T^{-1}=-\mathbf{J}.
+\]
+In quantum mechanics, \(T\) is represented by an antiunitary operator,
+so it also complex-conjugates scalar coefficients:
+\[
+T\bigl(c\,|\psi\rangle\bigr)
+=c^*\,T|\psi\rangle.
+\]
+
+\subsection{The CPT Theorem}
+
+The CPT theorem states that any local, Lorentz-invariant quantum field
+theory with a Hermitian Hamiltonian is invariant under the combined
+transformation \(CPT\). Although \(C\), \(P\), or \(T\) may each be
+violated separately, their combined action is a symmetry under the
+theorem's assumptions.
+
+One consequence is that a particle and its antiparticle have equal
+masses and equal total lifetimes:
+\[
+m_{\text{particle}}=m_{\text{antiparticle}},
+\qquad
+\tau_{\text{particle}}=\tau_{\text{antiparticle}}.
+\]
 
 
 
@@ -4100,13 +4218,58 @@ This is the theory of a set of free, non-relativistic, identical bosons, all wit
 
 
 
-\subsection{Proof of the Derivative of the Delta Function}
+
+
+
+
+
+
+\subsection{Proof of the Derivative of the Dirac Delta Distribution Function}
 
 The proof uses integration by parts. Since the delta function $(\delta(x))$ vanishes at infinity, the \emph{boundary term is zero}.  \\
 
 $\int_{-\infty}^{\infty} \delta'(x) f(x) dx$ = $\left[ \delta(x) f(x) \right]_{-\infty}^{\infty} - \int_{-\infty}^{\infty} \delta(x) f'(x) dx$ = $0 - f'(0)$ = $-f'(0)$  \\
 
-\subsection{Proof of Mathieu Functions}
+\begin{theorem}
+The derivative of the Dirac delta distribution is defined by
+\[
+\langle \delta',\varphi\rangle=-\varphi'(0)
+\]
+for every test function \(\varphi\in C_c^\infty(\mathbb{R})\).
+More generally, for \(a\in\mathbb{R}\),
+\[
+\langle \delta'(x-a),\varphi(x)\rangle=-\varphi'(a).
+\]
+\end{theorem}
+
+\begin{proof}
+The distributional derivative of a distribution \(T\) is defined by
+\[
+\langle T',\varphi\rangle=-\langle T,\varphi'\rangle.
+\]
+Taking \(T=\delta\), and using
+\[
+\langle \delta,\psi\rangle=\psi(0),
+\]
+we obtain
+\[
+\langle \delta',\varphi\rangle
+=-\langle \delta,\varphi'\rangle
+=-\varphi'(0).
+\]
+For a shifted delta distribution, \(\langle \delta(x-a),\psi(x)\rangle
+=\psi(a)\). Therefore,
+\[
+\langle \delta'(x-a),\varphi(x)\rangle
+=-\langle \delta(x-a),\varphi'(x)\rangle
+=-\varphi'(a).
+\]
+\end{proof}
+
+
+
+
+
 
 
 
