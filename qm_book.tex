@@ -38,6 +38,7 @@
 \usepackage{wrapfig}
 %\DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \usepackage{tikz}
+\usetikzlibrary{arrows.meta}
 \usetikzlibrary{patterns}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
@@ -557,6 +558,7 @@ Completely described states, occur as a result of the \emph{simultaneous measure
 \begin{enumerate}
 
 \item Hydrogen Spectrum
+\item Stern-Gerlach projection
 \item Binary Entropy Diagram
 \item Vector pointing towards the Sun
 \item Time-Dilation Lorenzt Factor
@@ -575,7 +577,6 @@ Completely described states, occur as a result of the \emph{simultaneous measure
 \item First Four Legendre Polynomials
 \item Dominated Convergence
 \item Dorminant Convrgence
-%\item Stern-Gerlach projection
 \item Exact Inward Intergration
 \item Electronic DDensity for Helium Atom
 \item Kohm-Sham Asymptotic Behavior
@@ -792,6 +793,39 @@ Even the speed of light (C) - has been stopped!, using slow light pulses. The wa
 Why, currently no answer/solutions...maybe its' even a wrong question. Considering Faradays' Law, knowing the Fourier transform, invoke a linear, and orthogonal transformation of Stokes' theorem, generalizing how the Electric Field remains Constant, the Magnetic Field too (curl$\mathbf E$) = - ($\frac{\partial \mathbf B}{\partial t}$), with $\iint_s \mathbf F dS$ = $\int_c \mathbf F dt$, where (C) is a closed curve, and $\mathbf F$ is a Vector Field defined in $\mathbb C$. It can be calculated, by making the Electric Field Constant, and varying the Magnetic Field e.g.
 $\mathbf B(t)$ = $\langle tx, ty, -2tz \rangle$, $0<t<\infty$. Note that in general, the z component of angular momentum is $\hbar$m, with probability 1, and (m) is the state of the Magnetic Quantum number.  \\
 This analysis is fiducial, and is based on the Theory of Complex Numbers, Maxwells' equations, Fourier transform, homogeneous linear differential equations, the double-slit experiment(the results on the screen is a transmitted split beam intensity profile), Stern-Gerlach experiment(represents an entangled Magnetic moment of Silver atoms), and Schr$\ddot{o}$dingers' equation.  \\
+
+\begin{tikzpicture}[
+  >=Stealth,
+  beam/.style={thick,->},
+  magnet/.style={draw,thick,minimum width=1.6cm,minimum height=1.2cm}
+]
+  % Source
+  \draw[fill=gray!20] (-3,0) circle (0.25);
+  \node[below=4pt] at (-3,0) {Source};
+
+  % Incoming beam
+  \draw[beam] (-2.7,0) -- (-1.1,0);
+  \node[above=4pt] at (-2.9,0) {Unpolarized Beam};
+
+  % Stern--Gerlach magnet
+  \node[magnet] (magnet) at (0,0) {};
+  \node at (magnet.center) {SG magnet};
+  \node[above=7pt] at (0,0.6) {\( +\nabla B_z \)};
+  \node[below=7pt] at (0,-0.6) {\( -\nabla B_z \)};
+
+  % Split beams
+  \draw[beam] (0.8,0) -- (1.7,0.8) -- (3,0.8);
+  \draw[beam] (0.8,0) -- (1.7,-0.8) -- (3,-0.8);
+
+  % Detection spots
+  \fill (3,0.8) circle (2pt);
+  \fill (3,-0.8) circle (2pt);
+  \node[right=5pt] at (3,0.8) {\(S_z=+\hbar/2\)};
+  \node[right=5pt] at (3,-0.8) {\(S_z=-\hbar/2\)};
+\end{tikzpicture}
+
+\noindent
+
 There are no visible sources of some forms though, they're(strange, and arbitrary) schematic representation of Physical ideas(Force, Momentum, Energy, Mass, Work, Acceleration. Length Of Interval, Time, and Velocity)...which are all approximations!  \\
 The simultaneous probability distributions of various observables, given differential equations, which may be integrated, show how these observables change in time.  \\
 Keep in mind, we've evolved from thinking the Sun was static, (It's a linear combination of a Stationary State[ \textbf{NOT} static], its' \emph{probabilities} don't change!!, and that it revolves around the Earth{defined also a linear combination of a Stationary State, with no changing probabilities), it's now the other way around.  \\
