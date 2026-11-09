@@ -2250,8 +2250,7 @@ Just as with the finite potential well, the functions have to join smoothly at t
 \chapter{The Simple Harmonic Oscillator}
 
 
-When Energy is quantized, the only allowed values for
-E = $\epsilon \hbar \omega$, are values that yield solutions in the physical Hilbert space: $E_n$ = $(n + \frac{1}{2}) \hbar \omega$, $(n) = 0, 1, 2,...$.  \\
+When Energy is quantized, the only allowed values for E = $\epsilon \hbar \omega$, are values that yield solutions in the physical Hilbert space: $E_n$ = $(n + \frac{1}{2}) \hbar \omega$, $(n) = 0, 1, 2,...$.  \\
 For each value of (n), the corresponding polynomials is of ($n_{th}$) order, called Hermite polynomials. We know that: $\boxed{[x, p] = i \hbar}$, and that the Hamiltonian $\hat H$ = $\frac{p^2}{2m}$ $\frac{1}{2}$ $m$ $\omega^2 \hat x^2$.The Quantum Harmonic Oscillator is an extension of the Classical Oscillator. We expect that Energy eigenstates, only exist for certain quantized values of (E). This is a differential equation:
 \begin{equation}
 - \frac{\hbar^2}{2m}\frac{d^2 \psi (x)}{d x^2} + \frac{1}{2} m \omega^2 x^2 \psi (x) = E \psi (x)
@@ -2270,6 +2269,38 @@ $\therefore$ $(\vartriangle x)^2_n$ = $L^2_0$ $(n + \frac{1}{2})$ $\approx$ $L_0
 \begin{equation}
 (\vartriangle(x), \vartriangle (p)) \geq \frac{\hbar}{2}
 \end{equation}
+
+\paragraph{Harmonic Oscillator}
+\label{Harmonic Oscillator}
+\noindent
+
+Consider a non-relativistic particle of mass (M) in one dimension, confined in a potential that vanishes for $(-a \leq x \leq a)$, and becomes infinite at $x = \pm a$, so that the wave-function must vanish at $x = \pm a$.  \\
+
+$\bullet$ Find the Energy values of states with definite Energy, and the corresponding normalized wave-functions.  \\
+
+Answer:  \\
+
+The states of definite Energy are those which are solutions of the time-independent Schr$\ddot{o}$dinger equation:  \\
+
+$\frac{-\hbar^2}{2M}$ $\frac{d^2}{dx^2}$ $\psi$(x) + V(x)$\psi$(x) = E$\psi$(x).  \\
+
+The potential for the infinite square(See \pageref{ch:Special Potentials}) well is given by:  \\
+
+\[
+V(x) = \begin{cases}
+0 & \text{for } |x| < a \\
+\infty & \text{for } |x| \geq a
+\end{cases}
+\]
+
+Continuity of the wave-function requires that we impose the boundary conditions $\psi$(x = $\pm$ a;  \\
+
+and so, \\
+
+\noindent
+$0 = A \sin(ka) + B \cos(ka)$, \qquad $0 = -A \sin(ka) + B \cos(ka)$.
+
+
 
 \chapter{Sample Practice}
 
@@ -3205,53 +3236,6 @@ Each field comprises an infinite number of operators, one at each point $\hat{x}
 \chapter{Index Theorem}
 
 Clifford Algebra, and (K-Theory).
-
-\paragraph{Harmonic Oscillator}
-\label{Harmonic Oscillator}
-\noindent
-
-Consider a non-relativistic particle of mass (M) in one dimension, confined in a potential that vanishes for $(-a \leq x \leq a)$, and becomes infinite at $x = \pm a$, so that the wave-function must vanish at $x = \pm a$.  \\
-
-$\bullet$ Find the Energy values of states with definite Energy, and the corresponding normalized wave-functions.  \\
-
-Answer:  \\
-
-The states of definite Energy are those which are solutions of the time-independent Schr$\ddot{o}$dinger equation:  \\
-
-$\frac{-\hbar^2}{2M}$ $\frac{d^2}{dx^2}$ $\psi$(x) + V(x)$\psi$(x) = E$\psi$(x).  \\
-
-The potential for the infinite square(See \pageref{Special Potentials}) well is given by:  \\
-
-\[
-V(x) = \begin{cases}
-0 & \text{for } |x| < a \\
-\infty & \text{for } |x| \geq a
-\end{cases}
-\]
-
-Continuity of the wave-function requires that we impose the boundary conditions $\psi$(x = $\pm$ a;  \\
-
-and so, \\
-
-\noindent
-$0 = A \sin(ka) + B \cos(ka)$, \qquad $0 = -A \sin(ka) + B \cos(ka)$.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 \paragraph{Canonical Quantization}
@@ -4219,14 +4203,47 @@ The plot tests normalization, and electron occupation counting,
 
 \paragraph{Atom in Local Density Approximation}
 
- Total Energy is compared with the corresponding non-spin-polarized LDA reference value from NIST(\url https://www.nist.gov/pml/atomic-reference-data-electronic-structure-calculations/atomic-reference-data-electronic-7-6).  \\
+\noindent
 
- With a construct of a smooth model density in a reduced Coulomb potential is only an initial guess: the LDA calculation restores the full nuclear Potential, and determines screening self-consistently.  \\
+Total Energy is compared with the corresponding non-spin-polarized (LDA) reference value from NIST(\url https://www.nist.gov/pml/atomic-reference-data-electronic-structure-calculations/atomic-reference-data-electronic-7-6).  \\
+
+With a construct of a smooth model density in a reduced Coulomb potential, is only an initial guess: the LDA calculation restores the full nuclear Potential, and determines screening self-consistently.  \\
+
+Before self-consistency, calculation in Rydbergs mixes orbitals and densities, from adjacent iterations, so intermediate Energies are \emph{convergence diagnostics}; the final converged value is the physical LDA result i.e. Oxygen, Potassium, and heavier Atoms use exactly the same implementation.  \\
+
+An (LDA) exchange-correlation potential follows the exponentially small density, it also decays rapidly. This short-ranged (LDA) tail, is not the exact Kohn–Sham asymptotic behavior; it is one manifestation of the (LDA) self-interaction error.  \\
+
+For a finite neutral system, the exact Kohn–Sham potential has the asymptotic form:
+
+$v_s(r)$ $\sim$ $-\frac{1}{r}$ \qquad $(r\to\infty)$ in atomic units. A useful way to show this is to plot $-r v_s(r)$, which approaches 1 at large (r). \\
+
+This idealized asymptotic curve is $v_s(r)$ = $\frac{-1}{r}$, so the plotted quantity is exactly 1 throughout. In a real atom or molecule, the potential differs at shorter distances, and approaches this limit only far from the system.  \\
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Kohm-Sham Asymptotic Behavior.pdf}
+  \label{Kohm-Sham Asymptotic Behavior.pdf}
+  \caption{Kohm-Sham Asymptotic Behavior}
+\end{figure}
+
+A uniform mesh is used to resolve the compact orbital, and the valence tail, simultaneously. Agreement with the NIST value checks reproduced same non-spin-polarized LDA calculation e.g. for Oxygen, we have the values:
+\begin{enumerate}
+\item Converged in 27 iterations
+\item Total energy = -74.473075389 Ha
+\item NIST LDA value = -74.473077 Ha
+\end{enumerate}
+
+Where (Ha) is Hartree Energy. Experiment, and more accurate many-body calculations, describe a different level of approximation.  \\
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Oxygen LDA.pdf}
+  \label{Oxygen LDA.pdf}
+  \caption{Oxygens' LDA}
+\end{figure}
 
 
-
-
-
+The Periodic Table presents a uniform-grid(mesh) algorithm, and remains reliable. 
 
 
 
@@ -4326,26 +4343,75 @@ Numerov can be reformulated after a change of variables, but it CANNOT be applie
 
 A convergence test varies the grid spacing systematically $\implies$ An empirical convergence rate for the complete calculation, not the formal local order of Numerovs' recurrence; it is the numerical machinery.
 
+\newpage
+
 \chapter{Problems}
+\noindent
+1. Using the effective Hydrogenic model, construct spherically averaged densities containing 28, 92, and 94 electrons. Verify that each density integrates to the requested Electron number. \\
 
-1. Using the effective Hydrogenic model, construct spherically averaged densities containing 28, 92, and 94 electrons. Verify that each density integrates to the requested electron number. \\
-
-For further details, study  \\
-\url{https://en.wikipedia.org/wiki/Electron_configurations_of_the_elements},  \\
+For further details, study: \\
+\url{https://en.wikipedia.org/wiki/Electron_configurations_of_the_elements}, 
 and  \\
-\url{https://www.nist.gov/pml/atomic-reference-data-electronic-structure-calculations/atomic-reference-data-electronic-8}.  \\
+\url{https://www.nist.gov/pml/atomic-reference-data-electronic-structure-calculations/atomic-reference-data-electronic-8}.  \\  
 
-2.
+2. Determine whether the limitation of the Periodic Table is the radial spacing, radial extent[$r_{max}$], Energy Mesh, number of Angular-Momentum channels, or Density Mixing.  \\
 
+The number of Angular-Momentum Channels is the closest match: it limits which Orbital Angular Momenta the basis can represent, which can constrain calculations for some elements.
 
+But it does not set which elements are available in the Periodic Table. That is usually determined by the codes' supported-element data, such as its basis sets, or pseudopotentials. Radial spacing, $R_{\max}$, Energy Mesh, and Density Mixing are numerical, or Convergence settings.
 
+The limitation of the Periodic Table (specifically in the context of Nuclear Physics, and the Hartree-Fock-Bogoliubov, or similar mean-field calculations used to map the "nuclear landscape") is typically the **Energy Mesh**.
 
+While the other factors mentioned are critical parameters for the Convergence, and Accuracy of a specific calculation, the Energy Mesh determines the resolution, and stability of the \emph{quasiparticle Spectrum}. If the Mesh is too coarse, the model cannot accurately capture the shell effects, and pairing correlations necessary to determine the drip lines, and \emph{}Stability of Isotopes}, which are the primary constraints, when attempting to complete a theoretical Periodic Table of Nuclei.
 
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|p{8cm}|}
+\hline
+\textbf{Parameter} & \textbf{Impact as a Limitation} \\ \hline
+Energy Mesh & The primary limitation; determines the resolution of the quasiparticle spectrum. A coarse mesh leads to numerical instability and inaccurate shell effects. \\ \hline
+Radial Spacing & Affects the spatial accuracy of the wave functions, particularly for halo nuclei with extended distributions. \\ \hline
+Angular-Momentum Channels & Limits the amount of configuration mixing; insufficient channels may fail to capture complex deformations. \\ \hline
+Density Mixing & Determines the ability of the model to handle transition densities and the mixing of different nuclear shapes. \\ \hline
+\end{tabular}
+\caption{Limitations of Nuclear Mean-Field Calculations for the Periodic Table}
+\end{table}
 
+\newpage
 
+There is no single inherent “Periodic Table limitation”; these are **numerical or model limits**, and the symptom usually identifies which one is active. Check them in this order
+\begin{table}[ht]
+\centering
+\begin{tabular}{p{0.22\linewidth} p{0.34\linewidth} p{0.36\linewidth}}
+\hline
+\textbf{Possible limitation} & \textbf{Typical symptom} & \textbf{How to test} \\
+\hline
+\textbf{Radial spacing \(dr\)} &
+Orbitals or densities change noticeably when the grid is refined; sharp near-nucleus features look poorly resolved. &
+Reduce \(dr\), keeping the radial extent fixed, and compare orbital energies and integrated electron counts. \\
 
+\textbf{Radial extent \(r_{\max}\)} &
+Bound orbitals are cut off before decaying; results change when the grid is extended. &
+Increase \(r_{\max}\) while keeping \(dr\) fixed. This is distinct from spacing. \\
 
+\textbf{Energy mesh / eigenvalue search} &
+A required eigenvalue is missed, or the solver finds the wrong node count or fails to bracket a state. &
+Refine the energy scan and verify that each orbital has the expected number of radial nodes and satisfies the outer boundary condition. \\
 
+\textbf{Angular-momentum channels \(l_{\max}\)} &
+Electron count or total density is wrong for atoms whose occupied shells include higher-\(l\) orbitals. &
+Include every occupied subshell; increase \(l_{\max}\) and check whether the density and energy converge. \\
+
+\textbf{Density mixing} &
+SCF iterations oscillate, diverge, or stall, even though individual orbital solves appear stable. &
+Reduce the mixing fraction or use a more stable mixing method; monitor both density and energy changes per iteration. \\
+\hline
+\end{tabular}
+\end{table}
+
+A decisive diagnosis requires Convergence tests: varying **one setting at a time**, and trackig total Electron count, Orbital Energies, Density, and Self-Consitency-Field(SCF) Convergence. If the code is intended for all elements, also check the **Physical Model**: A simple effective-Hydrogenic Potential, is not a self-consistent all-Electron model, and heavy elements may require \emph{Relativistic treatment}.
+
+\newpage
 
 \chapter{Appendix(Section II)}
 
