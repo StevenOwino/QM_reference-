@@ -440,7 +440,7 @@ DP@rint:#1\endcsname\relax\phantom
 }
 
 %\mainmatter
-\section{PART I, Theory}
+\chapter{PART I, Theory}
 
 \section{Units}
 
@@ -524,6 +524,8 @@ Don't try to read these notes linearly, instead, come back here as a formula ref
 
 Look up, and study these topics from the literature: Quantum particle in a box, Tensor fields, the Standard Model of elementary particles, the magnetic dipole moment of the electron, the force of Gravity, High Energy Physics,
 
+\newpage
+
 \section{Why Quantum Mechanics?}
 
 A complete description of the state of a Physical System, in Classical Mechanics, is effected by stating all its Coordinates, and Velocities at a given instant; With these initial data, the \emph{Equations Of Motion} completely determine the behaviour of the system at all subsequent instants. \\
@@ -531,25 +533,6 @@ In Quantum Mechanics, such a description is in principle impossible, since the C
 Thus a description of the state of a Quantum System is effected by means of a smaller number of quantities, than in Classical Mechanics, i.e. it is less detailed than a Classical description.  \\
 A very important consequence follows from this, regarding the nature of the \textbf{predictions}, made in Quantum Mechanics. Whereas a Classical description suffices to predict the future motion of a mechanical system with complete accuracy, the less detailed description given in Quantum Mechanics evidently cannot be enough to do this. This means that, even if an \emph{Electron} is in a state described in the most complete manner possible in Quantum Mechanics, its' behaviour at subsequent instants, is still in principle \textbf{uncertain}. Hence Quantum Mechanics, cannot make completely definite predictions concerning the future behaviour of the Electron. For a given initial state of the Electron, a subsequent \textbf{measurement} can give various results. The problem in Quantum Mechanics, consists in determining the \textbf{probability} of obtaining various results on performing this \emph{measurement}. It is understood, of course, that in some cases, the \emph{probability} of a given result of \emph{measurement} may be equal to  \textbf{unity}, i.e. \emph{certainty}, so that the result of that \emph{measurement} is \emph{unique}.  \\
 Completely described states, occur as a result of the \emph{simultaneous measurement} of a complete set of Physical quantities. From the results of such a \emph{measurement}, it's possible to determine the probability of various results of any subsequent \emph{measurement}, regardless of the history of the Electron, prior to the first \emph{measurement}.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 \newpage
 
@@ -571,6 +554,7 @@ Completely described states, occur as a result of the \emph{simultaneous measure
 \item Estimated Ground Search Energy, with its' Analytical Soluion
 \item Breit-Wigner distribution
 \item The relation between Phi, Theta, and Psi
+\item Graph of the Photoelectric Effect
 \item Lagrangian Formalism and Stationary Action
 \item First Four Hermite Polynomials
 \item Laguerre Polynomials
@@ -582,7 +566,7 @@ Completely described states, occur as a result of the \emph{simultaneous measure
 \item Kohm-Sham Asymptotic Behavior
 \item Oxygens' Local Density Appr oximation(LDA)
 \item Hartree Boundary Condition
-\item Numerovs' solution of Poisons' Equation' 
+\item Numerovs' solution of Poisons' Equation 
 
 \end{enumerate}
 
@@ -3273,7 +3257,73 @@ $\hat{\phi}$ ($\vec{x}$) = $\int \frac{d^3 p}{(2 \pi)^3}$ $\frac{1}{\sqrt{2 \ome
 
 Each field comprises an infinite number of operators, one at each point $\hat{x}$. Note that $\hat{\phi}$ is an \emph{operator}.
 
+\subsection{Basic idea}
 
+In Quantum Mechanics, the Path-Integral formulation expresses the \emph{Amplitude} for a system to move from an Initial Position \(x_i\), at Time \(t_i\), to a final Position \(x_f\), at Time \(t_f\) as a \emph{Sum over possible Paths} \(x(t)\), joining those endpoints. See the illustration of the figure in \ref{sec:Lagrangian Formalism and Stationary Action}. Each Path contributes a Phase determined by its Classical Action:
+\[
+S[x]=\int_{t_i}^{t_f} L(x,\dot{x},t)\,dt,
+\]
+where \(L\) is the Lagrangian.
+
+The propagator is written formally as
+\[
+\boxed{
+K(x_f,t_f;x_i,t_i)
+=
+\int_{x(t_i)=x_i}^{x(t_f)=x_f}
+\mathcal{D}x(t)\,
+\exp\!\left(\frac{i}{\hbar}S[x]\right)
+}.
+\]
+Here, \(\mathcal{D}x(t)\) denotes Integration over all Paths with the specified endpoints. The expression is formal until a precise
+regularization, and measure are chosen.
+
+\subsection{Connection with the Classical Path}
+
+In the Classical Limit, \(\hbar\) is small compared with the Action. The Phase \(e^{iS[x]/\hbar}\) then oscillates rapidly for most Paths, so their contributions tend to cancel. \emph{The dominant contributions come from Paths near Stationary points of the Action}:
+\[
+\delta S=0.
+\]
+This is Hamilton's Principle, which yields the Classical Euler-Lagrange equation
+\[
+\frac{d}{dt}\left(\frac{\partial L}{\partial\dot{x}}\right)
+-\frac{\partial L}{\partial x}=0.
+\]
+\emph{Thus, Classical Motion emerges as the Stationary-Phase limit of the
+Path Integral}.
+
+\subsection{Example: A Free Particle}
+
+For a Free Particle of Mass \(m\),
+\[
+L=\frac{m}{2}\dot{x}^{\,2}.
+\]
+The Path-Integral propagator in one-dimension, evaluates to
+\[
+K(x_f,t_f;x_i,t_i)
+=
+\sqrt{\frac{m}{2\pi i\hbar T}}\,
+\exp\!\left[
+\frac{i m(x_f-x_i)^2}{2\hbar T}
+\right],
+\qquad T=t_f-t_i>0.
+\]
+The Exponent is the Classical Action is divided by \(\hbar\).
+
+\subsection{Euclidean Path Integrals}
+
+By Analytically continuing to \emph{Imaginary Time}, \(t=-i\tau\), the oscillatory weight becomes an exponentially weighted one:
+\[
+e^{iS/\hbar}\longrightarrow e^{-S_E/\hbar},
+\]
+where \(S_E\) is the Euclidean Action. Euclidean Path Integrals are useful in Statistical Mechanics, and Quantum Field Theory, because
+they resemble Partition Functions.
+
+\subsection{Conclusion}
+
+\emph{The Path Integral provides an alternative formulation of Quantum Theory in which Amplitudes are computed by Summing contributions from
+all allowed Histories. It connects Quantum Amplitudes to Classical Action, supports Perturbative Calculations, and generalizes
+to Fields}.
 
 
 
@@ -3310,15 +3360,478 @@ For $\psi$, \quad $\frac{\partial \mathscr{L}}{\partial \psi^{*}}$ - $\partial_\
 For $\psi^{*}$, \quad $\frac{\partial \mathscr{L}}{\partial \psi}$ - $\partial_\mu \frac{\partial \mathscr{L}}{\partial(\partial_\mu \psi)}$ = $0$ - $\partial_0(i \psi^{*})$ - $\partial_{i} (b \partial_{i} \psi^{*})$ = $i \dot{\psi^{*}}$ - b$\nabla^{2} \psi^{*}$ = $0$ \\
 
 \chapter{Problems}
-\section{Developing Bergmann Constraints}
 
 \section{Estimation of the Plancks' constant}
 
-\section{Lagrange Multiplier}
+\subsection{Objective}
 
-\section{Gauss Law}
+Plancks' Constant \(h\), can be estimated by measuring the Stopping Potential of Photoelectrons for light of different frequencies. The method tests Einsteins' Photoelectric Equation, which relates \emph{Photon Energy}, to the Maximum Kinetic Energy of \emph{Emitted Electrons}.
 
-\section{Quantization in the Field Basis}
+\subsection{Theory}
+
+A Photon of Frequency \(f\), has Energy \(E=hf\). In the Photoelectric Effect, the Photon Energy is used to overcome the materials' Work Function \(\phi\); Any remaining Energy becomes the Electrons' Maximum Kinetic Energy:
+\[
+K_{\max}=hf-\phi.
+\]
+The Stopping Potential \(V_s\), is the Reverse Voltage required to prevent the most Energetic Photoelectrons from reaching the Collector. Since \(K_{\max}=eV_s\), where \(e\) is the positive elementary Charge,
+\[
+eV_s=hf-\phi,
+\]
+or
+\[
+\boxed{
+V_s=\frac{h}{e}f-\frac{\phi}{e}
+}.
+\]
+Thus, a graph of \(V_s\) against \(f\) should be approximately Linear.
+If its' fitted Slope is \(m\), then
+\[
+\boxed{h=em}.
+\]
+The Intercept is ideally \(-\phi/e\).
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines=left,
+    xlabel={Frequency of incident light, $\nu$},
+    ylabel={Maximum kinetic energy, $K_{\max}$},
+    xmin=0, xmax=6,
+    ymin=0, ymax=5,
+    xtick=\empty,
+    ytick=\empty,
+    width=10cm,
+    height=7cm,
+    clip=false
+]
+    % Photoelectric-effect relation: K_max = h(nu - nu_0)
+    % Illustrative values: threshold frequency nu_0 = 2
+    \addplot[blue, thick, domain=2:5.6, samples=2] {1.25*(x-2)};
+
+    % Threshold frequency
+    \addplot[dashed, gray] coordinates {(2,0) (2,4.5)};
+    \node[below] at (axis cs:2,0) {$\nu_0$};
+
+    % Labels
+    \node[blue, above left] at (axis cs:5.1,3.9)
+        {$K_{\max}=h\nu-\phi$};
+    \node[below right] at (axis cs:0,0) {$O$};
+\end{axis}
+\end{tikzpicture}
+
+\subsection{Experimental Procedure}
+
+\begin{enumerate}
+  \item Illuminate a Photoelectric Cell with Light of known Frequency. Use several Frequencies, keeping the Illumination Geometry, and
+  Apparatus conditions as consistent as possible.
+  \item For each Frequency, apply a Reverse Bias, and determine the
+  Stopping Potential \(V_s\), where the Photocurrent falls to Zero
+  within the instrument's resolution.
+  \item Repeat measurements when practical, and record the mean
+  Stopping Potential, and its' Uncertainty.
+  \item Convert each Wavelength \(\lambda\) to a Frequency using
+  \[
+  f=\frac{c}{\lambda},
+  \]
+  where \(c\) is the Speed of Light.
+  \item Fit the measurements to
+  \[
+  V_s=mf+b.
+  \]
+  Estimate Plancks' Constant from \(h=em\).
+\end{enumerate}
+
+\subsection{Uncertainty}
+
+If the fitted Slope has Standard Uncertainty \(\sigma_m\), and the Uncertainty in the elementary Charge is negligible compared with the Experimental Uncertainty, then
+\[
+\sigma_h=e\,\sigma_m.
+\]
+The Relative Uncertainty is
+\[
+\frac{\sigma_h}{h}=\frac{\sigma_m}{m}.
+\]
+Uncertainties in Wavelength affect the Frequency Values, and should also be included in the fit when they are not negligible.
+
+\subsection{Sources of Systematic Error}
+
+Important Sources of Error include Uncertainty in the Light Frequency, contact Potentials in the Apparatus, stray Light, and difficulty identifying the point at which the Photocurrent reaches Zero. The Stopping Potential should be measured consistently, and possible offsets should be considered when interpreting the fitted
+Intercept. The Work Function inferred from the Intercept may be less reliable than the Slope, because instrumental Voltage offsets can \emph{shift} the Intercept.
+
+\subsection{Conclusion}
+
+The Photoelectric Method, estimates Plancks' Constant by measuring how
+the Stopping Potential varies with Light Frequency. The Gradient of the \(V_s\)-versus-\(f\) graph is \(h/e\), so multiplying the fitted
+slope by \(e\) gives the experimental estimate of \(h\).
+
+
+
+
+
+
+
+\section{The Lagrange Multiplier}
+
+\subsection{Purpose}
+
+The method of Lagrange Multipliers, finds Candidate Extrema of a Differentiable Function subject, to one or more Equality Constraints. Instead of optimizing only on the Constraint Surface, the method introduces Auxiliary Variables called Lagrange Multipliers.
+
+\subsection{One Constraint}
+
+To find Extrema of \(f(\mathbf{x})\) subject to
+\[
+g(\mathbf{x})=c,
+\]
+define the Lagrangian
+\[
+\mathcal{L}(\mathbf{x},\lambda)
+=f(\mathbf{x})-\lambda\bigl(g(\mathbf{x})-c\bigr).
+\]
+At a Constrained Extremum where \(\nabla g\ne\mathbf{0}\), the
+Gradients of \(f\) and \(g\) are parallel:
+\[
+\boxed{
+\nabla f(\mathbf{x})=\lambda\nabla g(\mathbf{x}),
+\qquad
+g(\mathbf{x})=c.
+}
+\]
+These equations produce candidate points. Their values must then be compared, and Boundary cases, or other exceptional points, must be checked.
+
+\subsection{Example}
+
+Find the Maximum of \(f(x,y)=xy\) subject to
+\[
+x+y=10,\qquad x,y\geq 0.
+\]
+The Lagrangian is
+\[
+\mathcal{L}(x,y,\lambda)=xy-\lambda(x+y-10).
+\]
+Setting its' Partial Derivatives to Zero gives
+\[
+\frac{\partial\mathcal{L}}{\partial x}=y-\lambda=0,
+\qquad
+\frac{\partial\mathcal{L}}{\partial y}=x-\lambda=0,
+\qquad
+\frac{\partial\mathcal{L}}{\partial\lambda}=-(x+y-10)=0.
+\]
+Thus \(x=y\), and the Constraint gives \(x=y=5\). The product is
+\[
+f(5,5)=25.
+\]
+At the endpoints \((0,10)\) and \((10,0)\), the product is \(0\);
+therefore the Maximum is \(25\).
+
+\subsection{Several Constraints}
+
+For Constraints \(g_j(\mathbf{x})=c_j\), \(j=1,\ldots,m\), use
+\[
+\mathcal{L}(\mathbf{x},\lambda_1,\ldots,\lambda_m)
+=f(\mathbf{x})
+-\sum_{j=1}^{m}\lambda_j\bigl(g_j(\mathbf{x})-c_j\bigr).
+\]
+The candidate points satisfy
+\[
+\nabla f(\mathbf{x})
+=\sum_{j=1}^{m}\lambda_j\nabla g_j(\mathbf{x}),
+\qquad
+g_j(\mathbf{x})=c_j,\quad j=1,\ldots,m.
+\]
+
+\subsection{Interpretation, and Limitations}
+
+Geometrically, at a Regular Constrained Extremum, the Level Surface of \(f\), is Tangent to the Constraint Surface. The Multiplier
+\(\lambda\), measures the change in the optimal value as the Constraint value \(c\) changes, under suitable regularity conditions.
+
+The method identifies candidates, not automatically Maxima or Minima. One must classify the candidates, and check the feasible Boundary. If the Constraint Gradients are dependent, the Regularity Condition may fail, and additional Analysis is needed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Gauss' Law}
+
+\subsection{Statement of the Law}
+
+Gauss' Law relates the Electric Field through a closed surface, to the Electric Charge enclosed by that surface. In SI units, its' Integral Form is
+\[
+\boxed{
+\oint_{\partial V}\mathbf{E}\cdot d\mathbf{A}
+=\frac{Q_{\mathrm{enc}}}{\varepsilon_0}
+},
+\]
+where \(\partial V\) is the Closed Boundary of a Volume \(V\),
+\(d\mathbf{A}\) is the outward-directed Area element,
+\(Q_{\mathrm{enc}}\) is the Charge inside the Volume, and
+\(\varepsilon_0\) is the Vacuum Permittivity.
+
+\subsection{Differential form}
+
+Using the Divergence Theorem,
+\[
+\oint_{\partial V}\mathbf{E}\cdot d\mathbf{A}
+=\int_V \nabla\cdot\mathbf{E}\,dV.
+\]
+The Enclosed Charge can be written in terms of the \emph{Charge Density}
+\(\rho\):
+\[
+Q_{\mathrm{enc}}=\int_V\rho\,dV.
+\]
+Therefore,
+\[
+\int_V \nabla\cdot\mathbf{E}\,dV
+=\frac{1}{\varepsilon_0}\int_V\rho\,dV.
+\]
+Since this holds for any Volume \(V\), the integrands are equal:
+\[
+\boxed{
+\nabla\cdot\mathbf{E}=\frac{\rho}{\varepsilon_0}
+}.
+\]
+This is one of Maxwells' Equations.
+
+\subsection{Example: A Point Charge}
+
+For a Point Charge \(q\) at the origin, Spherical Symmetry $\implies$ the Electric Field has Constant Magnitude on a Sphere of Radius\(r\), and points R\emph{Radially outward}. Applying the \emph{Integral Law} to that Sphere gives
+\[
+E(r)\,4\pi r^2=\frac{q}{\varepsilon_0}.
+\]
+Thus,
+\[
+\mathbf{E}(r)
+=\frac{q}{4\pi\varepsilon_0 r^2}\,\hat{\mathbf{r}},
+\]
+which is Coulombs' Electric Field.
+
+\subsection{Gauss' Law in Matter}
+
+In \emph{Material Media}, it is often useful to introduce the Electric Displacement Field \(\mathbf{D}\). Its' Divergence is related to the Free Charge Density \(\rho_{\mathrm{free}}\):
+\[
+\nabla\cdot\mathbf{D}=\rho_{\mathrm{free}},
+\qquad
+\oint_{\partial V}\mathbf{D}\cdot d\mathbf{A}
+=Q_{\mathrm{free,enc}}.
+\]
+For a linear, Isotropic Medium, \(\mathbf{D}=\varepsilon\mathbf{E}\),
+where \(\varepsilon\) is the Permittivity.
+
+\subsection{Gauss' Law as a Constraint in Field Theory}
+
+In Canonical Electrodynamics, Gauss'' Law is also a Constraint on
+Physical States. In Operator Form,
+\[
+\left(\nabla\cdot\hat{\mathbf{E}}(\mathbf{x})
+-\hat{\rho}(\mathbf{x})\right)|\mathrm{phys}\rangle=0.
+\]
+It restricts the allowed States, and ensures that Physical States satisfy the \emph{Electromagnetic Gauge Constraint}.
+
+\subsection{Conclusion}
+
+\emph{Gauss' Law says that Electric Charge is the Source of Electric-Field Flux. Its' Integral Form, is especially useful when the Charge Distribution has Symmetry, while its' Differential form expresses the local relation between, Charge Density and the Divergence of the Electric Field}.
+
+\subsection{A Brief Review of the Neumann Boundary Condition}
+
+A Neumann Boundary Condition, specifies the Normal Derivative of a Function on the Boundary of a Domain. For a Domain
+\(\Omega\subset\mathbb{R}^n\) with Boundary \(\partial\Omega\), it has
+the Form
+\[
+\frac{\partial u}{\partial n}=g
+\qquad \text{on } \partial\Omega,
+\]
+where \(n\) is the Outward Unit Normal, and
+\[
+\frac{\partial u}{\partial n}
+=\nabla u\cdot n.
+\]
+The Function \(g\) prescribes the normal rate of change of \(u\), at
+the Boundary.
+
+\subsection{Example: Poisson's Euation}
+
+Consider the Neumann Problem
+\[
+-\Delta u=f \quad \text{in } \Omega,
+\qquad
+\frac{\partial u}{\partial n}=g \quad \text{on } \partial\Omega.
+\]
+Integrating the Differential Equation over \(\Omega\), and using the
+Divergence Theorem gives
+\[
+\int_\Omega f\,dx
+=-\int_\Omega\Delta u\,dx
+=-\int_{\partial\Omega}\frac{\partial u}{\partial n}\,dS
+=-\int_{\partial\Omega}g\,dS.
+\]
+Therefore, a necessary compatibility condition for a solution is
+\[
+\boxed{
+\int_\Omega f\,dx
++\int_{\partial\Omega}g\,dS=0
+}.
+\]
+
+\subsection{Weak Formulation}
+
+Multiplying \(-\Delta u=f\) by a test Function \(v\), Integrating over \(\Omega\), and applying \emph{Integration By Parts}, yields
+\[
+\int_\Omega \nabla u\cdot\nabla v\,dx
+=
+\int_\Omega f v\,dx
++\int_{\partial\Omega}g v\,dS.
+\]
+This is the Weak Formulation of the Neumann Problem.
+
+\subsection{Uniqueness}
+
+For the pure Neumann Problem, the solution is generally determined only up to an additive Constant. Indeed, if \(u\) is a solution, then
+\(u+C\) has the same Laplacian, and Normal Derivative for any Constant\(C\). Uniqueness can be obtained by imposing an additional \emph{Normalization}, such as
+\[
+\int_\Omega u\,dx=0.
+\]
+
+\subsection{Interpretation, and Applications}
+
+Neumann Conditions prescribe \emph{Flux} across a Boundary. For example, in Heat Conduction, the Normal Derivative of temperature, is related
+to Heat Flux; in Electrostatics, a Normal Electric-Field component can be specified at a surface. Neumann Conditions are often contrasted with Dirichlet conditions, which prescribe the Value of the Function itself on the Boundary.
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Quantization in a Field Basis}
+
+\subsection{Field eigenstates}
+
+In Canonical Quantization, a Classical Field \(\phi(\mathbf{x},t)\), and its' Conjugate Momentum \(\pi(\mathbf{x},t)\), become operators satisfying the Equal-Time Commutation Relations
+\[
+[\hat{\phi}(\mathbf{x}),\hat{\pi}(\mathbf{y})]
+=i\hbar\,\delta^{(3)}(\mathbf{x}-\mathbf{y}),
+\]
+\[
+[\hat{\phi}(\mathbf{x}),\hat{\phi}(\mathbf{y})]=0,
+\qquad
+[\hat{\pi}(\mathbf{x}),\hat{\pi}(\mathbf{y})]=0.
+\]
+A Field Basis consists of eigenstates of the Field Operator:
+\[
+\hat{\phi}(\mathbf{x})\,|\varphi\rangle
+=\varphi(\mathbf{x})\,|\varphi\rangle,
+\]
+where \(\varphi(\mathbf{x})\) labels a Field Configuration.
+
+Formally, these states satisfy
+\[
+\langle\varphi|\varphi'\rangle
+=\delta[\varphi-\varphi'],
+\qquad
+\int\mathcal{D}\varphi\,
+|\varphi\rangle\langle\varphi|=\hat{I}.
+\]
+Here, \(\delta[\varphi-\varphi']\) is a Functional Delta Distribution, and \(\mathcal{D}\varphi\) denotes Integration over Field configurations.
+
+\subsection{Wave Functionals and Operators}
+
+A Quantum State \(|\Psi\rangle\) is represented in the Field Basis by
+the Wave Functional
+\[
+\Psi[\varphi,t]=\langle\varphi|\Psi(t)\rangle.
+\]
+In this representation, the Field, and Conjugate-Momentum Operators act as
+\[
+\bigl(\hat{\phi}(\mathbf{x})\Psi\bigr)[\varphi]
+=\varphi(\mathbf{x})\Psi[\varphi],
+\]
+\[
+\bigl(\hat{\pi}(\mathbf{x})\Psi\bigr)[\varphi]
+=-i\hbar\frac{\delta}{\delta\varphi(\mathbf{x})}
+\Psi[\varphi].
+\]
+These actions reproduce the Canonical Commutation Relation, since
+\[
+\left[
+\varphi(\mathbf{x}),
+-i\hbar\frac{\delta}{\delta\varphi(\mathbf{y})}
+\right]
+=i\hbar\,\delta^{(3)}(\mathbf{x}-\mathbf{y}).
+\]
+
+\subsection{The Schr$\ddot{o}$dinger Equation Example}
+
+The State evolves according to
+\[
+i\hbar\frac{\partial}{\partial t}|\Psi(t)\rangle
+=\hat{H}|\Psi(t)\rangle.
+\]
+In the Field Basis, this becomes a Functional Schr$\ddot{o}$dinger Equation:
+\[
+i\hbar\frac{\partial}{\partial t}\Psi[\varphi,t]
+=
+\hat{H}\left[
+\varphi(\mathbf{x}),
+-i\hbar\frac{\delta}{\delta\varphi(\mathbf{x})}
+\right]\Psi[\varphi,t].
+\]
+
+For example, for a Real Scalar Field with Hamiltonian
+\[
+\hat{H}
+=\int d^3x\left[
+\frac{1}{2}\hat{\pi}^{\,2}
++\frac{1}{2}(\nabla\hat{\phi})^2
++V(\hat{\phi})
+\right],
+\]
+the equation takes the formal form
+\[
+i\hbar\frac{\partial\Psi[\varphi,t]}{\partial t}
+=
+\int d^3x\left[
+-\frac{\hbar^2}{2}
+\frac{\delta^2}{\delta\varphi(\mathbf{x})^2}
++\frac{1}{2}(\nabla\varphi)^2
++V(\varphi)
+\right]\Psi[\varphi,t].
+\]
+
+\subsection{Interpretation, and Regularization}
+
+The Field-Basis Wave Functional assigns a Quantum Amplitude to each Field Configuration. In a Regulated Theory, such as one defined on a Spatial Lattice, the Functional Derivatives, and Functional Integrals become Ordinary Derivatives, and Integrals over Finitely Many Field variables. The Continuum expressions, are understood as Limits of such regulated constructions; Their Measure, and Operator Products may require Regularization, and Renormalization.
+
+\subsection{Conclusion}
+
+Quantization in a Field Basis represents States as Wave Functionals of Field configurations. The Field acts by multiplication, its' Conjugate Momentum acts by Functional Differentiation, and the Schr$\ddot{o}$ödinger equation becomes a Functional Differential Equation.
+
+
 
 
 
@@ -3465,24 +3978,124 @@ Arbitrary infinitesimal variations of coordinates, and a certain force-function,
 
 
 
+\section{Greens' Functions Definition}
+
+A Greens' Function, is the response of a linear Differential Operator to a point source. If \(L\) is a \emph{Linear Operator}, its' Greens Function
+\(G(x,\xi)\) satisfies
+\[
+L_x G(x,\xi)=\delta(x-\xi),
+\]
+together with the \emph{Boundary Conditions} appropriate to the problem. Here, \(L_x\) acts on the variable \(x\), while \(\xi\) identifies the
+location of the point source.
+
+\subsection{Using a Greens' Function}
+
+Consider the inhomogeneous equation
+\[
+L u(x)=f(x).
+\]
+If \(G\) satisfies the same Boundary Conditions as \(u\), the solution can be written as
+\[
+u(x)=\int G(x,\xi)f(\xi)\,d\xi.
+\]
+Applying \(L_x\) gives
+\[
+L_xu(x)
+=\int L_xG(x,\xi)f(\xi)\,d\xi
+=\int\delta(x-\xi)f(\xi)\,d\xi
+=f(x).
+\]
+Thus, the Greens' Function acts as the Integral \emph{Kernel} of the \emph{Inverse
+Operator} \(L^{-1}\).
+
+\subsection{Example: the One-Dimensional Poisson Equation}
+
+On the Real Line, consider
+\[
+-\frac{d^2u}{dx^2}=f(x).
+\]
+A Greens'' Function satisfies
+\[
+-\frac{d^2}{dx^2}G(x,\xi)=\delta(x-\xi).
+\]
+One choice is
+\[
+G(x,\xi)=-\frac{1}{2}|x-\xi|,
+\]
+since, in the distribution,
+\[
+\frac{d^2}{dx^2}|x-\xi|=2\delta(x-\xi).
+\]
+The solution is therefore
+\[
+u(x)=-\frac{1}{2}\int_{-\infty}^{\infty}
+|x-\xi|\,f(\xi)\,d\xi,
+\]
+provided the Integral, and Boundary behavior are appropriate for the given Source.
+
+\subsection{Boundary Conditions and Non-Uniqueness}
+
+A Differential Equation alone, may not determine a unique Greens' Function. Boundary Conditions are part of its' definition. For example, Dirichlet Conditions require \(G\) to vanish at the Boundary, whereas Neumann Conditions specify its' Normal Derivative. Different Boundary Conditions generally produce different Greens' Functions.
+
+If \(G\) is one solution of the defining equation, adding a solution of the \emph{Homogeneous Equation} \(Lh=0\) may give another; the prescribed
+Boundary Conditions select the desired Greens' Function.
+
+\subsection{Applications}
+
+Greens' Functions are used to solve \emph{Boundary-Value Problems} in Electrostatics, Wave Propagation, Diffusion, and Quantum Mechanics. They also provide a useful way to study how a System responds to a \emph{localized Source}.
 
 
 
+\section{Symmetry and its' breaking}
 
+A Symmetry is a Transformation that leaves the Laws of a System unchanged. A System exhibits \emph{Symmetry Breaking}, when its' State or observed behavior, does not share a Symmetry of the underlying Laws. Two important cases are explicit; Symmetry Breaking, and \emph{Spontaneous Symmetry Breaking}.
 
+\subsection{Explicit Symmetry Breaking}
 
+A Symmetry is explicitly broken, when the governing equations contain a term that is not invariant under the \emph{Symmetry Transformation}. For example, a Real Scalar Field with the Potential
+\[
+V(\phi)=\frac{1}{2}m^2\phi^2+\frac{\lambda}{4}\phi^4-h\phi
+\]
+is not Invariant under \(\phi\mapsto-\phi\) when \(h\ne 0\). The parameter \(h\) acts as an external field that favors one sign of
+\(\phi\).
 
-\section{Path Integral}
+\subsection{Spontaneous Symmetry Breaking}
 
+In Spontaneous Symmetry Breaking, the equations are Symmetric, but the System settles into a State that is not. Consider the
+\(\mathbb{Z}_2\)-symmetric potential
+\[
+V(\phi)=-\frac{\mu^2}{2}\phi^2+\frac{\lambda}{4}\phi^4,
+\qquad \mu^2>0,\quad \lambda>0.
+\]
+It is invariant under \(\phi\mapsto-\phi\). Its' Minima satisfy
+\[
+\frac{dV}{d\phi}=-\mu^2\phi+\lambda\phi^3=0,
+\]
+so the Vacuum values are
+\[
+\phi=0
+\quad\text{or}\quad
+\phi=\pm v,
+\qquad
+v=\frac{\mu}{\sqrt{\lambda}}.
+\]
+The point \(\phi=0\) is a Local Maximum.
 
+\subsection{Order parameter}
 
-\section{Greens' Function}
+An Order Parameter, is a quantity that distinguishes phases with different Symmetry Properties. In this example, the Vacuum Expectationvalue serves as an order parameter: It vanishes in the Symmetric State, and is non-zero in either of the Broken-Symmetry Vacua.  \\
 
+In Systems with an external Symmetry-Breaking source, the Spontaneous Order Parameter is defined by taking the \emph{Infinite-Volume Limit}, before removing the source:
+The order of limits matters, because a Finite System can transition between Symmetry-Related States.
 
+\subsection{Continuous Symmetries, and Goldstone Modes}
 
-\section{Symmetry Breaking}
+When a continuous Global Symmetry is Spontaneously Broken, the Goldstone Theorem predicts \emph{Massless Modes}, associated with the \emph{Broken Generators}, under its' usual assumptions. In \emph{Gauge Theories}, the corresponding \emph{Degrees of Freedom} can instead become part of Massive Gauge Fields, through the \emph{Higgs Mechanism}; this is not appearance of \emph{Physical Massless Goldstone Particles}.
 
- Maxwell equations
+\subsection{Conclusion}
+
+Symmetry Breaking distinguishes the Symmetry of the governing Laws from the \emph{Symmetry of a Systems' State}. Explicit Breaking comes from the equations themselves, whereas Spontaneous Breaking occurs when \emph{Symmetric equations admit a State that selects one among several Symmetry-related possibilities}.
+
 
 
 \section{List of experiments}
@@ -4023,43 +4636,487 @@ The \emph{principal value} of the \textbf{Exponential Integral} $E_1(z)$, for a 
 
 The logarithmic integral is defined by $\text{li}$(x) = $\int_{0}^{x}$ $\frac{dt}{\ln t}$ = $\text{Ei}(\ln x)$  \\
 
+For real \(x\), the Exponential Integral is commonly defined by the Cauchy Principal Value
+\[
+\operatorname{Ei}(x)
+=\operatorname{PV}\int_{-\infty}^{x}\frac{e^t}{t}\,dt.
+\]
+The Principal Value is needed when the interval of Integration crosses the \emph{Singularity}, at \(t=0\). For \(x>0\), an equivalent definition is
+\[
+\operatorname{Ei}(x)
+=\operatorname{PV}\int_{-\infty}^{x}\frac{e^t}{t}\,dt.
+\]
+For \(x>0\), the related function \(E_1\) is defined by
+\[
+E_1(x)=\int_x^\infty \frac{e^{-t}}{t}\,dt,
+\]
+and the two functions satisfy
+\[
+\operatorname{Ei}(-x)=-E_1(x),\qquad x>0.
+\]
 
+The derivative follows from the Fundamental Theorem of Calculus:
+\[
+\frac{d}{dx}\operatorname{Ei}(x)=\frac{e^x}{x},
+\qquad x\ne 0.
+\]
+Near the origin, its' Series Expansion is
+\[
+\operatorname{Ei}(x)
+=\gamma+\ln|x|
++\sum_{k=1}^{\infty}\frac{x^k}{k\,k!},
+\qquad x\ne 0,
+\]
+where \(\gamma\) is the Euler-Mascheroni constant. The Logarithmic term reflects the singularity at \(x=0\).
 
+\subsection{Logarithmic Integral Value}
 
+The Logarithmic Integral is defined, for \(x>0\), by
+\[
+\operatorname{li}(x)
+=\operatorname{PV}\int_0^x \frac{dt}{\ln t}.
+\]
+The Principal Value is required. when the interval crosses \(t=1\),
+where \(\ln t=0\). A commonly used offset of the Logarithmic Integral is
+\[
+\operatorname{Li}(x)
+=\int_2^x \frac{dt}{\ln t}.
+\]
+For \(x>1\), these conventions are related by
+\[
+\operatorname{Li}(x)=\operatorname{li}(x)-\operatorname{li}(2).
+\]
+Changing variables \(t=e^u\) gives the connection
+\[
+\operatorname{li}(x)=\operatorname{Ei}(\ln x),
+\qquad x>0,
+\]
+with the Principal-Value interpretation at \(x=1\).
 
+At points where \(x\ne 1\), differentiation yields
+\[
+\frac{d}{dx}\operatorname{li}(x)=\frac{1}{\ln x},
+\qquad
+\frac{d}{dx}\operatorname{Li}(x)=\frac{1}{\ln x}.
+\]
 
+\subsection{Asymptotic behavior}
 
+As \(x\to+\infty\), the Exponential Integral has the aAsymptotic Expansion
+\[
+\operatorname{Ei}(x)
+\sim \frac{e^x}{x}
+\left(
+1+\frac{1!}{x}+\frac{2!}{x^2}
++\frac{3!}{x^3}+\cdots
+\right).
+\]
+Consequently, as \(x\to+\infty\), the Logarithmic Integral satisfies
+\[
+\operatorname{li}(x)
+\sim \frac{x}{\ln x}
+\left(
+1+\frac{1!}{\ln x}+\frac{2!}{(\ln x)^2}
++\frac{3!}{(\ln x)^3}+\cdots
+\right).
+\]
+These are Asymptotic Expansions: truncating after finitely many terms gives approximations for large positive \(x\).
 
+\subsection{Applications}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+The Exponential Integral appears in problems involving Exponential Decay, Radiative Transfer, and Differential Equations. The Logarithmic Integral is closely connected to the \emph{distribution of Prime Numbers}; In particular, it is a Classical approximation to the Prime-Counting Function.
 
 \section{Runge-Lenz Vector}
 
+\subsection{The Coulomb problem}
+
+Consider a particle of mass \(m\) moving in the attractive Coulomb
+potential
+\[
+V(r)=-\frac{k}{r},\qquad k>0.
+\]
+The Hamiltonian, and Angular Momentum Operator are
+\[
+H=\frac{\mathbf{p}^{\,2}}{2m}-\frac{k}{r},
+\qquad
+\mathbf{L}=\mathbf{r}\times\mathbf{p}.
+\]
+Besides energy and angular momentum, this problem has an additional
+conserved quantity: the Runge--Lenz vector.
+
+\subsection{Definition}
+
+In Classical Mechanics, the Runge--Lenz vector is
+\[
+\mathbf{A}
+=\frac{1}{m}\mathbf{p}\times\mathbf{L}
+-k\frac{\mathbf{r}}{r}.
+\]
+In Quantum Mechanics, operator ordering matters because
+\(\mathbf{p}\) and \(\mathbf{L}\) do not generally commute. A Hermitian
+definition is
+\[
+\boxed{
+\mathbf{A}
+=\frac{1}{2m}
+\left(\mathbf{p}\times\mathbf{L}
+      -\mathbf{L}\times\mathbf{p}\right)
+-k\frac{\mathbf{r}}{r}
+}.
+\]
+Here \(\mathbf{r}/r\) denotes the radial unit-vector operator.
+
+\subsection{Conservation}
+
+For the Coulomb Hamiltonian, the Runge--Lenz vector commutes with the
+Hamiltonian:
+\[
+[H,A_i]=0,\qquad i=1,2,3.
+\]
+Equivalently, its time derivative vanishes:
+\[
+\frac{d\mathbf{A}}{dt}
+=\frac{i}{\hbar}[H,\mathbf{A}]=0.
+\]
+This additional conservation law is special to the inverse-square Central Force. It explains why the Classical Kepler orbit is closed, and contributes to the degeneracy of the Quantum Coulomb Spectrum. The Angular Momentum and Runge--Lenz vector obey
+\[
+[L_i,L_j]=i\hbar\epsilon_{ijk}L_k,
+\qquad
+[L_i,A_j]=i\hbar\epsilon_{ijk}A_k,
+\]
+and
+\[
+[A_i,A_j]=-\frac{2i\hbar H}{m}\epsilon_{ijk}L_k.
+\]
+Thus \(\mathbf{A}\) transforms as a vector under rotations.
+
+\subsection{Classical interpretation}
+
+In Classical Mechanics, \(\mathbf{A}\) points along the major axis of the Kepler orbit, toward periapsis. For an orbit with eccentricity
+\(e\),
+\[
+|\mathbf{A}|=ke.
+\]
+A circular orbit has \(e=0\) and hence \(\mathbf{A}=0\); an elliptical orbit has \(0<e<1\).
+
+\subsection{Quantum Significance}
+
+For bound states of the Coulomb Potential, the Runge-Lenz Symmetry helps explain why states with different orbital Angular Momentum
+Quantum numbers can share the same energy. The bound-state spectrum depends on the \emph{principal Quantum Number \(n\)}, rather than separately on the orbital Angular Momentum Quantum Number \(\ell\):
+\[
+E_n=-\frac{m k^2}{2\hbar^2 n^2},
+\qquad n=1,2,3,\ldots
+\]
+This extra degeneracy is associated with a Symmetry of the Coulomb problem.
+
+\subsection{Conclusion}
+
+The Runge-Lenz \emph{Vector}, is a conserved Vector, specific to the Coulomb problem. Classically, it encodes the orientation, and eccentricity of the orbit; Quantum Mechanically, it reveals an additional symmetry that helps account for the degeneracy of the \emph{Hydrogen-like Energy levels}.
+
+
 \section{Proof of Fouriers' Theorem}
+
+“Fourier’s theorem” can refer to several results. The following is a standard Fourier-series version: Dirichlet’s convergence theorem.  
+
+Let \(f\) be a \(2\pi\)-periodic, piecewise continuously differentiable
+function. Its Fourier coefficients are
+\[
+a_n=\frac{1}{\pi}\int_{-\pi}^{\pi} f(t)\cos(nt)\,dt,
+\qquad
+b_n=\frac{1}{\pi}\int_{-\pi}^{\pi} f(t)\sin(nt)\,dt.
+\]
+At every \(x\), the \(N\)-th partial sum
+\[
+S_N(x)=\frac{a_0}{2}
++\sum_{n=1}^{N}\bigl(a_n\cos(nx)+b_n\sin(nx)\bigr)
+\]
+converges to
+\[
+\lim_{N\to\infty}S_N(x)
+=\frac{f(x+)+f(x-)}{2}.
+\]
+In particular, at every point where \(f\) is continuous,
+\(S_N(x)\to f(x)\).
+
+
+The \(N\)-th partial sum can be written using the Dirichlet kernel
+\[
+D_N(u)=\frac{1}{2}+\sum_{n=1}^{N}\cos(nu)
+=\frac{\sin\bigl((N+\tfrac12)u\bigr)}{2\sin(u/2)}
+\]
+as
+\[
+S_N(x)=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x-u)D_N(u)\,du.
+\]
+Since
+\[
+\frac{1}{\pi}\int_{-\pi}^{\pi}D_N(u)\,du=1,
+\]
+we may subtract the one-sided limits at \(x\) and obtain
+\[
+S_N(x)-\frac{f(x+)+f(x-)}{2}
+=
+\frac{1}{\pi}\int_0^\pi
+\frac{f(x-u)+f(x+u)-f(x-)-f(x+)}
+     {2\sin(u/2)}
+\sin\bigl((N+\tfrac12)u\bigr)\,du.
+\]
+The quotient
+\[
+g_x(u)=
+\frac{f(x-u)+f(x+u)-f(x-)-f(x+)}
+     {2\sin(u/2)}
+\]
+is piecewise continuous, and integrable on \([0,\pi]\). Near \(u=0\), piecewise continuous differentiability of \(f\) ensures that its numerator is \(O(u)\), while \(2\sin(u/2)\) is also \(O(u)\); thus \(g_x\) remains bounded there.
+
+For every piecewise continuous, integrable function \(g\),
+\[
+\lim_{\lambda\to\infty}\int_0^\pi g(u)\sin(\lambda u)\,du=0.
+\]
+This follows by approximating \(g\) in the integral norm by step functions; the oscillatory integral of each step function tends to zero. Applying this fact to \(g_x\), with
+\(\lambda=N+\tfrac12\), shows that
+\[
+\lim_{N\to\infty}
+\left(S_N(x)-\frac{f(x+)+f(x-)}{2}\right)=0.
+\]
+Therefore,
+\[
+\lim_{N\to\infty}S_N(x)
+=\frac{f(x+)+f(x-)}{2},
+\]
+as claimed.
+
+
+
+\subsection{Euler--Mascheroni Constant Definition}
+
+The Euler-Mascheroni constant, denoted by \(\gamma\), is the limiting difference between the \(n\)-th Harmonic Number, and the Natural Logarithm of \(n\):
+\[
+\boxed{
+\gamma=\lim_{n\to\infty}\left(H_n-\ln n\right)
+},
+\qquad
+H_n=\sum_{k=1}^{n}\frac{1}{k}.
+\]
+Numerically,
+\[
+\gamma\approx 0.5772156649015328606\ldots
+\]
+
+\subsection{Convergence}
+
+The sequence \(H_n-\ln n\) converges. Indeed, its successive difference is
+\[
+(H_{n+1}-\ln(n+1))-(H_n-\ln n)
+=
+\frac{1}{n+1}-\ln\left(1+\frac{1}{n}\right)<0.
+\]
+Thus, the sequence decreases. It is also bounded below, for example, by comparing the Hrmonic Sum with the Integral of \(1/x\). Therefore its' Convergent Series is
+\[
+\gamma
+=
+\sum_{n=1}^{\infty}
+\left(
+\frac{1}{n}-\ln\left(1+\frac{1}{n}\right)
+\right).
+\]
+
+\section{Integral representations}
+
+The constant also has the Integral representations
+\[
+\gamma
+=-\int_0^\infty e^{-x}\ln x\,dx
+\]
+and
+\[
+\gamma
+=\int_0^1
+\left(
+\frac{1}{\ln(1/t)}-\frac{1}{1-t}
+\right)dt.
+\]
+The apparent Singularities, in these expressions are interpreted by taking the corresponding improper Integrals.
+
+\subsection{Connection with the Zeta Function}
+
+The Riemann-Zeta-Function has a pole at \(s=1\). Near that, point its' \emph{Laurent Expansion} begins
+\[
+\zeta(s)
+=
+\frac{1}{s-1}+\gamma+O(s-1).
+\]
+Thus \(\gamma\) is the constant term in the Laurent Expansion of \(\zeta(s)\) after its' pole is subtracted.
+
+\subsection{Arithmetic status}
+
+The Constant is known to be Irrational only if an additional assumption is made; its' Irrationality is currently an open problem. It is also not known whether \(\gamma\) is \emph{Transcendental}.
+
+\subsection{Conclusion}
+
+The Euler--Mascheroni Constant arises from the difference between Discrete Harmonic Sums, and the continuous Logarithm. Its' appearances in \emph{Analysis, Number Theory, and Special Functions, make it a Fundamental Mathematical Constant}.
+
+
+
+\subsection{Laurent Series Definition}
+
+A Laurent Series centered at \(z_0\), is a series that may contain both positive and negative powers of \(z-z_0\):
+\[
+\sum_{n=-\infty}^{\infty} a_n(z-z_0)^n
+=
+\sum_{n=0}^{\infty}a_n(z-z_0)^n
++
+\sum_{n=1}^{\infty}\frac{a_{-n}}{(z-z_0)^n}.
+\]
+The first Sum is the regular part; the second is called the Principal part.
+
+\subsection{Laurents' Theorem}
+
+Suppose \(f\) is Analytic in the \emph{Annulus}
+\[
+r<|z-z_0|<R.
+\]
+Then \(f\) has a unique Laurent Expansion there:
+\[
+f(z)=\sum_{n=-\infty}^{\infty}a_n(z-z_0)^n,
+\]
+where, for any circle \(|\zeta-z_0|=\rho\) lying in the Annulus,
+\[
+a_n=
+\frac{1}{2\pi i}
+\int_{|\zeta-z_0|=\rho}
+\frac{f(\zeta)}{(\zeta-z_0)^{n+1}}\,d\zeta.
+\]
+The Series Converges uniformly on every closed sub-Annulus contained in \(r<|z-z_0|<R\). When all coefficients with negative indices vanish, the Laurent Series reduces to a Taylor series.
+
+\subsection{Example}
+
+For \(0<|z|<1\), the \emph{Geometric Series}: \url{https://mediaspace.itap.purdue.edu/media/Fall+2023+-+MA162+-+Chen+%287A27%29/1_tvb4ksbb}; Gives
+\[
+\frac{1}{z(1-z)}
+=\frac{1}{z}\frac{1}{1-z}
+=\frac{1}{z}\sum_{n=0}^{\infty}z^n
+=\frac{1}{z}+1+z+z^2+\cdots.
+\]
+This is a Laurent Expansion about \(z_0=0\), valid in the Annulus \(0<|z|<1\). Its' Principal part is \(1/z\), so the Function has a pole at the origin.
+
+\subsection{Residues}
+
+The Coefficient of \((z-z_0)^{-1}\) is called the Residue of \(f\)
+at \(z_0\):
+\[
+\operatorname{Res}(f,z_0)=a_{-1}.
+\]
+It can be computed from the \emph{Contour Integral}
+\[
+\operatorname{Res}(f,z_0)
+=
+\frac{1}{2\pi i}
+\int_{|\zeta-z_0|=\rho}f(\zeta)\,d\zeta,
+\]
+provided the circle lies in a region where \(f\) is Analytic, except possibly at \(z_0\).
+
+\subsection{Types of Isolated Singularities}
+
+The Principal part classifies an Isolated Singularity at \(z_0\):
+\begin{itemize}
+  \item If the Principal part is zero, the singularity is removable.
+  \item If the Principal part has finitely many non-zero terms, the
+        singularity is a pole.
+  \item If the Principal part has infinitely many non-zero terms, the
+        Singularity is essential.
+\end{itemize}
+
+\subsection{Conclusion}
+
+Laurent Series extends Taylor Series to Annular regions around Isolated Singularities. Their negative-power terms describe the singular behavior, while the coefficient of \((z-z_0)^{-1}\) gives the Residue, a central quantity in \emph{complex analysis}.
+
+
+\newpage
 
 \section{The Canonical Commutation Relations}
 
 Annihilation Operation: $[\psi (\mathbf{x}, t), \psi (\mathbf{y}, t)]$ = $[\psi^{*} (\mathbf{x}, t). \psi^{*} (\mathbf{y}, t)]$ = $0$  \\
 
 Creation Operation: $[\psi (\mathbf{x}, t), i \psi^{*} (\mathbf{y}, t)]$  = i$\delta^{(3)} (\mathbf{x} - \mathbf{y})$   \\
+
+
+Canonical commutation relations (CCRs) express the basic algebraic structure of Quantum Mechanics. They encode the noncommutativity of conjugate observables, such as Position and Momentum, and underlie the uncertainty relations, and much of Quantum Dynamics.
+
+\subsection{Position and momentum}
+
+For a particle moving in one spatial dimension, the position operator
+\(\hat{x}\) and momentum operator \(\hat{p}\) satisfy
+\[
+[\hat{x},\hat{p}]
+\equiv \hat{x}\hat{p}-\hat{p}\hat{x}
+=i\hbar \hat{I},
+\]
+where \(\hbar\) is the reduced Planck constant and \(\hat{I}\) is the
+identity operator.
+
+In the Position representation,
+\[
+(\hat{x}\psi)(x)=x\psi(x),
+\qquad
+(\hat{p}\psi)(x)=-i\hbar\frac{d\psi}{dx}.
+\]
+Acting on a sufficiently smooth wavefunction \(\psi\), one obtains
+\begin{align*}
+([\hat{x},\hat{p}]\psi)(x)
+&=x\left(-i\hbar\frac{d\psi}{dx}\right)
+  -\left(-i\hbar\frac{d}{dx}(x\psi)\right)\\
+&=-i\hbar x\frac{d\psi}{dx}
+  +i\hbar\left(\psi+x\frac{d\psi}{dx}\right)\\
+&=i\hbar\psi(x).
+\end{align*}
+Hence \([\hat{x},\hat{p}]=i\hbar\hat{I}\) on an appropriate common domain.
+
+\subsection{Multiple dimensions}
+
+For Position and Momentum components in \(d\) dimensions, the CCRs are
+\[
+[\hat{x}_i,\hat{p}_j]=i\hbar\delta_{ij}\hat{I},
+\qquad
+[\hat{x}_i,\hat{x}_j]=0,
+\qquad
+[\hat{p}_i,\hat{p}_j]=0,
+\]
+where \(\delta_{ij}\) is the Kronecker delta.
+
+\subsection{Uncertainty relation}
+
+For observables \(A\) and \(B\), the Robertson uncertainty relation is
+\[
+\Delta A\,\Delta B
+\geq \frac{1}{2}\left|\langle[A,B]\rangle\right|.
+\]
+Applying it to Position and Momentum gives
+\[
+\Delta x\,\Delta p\geq\frac{\hbar}{2}.
+\]
+Thus, the Position-Momentum uncertainty relation follows from their non-zero commutator.
+
+\subsection{Canonical Commutation Relations for Fields}
+
+In canonical quantization of a scalar field, the field
+\(\hat{\phi}(\mathbf{x},t)\) and its conjugate momentum
+\(\hat{\pi}(\mathbf{x},t)\) satisfy the equal-time relations
+\[
+[\hat{\phi}(\mathbf{x},t),\hat{\pi}(\mathbf{y},t)]
+=i\hbar\,\delta^{(3)}(\mathbf{x}-\mathbf{y}),
+\]
+\[
+[\hat{\phi}(\mathbf{x},t),\hat{\phi}(\mathbf{y},t)]=0,
+\qquad
+[\hat{\pi}(\mathbf{x},t),\hat{\pi}(\mathbf{y},t)]=0.
+\]
+These are the field-theoretic counterparts of the position--momentum (Canonincal Commutation Relation(CCR).
+
+\subsection{Conclusion}
+
+Canonical Commutation Relations specify how conjugate Quantum Observables fail to commute. The fundamental relation
+\([\hat{x},\hat{p}]=i\hbar\hat{I}\) leads directly to the Position-Momentum uncertainty bound, and generalizes naturally to systems with many degrees of freedom, and to Quantum Fields.
 
 \subsection{Mathieu Functions}
 
@@ -4112,14 +5169,7 @@ with \(B_0=0\).
 
 \section{Charge, Parity, and Time-Reversal}
 
-\paragraph{Charge}
-
-%\begin{align*}
-%Q &= \int d^{3}\mathbf{x} \, \psi^{*}(\mathbf{x}, t) \psi(\mathbf{x}, t) \\
- % &= \int \frac{d^{3}\mathbf{p}}{(2 \pi)^3} d^{3}\mathbf{p}' \, a^{\dagger}_\mathbf{p} e^{-i(\mathbf{p} \cdot \mathbf{x} - \omega_\mathbf{p}t)} a_{\mathbf{p}'} %e^{i(\mathbf{p}' \cdot \mathbf{x} - \omega_{\mathbf{p}'}t)} \\
-  %&= \int d^{3}\mathbf{p} \, a^{\dagger}_\mathbf{p} a_\mathbf{p}
-%\end{align*}
-
+\subsection{Charge}
 
 $Q$  \\
 = $\int$ $d^{3}$ $\mathbf{\textbf{x}}$ $\psi^{*}$ $(\mathbf{\textbf{x}}, t)$ $\psi$ $(\mathbf{x}, t)$ \\
@@ -4127,14 +5177,12 @@ $Q$  \\
 \cdot \mathbf{\textbf{x}} - \omega \mathbf{\textbf{p}}t}$ $a_\mathbf{\textbf{p}}^{\prime}$ $e^{i(\mathbf{\textbf{p}} \cdot \mathbf{\textbf{x}} - \omega \mathbf{\textbf{p}}^{\prime}t)}$ \\
 = $\int$ $d^{3}$ $\mathbf{\textbf{p}}$ $a^{\dagger}_\mathbf{\textbf{p}}$ $a_\mathbf{\textbf{p}}$  \\
 
+NOTE: A Photon is an example of a particle in a Hermitian Field havng its' own charge-conjugate. \\
 
-This is the theory of a set of free, non-relativistic, identical bosons, all with mass (m). Each boson has momentum (p), and Energy [E] = $\omega$ = $\frac{\mid p \mid^2}{2m}$. The conserved charge (Q), is the number of bosons. All of the operators; the Hamiltonian (H), Momentum(P), and Charge(Q), are time-independent.  \\
+This is the theory of a set of free, non-relativistic, identical bosons, all with mass (m). Each boson has momentum (p), and Energy [E] = $\omega$ = $\frac{\mid p \mid^2}{2m}$. The conserved charge (Q), is the number of bosons. All of the operators; Momentum(P), and Charge(Q), are time-independent, including the Hamiltonian. \\
 
 
-Charge conjugation (\(C\)), parity (\(P\)), and time reversal (\(T\))
-are discrete transformations used to study symmetries in physics. Their
-precise action on fields depends on the field and convention; the
-relations below give their general meaning.
+Charge Conjugation (\(C\)), Parity (\(P\)), and Time Reversal (\(T\)) are Discrete Transformations used to study Symmetries in Physics. Their precise action on Fields depends on the Field, and convention; the relations below give their general meaning.
 
 \subsection{Charge Conjugation}
 
@@ -4177,42 +5225,11 @@ T\mathbf{p}T^{-1}=-\mathbf{p},
 \qquad
 T\mathbf{J}T^{-1}=-\mathbf{J}.
 \]
-In quantum mechanics, \(T\) is represented by an antiunitary operator,
-so it also complex-conjugates scalar coefficients:
+In quantum mechanics, \(T\) is represented by an anti-unitary operator, so it also Complex-Conjugates Scalar Coefficients:
 \[
 T\bigl(c\,|\psi\rangle\bigr)
 =c^*\,T|\psi\rangle.
 \]
-
-\subsection{The CPT Theorem}
-
-The CPT theorem states that any local, Lorentz-invariant quantum field
-theory with a Hermitian Hamiltonian is invariant under the combined
-transformation \(CPT\). Although \(C\), \(P\), or \(T\) may each be
-violated separately, their combined action is a symmetry under the
-theorem's assumptions.
-
-One consequence is that a particle and its antiparticle have equal
-masses and equal total lifetimes:
-\[
-m_{\text{particle}}=m_{\text{antiparticle}},
-\qquad
-\tau_{\text{particle}}=\tau_{\text{antiparticle}}.
-\]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -4265,6 +5282,100 @@ For a shifted delta distribution, \(\langle \delta(x-a),\psi(x)\rangle
 =-\varphi'(a).
 \]
 \end{proof}
+
+
+
+\subsection{Position--momentum example}
+
+For Position and Momentum,
+\[
+[\hat{x},\hat{p}]=i\hbar\hat{I}.
+\]
+Therefore,
+\[
+\langle[\hat{x},\hat{p}]\rangle=i\hbar,
+\]
+and the Robertson relation becomes
+\[
+\boxed{\Delta x\,\Delta p\geq\frac{\hbar}{2}}.
+\]
+
+\subsection{Remarks}
+
+The Robertson bound is state-dependent because it contains
+\(\langle[A,B]\rangle\). A stronger form, the
+Schr$\ddot{o}$dinger-Robertson relation, also includes the covariance between the observables:
+\[
+(\Delta A)^2(\Delta B)^2
+\geq
+\frac{1}{4}\left|\langle[A,B]\rangle\right|^2
++
+\frac{1}{4}\left|\left\langle
+\{\widetilde{A},\widetilde{B}\}
+\right\rangle\right|^2,
+\]
+where \(\{X,Y\}=XY+YX\) is the anticommutator.
+
+\subsection{The Integral Form of Gauss' Law, its' Statement}
+
+Gauss' Law relates the Electric Flux through a closed surface to the
+total Charge Enclosed by that Surface. In SI units,
+\[
+\boxed{
+\oint_{\partial V}\mathbf{E}\cdot d\mathbf{A}
+=\frac{Q_{\mathrm{enc}}}{\varepsilon_0}
+}
+\]
+where \(\partial V\) is the Closed Boundary of a Volume \(V\),
+\(d\mathbf{A}= \mathbf{n}\,dA\) is the outward-directed Area element,
+\(Q_{\mathrm{enc}}\) is the Charge inside \(V\), and
+\(\varepsilon_0\) is the Vacuum Permittivity.
+
+The left-hand side,
+\[
+\Phi_E=\oint_{\partial V}\mathbf{E}\cdot d\mathbf{A},
+\]
+is the Net Electric Flux through the Surface. Outward Field contributes positive Flux; Inward Field contributes negative Flux.
+
+\subsection{Relation to the Differential Form}
+
+If the Charge Density is \(\rho\), then
+\[
+Q_{\mathrm{enc}}=\int_V \rho\,dV.
+\]
+Applying the Divergence Theorem gives
+\[
+\oint_{\partial V}\mathbf{E}\cdot d\mathbf{A}
+=\int_V\nabla\cdot\mathbf{E}\,dV.
+\]
+Consequently,
+\[
+\int_V\nabla\cdot\mathbf{E}\,dV
+=\frac{1}{\varepsilon_0}\int_V\rho\,dV.
+\]
+Because this holds for any Volume \(V\), the corresponding local equation is
+\[
+\nabla\cdot\mathbf{E}=\frac{\rho}{\varepsilon_0}.
+\]
+
+\subsection{Example: Spherical Symmetry}
+
+For a Point Charge \(q\) at the Center of a Sphere of Radius \(r\), Spherical Symmetry makes the Electric Field Radial, and Constant in Magnitude on the Sphere. Therefore,
+\[
+\oint_{\partial V}\mathbf{E}\cdot d\mathbf{A}
+=E(r)\,4\pi r^2
+=\frac{q}{\varepsilon_0},
+\]
+so
+\[
+\mathbf{E}(r)
+=\frac{q}{4\pi\varepsilon_0r^2}\,\hat{\mathbf{r}}.
+\]
+
+\subsection{Important interpretation}
+
+The Integral Law applies to any Closed Surface, not only a Sphere. Its' usefulness in calculating \(\mathbf{E}\), depends on whether the Charge Distribution has enough Symmetry to simplify the Flux Integral. Charges outside the chosen Closed Surface may affect the Electric Field on the Surface, but their net contribution to the Total Flux
+through it is Zero.
 
 
 
@@ -4576,7 +5687,7 @@ But it does not set which elements are available in the Periodic Table. That is 
 
 The limitation of the Periodic Table (specifically in the context of Nuclear Physics, and the Hartree-Fock-Bogoliubov, or similar mean-field calculations used to map the "nuclear landscape") is typically the **Energy Mesh**.
 
-While the other factors mentioned are critical parameters for the Convergence, and Accuracy of a specific calculation, the Energy Mesh determines the resolution, and stability of the \emph{quasiparticle Spectrum}. If the Mesh is too coarse, the model cannot accurately capture the shell effects, and pairing correlations necessary to determine the drip lines, and \emph{}Stability of Isotopes}, which are the primary constraints, when attempting to complete a theoretical Periodic Table of Nuclei.
+While the other factors mentioned are critical parameters for the Convergence, and Accuracy of a specific calculation, the Energy Mesh determines the resolution, and stability of the \emph{quasiparticle Spectrum}. If the Mesh is too coarse, the model cannot accurately capture the shell effects, and pairing correlations necessary to determine the drip lines, and \emph{Stability of Isotopes}, which are the primary constraints, when attempting to complete a theoretical Periodic Table of Nuclei.
 
 \begin{table}[h]
 \centering
