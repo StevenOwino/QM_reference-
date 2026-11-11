@@ -7,6 +7,7 @@
 \usepackage{booktabs}
 \usepackage{calc}
 \usepackage{amsmath}
+%\usepackage{amsthm}
 \usepackage{imakeidx}
 \usepackage{hyperref}
 % Recommended for modern LaTeX
@@ -30,6 +31,7 @@
   \fancyfoot[C]{\hyperlink{toc}{\thepage}}
 }
 \usepackage{mathtools}
+%\usepackage{mathrsfs}
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 
 \usepackage{listings}
@@ -432,8 +434,8 @@ DP@rint:#1\endcsname\relax\phantom
 %\frontmatter
 %\tableofcontents
 
-% Table of Contents
-% Redefine headings for table of contents & index
+Table of Contents
+Redefine headings for table of contents and index
 \renewcommand{\contentsname}{%
   \protect\Large\protect\normalfont\protect\centering%
   CONTENTS.\\
@@ -554,6 +556,8 @@ Completely described states, occur as a result of the \emph{simultaneous measure
 \item Estimated Ground Search Energy, with its' Analytical Soluion
 \item Breit-Wigner distribution
 \item The relation between Phi, Theta, and Psi
+\item Quantum Description of the Aharonov-Bohm Effect
+\item Aharonov-Bohm Shift of Interference Pattern
 \item Graph of the Photoelectric Effect
 \item Lagrangian Formalism and Stationary Action
 \item First Four Hermite Polynomials
@@ -3097,10 +3101,253 @@ frequency}}$.
 \label{fig:Spinning top.pdf}
 \end{figure}
 
+
+\chapter{The Atiyah-Singer Index Theorem}
+\label{ch:Atiyah-Singer Index Theorem}
+
+\subsection{Analytic Index}
+
+Let \(M\) be a Compact Smooth Manifold without Boundary, and let \(E,F\to M\) be Complex Vector Bundles. An Elliptic Differential Operator
+\[
+D:C^\infty(M,E)\longrightarrow C^\infty(M,F)
+\]
+extends to a Fredholm Operator between suitable Sobolev completions. Its' Analytic Index is
+\begin{equation}
+\operatorname{ind}_{\mathrm{an}}(D)
+=
+\dim\ker D-\dim\operatorname{coker}D.
+\end{equation}
+Equivalently, after choosing compatible Hilbert-space completions,
+\[
+\operatorname{ind}_{\mathrm{an}}(D)
+=
+\dim\ker D-\dim\ker D^*.
+\]
+In particular, the Index is an Integer, and is stable under Continuous Deformations of the Elliptic Operator.
+
+\subsection{Principal Symbol}
+
+The Principal Symbol of \(D\) is a Bundle Map over the Cotangent Bundle,
+\[
+\sigma_D(x,\xi):E_x\longrightarrow F_x,
+\qquad (x,\xi)\in T^*M.
+\]
+Ellipticity means that \(\sigma_D(x,\xi)\) is invertible whenever \(\xi\ne 0\). Thus the Symbol defines a Class
+\[
+[\sigma_D]\in K_c^0(T^*M),
+\]
+where \(K_c^0(T^*M)\) denotes the Compactly supported \(K\)-Theory of the Cotangent Bundle.
+
+\subsection{Topological Index}
+
+The Symbol Class determines a Topological Index
+\[
+\operatorname{ind}_{\mathrm{top}}([\sigma_D])\in\mathbb Z.
+\]
+The Atiyah--Singer Index Theorem states that, the Analytic and Topological Indices agree:
+\begin{equation}
+\boxed{
+\operatorname{ind}_{\mathrm{an}}(D)
+=
+\operatorname{ind}_{\mathrm{top}}([\sigma_D]).
+}
+\end{equation}
+Thus, an Integer defined using Solutions of a Differential Equation
+can be Computed from the Topology of \(M\), and the Symbol of \(D\).
+
+\subsection{Characteristic-Class Formula}
+
+One standard Cohomological Form of the Theorem is
+\begin{equation}
+\operatorname{ind}(D)
+=
+\left\langle
+\operatorname{ch}([\sigma_D])\smile
+\pi^*\operatorname{Td}(T_{\mathbb C}M),
+[T^*M]
+\right\rangle.
+\end{equation}
+Here \(\pi:T^*M\to M\) is the Cotangent-Bundle Projection,
+\(\operatorname{ch}\) is the Chern character, and
+\(\operatorname{Td}\) is the Todd class. The Pairing is understood using the compactly supported Cohomology Class associated with the Symbol; Equivalently, one may express the topological index using the Push-Forward (Integration along the Cotangent-Bundle Fibers).
+
+\subsection{Dirac-Operator case}
+
+A particularly important case is a Spin Manifold \(M\) with a Complex Vector Bundle \(W\to M\). Let \(D_W\) be the Spin Dirac Operator b
+\(W\). The Index Theorem takes the Form
+\begin{equation}
+\operatorname{ind}(D_W^+)
+=
+\left\langle
+\widehat{A}(TM)\smile\operatorname{ch}(W),
+[M]
+\right\rangle.
+\end{equation}
+Here \(D_W^+\) Maps Positive-Chirality Spinors, to Negative-Chirality Spinors, \(\widehat{A}(TM)\) is the \(\widehat{A}\)-Class of the Tangent Bundle, and \([M]\), is the Fundamental Class of \(M\).
+
+For example, when \(W\) is the trivial Line Bundle,
+\begin{equation}
+\operatorname{ind}(D^+)
+=
+\left\langle\widehat{A}(TM),[M]\right\rangle.
+\end{equation}
+
+\subsection{Examples}
+
+\paragraph{De Rham Operator.}
+The Index of the de Rham Operator is the Euler Characteristic:
+\begin{equation}
+\operatorname{ind}(d+d^*)
+=
+\sum_{k=0}^{\dim M}(-1)^k\dim H^k_{\mathrm{dR}}(M)
+=
+\chi(M).
+\end{equation}
+
+\paragraph{Signature Operator}
+On an oriented manifold of Dimension divisible by four, the Index of the Signature Operator, equals the Signature of the Intersection Form.
+The Index Theorem expresses it as
+\begin{equation}
+\operatorname{ind}(D_{\mathrm{sign}})
+=
+\left\langle L(TM),[M]\right\rangle,
+\end{equation}
+where \(L(TM)\) is the Hirzebruch \(L\)-Class.
+
+\subsection{Interpretation}
+
+The Theorem has two complementary sides. The Analytic Index, measures the difference between the Dimensions of the Solution Spaces of \(D\), and its' Adjoint. The Topological Index is determined by the Symbol Class, and Characteristic Classes of the underlying Bundles. Their equality implies that, the Analytic Index is
+unchanged by many Geometric Deformations, even when the Kernels of the Operators themselves change.
+
+\section{Holomorphic Euler Characteristic}
+
+Let \(X\) be a Compact Complex Manifold, and let \(\mathcal{F}\) be a Coherent Analytic Sheaf on \(X\). Its' \(q\)-th Sheaf Cohomology Group is
+denoted by \(H^q(X,\mathcal{F})\). Since \(X\) is Compact, these Groups are Finite-Dimensional Complex Vector Spaces. The Holomorphic Euler Characteristic of \(\mathcal{F}\) is the alternating sum
+\begin{equation}
+\chi(X,\mathcal{F})
+=
+\sum_{q=0}^{\dim_{\mathbb{C}}X}
+(-1)^q\dim_{\mathbb{C}}H^q(X,\mathcal{F}).
+\end{equation}
+
+For a Holomorphic Vector Bundle \(E\to X\), we write \(\mathcal{O}(E)\), for its' Sheaf of Holomorphic Sections, and define
+\begin{equation}
+\chi(X,E)
+=
+\sum_{q=0}^{\dim_{\mathbb{C}}X}
+(-1)^q\dim_{\mathbb{C}}H^q(X,\mathcal{O}(E)).
+\end{equation}
+In particular, the Holomorphic Euler Characteristic of \(X\), is
+\begin{equation}
+\chi(\mathcal{O}_X)
+=
+\sum_{q=0}^{\dim_{\mathbb{C}}X}
+(-1)^q h^{0,q}(X),
+\qquad
+h^{0,q}(X)=\dim_{\mathbb{C}}H^q(X,\mathcal{O}_X).
+\end{equation}
+
+\subsection{Hirzebruch--Riemann--Roch Theorem}
+
+If \(X\) is a Compact Complex Manifold, and \(E\to X\) is a Holomorphic Vector Bundle, the Hirzebruch--Riemann--Roch Theorem gives
+\begin{equation}
+\boxed{
+\chi(X,E)
+=
+\int_X
+\operatorname{ch}(E)\smile\operatorname{Td}(T_X).
+}
+\end{equation}
+Here \(\operatorname{ch}(E)\) is the Chern Character of \(E\), \(\operatorname{Td}(T_X)\) is the Todd Class of the Holomorphic Tangent Bundle, and the Integral denotes evaluation of the Top-Degree Cohomology Component on the Fundamental Class of \(X\).
+
+For the trivial Line Bundle \(E=\mathcal{O}_X\), this becomes
+\begin{equation}
+\chi(\mathcal{O}_X)
+=
+\int_X \operatorname{Td}(T_X).
+\end{equation}
+
+\subsection{Line Bundles}
+
+For a Holomorphic Line Bundle \(L\to X\), the Chern Character is
+\[
+\operatorname{ch}(L)=e^{c_1(L)}.
+\]
+Therefore,
+\begin{equation}
+\chi(X,L)
+=
+\int_X e^{c_1(L)}\smile\operatorname{Td}(T_X).
+\end{equation}
+This formula expresses the Holomorphic Euler Characteristic as a
+Topological quantity determined by Characteristic Classes.
+
+\subsection{Examples}
+
+\paragraph{Compact Riemann Surfaces}
+
+Let \(X\) be a compact Riemann Surface of Genus \(g\), and let \(L\) be a Holomorphic Line Bundle on \(X\). The Riemann--Roch Theorem gives
+\begin{equation}
+\chi(X,L)
+=
+\dim H^0(X,L)-\dim H^1(X,L)
+=
+\deg(L)+1-g.
+\end{equation}
+Taking \(L=\mathcal{O}_X\), we obtain
+\begin{equation}
+\chi(\mathcal{O}_X)=1-g.
+\end{equation}
+
+\paragraph{Compact Complex Surfaces}
+
+If \(X\) is a Compact Complex Surface, then
+\begin{equation}
+\chi(\mathcal{O}_X)
+=
+\frac{1}{12}
+\int_X\left(c_1(T_X)^2+c_2(T_X)\right).
+\end{equation}
+Equivalently, using the Canonical Bundle \(K_X\),
+\begin{equation}
+\chi(\mathcal{O}_X)
+=
+\frac{K_X^2+c_2(X)}{12},
+\end{equation}
+where \(K_X^2\) denotes the Self-Intersection Number of the Canonical Class, and \(c_2(X)\) is the Second Chern Number.
+
+\subsection{Relation to the Dolbeault Index}
+
+The Dolbeault operator \(E\), 
+\[
+\bar{\partial}_E+\bar{\partial}_E^*,
+\]
+is an Elliptic Operator. Its' Index is the Holomorphic Euler Characteristic:
+\begin{equation}
+\operatorname{ind}(\bar{\partial}_E)
+=
+\sum_q(-1)^q\dim H^{0,q}(X,E)
+=
+\chi(X,E).
+\end{equation}
+Thus Hirzebruch-Riemann-Roch is a special case of the Atiyah--Singer Index Theorem.
+
+\subsection{Remarks}
+
+The Holomorphic Euler Characteristic is an alternating sum of Holomorphic Cohomology Dimensions.
+\[
+\chi_{\mathrm{top}}(X)=\sum_k(-1)^k\dim H^k(X,\mathbb{C}).
+\]
+The two Invariants involve Different Cohomology Groups, and need not agree. Also, \(\chi(X,E)\) is a Single Alternating Sum: It does not determine the individual Dimensions \(\dim H^q(X,E)\) without additional information.
+
+
+
 \chapter{Spin}
 
 This is a property of the universe.  \\
-A two-particle wave-function is a difficult proposition, calculated with $\hat H$, integrated on all dimensions of an indistinguishable particle! See Eq.~ \eqref{eq:Hamiltonian}. Electrons are confined, and DON'T interact.  \\
+A two-particle wave-function is a difficult proposition, calculated with $\hat H$, integrated on all dimensions of an indistinguishable particle! See Eq.~ \eqref{eq:Hamiltonian}, and page (\pageref{ch:Atiyah-Singer Index Theorem}). Electrons are confined, and DON'T interact.  \\
+
+
 
 \paragraph{Quantum Projection}
 \noindent
@@ -3150,13 +3397,17 @@ P_{fi} = \left| - \frac{i}{\hbar} \int_{0}^t \langle \psi_f \mid \hat V (t^{\pri
 Where $\hat V(t)$, is a time-dependent operator, and $\omega_{fi}$ = $\frac{E_f -  E_i}{\hbar}$ = $\frac{i}{\hbar}$ $\left[\langle \psi_f \mid \hat H_0 \mid \psi_f \rangle - \langle \psi_i \mid \hat H_0 \mid \psi_i \rangle \right]$ = Transition frequency. As a function of $\omega_{fi}$, the transition probability has a diffraction pattern. See Figure~\ref{fig:Interference-pattern-intensity-recorded-by-the-3000-pixel-line-camera.pdf}.  \\
 The transition probability of finding the system in a state $\mid \psi_f \rangle$, of Energy ($E_f$), is \emph{maximum only when} $E_i$ = $E_f$, or $\omega_{fi} \simeq 0$. The central peak becomes narrower, and higher as time increases(A property of the Dirac Delta Function)See Equation~\ref{eq:Dirac Delta Function}, hence yields a transition probability of $\mathbf{\textbf{unit time}}$, and guarantees conservation of Energy, in the limit (t) $\rightarrow$ $\infty$. Note that $\iff$ $E_f$ $\neq$ $E_i$ = $0$. A constant \emph{Perturbation}\index{Perturbation} (time-independent), neither removes, nor adds Energy to a system, it causes Energy conservation transitions.
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=10cm]{Interference-pattern-intensity-recorded-by-the-3000-pixel-line-camera.pdf}
-\end{center}
-\caption{(A) Interference-pattern intensity recorded by the 3000-pixel line camera, averaged over 10,000 camera frames. (B) Log of spatial spectral power with double-slit power peaking around wave-number 45 (equivalent to a wavelength of about 69 pixels) and single-slit power at 1. The peak around wave-number 90 is a harmonic of the double-slit frequency.}
-\label{fig:Interference-pattern-intensity-recorded-by-the-3000-pixel-line-camera.pdf}
-\end{figure}
+
+
+
+
+
+
+
+
+
+
+
 
 \paragraph{Harmonic [Periodic] Perturbation}
 \noindent
@@ -3195,6 +3446,13 @@ K = $\frac{2 \pi n}{a}$, n = $0, \pm 1, \pm 2, ....$  \\
 $K^2$ = $\frac{2 m E}{\hbar^2}$  \\
 
 $\therefore$ $\Psi(x)$ = $e^{i K a}$ [$A \sin(K(x + a))$ + $B(\cos(K(x + a))$]
+
+
+
+
+
+
+
 
 \paragraph{Stone-von Neumann Theorem}
 
@@ -3235,19 +3493,281 @@ J_N^\mu = \prod^\mu D\phi - W^\mu(x)
 
 If $\phi$ obeys the equations of motion, then the current is conserved, i.e. $\partial_\mu J_N^\mu = 0$.  \\
 
+
+
+
+
+
+
+
+
 \chapter{Time-Dependent Problems}
 
-There's no possible state with E = 0, as illustrated by Figure \ref{fig:Ground state search.png}; Thus, it is convenient
-to adopt periodic boundary conditions, which require that the wave-function is unaffected by a translation of any of the three Cartesian coordinates.
+There's no possible State with E = 0, as illustrated by Figure \ref{fig:Ground state search.png}; Thus, it is convenient to adopt Periodic Boundary Conditions, which require that the Wave-Function is unaffected by a translation of any of the Three Cartesian Coordinates.  \\
+
+Depending on the context (Physics, Mathematics, or Engineering), "Time-Dependent Problems" refers to Systems where the State Variables change over Time, governed by Differential Equations.  \\
+
+Mathematical Formulation, and common types of Time-Dependent Problems are reviwed:  \\
+
+1. General Mathematical Formulation  \\
+
+Most Time-Dependent Problems are expressed as an \textbf{Initial Value Problem (IVP)}. The general form is a Partial Differential Equation (PDE), or Ordinary Differential Equation (ODE), where the Time dDerivative is the \emph{primary driver of evolution}.  \\
+
+$\frac{\partial u(\mathbf{x}, t)}{\partial t} = \mathcal{L}[u(\mathbf{x}, t)]$  \\
+Where: \\
+ $u(\mathbf{x}, t)$ is the Dependent Variable (e.g., Temperature, Displacement).  \\
+ $\mathbf{x}$ represents the Spatial Coordinates.  \\ 
+ $t$ represents Time.  \\
+
+ $\mathcal{L}$ is a Differential Operator representing the Physics of the System.  \\
+
+To find a unique solution, you must define the \textbf{Initial Condition (IC)} at $t=0$:  \\
+$ u(\mathbf{x}, 0) = f(\mathbf{x})$
+
+And \textbf{Boundary Conditions (BC)} $\forall$ $t > 0$ on the Domain Boundary $\partial \Omega$:
+$ u(\mathbf{x}, t) = g(\mathbf{x}, t) \quad \text{for } \mathbf{x} \in \partial \Omega $
+
+2. Common Types of Time-Dependent PDEs  \\
+
+   \textbf{The Heat Equation (Parabolic)}  \\
+
+Describes Diffusion Processes. It is Characterized by a First-Order Time Derivative, and a Second-Order Spatial Derivative.  \\
+$ \frac{\partial u}{\partial t} = \alpha \nabla^2 u $   
+
+\textbf{Behavior}: Smoothing, and Dissipative. Information spreads infinitely fast, and Gradients Flatten Over Time.  \\
+
+     \textbf{The Wave Equation (Hyperbolic)}  \\
+
+Describes the Propagation of Oscillations (Sound, Light, Strings). It features a Second-Order Time Derivative.
+$\frac{\partial^2 u}{\partial t^2} = c^2 \nabla^2 u$
+   \textbf{Behavior}: Conservative. Information travels at a Finite Speed $c$, and Signals maintain their shape as they propagate.
+
+    The Schr$\ddot{o}$}dinger Equation (Quantum Mechanics)  \\
+
+A Complex-Valued Equation describing the Evolution of a Quantum State.
+$i\hbar \frac{\partial}{\partial t} \Psi(\mathbf{x}, t) = \left[ -\frac{\hbar^2}{2m} \nabla^2 + V(\mathbf{x}, t) \right] \Psi(\mathbf{x}, t)$
+   \textbf{Behavior}: Unitary Evolution. The Total Probability (Integral of $|\Psi|^2$) is \emph{Conserved Over Time}.
+
+3. Solution Methods  \\
+
+    \textbf{Separation of Variables}  \\
+
+If the Operator $\mathcal{L}$ is Linear, and the BCs(Bondary Conditions) are Homogeneous, we assume:
+$u(\mathbf{x}, t) = X(\mathbf{x})T(t) $
+Substituting this into the PDE, allows us to split the equation into two independent ODEs linked by a \emph{Separation Constant} $\lambda$.
+
+     \textbf{Fourier Transforms}  \\
+
+For problems on an Infinite Domain ($-\infty < x < \infty$), we Transform the Spatial Coordinate to the Frequency Domain:
+$ \hat{u}(k, t) = \int_{-\infty}^{\infty} u(x, t) e^{-ikx} dx $
+This converts the PDE into a simpler ODE in terms of $t$, which is then \emph{solved, and inverted}.  \\
+
+    \textbf{Numerical Integration (Time Stepping)}  \\
+
+For Complex Systems, we \emph{Discretize Time into Steps} $\Delta t$. A common approach is the \textbf{Forward Euler} method:
+$u_{n+1} = u_n + \Delta t \cdot \mathcal{L}[u_n]$
+For better stability (especially in the Heat Equation), the \textbf{Crank-Nicolson} method is used:
+$\frac{u_{n+1} - u_n}{\Delta t} = \frac{1}{2} \left( \mathcal{L}[u_{n+1}] + \mathcal{L}[u_n] \right) $
+
 
 \chapter{Allowed Energies In Materials, Considering Temperature}
-\section{Properties of Helium}
 
-In \url{http:\\pages.cs.wisc.edu/kovar/hall.html},
+\[
+\boxed{\text{Temperature usually changes which allowed states are occupied,
+not the basic rule that determines which states are allowed.}}
+\]
 
-\chapter{Entanglement}
+In a Crystalline Material, Electron Energies form allowed Bands separated by Forbidden Energy Gaps. The allowed Energies are determined by the materials' Atomic Structure and Periodic Potential. Temperature changes the Probability that an available State of Energy \(E\) is Occupied, described approximately by the Fermi-Dirac Distribution:
+\[
+f(E,T)=\frac{1}{\exp\!\left(\dfrac{E-\mu(T)}{k_{\mathrm B}T}\right)+1},
+\]
 
-There is a need to describe systems that extend over macroscopic distances in ways that are inconsistent with Classical ideas. In Quantum Mechanics, two observable particles ($x_1$), and ($x_2$) commute by Eq. \eqref{eq:Abelian/Commutatitive}. How can measurement of particle $(x_2$)s' Momentum, interfere with ($x_1$)s', if they're far apart? The way out of this dilemma within Quantum Mechanics is to suppose that the second measurement, which gives particle 1 a definite Position, does indeed prevent particle 2 from having a definite Momentum, even though the two particles are far apart. The states of the two particles are said to be $\mathbf{entangled}$. When two systems have wave-functions which differ by at most a constant phase factor, they are said to be in the same Quantum state. It is essential that in every measurement, there shall actually be a disturbance arising from the apparatus that destroys all elements of corresponding to observables that do not commute with the measured variable.
+where \(f(E,T)\) is the Occupation Probability, \(\mu(T)\) is the Chemical Potential, and \(k_{\mathrm B}\) is Boltzmanns' Constant. At \(T=0\), States below the Fermi Energy are filled, and States above it are empty(ignoring \emph{Degeneracies}). At \(T>0\), some Electrons are Thermally Excited
+into Higher-Energy States.
+
+\paragraph{Metals}
+
+In a metal, allowed States are available near the Fermi Energy \(E_{\mathrm F}\). Heating broadens the Occupation from a sharp step over, an Energy Range of
+Order \(k_{\mathrm B}T\):
+
+\[
+\Delta E_{\mathrm{thermal}}\sim k_{\mathrm B}T.
+\]
+
+\paragraph{Semiconductors, and Insulators}
+
+These materials have a Valence Band, a Conduction Band, and a Band Gap \(E_{\mathrm g}\). Thermal Energy can excite Electrons across the Gap. In a non-Degenerate Semiconductor, the Intrinsic Carrier Concentration varies approximately as
+\[
+n_i(T)\propto T^{3/2}
+\exp\!\left(-\frac{E_{\mathrm g}}{2k_{\mathrm B}T}\right).
+\]
+Thus, increasing Temperature generally increases the number of mobile
+Electrons, even though the Band Gap remains much larger than \(k_{\mathrm B}T\) in many conditions.
+
+\paragraph{Temperature-Dependent Band Structure}
+
+The allowed Energies can also Shift slightly, with Temperature, because Thermal Expansion, and Lattice vibrations change the Crystal Potential.
+A common \emph{Empirical Model} for a Semiconductor Band Gap is the Varshni Relation:
+\[
+E_{\mathrm g}(T)
+=
+E_{\mathrm g}(0)
+-
+\frac{\alpha T^2}{T+\beta},
+\]
+where \(\alpha\), and \(\beta\) are Material-Dependent Parameters. This is a typical trend, not a Universal Law.
+
+\[
+\boxed{
+\text{Temperature affects both State Occupation and, usually more modestly,
+the Energies and widths of the allowed Bands.}
+}
+\]
+
+
+
+
+
+
+
+
+
+
+
+\chapter{The Aharonov-Bohm Effect}
+
+This describes the Magnetic Version, which is the most commonly meant by the Aharonov–Bohm effect. The Electric Version, involves a Phase Difference, accumulated while a Charged particle experiences different Electric Potentials over time.  \\
+
+\section{Physical setting}
+
+The Aharonov--Bohm effect demonstrates that Electromagnetic Potentials can affect Quantum Interference, even when a Charged Particle travels only through a region in which the Electromagnetic fields vanish. The standard example is the \emph{Magnetic Aharonov--Bohm effect}: a Magnetic Flux, is confined to an inaccessible region, while a Coherent Particle beam, travels along two paths, that pass on opposite sides of it.
+
+For a Particle of Charge \(q\), the Magnetic Field may be Zero along both Paths, but the Vector Potential \(\mathbf{A}\), need not vanish
+there. The two Paths can therefore acquire different Quantum Phases.
+
+\subsection{Phase Difference}
+
+In the presence of Electromagnetic Potentials, the Phase accumulated along a Path \(\gamma\), contains the term
+\begin{equation}
+\varphi_\gamma
+=
+\frac{q}{\hbar}\int_\gamma \mathbf{A}\cdot d\mathbf{l},
+\end{equation}
+for the Magnetic contribution. For two Paths \(\gamma_1\), and \(\gamma_2\) with the same endpoints, their Relative Phase is
+\begin{align}
+\Delta\varphi
+&=
+\frac{q}{\hbar}
+\left(
+\int_{\gamma_1}\mathbf{A}\cdot d\mathbf{l}
+-
+\int_{\gamma_2}\mathbf{A}\cdot d\mathbf{l}
+\right)\\
+&=
+\frac{q}{\hbar}\oint_C\mathbf{A}\cdot d\mathbf{l}\\
+&=
+\frac{q}{\hbar}\int_S
+(\boldsymbol{\nabla}\times\mathbf{A})\cdot d\mathbf{S}\\
+&=
+\frac{q\Phi_B}{\hbar}.
+\end{align}
+Here \(C\) is the Closed Loop formed by following one path, and returning along the other, \(S\) is a surface bounded by \(C\), and
+\[
+\Phi_B=\int_S\mathbf{B}\cdot d\mathbf{S}
+\]
+is the enclosed Magnetic Flux. The final equality uses
+\(\mathbf{B}=\boldsymbol{\nabla}\times\mathbf{A}\). Although the Particle Paths can lie entirely in a region where
+\(\mathbf{B}=0\), the loop can enclose a region containing non-zero Magnetic Flux.
+
+\subsection{Interference, and Flux Periodicity}
+
+The Phase Difference changes the Relative Phase of the Two Path Amplitudes, and hence Shifts the Interference Pattern. The effect is Periodic in Flux, with Period
+\begin{equation}
+\Phi_0=\frac{h}{|q|}.
+\end{equation}
+For an Electron, whose Charge is \(q=-e\),
+\begin{equation}
+\Delta\varphi
+=
+-\frac{e\Phi_B}{\hbar}
+=
+-2\pi\frac{\Phi_B}{h/e}.
+\end{equation}
+The sign depends on the Charge, and on the Chosen Orientation of the Paths, and Surface; the Observable Interference Shift, depends on the
+Relative Phase Modulo \(2\pi\).
+
+\subsection{Gauge Invariance}
+
+Under a Gauge Transformation,
+\begin{equation}
+\mathbf{A}\longmapsto\mathbf{A}+\boldsymbol{\nabla}\chi,
+\end{equation}
+the Integral around a Closed Loop is unchanged:
+\begin{equation}
+\oint_C(\mathbf{A}+\boldsymbol{\nabla}\chi)\cdot d\mathbf{l}
+=
+\oint_C\mathbf{A}\cdot d\mathbf{l},
+\end{equation}
+because the Integral of a Gradient around a Closed Loop vanishes. Thus the Phase Difference is Gauge Invariant. The individual Path-Dependent Phases, need not be Gauge Invariant, but their Interferometrically measured difference is.
+
+\subsection{Topological Aspect}
+
+In the idealized Magnetic setup, the region accessible to the Particle is not simply connected: Paths can wind around the excluded Flux-carrying region. A Vector Potential can have a non-zero circulation around such a Loop, even though the Magnetic field vanishes locally along the Particles' Paths. The Phase is therefore sensitive to the
+enclosed Flux, or equivalently to the Loop Integral of the Potential.
+
+\subsection{Interpretation}
+
+The Aharonov--Bohm effect is a Quantum-Mechanical Interference Effect, not a Classical Force, acting on the Particle along its' Path. Its' Observable Prediction is the 
+Flux-Dependent Phase Shift
+\[
+\Delta\varphi=\frac{q\Phi_B}{\hbar}.
+\]
+It shows that, Electromagnetic Potentials play an essential role in the Quantum description, while \emph{Measurable Predictions}, remain Gauge Invariant.  \\
+
+
+
+\begin{tikzpicture}[>=stealth, thick]
+  % Screen
+  \draw[very thick] (5,-2) -- (5,2);
+  \node[above] at (5,2) {screen};
+  \draw[fill=black] (5,0.7) circle (1.5pt);
+  \node[right] at (5,0.7) {interference};
+
+  % Source and slits
+  \fill (0,0) circle (2pt);
+  \node[left] at (0,0) {source};
+  \draw (1.5,-1.2) -- (1.5,1.2);
+  \draw[white, line width=3pt] (1.5,-0.45) -- (1.5,-0.15);
+  \draw[white, line width=3pt] (1.5,0.15) -- (1.5,0.45);
+  \node[below] at (1.6,-1.2) {two slits};
+
+  % Paths around flux tube
+  \draw[->, blue] (0,0) .. controls (0.8,0.7) and (1.1,0.3) .. (1.5,0.3)
+    .. controls (2.5,1.2) and (3.8,1.1) .. (5,0.7);
+  \draw[->, red] (0,0) .. controls (0.8,-0.7) and (1.1,-0.3) .. (1.5,-0.3)
+    .. controls (2.5,-0.9) and (3.8,-0.7) .. (5,0.7);
+  \node[blue] at (3,1.35) {$\psi_1$};
+  \node[red] at (3,-1.05) {$\psi_2$};
+
+  % Flux tube
+  \draw[fill=gray!20] (2.35,-0.35) rectangle (2.65,0.35);
+  \node[below] at (3.0,-0.55) {confined flux $\Phi$};
+  \node at (2.5,0) {$\otimes$};
+
+  % Phase label
+  \node[align=center] at (4.0,-2.2)
+    {$\Delta\phi=\dfrac{q}{\hbar}\oint\mathbf A\cdot d\mathbf l
+      =\dfrac{q\Phi}{\hbar}$};
+\end{tikzpicture}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.1\textwidth]{Aharonov-Bohm Shift of Interference Pattern.pdf}
+  \label{Aharonov-Bohm Shift of Interference Pattern.pdf}
+  \caption{Aharonov-Bohm Shift of Interference Pattern}
+\end{figure}
+
+\newpage
 
 \chapter{Path Integrals in Quantum Field Theory}
 
@@ -3329,14 +3849,6 @@ to Fields}.
 
 
 
-
-
-
-
-
-\chapter{Index Theorem}
-
-Clifford Algebra, and (K-Theory).
 
 
 \paragraph{Canonical Quantization}
