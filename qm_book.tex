@@ -2937,6 +2937,7 @@ while Hadamard leves them as $\mathbb R$. QFT also allows derivation of Fourier 
 \end{remark}
 
 Baker-Campbell-Hausedorff Theorem\index{Baker-Campbell-Hausedorff Theorem} $\rightarrow$ \\
+\label{eq:Baker-Campbell-Hausedorff Theorem}
 \begin{equation}
 \log(e^Xe^Y) = X + \int_{0}^1 g(e^{\text{ad X}} e^{\text{t ad Y}})(Y)dt.
 \end{equation}
@@ -3591,25 +3592,170 @@ The Theorem guarantees that it doesn't matter how we represent Position and Mome
 
 Crucially, the Stone-von Neumann Theorem \textbf{fails}, for Systems with an Infinite Number of Degrees of Freedom. This failure is a cornerstone of:
  \textbf{Quantum Field Theory (QFT)}: In QFT, there exist Infinitely many Unitarily Inequivalent Representations of the CCR (e.g., different Vacuum States).  \\
- \textbf{Thermodynamic Limit}: It explains why different Phases of Matter (like a Liquid vs. a Crystal), can be described by Representations that cannot be Mapped into one another, by a Simple Unitary Transformation.
+ \textbf{Thermodynamic Limit}: It explains why different Phases of Matter (like a Liquid vs. a Crystal), can be described by Representations that cannot be Mapped into one another, by a Simple Unitary Transformation.  \\
+
+The Weyl Form is the exponentiated version of the Canonical Commutation Relations (CCR). It was introduced by Hermann Weyl, to resolve the Mathematical Instabilities associated with the Unbounded nature of the Position ($\hat{x}$), and Momentum ($\hat{p}$) Operators.  \\
+
+    1. The Problem with the Heisenberg Form  \\
+
+The standard Heisenberg Commutation Relation is:  \\
+$[\hat{x}, \hat{p}] = i\hbar \mathbb{I}$  \\
+Mathematically, $\hat{x}$, and $\hat{p}$ are \textbf{Unbounded Operators}. This means they cannot be defined on the entire Hilbert Space $\mathcal{H}$, but only on a Dense Domain. This creates technical difficulties when taking products of Operators, or discussing their \emph{Spectral Properties}, as the Domain of $[\hat{x}, \hat{p}]$, might be smaller than the Domains of the Individual Operators.  \\
+
+    2. Construction of the Weyl Form  \\
+
+To bypass these issues, we move from the Generators ($\hat{x}, \hat{p}$), to the Unitary Groups they Generate. We define the \textbf{Unitary Translation Operators}:  \\
+
+\textbf{Translation in Momentum Space}:  \\
+$ U(a) = e^{i a \hat{p} / \hbar}$  \\
+This Operator shifts the Position of a State by $a$: $U(a)\psi(x) = \psi(x+a)$.  \\
+
+  \textbf{Translation in Position Space}:  \\
+$ V(b) = e^{i b \hat{x} / \hbar}$  \\
+This Operator Shifts the Momentum of a State by $b$: $V(b)\psi(x) = e^{ibx/\hbar}\psi(x)$.  \\
+
+Unlike $\hat{x}$ and $\hat{p}$, these Operators $U(a)$, and $V(b)$ are \textbf{Bounded and Unitary}, meaning they are defined everywhere on the Hilbert Space, and \emph{Preserve the Norm of the State}.  \\
+
+  3. The Weyl Relation  \\
+
+By applying the Baker-Campbell-Hausdorff (BCH) formula[\eqref{eq:Baker-Campbell-Hausedorff Theorem}],  to the Heisenberg relation, we derive the \textbf{Weyl Commutation Relation}:  \\
+$U(a)V(b) = e^{iab/\hbar} V(b)U(a)$  \\
+Alternatively, this is often written as:  \\
+$ U(a)V(b)U(a)^\dagger = e^{iab/\hbar} V(b)$
+This equation states that, Shifting in Momentum, and then Shifting in Position is the same as Shifting in Position, and then Momentum, provided you multiply by a Phase Factor $e^{iab/\hbar}$.  \\
+
+    4. Summary Comparison  \\
+
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Feature} & \textbf{Heisenberg Form} & \textbf{Weyl Form} \\
+\hline
+\textbf{Operators} & Unbounded ($\hat{x}, \hat{p}$) & Bounded/Unitary ($U(a), V(b)$) \\
+\hline
+\textbf{Domain} & Dense subspace of $\mathcal{H}$ & Entire Hilbert space $\mathcal{H}$ \\
+\hline
+\textbf{Equation} & $[\hat{x}, \hat{p}] = i\hbar \mathbb{I}$ & $U(a)V(b) = e^{iab/\hbar} V(b)U(a)$ \\
+\hline
+\textbf{Stability} & Mathematically delicate & Mathematically rigorous \\
+\hline
+\end{tabular} \\
+
+\noindent
+
+   5. Physical Significance  \\
+
+The Weyl Form is the starting point for the \textbf{Stone-von Neumann Theorem}. The Theorem proves that, any Irreducible Representation of the Weyl Relations, is Unitarily Equivalent to the Schr$\ddot{o}$dinger Representation. \emph{Essentially, it proves that the "Wave-Function" approach to Quantum Mechanics, is the only possible way to realize the CCR for a Finite Number of Particles}. 
 
 \newpage
 
 
 \paragraph{Segal-Bargmann Space}
 
+The Segal-Bargmann Space $\mathcal{H}_{\mathrm{SB}}$, is a Hilbert Space of entire Functions on $\mathbb{C}^n$, with Inner Product
+\[
+\langle f,g\rangle_{\mathrm{SB}}
+=
+\frac{1}{(\pi\hbar)^n}
+\int_{\mathbb{C}^n}
+\overline{f(z)}\,g(z)\,
+e^{-|z|^2/\hbar}\,d^{2n}z.
+\]
+Its' Norm is Finite for every $f\in\mathcal{H}_{\mathrm{SB}}$. The Segal-Bargmann transform maps, the Position-Space of Hilbert Space $L^2(\mathbb{R}^n)$, Unitarily onto $\mathcal{H}_{\mathrm{SB}}$.  \\
+
+In this representation, the Canonical Operators act as  \\
+\[
+\hat{x}_j
+=
+\frac{1}{\sqrt{2}}\left(z_j+\hbar\frac{\partial}{\partial z_j}\right),
+\qquad
+\hat{p}_j
+=
+\frac{1}{i\sqrt{2}}\left(z_j-\hbar\frac{\partial}{\partial z_j}\right),
+\]
+for the convention in which $z_j=(x_j-ip_j)/\sqrt{2}$, and $[\hat{x}_j,\hat{p}_k]=i\hbar\delta_{jk}\mathbb{I}$. These operators are generally Unbounded, and are defined on suitable Dense Domains in $\mathcal{H}_{\mathrm{SB}}$.
+
+\newpage
+
 \paragraph{Wignar-Eckart Theorem}
+
+Let $T^{(k)}_q$ be the $q$th component of an Irreducible Spherical Tensor Operator of Rank $k$. For Angular-Momentum Eigenstates $|j,m,\alpha\rangle$, the Matrix Elements Factor into a Geometric Coefficient, and a Reduced Matrix Element:
+\[
+\langle j'm'\alpha'|T^{(k)}_q|jm\alpha\rangle
+=
+(-1)^{j'-m'}
+\begin{pmatrix}
+j' & k & j \\
+-m' & q & m
+\end{pmatrix}
+\langle j'\alpha'\|T^{(k)}\|j\alpha\rangle .
+\]
+The $3j$ symbol contains the dependence on the Magnetic Quantum Numbers $m,m',q$, while the Reduced Matrix Element, is Independent of them. Its' Value depends on the States, and the Tensor Operator, but not on the Magnetic Quantum Numbers.  \\
+
+The $3j$ symbol gives the Selection Rules
+\[
+m'=m+q,
+\qquad
+|j'-j|\le k\le j'+j.
+\]
+Additional Selection Rules may arise from other Quantum Numbers, or Symmetries. The precise Normalization of the Reduced Matrix Element depends on convention.
+
+\newpage
 
 \paragraph{virial Theorem} See Eq. \eqref{eq:virial Theorem}
 
+\emph{For a Bound Stationary State of a Particle}, with Hamiltonian
+\[
+\hat{H}=\frac{\hat{\mathbf{p}}^{\,2}}{2m}+V(\hat{\mathbf{r}}),
+\]
+the Quantum virial Theorem states
+\[
+2\langle \hat{T}\rangle
+=
+\left\langle
+\hat{\mathbf{r}}\cdot\nabla V(\hat{\mathbf{r}})
+\right\rangle,
+\qquad
+\hat{T}=\frac{\hat{\mathbf{p}}^{\,2}}{2m}.
+\]
+If the Potential is Homogeneous of Degree $n$, so that $V(\lambda\mathbf{r})=\lambda^nV(\mathbf{r})$, then $\mathbf{r}\cdot\nabla V=nV$, and therefore
+\[
+2\langle \hat{T}\rangle=n\langle V\rangle.
+\]
+For example, a Coulomb Potential has $n=-1$, giving $2\langle \hat{T}\rangle=-\langle V\rangle$; a Harmonic Potential has $n=2$, giving $\langle \hat{T}\rangle=\langle V\rangle$.  \\
 
+The Theorem applies when the State is Stationary, and the relevant Expectation Values and Boundary terms, are well behaved.
 
+\newpage
 
+\paragraph{Gram-Schmidt Theorem}   
 
+\noindent
 
+Let $\{v_1,\ldots,v_n\}$ be a Linearly Independent Set in an Inner
+Product Space. Define recursively
+\[
+u_1=v_1,
+\qquad
+e_1=\frac{u_1}{\|u_1\|},
+\]
+and, for $k=2,\ldots,n$,
+\[
+u_k=v_k-\sum_{j=1}^{k-1}\langle e_j,v_k\rangle e_j,
+\qquad
+e_k=\frac{u_k}{\|u_k\|}.
+\]
+Then $\{e_1,\ldots,e_n\}$ is an \emph{Orthonormal Set}, and for every
+$k$,
+\[
+\operatorname{span}\{e_1,\ldots,e_k\}
+=
+\operatorname{span}\{v_1,\ldots,v_k\}.
+\]
+In particular, the two Sets Span the same Subspace. The construction requires each $u_k\ne 0$, which is guaranteed by the lLinear Independence of the original Vectors.  \\
 
+Here, the Inner Product is taken to be Conjugate-Linear in its' first argument. If convention makes it Linear in the first argument, the Projection Coefficient is $\langle v_k,e_j\rangle$.
 
-\paragraph{Gram-Schmidt Theorem}
+\newpage
 
 \paragraph{Optical Theorem}
 
@@ -3621,11 +3767,54 @@ Crucially, the Stone-von Neumann Theorem \textbf{fails}, for Systems with an Inf
 
 \paragraph{Poisson Distribution}
 
+A Random Variable $X$, has a Poisson Distribution with parameter
+$\lambda>0$, if its' Probability Mass Function is
+\[
+\Pr(X=k)=\frac{e^{-\lambda}\lambda^k}{k!},
+\qquad k=0,1,2,\ldots.
+\]
+The Parameter $\lambda$, is both the Mean, and the Variance:
+\[
+\mathbb{E}[X]=\lambda,
+\qquad
+\operatorname{Var}(X)=\lambda.
+\]
+The Poisson distribution models the number of events occurring in a fixed interval, when events occur independently at a Constant average rate. For example, if Events occur at Rate $r$ over an interval of duration $t$, then the Count is often modeled as $X\sim\operatorname{Poisson}(rt)$.
+
+\newpage
+
 \paragraph{Ritz Theorem}
 
 \paragraph{Steiners' Parallel-Axis Theorem}
 
+For a rigid body of Mass $M$, the Moment of Inertia about an Axis is related to the Moment of Inertia about a Parallel Axis through the \emph{Center Of Mass} by
+\[
+I=I_{\mathrm{CM}}+Md^2,
+\]
+where $I_{\mathrm{CM}}$, is the Moment of Inertia, about the Center-Of-Mass axis, and $d$, is the Perpendicular Distance between the Two Axes.  \\
+
+In Integral Form, for an Axis Perpendicular to the Position Vectors $\mathbf{r}$,
+\[
+I=\int |\mathbf{r}-\mathbf{a}|^2\,dm
+=I_{\mathrm{CM}}+Md^2,
+\]
+where $\mathbf{a}$, is the Displacement of the chosen Axis from the Center-Of-Mass Axis. The Theorem applies when the Axes are Parallel.
+
+\newpage
+
 \paragraph{Larmors' Theorem}
+
+\noindent
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3634,25 +3823,34 @@ Crucially, the Stone-von Neumann Theorem \textbf{fails}, for Systems with an Inf
 
 
 \paragraph{Noethers' Theorem}
+
 \noindent
 
-Noethers' theorem states the following: \\
-
-If a continuous symmetry transformation $\phi$ $\rightarrow$ $\phi + D \phi$ only changes $\mathscr{L}$, by the addition of a four-divergence (i.e. D$\mathscr{L} = \partial_\mu W^\mu$) for arbitrary $\phi$, then this implies the existence of a current
-
+Noethers' Theorem states that, every Continuous Differentiable Symmetry of the Action, corresponds to a \emph{Conserved Quantity}. For Generalized Coordinates $q_i(t)$, let
 \[
-J_N^\mu = \prod^\mu D\phi - W^\mu(x)
+S[q]=\int_{t_1}^{t_2} L(q_i,\dot q_i,t)\,dt.
 \]
+If an Infinitesimal Transformation
+\[
+q_i\longmapsto q_i+\varepsilon\,\delta q_i
+\]
+changes the \emph{Lagrangian only by a Total Time Derivative},
+\[
+\delta L=\varepsilon\frac{dF}{dt},
+\]
+then the quantity
+\[
+Q=\sum_i p_i\,\delta q_i-F,
+\qquad
+p_i=\frac{\partial L}{\partial \dot q_i},
+\]
+is Conserved along solutions of the \emph{Euler-Lagrange Equations}: See the subsection in page [\pageref{ssec:Connection with the Classical Path}] \ldots
+\[
+\frac{dQ}{dt}=0.
+\]
+For example, Invariance under Time Translations gives Conservation of Energy, while Invariance under Spatial Translations gives Conservation of Linear Momentum. The precise Conserved Quantity depends on the Transformation, and on the Boundary term $F$.
 
-If $\phi$ obeys the equations of motion, then the current is conserved, i.e. $\partial_\mu J_N^\mu = 0$.  \\
-
-
-
-
-
-
-
-
+\newpage
 
 \chapter{Time-Dependent Problems}
 
@@ -3952,12 +4150,13 @@ Here, \(\mathcal{D}x(t)\) denotes Integration over all Paths with the specified 
 regularization, and measure are chosen.
 
 \subsection{Connection with the Classical Path}
+\label{ssec:Connection with the Classical Path}
 
 In the Classical Limit, \(\hbar\) is small compared with the Action. The Phase \(e^{iS[x]/\hbar}\) then oscillates rapidly for most Paths, so their contributions tend to cancel. \emph{The dominant contributions come from Paths near Stationary points of the Action}:
 \[
 \delta S=0.
 \]
-This is Hamilton's Principle, which yields the Classical Euler-Lagrange equation
+This is Hamilton's Principle, which yields the Classical Euler-Lagrange Equation
 \[
 \frac{d}{dt}\left(\frac{\partial L}{\partial\dot{x}}\right)
 -\frac{\partial L}{\partial x}=0.
