@@ -40,7 +40,7 @@
 \usepackage{wrapfig}
 %\DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta}
+\usetikzlibrary{shapes.geometric,arrows.meta}
 \usetikzlibrary{patterns}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
@@ -550,25 +550,25 @@ Completely described states, occur as a result of the \emph{simultaneous measure
 \item Quantum Harmonic Oscillator
 \item Relativistic Mass increase
 \item Anharmonic vs simple Harmonic Oscillator
-\item Fnite Square-Well Ptential
+\item Fnite Square-Well Potential
 \item Quantum Tunneling through a Potential Barrier
-\item Minizing Energy for a Ground state search
+\item Minizing Energy for a Ground State search
 \item Estimated Ground Search Energy, with its' Analytical Soluion
-\item Breit-Wigner distribution
+\item Breit-Wigner Distribution
 \item The relation between Phi, Theta, and Psi
+\item Illustration of Brillouin Zone
 \item Quantum Description of the Aharonov-Bohm Effect
 \item Aharonov-Bohm Shift of Interference Pattern
 \item Graph of the Photoelectric Effect
-\item Lagrangian Formalism and Stationary Action
+\item Lagrangian Formalism, and Stationary Action
 \item First Four Hermite Polynomials
 \item Laguerre Polynomials
 \item First Four Legendre Polynomials
 \item Dominated Convergence
-\item Dorminant Convrgence
 \item Exact Inward Intergration
-\item Electronic DDensity for Helium Atom
+\item Electronic Density for Helium Atom
 \item Kohm-Sham Asymptotic Behavior
-\item Oxygens' Local Density Appr oximation(LDA)
+\item Oxygens' Local Density Approximation(LDA)
 \item Hartree Boundary Condition
 \item Numerovs' solution of Poisons' Equation 
 
@@ -3436,16 +3436,108 @@ p_{fi} (t) = \frac{\Big| \langle \psi_f \mid \hat V (t) \mid \psi_i \rangle \Big
 
 
 \chapter{Related Theorems}
-\paragraph{Blochs' Theorem}\index{Blochs' Theorem}
+\paragraph{Blochs' Theorem}\index{Blochs' Theorem}  
 \noindent
 
-For periodic potentials, V(x + a) = V(x); So, $\Psi(x + a)$ = $e^{i K a} \Psi(x)$, for some constant K. \\
+Blochs' Theorem describes the behavior of Electrons (or other Particles), in a perfectly Periodic Potential, such as the Ions in a Crystal Lattice. It proves that the Eigenstates of the Hamiltonian for such a System are not arbitrary, but are \emph{Plane Waves Modulated by a Periodic Function}.  \\
 
-K = $\frac{2 \pi n}{a}$, n = $0, \pm 1, \pm 2, ....$  \\
+    1. The Physical Premise  \\
 
-$K^2$ = $\frac{2 m E}{\hbar^2}$  \\
+In a Crystal, the Potential $V(\mathbf{r})$, is Periodic w.r.t the Lattice Vectors $\mathbf{R}$. This means:  \\
+$ V(\mathbf{r} + \mathbf{R}) = V(\mathbf{r}) $
+where $\mathbf{R} = n_1 \mathbf{a}_1 + n_2 \mathbf{a}_2 + n_3 \mathbf{a}_3$, and $\mathbf{a}_i$ are the PPrimitive Translation Vectors of the Lattice.  \\
 
-$\therefore$ $\Psi(x)$ = $e^{i K a}$ [$A \sin(K(x + a))$ + $B(\cos(K(x + a))$]
+    2. Mathematical Statement of Blochs' Theorem  \\
+
+The Theorem states that, the Eigenfunctions $\psi_{n\mathbf{k}}(\mathbf{r})$ of the One-Electron Schr$\ddot{o}$dinger equation for a Periodic Potential can be written as:
+$\psi_{n\mathbf{k}}(\mathbf{r}) = e^{i\mathbf{k} \cdot \mathbf{r}} u_{n\mathbf{k}}(\mathbf{r}) $
+
+Where:  \\
+ $\mathbf{k}$ is the crystal momentum (the wave vector).  \\
+ $u_{n\mathbf{k}}(\mathbf{r})$ is a Function with the \textbf{same Periodicity} as the Lattice:  \\
+ $u_{n\mathbf{k}}(\mathbf{r} + \mathbf{R}) = u_{n\mathbf{k}}(\mathbf{r})$  \\
+ $n$ is the Band Index, accounting for multiple solutions at the same $\mathbf{k}$.  \\
+
+    3. Implications of the Theorem  \\
+
+     Translation Symmetry  \\
+
+If we apply a Translation Operator $\hat{T}_{\mathbf{R}}$ to the Wavefunction, the result is:  \\
+$\psi(\mathbf{r} + \mathbf{R}) = e^{i\mathbf{k} \cdot \mathbf{R}} \psi(\mathbf{r})$  \\
+This shows that while the Probability Density $|\psi|^2$ is Periodic, the Wavefunction itself picks up a Phase Factor $e^{i\mathbf{k} \cdot \mathbf{R}}$.  \\
+
+     Energy Bands, and Gaps  \\
+
+Because the solutions depend on $\mathbf{k}$, the Energy $E_n(\mathbf{k})$ varies Continuously with the Wave Vector. However, the Periodicity of the Lattice imposes Boundaries (the Brillouin Zone). At these Boundaries, Bragg Reflection occurs, leading to the formation of:  \\
+  \textbf{Energy Bands}: Ranges of $E$ where solutions exist.
+  \textbf{Band Gaps}: Ranges of $E$ where no solutions exist, defining whether a Material is a Conductor, Semiconductor, or Insulator.  \\
+
+    4. Relation to Plane Waves  \\
+
+In the Limit where the Periodic Potential $V(\mathbf{r}) \to 0$ (the "Free Electron" Limit), the Periodic part $u_{n\mathbf{k}}(\mathbf{r})$, becomes a Constant.  \\ 
+The Wave-unction then reduces to a standard Plane Wave:  \\
+$\psi(\mathbf{r}) \propto e^{i\mathbf{k} \cdot \mathbf{r}} $
+This allows us to express $u_{n\mathbf{k}}(\mathbf{r})$ as a Fourier Series, over the Reciprocal Lattice Vectors $\mathbf{G}$:  \\
+$\psi_{n\mathbf{k}}(\mathbf{r}) = \sum_{\mathbf{G}} C_{n, \mathbf{k}-\mathbf{G}} e^{i(\mathbf{k}-\mathbf{G}) \cdot \mathbf{r}}$
+
+Since a full 3D Brillouin Zone is difficult to render in a 2D image, the most common way to visualize this in TikZ is to draw the \textbf{2D Brillouin Zone for a Square Lattice}.  \\ 
+
+The diagram illustrates the Reciprocal Lattice Points, the Perpendicular Bisectors (Bragg Planes), and the resulting first Brillouin Zone (the Central Square).
+
+\begin{tikzpicture}[scale=2]
+    % Grid settings
+    \def\sz{2} % Size of the lattice constant in k-space
+
+    % 1. Draw the reciprocal lattice points
+    \foreach \x in {-1,0,1} {
+        \foreach \y in {-1,0,1} {
+            \fill (\x*\sz, \y*\sz) circle (2pt);
+        }
+    }
+
+    % 2. Draw the perpendicular bisectors (the "Bragg Planes")
+    % Vertical lines
+    \draw[dashed, gray] (0.5*\sz, -1.5*\sz) -- (0.5*\sz, 1.5*\sz);
+    \draw[dashed, gray] (-0.5*\sz, -1.5*\sz) -- (-0.5*\sz, 1.5*\sz);
+    % Horizontal lines
+    \draw[dashed, gray] (-1.5*\sz, 0.5*\sz) -- (1.5*\sz, 0.5*\sz);
+    \draw[dashed, gray] (-1.5*\sz, -0.5*\sz) -- (1.5*\sz, -0.5*\sz);
+
+    % 3. Highlight the First Brillouin Zone (the central square)
+    \draw[thick, blue, fill=blue!10] 
+        (-0.5*\sz, -0.5*\sz) rectangle (0.5*\sz, 0.5*\sz);
+
+    % 4. Label high symmetry points
+    \node[below left] at (0,0) {$\Gamma$};
+    \node[above] at (0, 0.5*\sz) {$X$};
+    \node[right] at (0.5*\sz, 0) {$X$};
+    \node[above right] at (0.5*\sz, 0.5*\sz) {$M$};
+
+    % 5. Label vectors
+    \draw[-{Stealth}, thick] (0,0) -- (0.5*\sz, 0.5*\sz) node[midway, above left] {$\mathbf{k}$};
+    
+    % Reciprocal lattice vector label
+    \draw[-{Stealth}, red, thick] (0,0) -- (\sz, 0) node[midway, below] {$\mathbf{b}_1$};
+
+    % Legend/Titles
+    \node[anchor=west] at (1.6*\sz, 1*\sz) {\small Reciprocal Lattice};
+    \node[anchor=west] at (1.6*\sz, 0.7*\sz) {\small BZ Boundary (Dashed)};
+    \node[anchor=west, blue] at (1.6*\sz, 0.4*\sz) {\small 1st Brillouin Zone};
+
+\end{tikzpicture}
+
+   \textbf{Explanation of the diagram}:  \\
+1.  \textbf{Reciprocal Lattice}: It uses a nested for each Loop, to plot a 3$\times$3 Grid of Points representing the Reciprocal Lattice.  \\
+2.  \textbf{Bisectors}: The dashed Gray Lines represent the Boundaries, where $\mathbf{k} \cdot \mathbf{G} = \frac{1}{2}G^2$. These are the "Bragg Planes" in 2D.  \\
+3.  \textbf{The Zone}: The `rectangle`, fills the center area in light Blue to clearly mark the \textbf{First Brillouin Zone}.  \\
+4.  \textbf{Symmetry Points}: It labels the center as $\Gamma$, the face centers as $X$, and the corners as $M$, which is standard notation for a simple Cubic/Square Lattice.  \\
+5.  \textbf{Vectors}: The red Vector $\mathbf{b}_1$ shows the distance between Reciprocal Lattice Points, and the black Vector $\mathbf{k}$ points toward the Zone Boundary.  \\
+
+    \textbf{Bragg Reflection}  \\
+
+The Boundaries of the Brillouin Zone, represent the Condition for Bragg Reflection. When a Wave Vector $\mathbf{k}$ reaches the BZ Boundary, it satisfies the Condition:
+$ 2\mathbf{k} \cdot \mathbf{G} = |\mathbf{G}|^2$.
+At these points, Standing Waves are formed, which leads to the opening of \textbf{Energy Gaps} (Band Gaps) in the Electronic Spectrum.
 
 
 
@@ -3454,13 +3546,68 @@ $\therefore$ $\Psi(x)$ = $e^{i K a}$ [$A \sin(K(x + a))$ + $B(\cos(K(x + a))$]
 
 
 
-\paragraph{Stone-von Neumann Theorem}
+
+\newpage
+
+\paragraph{Stone-von Neumann Theorem}  
+
+\noindent
+
+This is a Fundamental result in Quantum Mechanics, and Functional Analysis. It establishes the uniqueness of the representation of the Canonical Commutation Relations (CCR), for a Finite Number of Degrees of Freedom.  \\
+
+    1. The Canonical Commutation Relations (CCR)  \\
+
+In Quantum Mechanics, the Position Operator $\hat{x}$, and the Momentum Operator $\hat{p}$, are required to satisfy the Heisenberg Commutation Relation:
+$[\hat{x}, \hat{p}] = i\hbar \mathbb{I} $
+where $\mathbb{I}$ is the Identity Operator. Because $\hat{x}$, and $\hat{p}$ are Unbounded Operators, the Commutation Relation is more rigorously handled using their corresponding Unitary Groups (the Weyl Form).  \\
+
+    2. The Weyl Form  \\
+
+To avoid the Mathematical pitfalls of Unbounded Operators, we define the Unitary Operators:
+ \textbf{Translation in Momentum}: $U(a) = e^{i a \hat{p} / \hbar}$  \\
+ \textbf{Translation in Position}: $V(b) = e^{i b \hat{x} / \hbar}$  \\
+
+The CCR in Weyl Form is expressed as:
+$U(a)V(b) = e^{iab/\hbar} V(b)U(a)$  \\
+This version of the Commutation Relation involves Bounded, Unitary Operators, making the Analysis Mathematically Stable.  \\
+
+    3. Statement of the Theorem  \\
+
+The Stone-von Neumann Theorem states that, for a Finite Number of Degrees of Freedom $n$, any Irreducible Unitary Representation of the Weyl Relations is \textbf{Unitarily equivalent} to the standard Schr$\ddot{o}$dinger Representation.  \\
+
+In the Schr$\ddot{o}$dinger Representation, the Operators act on the \emph{Hilbert Space} $L^2(\mathbb{R}^n)$ as: \\
+$(\hat{x} \psi)(x) = x \psi(x) \quad \text{and} \quad (\hat{p} \psi)(x) = -i\hbar \frac{\partial}{\partial x} \psi(x)$  \\
+
+  \textbf{Unitary Equivalence} means that, if there is another Representation $(\hat{x}', \hat{p}')$ on a Hilbert Space $\mathcal{H}'$, there exists a Unitary Operator $\mathcal{U} : \mathcal{H} \to \mathcal{H}'$ such that:  \\
+$\hat{x}' = \mathcal{U} \hat{x} \mathcal{U}^\dagger \quad \text{and} \quad \hat{p}' = \mathcal{U} \hat{p} \mathcal{U}^\dagger$
+
+    4. Physical, and Mathematical Significance  \\
+
+  \textbf{Uniqueness of Quantum Mechanics}  \\
+
+The Theorem guarantees that it doesn't matter how we represent Position and Momentum (e.g., whether we use the Position-Space Wave Function, or the Momentum-Space Wave Function); the Physics remains identical, because the Representations are \emph{Unitarily Equivalent}.  \\
+
+     \emph{Limitations: (Infinite Degrees of Freedom)}  \\
+
+Crucially, the Stone-von Neumann Theorem \textbf{fails}, for Systems with an Infinite Number of Degrees of Freedom. This failure is a cornerstone of:
+ \textbf{Quantum Field Theory (QFT)}: In QFT, there exist Infinitely many Unitarily Inequivalent Representations of the CCR (e.g., different Vacuum States).  \\
+ \textbf{Thermodynamic Limit}: It explains why different Phases of Matter (like a Liquid vs. a Crystal), can be described by Representations that cannot be Mapped into one another, by a Simple Unitary Transformation.
+
+\newpage
+
 
 \paragraph{Segal-Bargmann Space}
 
 \paragraph{Wignar-Eckart Theorem}
 
 \paragraph{virial Theorem} See Eq. \eqref{eq:virial Theorem}
+
+
+
+
+
+
+
 
 \paragraph{Gram-Schmidt Theorem}
 
@@ -3479,6 +3626,12 @@ $\therefore$ $\Psi(x)$ = $e^{i K a}$ [$A \sin(K(x + a))$ + $B(\cos(K(x + a))$]
 \paragraph{Steiners' Parallel-Axis Theorem}
 
 \paragraph{Larmors' Theorem}
+
+
+
+
+
+
 
 \paragraph{Noethers' Theorem}
 \noindent
